@@ -3,8 +3,11 @@
 post_install() {
 set -e
 
+    # nokogiri native ext must link system libs, never bundled C sources
+    export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
 # Install the gem
-gem install ethon -v 0.18.0
+gem install ethon -v 0.18.0 -- --use-system-libraries
 
 # Apply the patch to libc.rb
 file=$(find $PREFIX/lib/ruby/gems -name "libc.rb" -path "*/ethon/*" | head -1)

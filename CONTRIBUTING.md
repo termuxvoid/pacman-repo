@@ -73,6 +73,8 @@ post_remove() {
 }
 ```
 
+Native-gem rule: any hook that runs `gem install` / `bundle install` must first `export NOKOGIRI_USE_SYSTEM_LIBRARIES=1`, and bare `gem install <tool>` calls should pass trailing `-- --use-system-libraries`. Otherwise nokogiri (a transitive dependency of many gems) rebuilds its bundled C sources against missing headers and the install fails. See `wpscan.install` for the pattern.
+
 ### Data files
 
 If the package ships files (fonts, scripts, themes), tar them as `<name>-data.tar.gz`, reference them via `source=` with a real `sha256sums`, and extract into `$pkgdir` inside `package()`:
@@ -88,7 +90,15 @@ package() {
 
 We use `SKIP` for shipped data (same policy as the APT repo): manually maintained hashes drift out of sync and break builds without adding safety — the git history is the integrity record.
 
-The archive's internal paths map onto the device root, e.g. `data/data/com.termux/files/usr/bin/foo`.
+The archive's internal paths **must be PREFIX-relative** (`usr/bin/foo`, `share/<pkg>/...`) — never absolute `data/data/com.termux/...` paths. Pacman's root is `$PREFIX` on real pacman-bootstrap devices, so absolute paths fail to extract there (this matches how termux-pacman ships its own packages). Generate archives with:
+
+```bash
+tar -czf <name>-data.tar.gz -C <src>/data/data/com.termux/files .
+```
+
+### Writable locations
+
+Only `$PREFIX`, `$HOME`, and `$TMPDIR` are writable at hook time. Always `mkdir -p` before writing into a subdirectory, and never reference raw `/data/data/...` or other absolute system paths inside hooks.
 
 ## Test before submitting
 

@@ -3,7 +3,10 @@
 post_install() {
 set -e
 
-gem install wpscan -v 4.0.0
+    # nokogiri native ext must link system libs, never bundled C sources
+    export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
+gem install wpscan -v 4.0.0 -- --use-system-libraries
 
 echo "WPScan installed successfully."
 echo ""

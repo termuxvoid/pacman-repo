@@ -3,6 +3,9 @@
 post_install() {
 set -e
 
+    # nokogiri native ext must link system libs, never bundled C sources
+    export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
+
 BEEF_DIR="$PREFIX/share/beef"
 LAUNCHER="$PREFIX/bin/beef"
 TARBALL_URL="https://github.com/beefproject/beef/archive/refs/tags/v0.6.0.0.tar.gz"

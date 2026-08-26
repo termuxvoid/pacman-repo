@@ -130,7 +130,10 @@ port_one() {
     # ---- data tarball ----
     local srclines=() sumlines=() pkgbody='    return 0'
     if [ -d "$srcdir/data" ]; then
-        tar -czf "$outdir/${name}-data.tar.gz" -C "$srcdir/data" .
+        # Pack PREFIX-RELATIVE (usr/..., etc/...) like termux-pacman packages:
+        # pacman root is $PREFIX on real bootstrap devices, so absolute
+        # data/data/com.termux/... paths inside archives cannot extract there.
+        tar -czf "$outdir/${name}-data.tar.gz" -C "$srcdir/data/data/com.termux/files" .
         # No integrity pinning (mirrors the APT repo): hashes of manually
         # packed data drift out of sync and break builds for no benefit.
         srclines=("source=(${name}-data.tar.gz)")
