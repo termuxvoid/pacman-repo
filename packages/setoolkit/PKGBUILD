@@ -3,7 +3,7 @@
 
 pkgname="setoolkit"
 pkgver=8.0.3+git20241021.0kali1
-pkgrel=1
+pkgrel=2
 pkgdesc='Social Engineering Toolkit'
 arch=('any')
 url="https://github.com/trustedsec/social-engineer-toolkit"

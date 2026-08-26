@@ -59,7 +59,10 @@ else
     echo -e "${YELLOW}⚠ Binary not found${NC}"
 fi
 
-read -p "Clean Go cache? [y/N]: " choice
+# Removal hooks run without a TTY, so an interactive `read` would hang.
+# Default to NOT cleaning the Go cache (non-destructive); opt in with
+# HTTPX_CLEAN=1 for scripted removals.
+choice="${HTTPX_CLEAN:-N}"
 if [[ "$choice" =~ [yY] ]]; then
     go clean -cache -modcache 2>/dev/null && \
     echo -e "${GREEN}✓ Go cache cleaned${NC}" || \

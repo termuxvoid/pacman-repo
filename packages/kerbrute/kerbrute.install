@@ -56,7 +56,10 @@ if [ -f "$KERBRUTE_BIN" ]; then
     echo -e "${RED}✗ Failed to remove binary (try: rm -f $KERBRUTE_BIN)${NC}"
 fi
 
-read -p "Clean wordlists directory? [y/N]: " choice
+# Removal hooks run without a TTY, so an interactive `read` would hang.
+# Default to NOT cleaning the user's wordlists (non-destructive); opt in
+# with KERBRUTE_CLEAN=1 for scripted removals.
+choice="${KERBRUTE_CLEAN:-N}"
 [[ "$choice" =~ [yY] ]] && {
     rm -rf "$HOME/kerbrute-wordlists" 2>/dev/null && \
     echo -e "${GREEN}✓ Wordlists removed${NC}" || \

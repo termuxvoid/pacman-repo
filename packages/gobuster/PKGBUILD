@@ -3,7 +3,7 @@
 
 pkgname="gobuster"
 pkgver=3.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Directory/file & DNS busting tool written in Go'
 arch=('any')
 url="https://github.com/OJ/gobuster"

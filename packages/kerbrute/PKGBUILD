@@ -3,7 +3,7 @@
 
 pkgname="kerbrute"
 pkgver=1.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Kerberos brute force and enumeration tool'
 arch=('any')
 url="https://github.com/ropnop/kerbrute"

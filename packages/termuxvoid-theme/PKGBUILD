@@ -3,7 +3,7 @@
 
 pkgname="termuxvoid-theme"
 pkgver=3.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Professional terminal customization for Termux'
 arch=('any')
 url="https://github.com/termuxvoid/TermuxVoid-Theme"

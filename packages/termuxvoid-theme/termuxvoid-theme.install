@@ -2,6 +2,10 @@
 
 post_install() {
 
+# Hooks may run with HOME unset in some libalpm contexts; guard it so we
+# never scatter configs into Android's read-only /.
+: "${HOME:?HOME must be set}"
+
 RED='\e[1;31m'
 GREEN='\e[1;32m'
 YELLOW='\e[1;33m'
@@ -63,7 +67,9 @@ fetch_theme() {
 }
 
 customize_prompt() {
-    read -p "$(echo -e "${CYAN}Enter your name for prompt (blank for default 'TermuxVoid'): ${NC}")" username
+    # Post-install hooks run without a TTY, so an interactive `read` would
+    # hang. Default to the built-in name and allow override via env.
+    username="${TERMUXVOIDTHEME_NAME:-}"
     if [ -n "$username" ]; then
         if sed -i "s/TermuxVoid/$username/g" "$THEME_DIR/assets/starship.toml"; then
             echo -e "${GREEN}[+] Prompt customized with your name${NC}"
@@ -76,10 +82,11 @@ customize_prompt() {
 }
 
 setup_banner() {
-    read -p "$(echo -e "${CYAN}Configure custom banner? [y/N]: ${NC}")" banner_choice
+    # Default to N (skip banner, just tweak motd); allow env override.
+    banner_choice="${TERMUXVOIDTHEME_BANNER:-N}"
     if [[ "$banner_choice" =~ ^[Yy]$ ]]; then
         BANNER_CONFIGURED=true
-        read -p "$(echo -e "${YELLOW}Enter custom banner path or blank for default: ${NC}")" banner_path
+        banner_path="${TERMUXVOIDTHEME_BANNER_PATH:-}"
         mkdir -p "$TERMUX_DIR"
         if [ -z "$banner_path" ]; then
             if [ -f "$THEME_DIR/assets/tvr.png" ]; then
@@ -181,7 +188,6 @@ complete_installation() {
         echo -e "- MOTD message modified"
     fi
     cleanup
-    read -p "$(echo -e "\n${CYAN}Press Enter to exit...${NC}")"
 }
 
 show_header

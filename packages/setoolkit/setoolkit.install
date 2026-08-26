@@ -40,7 +40,10 @@ if [ -f "$PREFIX/bin/setoolkit" ]; then
     echo -e "${RED}✗ Failed to remove launcher${NC}"
 fi
 
-read -p "Remove SEToolkit from NetHunter? [y/N]: " choice
+# Removal hooks run without a TTY, so an interactive `read` would hang.
+# Default to NOT removing from NetHunter (non-destructive); opt in with
+# SETOOLKIT_CLEAN=1 for scripted removals.
+choice="${SETOOLKIT_CLEAN:-N}"
 [[ "$choice" =~ [yY] ]] && {
     nh apt remove set -y && \
     echo -e "${GREEN}✓ SEToolkit removed from NetHunter${NC}" || \

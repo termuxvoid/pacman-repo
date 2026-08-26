@@ -3,7 +3,7 @@
 
 pkgname="httpx"
 pkgver=1.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery'
 arch=('any')
 url="https://docs.projectdiscovery.io/tools/httpx"

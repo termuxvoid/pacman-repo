@@ -3,7 +3,7 @@
 
 pkgname="ruby-nokogiri"
 pkgver=1.19.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Ruby gem for HTML/XML parsing (system libraries version)'
 arch=('any')
 url="https://nokogiri.org/"

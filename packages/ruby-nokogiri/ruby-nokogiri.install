@@ -1,22 +1,27 @@
 #!/bin/bash
 
 post_install() {
-# Post-installation script for ruby-nokogiri
-
 set -e
 
-echo "Installing Nokogiri 1.19.0 with system libraries..."
+    # nokogiri native ext must link system libs, never bundled C sources
+    # (mirrors the rule in CONTRIBUTING.md / wpscan.install / ruby-ethon.install)
+    export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-gem install nokogiri -v 1.19.0 -- --use-system-libraries
+    # pacman passes "$1" as pkgver-pkgrel; upstream pins need bare pkgver
+    UPVER="${1%%-*}"
 
-echo "Verifying installation..."
-ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
-    echo "Nokogiri installation failed!" >&2
-    return 1
-}
+    echo "Installing Nokogiri ${UPVER} with system libraries..."
 
-echo "Nokogiri 1.19.0 installed successfully."
-return 0
+    gem install nokogiri -v "${UPVER}" -- --use-system-libraries
+
+    echo "Verifying installation..."
+    ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
+        echo "Nokogiri installation failed!" >&2
+        return 1
+    }
+
+    echo "Nokogiri ${UPVER} installed successfully."
+    return 0
 }
 
 post_remove() {
@@ -42,4 +47,3 @@ fi
 echo "Nokogiri removal complete."
 return 0
 }
-
