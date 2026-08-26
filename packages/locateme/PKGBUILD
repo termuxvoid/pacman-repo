@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/locateme)
+
+pkgname="locateme"
+pkgver=1.2
+pkgrel=0
+pkgdesc='Live location tracker using google maps'
+arch=('any')
+depends=('php' 'jq' 'openssh' 'figlet')
+options=('!strip')
+source=(locateme-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/locateme-data.tar.gz" -C "${pkgdir}"
+}

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+post_install() {
+set -e
+pip install apkleaks==2.6.3
+return 0
+}
+
+post_remove() {
+pip uninstall -y apkleaks 2>/dev/null || true
+return 0
+}
+

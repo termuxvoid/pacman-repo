@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/drshell)
+
+pkgname="drshell"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='Reverse Shell Session Manager'
+arch=('any')
+url="https://github.com/DrDataYE/DrShell"
+depends=('git' 'python' 'openssh')
+install="drshell.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

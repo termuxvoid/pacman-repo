@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/androvirus)
+
+pkgname="androvirus"
+pkgver=3.0
+pkgrel=0
+pkgdesc='Android penetration testing framework (USE RESPONSIBLY)'
+arch=('any')
+url="https://github.com/Anon4You/AndroVirus.git"
+depends=('curl' 'git' 'php' 'cloudflared')
+install="androvirus.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

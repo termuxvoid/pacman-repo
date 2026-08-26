@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cdxsummary)
+
+pkgname="cdxsummary"
+pkgver=0.1.1
+pkgrel=0
+pkgdesc='CDX summary and analysis tool'
+arch=('any')
+url="https://github.com/internetarchive/cdx-summary"
+depends=('python' 'python-pip')
+install="cdxsummary.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

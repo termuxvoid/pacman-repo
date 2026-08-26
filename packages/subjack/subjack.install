@@ -1,0 +1,61 @@
+#!/bin/bash
+
+post_install() {
+
+LAUNCHER="$PREFIX/bin/subjack"
+SUBJACK_BIN="$HOME/go/bin/subjack"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing subjack...${NC}"
+go install -v github.com/haccer/subjack@latest || {
+    echo -e "${RED}Error: Failed to install subjack. Ensure Go is installed and internet is available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher at $LAUNCHER...${NC}"
+cat > "$LAUNCHER" <<- EOF
+$SUBJACK_BIN "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo -e "${RED}Error: Failed to set executable permissions for $LAUNCHER.${NC}"
+    return 1
+}
+
+if [ -x "$SUBJACK_BIN" ]; then
+    echo -e "${GREEN}subjack installed successfully. Run 'subjack -h' to verify.${NC}"
+else
+    echo -e "${RED}Error: subjack binary not found at $SUBJACK_BIN.${NC}"
+    return 1
+fi
+}
+
+post_remove() {
+
+LAUNCHER="$PREFIX/bin/subjack"
+SUBJACK_BIN="$HOME/go/bin/subjack"
+GO_DIR="$HOME/go"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling subjack...${NC}"
+
+[ -d "$GO_DIR" ] && chmod 751 -R "$GO_DIR"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -f "$SUBJACK_BIN" ]; then
+    rm -f "$SUBJACK_BIN" && echo -e "${GREEN}✓ Removed binary${NC}" || \
+    echo -e "${RED}✗ Failed to remove binary (try: rm -f $SUBJACK_BIN)${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gobuster)
+
+pkgname="gobuster"
+pkgver=3.8.2
+pkgrel=0
+pkgdesc='Directory/file & DNS busting tool written in Go'
+arch=('any')
+url="https://github.com/OJ/gobuster"
+depends=('golang' 'git')
+install="gobuster.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/zipcracker)
+
+pkgname="zipcracker"
+pkgver=1.0
+pkgrel=0
+pkgdesc='A powerful yet simple ZIP archive password recovery tool designed for Termux'
+arch=('any')
+url="https://github.com/Anon4You/ZipCracker"
+depends=('zip' 'unzip')
+options=('!strip')
+source=(zipcracker-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/zipcracker-data.tar.gz" -C "${pkgdir}"
+}

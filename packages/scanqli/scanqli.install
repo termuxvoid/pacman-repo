@@ -1,0 +1,35 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+INSTALL_DIR="$PREFIX/share/scanqli"
+LAUNCHER="$PREFIX/bin/scanqli"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone https://github.com/bambish/ScanQLi.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+# Remove lxml and numpy from requirements.txt (already installed as dependencies)
+sed -i '/lxml/d' requirements.txt 2>/dev/null || true
+sed -i '/numpy/d' requirements.txt 2>/dev/null || true
+
+pip install -r requirements.txt
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/scanqli"
+exec python scanqli.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/scanqli"
+rm -rf "$PREFIX/share/scanqli"
+return 0
+}
+

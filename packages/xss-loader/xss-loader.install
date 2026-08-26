@@ -1,0 +1,35 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+INSTALL_DIR="$PREFIX/share/xss-loader"
+LAUNCHER="$PREFIX/bin/xss-loader"
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+
+git clone --depth 1 -q https://github.com/capture0x/XSS-LOADER.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+sed -i '/lxml/d' requirements.txt
+sed -i 's/[=<>].*//' requirements.txt
+pip install -r requirements.txt
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/xss-loader"
+exec python -W ignore payloader.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo "xss-loader installed. Run 'xss-loader'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/xss-loader"
+rm -rf "$PREFIX/share/xss-loader"
+echo "xss-loader removed."
+return 0
+}
+

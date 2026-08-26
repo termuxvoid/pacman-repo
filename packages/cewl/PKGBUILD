@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cewl)
+
+pkgname="cewl"
+pkgver=6.2.1
+pkgrel=0
+pkgdesc='Custom Word List generator (CeWL) for password cracking'
+arch=('any')
+url="https://github.com/digininja/CeWL"
+depends=('git' 'ruby' 'pkg-config' 'openssl' 'libxml2' 'libxslt' 'ruby-nokogiri' 'exiftool')
+install="cewl.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

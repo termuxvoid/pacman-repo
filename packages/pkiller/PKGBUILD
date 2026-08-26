@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pkiller)
+
+pkgname="pkiller"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Automated PairIP License Removal Tool for Android APKs'
+arch=('any')
+url="https://github.com/Anon4You/PKiller"
+depends=('git' 'python' 'asciibanner' 'apkeditor' 'apksigner')
+install="pkiller.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

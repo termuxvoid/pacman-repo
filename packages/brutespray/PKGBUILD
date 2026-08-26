@@ -3,7 +3,7 @@
 
 pkgname="brutespray"
 pkgver=2.6.3
-pkgrel=1
+pkgrel=0
 pkgdesc="Brute-force attacks from Nmap output"
 arch=('any')
 url="https://github.com/x90skysn3k/brutespray"

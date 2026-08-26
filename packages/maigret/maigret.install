@@ -1,0 +1,24 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+pip install --no-binary curl_cffi curl_cffi --force-reinstall
+pip install maigret==0.6.4
+
+echo "maigret installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  maigret username"
+echo "  maigret username -o json"
+echo "  maigret username -a  # Show all results"
+echo "  maigret username --recursive  # Follow found accounts"
+return 0
+}
+
+post_remove() {
+pip uninstall -y maigret 2>/dev/null || true
+echo "maigret completely removed."
+return 0
+}
+

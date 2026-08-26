@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/venom)
+
+pkgname="venom"
+pkgver=1.0.3
+pkgrel=0
+pkgdesc='An automated phishing tool for absolute beginners'
+arch=('any')
+url="https://github.com/Anon4You/venom/"
+depends=('git' 'curl' 'php' 'openssh' 'nodejs' 'cloudflared')
+install="venom.install"
+options=('!strip')
+source=(venom-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/venom-data.tar.gz" -C "${pkgdir}"
+}

@@ -1,0 +1,31 @@
+#!/bin/bash
+
+post_install() {
+
+set -e
+
+echo "Building Findomain..."
+
+git clone https://github.com/Findomain/Findomain.git "$TMPDIR/findomain" || exit 1
+cd "$TMPDIR/findomain"
+
+RUSTFLAGS="-C opt-level=z" cargo build --release || exit 1
+
+install -Dm700 -t "$PREFIX/bin" target/release/findomain || exit 1
+
+rm -rf "$TMPDIR/findomain"
+
+echo "Findomain installed successfully."
+return 0
+}
+
+post_remove() {
+
+if [ -f "$PREFIX/bin/findomain" ]; then
+    rm -f "$PREFIX/bin/findomain"
+fi
+
+echo "Findomain completely removed."
+return 0
+}
+

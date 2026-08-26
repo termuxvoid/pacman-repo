@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/mtcr-apply)
+
+pkgname="mtcr-apply"
+pkgver=1.1.0
+pkgrel=0
+pkgdesc='MTCR Patch Application Tool for Android APKs'
+arch=('any')
+url="https://telegram.me/NullRE_Channel"
+depends=('openjdk-21')
+options=('!strip')
+source=(mtcr-apply-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/mtcr-apply-data.tar.gz" -C "${pkgdir}"
+}

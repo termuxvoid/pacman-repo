@@ -1,0 +1,34 @@
+#!/bin/bash
+
+pre_install() {
+PANDORA="$PREFIX/share/pandora"
+if [[ -d $PANDORA ]]; then
+  rm -rf $PANDORA
+fi
+}
+
+post_install() {
+PANDORA="$PREFIX/share/pandora"
+BIN="$PREFIX/bin/pandora"
+git clone --quiet https://github.com/MrSanZz/pandora.git $PANDORA
+
+cd $PANDORA
+pip install -r requirements.txt
+
+cat > $BIN <<-EOF
+#!$PREFIX/bin/sh
+cd $PANDORA
+python pandora.py 
+EOF
+
+chmod +x $BIN
+
+echo "[*] PANDORA tool installed"
+echo "[*] you can now use it by typing pandora"
+}
+
+post_remove() {
+rm -rf $PREFIX/share/pandora 
+rm -rf $PREFIX/bin/pandora
+}
+

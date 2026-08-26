@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/shorturl)
+
+pkgname="shorturl"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='URL shortner for termux'
+arch=('any')
+depends=('toilet' 'curl')
+options=('!strip')
+source=(shorturl-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/shorturl-data.tar.gz" -C "${pkgdir}"
+}

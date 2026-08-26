@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/9router)
+
+pkgname="9router"
+pkgver=0.5.55
+pkgrel=0
+pkgdesc='Smart gateway between your tools and 60+ AI providers'
+arch=('any')
+url="https://9router.com/"
+depends=('npm')
+install="9router.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

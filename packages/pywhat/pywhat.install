@@ -1,0 +1,39 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing pywhat 5.1.0...${NC}"
+pip install pywhat==5.1.0 || {
+    echo -e "${RED}Error: Failed to install pywhat. Ensure Python and pip are available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}pywhat installed successfully!${NC}"
+echo "Usage:"
+echo "  pywhat or what --help       # Show help menu"
+echo "  pywhat 'text'       # Analyze text"
+echo "  pywhat file.txt     # Analyze file"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling pywhat...${NC}"
+
+pip uninstall -y pywhat 2>/dev/null || {
+    echo -e "${RED}Error: Failed to uninstall pywhat.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}pywhat completely removed${NC}"
+return 0
+}
+

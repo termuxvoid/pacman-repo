@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/reaver)
+
+pkgname="reaver"
+pkgver=1.6.6
+pkgrel=0
+pkgdesc='Brute force WPS PINs and recover WPA/WPA2 passphrases'
+arch=('any')
+url="https://github.com/t6x/reaver-wps-fork-t6x"
+depends=('git' 'make' 'libpcap' 'libnl')
+install="reaver.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

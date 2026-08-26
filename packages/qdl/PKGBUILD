@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/qdl)
+
+pkgname="qdl"
+pkgver=3.7
+pkgrel=0
+pkgdesc='Qualcomm Download Tool (QDL) for EDL flashing'
+arch=('any')
+url="https://github.com/linux-msm/qdl"
+depends=('git' 'clang' 'libxml2' 'libusb' 'libzip' 'ninja' 'build-essential' 'help2man' 'pkg-config' 'termux-api' 'python' 'python-pip')
+install="qdl.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

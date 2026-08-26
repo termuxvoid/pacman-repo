@@ -1,0 +1,16 @@
+#!/bin/bash
+
+post_install() {
+set -e
+go install -trimpath -ldflags "-w -s" github.com/projectdiscovery/katana/cmd/katana@v1.7.0
+if [ ! -f "$PREFIX/bin/katana" ] && [ -f "$HOME/go/bin/katana" ]; then
+    ln -sf "$HOME/go/bin/katana" "$PREFIX/bin/katana"
+fi
+return 0
+}
+
+post_remove() {
+rm -f "$HOME/go/bin/katana" "$PREFIX/bin/katana"
+return 0
+}
+

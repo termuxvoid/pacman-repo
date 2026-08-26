@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/spider)
+
+pkgname="spider"
+pkgver=2.0
+pkgrel=0
+pkgdesc='telegram autoreport script'
+arch=('any')
+depends=('python' 'python-pip')
+install="spider.install"
+options=('!strip')
+source=(spider-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/spider-data.tar.gz" -C "${pkgdir}"
+}

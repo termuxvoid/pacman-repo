@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/hashid)
+
+pkgname="hashid"
+pkgver=3.1.4
+pkgrel=0
+pkgdesc='Advanced hash identifier'
+arch=('any')
+url="https://github.com/psypanda/hashID"
+depends=('python' 'python-pip')
+install="hashid.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

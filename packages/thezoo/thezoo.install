@@ -1,0 +1,62 @@
+#!/bin/bash
+
+post_install() {
+
+ZOO_DIR="$PREFIX/share/thezoo"
+LAUNCHER="$PREFIX/bin/thezoo"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing theZoo 0.60...${NC}"
+[ -d "$ZOO_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$ZOO_DIR"; }
+
+echo -e "${GREEN}Cloning repository...${NC}"
+git clone --depth=1 https://github.com/ytisf/theZoo.git "$ZOO_DIR" || {
+    echo -e "${RED}Error: Failed to clone theZoo repository.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Installing Python dependencies...${NC}"
+cd "$ZOO_DIR"
+pip install -r requirements.txt || {
+    echo -e "${RED}Error: Failed to install Python dependencies.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher...${NC}"
+cat > "$LAUNCHER" << EOF
+cd "$ZOO_DIR" && python theZoo.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "${GREEN}theZoo installed successfully!${NC}"
+echo "Run: thezoo"
+echo "Warning: Contains live malware samples - use with caution!"
+return 0
+}
+
+post_remove() {
+
+ZOO_DIR="$PREFIX/share/thezoo"
+LAUNCHER="$PREFIX/bin/thezoo"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling theZoo...${NC}"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -d "$ZOO_DIR" ]; then
+    rm -rf "$ZOO_DIR" && echo -e "${GREEN}✓ Removed theZoo directory${NC}" || \
+    echo -e "${RED}✗ Failed to remove theZoo directory${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+return 0
+}
+

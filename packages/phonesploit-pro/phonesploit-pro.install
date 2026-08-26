@@ -1,0 +1,46 @@
+#!/bin/bash
+
+post_install() {
+
+INSTALL_DIR="$PREFIX/share/phonesploitpro"
+LAUNCHER="$PREFIX/bin/phonesploit"
+
+echo "[*] Installing PhoneSploit Pro v1.6.1..."
+git clone --depth=1 https://github.com/AzeemIdrisi/PhoneSploit-Pro.git "$INSTALL_DIR" || {
+    echo "[!] Clone failed. Check:"
+    echo "    1. Internet connection"
+    echo "    2. git installation"
+    return 1
+}
+
+echo "[*] Installing Python dependencies..."
+pip install -r "$INSTALL_DIR/requirements.txt" || {
+    echo "[!] Dependency install failed"
+    return 1
+}
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<'EOF'
+cd "$PREFIX/share/phonesploitpro"
+exec python phonesploitpro.py "$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo "[!] Launcher creation failed"
+    return 1
+}
+
+echo -e "\n[✓] PhoneSploit Pro installed!"
+echo "  Usage:"
+echo "    phonesploit           # Interactive mode"
+echo "  Note: Requires USB debugging enabled on target device"
+}
+
+post_remove() {
+
+echo "[*] Removing PhoneSploit Pro..."
+rm -rf "$PREFIX/share/phonesploitpro"
+rm -f "$PREFIX/bin/phonesploit"
+echo "[✓] Uninstallation complete"
+}
+

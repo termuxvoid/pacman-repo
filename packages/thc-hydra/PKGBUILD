@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/thc-hydra)
+
+pkgname="thc-hydra"
+pkgver=9.8dev
+pkgrel=0
+pkgdesc='Parallelized Login Cracker Supporting Numerous Protocols'
+arch=('any')
+url="https://github.com/vanhauser-thc/thc-hydra"
+depends=('git' 'make' 'clang' 'openssl' 'libssh' 'libssh2' 'libgcrypt' 'libidn' 'pcre' 'pcre2' 'zlib' 'sed')
+install="thc-hydra.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

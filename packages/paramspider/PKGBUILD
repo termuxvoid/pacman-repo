@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/paramspider)
+
+pkgname="paramspider"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='Parameter discovery suite for web applications'
+arch=('any')
+url="https://github.com/devanshbatham/paramspider"
+depends=('git' 'python' 'python-pip')
+install="paramspider.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

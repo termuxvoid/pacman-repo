@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/phoneinfoga)
+
+pkgname="phoneinfoga"
+pkgver=2.11.0
+pkgrel=0
+pkgdesc='Phone number intelligence framework'
+arch=('any')
+url="https://github.com/sundowndev/phoneinfoga"
+depends=('curl' 'tar')
+install="phoneinfoga.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

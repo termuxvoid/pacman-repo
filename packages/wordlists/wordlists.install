@@ -1,0 +1,59 @@
+#!/bin/bash
+
+post_install() {
+
+WORDLISTS_DIR="$PREFIX/share/wordlists"
+WORK_DIR=$(mktemp -d -p "$TMPDIR") || {
+    echo "[!] Failed to create temp dir" >&2
+    return 1
+}
+
+echo "[*] Installing wordlists to $WORDLISTS_DIR..."
+mkdir -p "$WORDLISTS_DIR"
+
+# Download rockyou.txt from Brannon Dorsey's mirror (faster)
+echo "[*] Fetching rockyou.txt (GitHub mirror)..."
+wget -q --show-progress -O "$WORDLISTS_DIR/rockyou.txt" \
+    https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt \
+    && echo "[+] rockyou.txt installed (143MB)"
+
+# Minimal SecLists (only Common-Credentials)
+cd "$WORK_DIR" && {
+    git clone --quiet --depth=1 --filter=blob:none \
+        --sparse https://github.com/danielmiessler/SecLists.git \
+        && cd SecLists \
+        && git sparse-checkout set Passwords/Common-Credentials \
+        && mv Passwords/Common-Credentials/*.txt "$WORDLISTS_DIR/" \
+        && echo "[+] SecLists common passwords installed"
+}
+
+# Cleanup
+rm -rf "$WORK_DIR"
+chmod 644 "$WORDLISTS_DIR"/* 2>/dev/null
+echo "[+] Installation complete. Wordlists:"
+ls -lh "$WORDLISTS_DIR" | awk '{print $5, $9}'
+}
+
+post_remove() {
+
+WORDLISTS_DIR="$PREFIX/share/wordlists"
+
+case "$1" in
+    remove|purge|abort-install)
+        echo "[*] Removing wordlists..."
+        [ -d "$WORDLISTS_DIR" ] && {
+            rm -rf "$WORDLISTS_DIR" && \
+            echo "[+] Wordlists removed" || \
+            echo "[!] Removal failed" >&2
+        }
+        ;;
+    upgrade|failed-upgrade|disappear)
+        # Keep files during upgrade
+        ;;
+esac
+
+# Clean orphaned temp files (if any)
+find "$TMPDIR" -maxdepth 1 -name 'wordlists.*' -exec rm -rf {} + 2>/dev/null
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/metabigor)
+
+pkgname="metabigor"
+pkgver=2.2.0
+pkgrel=0
+pkgdesc='OSINT tool without API keys'
+arch=('any')
+url="https://github.com/j3ssie/metabigor"
+depends=('curl' 'tar' 'git' 'golang')
+install="metabigor.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

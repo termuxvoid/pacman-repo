@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/antigravity-cli)
+
+pkgname="antigravity-cli"
+pkgver=1.1.19
+pkgrel=0
+pkgdesc='AI‑powered coding assistant (glibc wrapper for Termux)'
+arch=('any')
+url="https://antigravity.google/"
+depends=('curl' 'clang' 'python' 'glibc')
+install="antigravity-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

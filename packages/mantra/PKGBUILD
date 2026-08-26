@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/mantra)
+
+pkgname="mantra"
+pkgver=3.1
+pkgrel=0
+pkgdesc='API key hunter for JS files and web pages'
+arch=('any')
+url="https://github.com/brosck/mantra"
+depends=('golang' 'git')
+install="mantra.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

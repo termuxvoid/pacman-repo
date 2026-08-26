@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/haxrat)
+
+pkgname="haxrat"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='Cloud-based remote Android management suite'
+arch=('any')
+url="https://github.com/Anon4You/haxRat"
+depends=('git' 'npm' 'apkeditor' 'apksigner')
+install="haxrat.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

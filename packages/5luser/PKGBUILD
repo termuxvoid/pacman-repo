@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/5luser)
+
+pkgname="5luser"
+pkgver=1.0
+pkgrel=0
+pkgdesc='get unlimited 5 letters instagram unused usernames'
+arch=('any')
+url="https://github.com/Anon4You/5LUser"
+depends=('git' 'python' 'python-pip')
+install="5luser.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

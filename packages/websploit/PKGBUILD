@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/websploit)
+
+pkgname="websploit"
+pkgver=4.0.5
+pkgrel=0
+pkgdesc='Advanced MITM framework.'
+arch=('any')
+url="https://github.com/The404Hacking/websploit"
+depends=('python' 'python-pip' 'git' 'python-numpy')
+install="websploit.install"
+options=('!strip')
+source=(websploit-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/websploit-data.tar.gz" -C "${pkgdir}"
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/darkterm)
+
+pkgname="darkterm"
+pkgver=2.0
+pkgrel=0
+pkgdesc='Advanced Ethical Hacking Framework for Termux'
+arch=('any')
+url="https://github.com/Anon4You/darkterm"
+depends=('termux-tools' 'termux-exec' 'git')
+install="darkterm.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gophish)
+
+pkgname="gophish"
+pkgver=0.12.1.termuxvoid
+pkgrel=0
+pkgdesc='Open-source phishing framework'
+arch=('any')
+url="https://getgophish.com/"
+depends=('git' 'golang' 'build-essential' 'sqlite')
+install="gophish.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

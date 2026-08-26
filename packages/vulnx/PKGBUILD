@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/vulnx)
+
+pkgname="vulnx"
+pkgver=2.0.2
+pkgrel=0
+pkgdesc='Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.'
+arch=('any')
+url="https://github.com/projectdiscovery/vulnx"
+depends=('git' 'golang')
+install="vulnx.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

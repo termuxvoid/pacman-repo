@@ -1,0 +1,56 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+VERSION="2.11.0"
+ARCH=$(uname -m)
+
+case "$ARCH" in
+    aarch64)
+        ARCH_SUFFIX="arm64"
+        ;;
+    x86_64)
+        ARCH_SUFFIX="x86_64"
+        ;;
+    i686)
+        ARCH_SUFFIX="386"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH" >&2
+        return 1
+        ;;
+esac
+
+DOWNLOAD_URL="https://github.com/sundowndev/phoneinfoga/releases/download/v${VERSION}/phoneinfoga_Linux_${ARCH_SUFFIX}.tar.gz"
+TMP_DIR="$TMPDIR/phoneinfoga-download"
+BIN_DIR="$PREFIX/bin"
+
+mkdir -p "$TMP_DIR"
+
+echo "Downloading PhoneInfoga ${VERSION} for ${ARCH}..."
+curl -fsSL -o "$TMP_DIR/phoneinfoga.tar.gz" "$DOWNLOAD_URL"
+
+echo "Extracting..."
+tar -xzf "$TMP_DIR/phoneinfoga.tar.gz" -C "$TMP_DIR"
+
+echo "Installing binary..."
+install -Dm755 "$TMP_DIR/phoneinfoga" "$BIN_DIR/phoneinfoga"
+
+rm -rf "$TMP_DIR"
+
+echo "PhoneInfoga installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  phoneinfoga scan -n +1234567890"
+echo "  phoneinfoga scan -n +1234567890 -o json"
+echo "  phoneinfoga serve          # Start web interface"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/phoneinfoga"
+echo "PhoneInfoga completely removed."
+return 0
+}
+

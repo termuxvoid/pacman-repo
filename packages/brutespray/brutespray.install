@@ -3,13 +3,16 @@
 post_install() {
     set -e
 
+    # strip pacman pkgrel suffix: go module tags need the bare upstream version
+    UPVER="${1%%-*}"
+
     go install -trimpath -ldflags "-w -s" \
-        "github.com/x90skysn3k/brutespray/v2@v${1}"
+        "github.com/x90skysn3k/brutespray/v2@v${UPVER}"
 
     if [ ! -f "$PREFIX/bin/brutespray" ] && [ -f "$HOME/go/bin/brutespray" ]; then
         ln -sf "$HOME/go/bin/brutespray" "$PREFIX/bin/brutespray"
     fi
-    echo "brutespray ${1} installed successfully."
+    echo "brutespray ${UPVER} installed successfully."
 }
 
 post_remove() {

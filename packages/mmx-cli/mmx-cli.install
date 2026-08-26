@@ -1,0 +1,19 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+npm install -g mmx-cli@1.0.22
+
+echo "mmx-cli installed. Run 'mmx'"
+return 0
+}
+
+post_remove() {
+
+npm uninstall -g mmx-cli 2>/dev/null || true
+
+echo "mmx-cli removed."
+return 0
+}
+

@@ -1,0 +1,19 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+pip install phoneintel==1.1.1
+
+echo "phoneintel installed successfully."
+return 0
+}
+
+post_remove() {
+
+pip uninstall -y phoneintel 2>/dev/null || true
+
+echo "phoneintel completely removed."
+return 0
+}
+

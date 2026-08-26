@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/hbctool)
+
+pkgname="hbctool"
+pkgver=0.1.5
+pkgrel=96
+pkgdesc='Hermes Bytecode Disassembler and Assembler'
+arch=('any')
+url="https://github.com/Kirlif/HBC-Tool"
+depends=('python' 'python-pip' 'curl')
+install="hbctool.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

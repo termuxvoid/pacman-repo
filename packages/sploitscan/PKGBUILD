@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/sploitscan)
+
+pkgname="sploitscan"
+pkgver=0.14.3
+pkgrel=0
+pkgdesc='Exploit Intelligence Gathering and Analysis Tool'
+arch=('any')
+url="https://github.com/xaitax/SploitScan"
+depends=('python' 'python-pip' 'pip-basic-depends')
+install="sploitscan.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/dalfox)
+
+pkgname="dalfox"
+pkgver=3.2.1
+pkgrel=0
+pkgdesc='Fast parameter analysis and XSS scanning tool (v3 in Rust)'
+arch=('any')
+url="https://github.com/hahwul/dalfox"
+depends=('rust' 'clang' 'pkg-config' 'openssl' 'openssl-tool')
+install="dalfox.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

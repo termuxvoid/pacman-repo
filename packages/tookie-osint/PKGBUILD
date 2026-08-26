@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/tookie-osint)
+
+pkgname="tookie-osint"
+pkgver=4.1fix
+pkgrel=0
+pkgdesc='OSINT tool for username search across platforms'
+arch=('any')
+url="https://github.com/Alfredredbird/tookie-osint"
+depends=('git' 'python' 'python-pip' 'termux-tools')
+install="tookie-osint.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

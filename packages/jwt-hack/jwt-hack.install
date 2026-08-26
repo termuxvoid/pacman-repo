@@ -1,0 +1,34 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+echo "[*] Installing jwt-hack 2.6.0 using cargo..."
+
+# Install the binary via cargo
+cargo install jwt-hack --version 2.6.0
+
+# Create symlink in $PREFIX/bin
+if [ -f "$HOME/.cargo/bin/jwt-hack" ]; then
+    ln -sf "$HOME/.cargo/bin/jwt-hack" "$PREFIX/bin/jwt-hack"
+    echo "[✓] jwt-hack installed successfully."
+    echo "Run 'jwt-hack' to start."
+else
+    echo "[!] Binary not found at ~/.cargo/bin/jwt-hack"
+    return 1
+fi
+return 0
+}
+
+post_remove() {
+
+# Remove symlink
+rm -f "$PREFIX/bin/jwt-hack"
+
+# Uninstall the cargo package
+cargo uninstall jwt-hack 2>/dev/null || true
+
+echo "jwt-hack completely removed."
+return 0
+}
+

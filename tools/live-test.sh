@@ -16,7 +16,7 @@ Server = https://termuxvoid.github.io/pacman-repo/any
 EOF
 
 mkdir -p /tmp/livetest/db /tmp/livetest/cache
-curl -sL https://termuxvoid.github.io/pacman-repo/any/termuxvoid.gpg.asc -o /tmp/key.asc
+curl -sL https://termuxvoid.github.io/pacman-repo/termuxvoid.gpg.asc -o /tmp/key.asc
 test -s /tmp/key.asc && echo "KEY DOWNLOAD OK" >> "$LOG"
 
 pacman-key --init > /dev/null 2>&1 || true

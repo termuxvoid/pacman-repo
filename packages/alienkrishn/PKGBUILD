@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/alienkrishn)
+
+pkgname="alienkrishn"
+pkgver=2.0.7
+pkgrel=0
+pkgdesc='TermuxVoid package manager and system helper'
+arch=('any')
+url="https://termuxvoid.github.io/"
+depends=('curl' 'termux-tools')
+options=('!strip')
+source=(alienkrishn-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/alienkrishn-data.tar.gz" -C "${pkgdir}"
+}

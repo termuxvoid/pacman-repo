@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/goshs)
+
+pkgname="goshs"
+pkgver=2.1.4
+pkgrel=0
+pkgdesc='Feature-rich single-binary file server for red teamers and developers'
+arch=('any')
+url="https://goshs.de/"
+depends=('git' 'golang')
+install="goshs.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

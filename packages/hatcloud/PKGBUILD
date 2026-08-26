@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/hatcloud)
+
+pkgname="hatcloud"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='CloudFlare detector and information gatherer'
+arch=('any')
+url="https://github.com/HatBashBR/HatCloud"
+depends=('ruby' 'git')
+install="hatcloud.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

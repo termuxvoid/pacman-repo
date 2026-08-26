@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/afrog)
+
+pkgname="afrog"
+pkgver=3.5.6
+pkgrel=0
+pkgdesc='Fast vulnerability scanner with custom PoCs (afrog)'
+arch=('any')
+url="https://github.com/zan8in/afrog"
+depends=('git' 'golang')
+install="afrog.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/claude-code)
+
+pkgname="claude-code"
+pkgver=2.1.233
+pkgrel=0
+pkgdesc='Claude Code - AI coding assistant by Anthropic'
+arch=('any')
+url="https://github.com/anthropics/claude-code"
+depends=('glibc' 'clang' 'curl' 'tar')
+install="claude-code.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

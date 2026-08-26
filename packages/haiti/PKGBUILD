@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/haiti)
+
+pkgname="haiti"
+pkgver=4.0.0
+pkgrel=0
+pkgdesc='Hash type identifier (CLI tool)'
+arch=('any')
+url="https://github.com/noraj/haiti"
+depends=('ruby')
+install="haiti.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

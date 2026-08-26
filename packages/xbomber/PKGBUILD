@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/xbomber)
+
+pkgname="xbomber"
+pkgver=2.0.0
+pkgrel=0
+pkgdesc='A High-Performance SMS Bombing Tool for Educational Testing'
+arch=('any')
+url="https://github.com/Anon4You/XBomber"
+depends=('git' 'python' 'curl')
+install="xbomber.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

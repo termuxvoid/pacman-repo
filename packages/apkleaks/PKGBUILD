@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/apkleaks)
+
+pkgname="apkleaks"
+pkgver=2.6.3
+pkgrel=0
+pkgdesc='Scanning APK file for URIs, endpoints & secrets.'
+arch=('any')
+url="https://github.com/dwisiswant0/apkleaks"
+depends=('python' 'jadx')
+install="apkleaks.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

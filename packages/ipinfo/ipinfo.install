@@ -1,0 +1,10 @@
+#!/bin/bash
+
+post_install() {
+pip install requests --quiet
+
+echo "
+now you can launch the tool by
+typing ipinfo.."
+}
+

@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/darksploit-framework)
+
+pkgname="darksploit-framework"
+pkgver=2
+pkgrel=0
+pkgdesc='Darksploit is a tool to run and create exploits'
+arch=('any')
+url="https://github.com/ykankaya/DarkSploit"
+depends=('git' 'python2' 'perl' 'wget' 'php')
+install="darksploit-framework.install"
+options=('!strip')
+source=(darksploit-framework-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/darksploit-framework-data.tar.gz" -C "${pkgdir}"
+}

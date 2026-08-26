@@ -1,0 +1,32 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+VERSION="0.4.0"
+URL="https://github.com/Anon4You/Laudacode/archive/refs/tags/v${VERSION}.tar.gz"
+TMP_DIR="$TMPDIR/laudacode-build"
+BIN_DIR="$PREFIX/bin"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+mkdir -p "$TMP_DIR"
+cd "$TMP_DIR"
+
+curl -fsSL -o source.tar.gz "$URL"
+tar -xzf source.tar.gz --strip-components=1
+
+cargo build --release
+install -Dm755 target/release/laudacode "$BIN_DIR/laudacode"
+
+cd / && rm -rf "$TMP_DIR"
+
+echo "laudacode installed. Run 'laudacode'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/laudacode"
+echo "laudacode removed."
+return 0
+}
+

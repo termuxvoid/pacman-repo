@@ -1,0 +1,19 @@
+#!/bin/bash
+
+post_install() {
+RED='\033[1;31m'
+GREEN='\033[1;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[1;34m'
+NC='\033[0m'
+
+
+echo -e "${GREEN}[✓] Installation complete!${NC}"
+echo -e "\nRun the AI Assistant with: ${BLUE}termux-ai${NC}"
+}
+
+post_remove() {
+rm -rf $HOME/.config/termux-ai 
+rm -rf $PREFIX/bin/termux-ai
+}
+

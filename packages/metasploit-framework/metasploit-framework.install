@@ -3,8 +3,11 @@
 post_install() {
     set -e
 
+    # strip pacman pkgrel suffix: upstream release tags need bare pkgver
+    UPVER="${1%%-*}"
+
     MSFPATH="$PREFIX/opt/metasploit-framework"
-    TAG="${1}"
+    TAG="${UPVER}"
     ZIP_URL="https://github.com/rapid7/metasploit-framework/archive/refs/tags/${TAG}.zip"
 
     [ -d "$MSFPATH" ] && rm -rf "$MSFPATH"

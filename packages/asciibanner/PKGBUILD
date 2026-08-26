@@ -3,7 +3,7 @@
 
 pkgname="asciibanner"
 pkgver=2.1.0
-pkgrel=1
+pkgrel=0
 pkgdesc="A feature-rich FIGlet-compatible ASCII art generator with color support and font previews"
 arch=('any')
 url="https://github.com/Anon4You/asciibanner"
@@ -12,7 +12,7 @@ depends=('python' 'libcaca')
 install="asciibanner.install"
 options=('!strip')
 source=("asciibanner-data.tar.gz")
-sha256sums=('c7ea6f55b77cf3a739a22fc8b9d6d927f364c09dfcf9ffacf2bc081c2beb646d')
+sha256sums=('SKIP')
 
 # Files ship inside the package (unlike most TermuxVoid ports):
 # data/ maps 1:1 onto the device root, so the Termux prefix

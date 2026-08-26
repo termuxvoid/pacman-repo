@@ -1,0 +1,77 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing theHarvester 4.8.2 via NetHunter...${NC}"
+
+# Update and install theharvester using nethunter
+nh apt update -y && nh apt install theharvester -y || {
+    echo -e "${RED}Error: Failed to install theHarvester via NetHunter.${NC}"
+    echo -e "${YELLOW}Make sure nethunter-cli is properly configured.${NC}"
+    return 1
+}
+
+# Create multiple launcher scripts
+echo -e "${YELLOW}Creating launchers...${NC}"
+
+# Main launcher
+cat > $PREFIX/bin/theHarvester << 'EOF'
+exec nh theHarvester "$@"
+EOF
+
+# Alternative spelling launcher
+cat > $PREFIX/bin/theharvester << 'EOF'
+exec nh theharvester "$@"
+EOF
+
+# REST API launcher
+cat > $PREFIX/bin/restfulHarvest << 'EOF'
+exec nh restfulHarvest "$@"
+EOF
+
+# Make all launchers executable
+chmod +x $PREFIX/bin/theHarvester $PREFIX/bin/theharvester $PREFIX/bin/restfulHarvest
+
+echo -e "${GREEN}theHarvester installed successfully!${NC}"
+echo -e "${YELLOW}Available commands:${NC}"
+echo "  theHarvester -d example.com -l 500 -b google"
+echo "  theharvester -d target.com -b all"
+echo "  restfulHarvest --help"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  theHarvester -d company.com -b google,bing,linkedin"
+echo "  theHarvester -d domain.com -l 1000 -b shodan"
+echo "  theHarvester -d example.com -v --filename results.xml"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling theHarvester...${NC}"
+
+# Remove all launcher scripts
+launchers=("theHarvester" "theharvester" "restfulHarvest")
+for launcher in "${launchers[@]}"; do
+    if [ -f "$PREFIX/bin/$launcher" ]; then
+        rm -f $PREFIX/bin/$launcher
+        echo -e "${GREEN}Removed launcher: $launcher${NC}"
+    fi
+done
+
+# Remove theharvester using nethunter
+nh apt remove -y theharvester 2>/dev/null || {
+    echo -e "${YELLOW}theHarvester not found or already uninstalled.${NC}"
+}
+
+echo -e "${GREEN}theHarvester completely removed${NC}"
+return 0
+}
+

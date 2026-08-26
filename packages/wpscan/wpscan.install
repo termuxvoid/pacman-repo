@@ -1,0 +1,22 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+gem install wpscan -v 4.0.0
+
+echo "WPScan installed successfully."
+echo ""
+echo "Usage examples:"
+echo "  wpscan --url https://example.com"
+echo "  wpscan --url https://example.com --enumerate p,t,u"
+echo "  wpscan --url https://example.com --api-token API_KEY"
+return 0
+}
+
+post_remove() {
+gem uninstall wpscan -v 4.0.0 -x --force 2>/dev/null || true
+echo "WPScan completely removed."
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/sherlock)
+
+pkgname="sherlock"
+pkgver=0.16.0
+pkgrel=0
+pkgdesc='Hunt down social media accounts by username'
+arch=('any')
+url="https://sherlockproject.xyz"
+depends=('python' 'python-pip' 'python-numpy' 'python-pandas')
+install="sherlock.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

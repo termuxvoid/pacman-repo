@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/catsay)
+
+pkgname="catsay"
+pkgver=1.0
+pkgrel=0
+pkgdesc='terminal-based feline messenger inspired by cowsay'
+arch=('any')
+url="https://github.com/Anon4You/catsay"
+depends=('git' 'python')
+install="catsay.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

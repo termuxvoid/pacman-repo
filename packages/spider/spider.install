@@ -1,0 +1,12 @@
+#!/bin/bash
+
+post_install() {
+pip install -r $PREFIX/lib/spider/report/requirements.txt
+echo "
+-------------------------------------
+*SPIDER INSTALLED IN YOUR DEVICE*
+*NOW YOU CAN RUN THIS ON YOUR TERMUX*
+https://telegram.me/nullxvoid
+"
+}
+

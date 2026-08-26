@@ -1,0 +1,22 @@
+#!/bin/bash
+
+post_install() {
+
+set -e
+
+go install -trimpath -ldflags "-w -s" github.com/lc/gau/v2/cmd/gau@v2.2.4
+
+# Ensure the binary is linked in $PREFIX/bin if GOPATH/bin is not in PATH
+if [ ! -f "$PREFIX/bin/gau" ] && [ -f "$HOME/go/bin/gau" ]; then
+    ln -sf "$HOME/go/bin/gau" "$PREFIX/bin/gau"
+fi
+
+return 0
+}
+
+post_remove() {
+
+rm -f "$HOME/go/bin/gau" "$PREFIX/bin/gau"
+return 0
+}
+

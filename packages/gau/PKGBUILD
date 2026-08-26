@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gau)
+
+pkgname="gau"
+pkgver=2.2.4
+pkgrel=0
+pkgdesc='Fetch known URLs from AlienVault OTX, Wayback Machine, Common Crawl'
+arch=('any')
+url="https://github.com/lc/gau"
+depends=('git' 'golang')
+install="gau.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

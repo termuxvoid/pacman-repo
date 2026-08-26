@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/setoolkit)
+
+pkgname="setoolkit"
+pkgver=8.0.3+git20241021.0kali1
+pkgrel=0
+pkgdesc='Social Engineering Toolkit'
+arch=('any')
+url="https://github.com/trustedsec/social-engineer-toolkit"
+depends=('proot' 'tar' 'axel' 'nethunter-cli')
+install="setoolkit.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,68 @@
+#!/bin/bash
+
+post_install() {
+
+LAUNCHER="$PREFIX/bin/kerbrute"
+KERBRUTE_BIN="$HOME/go/bin/kerbrute"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Kerbrute...${NC}"
+go install -v github.com/ropnop/kerbrute@latest || {
+    echo -e "${RED}Error: Failed to install Kerbrute. Ensure Go is installed and internet is available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher at $LAUNCHER...${NC}"
+cat > "$LAUNCHER" <<- EOF
+$KERBRUTE_BIN "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo -e "${RED}Error: Failed to set executable permissions for $LAUNCHER.${NC}"
+    return 1
+}
+
+if [ -x "$KERBRUTE_BIN" ]; then
+    echo -e "${GREEN}Kerbrute installed successfully. Run 'kerbrute -h' to verify.${NC}"
+else
+    echo -e "${RED}Error: Kerbrute binary not found at $KERBRUTE_BIN.${NC}"
+    return 1
+fi
+}
+
+post_remove() {
+
+LAUNCHER="$PREFIX/bin/kerbrute"
+KERBRUTE_BIN="$HOME/go/bin/kerbrute"
+GO_DIR="$HOME/go"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Kerbrute...${NC}"
+
+[ -d "$GO_DIR" ] && chmod 751 -R "$GO_DIR"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -f "$KERBRUTE_BIN" ]; then
+    rm -f "$KERBRUTE_BIN" && echo -e "${GREEN}✓ Removed binary${NC}" || \
+    echo -e "${RED}✗ Failed to remove binary (try: rm -f $KERBRUTE_BIN)${NC}"
+fi
+
+read -p "Clean wordlists directory? [y/N]: " choice
+[[ "$choice" =~ [yY] ]] && {
+    rm -rf "$HOME/kerbrute-wordlists" 2>/dev/null && \
+    echo -e "${GREEN}✓ Wordlists removed${NC}" || \
+    echo -e "${RED}✗ No wordlists found${NC}"
+}
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+}
+

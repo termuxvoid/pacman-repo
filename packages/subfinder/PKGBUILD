@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/subfinder)
+
+pkgname="subfinder"
+pkgver=2.16.0
+pkgrel=0
+pkgdesc='Fast passive subdomain enumeration tool'
+arch=('any')
+url="https://github.com/projectdiscovery/subfinder"
+depends=('git' 'golang')
+install="subfinder.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

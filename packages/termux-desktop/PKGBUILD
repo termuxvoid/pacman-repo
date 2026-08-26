@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termux-desktop)
+
+pkgname="termux-desktop"
+pkgver=1.0.7
+pkgrel=0
+pkgdesc='termux xfce4 desktop gui with Hacker themes and icona '
+arch=('any')
+depends=('termux-am' 'xfce4' 'xfce4-terminal' 'xwayland' 'xfce4-whiskermenu-plugin' 'firefox' 'neovim' 'termux-x11-nightly' 'dbus' 'termux-desktop-wallpapers' 'xfce4-goodies')
+options=('!strip')
+source=(termux-desktop-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termux-desktop-data.tar.gz" -C "${pkgdir}"
+}

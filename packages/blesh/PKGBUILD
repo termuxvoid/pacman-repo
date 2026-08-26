@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/blesh)
+
+pkgname="blesh"
+pkgver=0.4.0.devel4
+pkgrel=0
+pkgdesc='Bash Line Editor (ble.sh) – interactive command line editing'
+arch=('any')
+url="https://github.com/akinomyoga/ble.sh"
+depends=('git' 'make' 'termux-tools')
+install="blesh.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+VERSION="3.2.1"
+BUILD_DIR="$TMPDIR/dalfox-build"
+
+mkdir -p "$BUILD_DIR"
+cd "$BUILD_DIR"
+
+curl -L -o "dalfox-${VERSION}.tar.gz" \
+  "https://github.com/hahwul/dalfox/archive/refs/tags/v${VERSION}.tar.gz"
+
+tar -xzf "dalfox-${VERSION}.tar.gz"
+cd "dalfox-${VERSION}"
+
+cargo build --release --locked
+
+install -Dm755 target/release/dalfox "$PREFIX/bin/dalfox"
+
+cd /
+rm -rf "$BUILD_DIR"
+
+return 0
+}
+
+post_remove() {
+set -e
+
+# Remove binary
+rm -f "$PREFIX/bin/dalfox"
+
+# Optional: remove any leftover build cache (safe to remove)
+rm -rf "$TMPDIR/dalfox-build" 2>/dev/null || true
+
+return 0
+}
+

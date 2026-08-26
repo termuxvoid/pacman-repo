@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pywhat)
+
+pkgname="pywhat"
+pkgver=5.1.0
+pkgrel=0
+pkgdesc='Identify anything - text analysis tool'
+arch=('any')
+url="https://github.com/bee-san/pyWhat"
+depends=('python' 'python-pip')
+install="pywhat.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

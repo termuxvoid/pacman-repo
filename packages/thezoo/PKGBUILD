@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/thezoo)
+
+pkgname="thezoo"
+pkgver=0.60
+pkgrel=0
+pkgdesc='A repository of live malware samples'
+arch=('any')
+url="https://github.com/ytisf/theZoo"
+depends=('git' 'python' 'python-pip')
+install="thezoo.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

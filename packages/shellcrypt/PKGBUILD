@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/shellcrypt)
+
+pkgname="shellcrypt"
+pkgver=2.0.0
+pkgrel=0
+pkgdesc='Professional code obfuscation tool for Bash and Python'
+arch=('any')
+url="https://github.com/Anon4You/ShellCrypt"
+depends=('python' 'nodejs' 'figlet')
+install="shellcrypt.install"
+options=('!strip')
+source=(shellcrypt-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/shellcrypt-data.tar.gz" -C "${pkgdir}"
+}

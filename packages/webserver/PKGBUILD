@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/webserver)
+
+pkgname="webserver"
+pkgver=1.2
+pkgrel=0
+pkgdesc='a simple webserver for termux'
+arch=('any')
+depends=('php' 'figlet' 'openssh')
+options=('!strip')
+source=(webserver-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/webserver-data.tar.gz" -C "${pkgdir}"
+}

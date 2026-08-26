@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/scanqli)
+
+pkgname="scanqli"
+pkgver=1.0
+pkgrel=0
+pkgdesc='SQL injection scanner and vulnerability detection tool'
+arch=('any')
+url="https://github.com/bambish/ScanQLi"
+depends=('git' 'python' 'python-lxml' 'python-numpy')
+install="scanqli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

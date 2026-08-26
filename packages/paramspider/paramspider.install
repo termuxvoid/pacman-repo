@@ -1,0 +1,39 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+PARAMSPIDER_DIR="$PREFIX/share/paramspider"
+
+echo "[*] Installing ParamSpider 1.0.1..."
+[ -d "$PARAMSPIDER_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$PARAMSPIDER_DIR"; }
+
+echo "[*] Cloning repository..."
+git clone --depth=1 https://github.com/devanshbatham/paramspider.git "$PARAMSPIDER_DIR"
+
+echo "[*] Installing Python package..."
+cd "$PARAMSPIDER_DIR"
+pip install .
+
+echo -e "\n[√] ParamSpider installed successfully!"
+echo "Usage:"
+echo "  python -m paramspider -d example.com"
+echo "  paramspider -d example.com"
+echo ""
+echo "Example: paramspider -d example.com"
+return 0
+}
+
+post_remove() {
+set -e
+
+echo "[*] Removing ParamSpider..."
+rm -rf "$PREFIX/share/paramspider"
+
+echo "[*] Uninstalling Python package..."
+pip uninstall -y paramspider 2>/dev/null || true
+
+echo "[√] ParamSpider completely removed"
+return 0
+}
+

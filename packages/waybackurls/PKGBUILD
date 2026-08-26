@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/waybackurls)
+
+pkgname="waybackurls"
+pkgver=0.1.0
+pkgrel=0
+pkgdesc='Fetch known URLs from Wayback Machine archives'
+arch=('any')
+url="https://github.com/tomnomnom/waybackurls"
+depends=('golang' 'git')
+install="waybackurls.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

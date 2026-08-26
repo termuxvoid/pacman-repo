@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/sliver-c2)
+
+pkgname="sliver-c2"
+pkgver=1.7.3
+pkgrel=0
+pkgdesc='Open‑source cross‑platform adversary emulation framework'
+arch=('any')
+url="https://github.com/BishopFox/sliver"
+depends=('golang' 'make' 'build-essential' 'zig' 'sed' 'python' 'curl' 'tar')
+install="sliver-c2.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

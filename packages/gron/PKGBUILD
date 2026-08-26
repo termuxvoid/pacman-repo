@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gron)
+
+pkgname="gron"
+pkgver=0.7.1
+pkgrel=0
+pkgdesc='Make JSON greppable'
+arch=('any')
+url="https://github.com/tomnomnom/gron"
+depends=('git' 'golang')
+install="gron.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

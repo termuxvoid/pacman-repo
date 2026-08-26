@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/openclaude)
+
+pkgname="openclaude"
+pkgver=0.29.1
+pkgrel=0
+pkgdesc='Open‑source coding‑agent CLI for cloud and local LLMs'
+arch=('any')
+url="https://github.com/Gitlawb/openclaude"
+depends=('npm' 'ripgrep' 'proot')
+install="openclaude.install"
+options=('!strip')
+source=(openclaude-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/openclaude-data.tar.gz" -C "${pkgdir}"
+}

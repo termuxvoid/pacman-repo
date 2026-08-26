@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/publiceye)
+
+pkgname="publiceye"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Comprehensive OSINT Tool for Information Lookup'
+arch=('any')
+url="https://github.com/Anon4You/publiceye"
+depends=('curl' 'jq' 'gum')
+options=('!strip')
+source=(publiceye-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/publiceye-data.tar.gz" -C "${pkgdir}"
+}

@@ -1,0 +1,39 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing wafw00f 2.4.2...${NC}"
+pip3 install wafw00f==2.4.2 || {
+    echo -e "${RED}Error: Failed to install wafw00f. Ensure Python and pip are available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}wafw00f installed successfully!${NC}"
+echo "Usage:"
+echo "  wafw00f -h          # Show help menu"
+echo "  wafw00f https://example.com  # Detect WAF"
+echo "  wafw00f -l          # List all WAF signatures"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling wafw00f...${NC}"
+
+pip3 uninstall -y wafw00f 2>/dev/null || {
+    echo -e "${RED}Error: Failed to uninstall wafw00f.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}wafw00f completely removed${NC}"
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/john)
+
+pkgname="john"
+pkgver=1.9.0
+pkgrel=0
+pkgdesc='John the Ripper password cracker'
+arch=('any')
+url="https://www.openwall.com/john/"
+depends=('git' 'make' 'clang' 'openssl' 'zlib')
+install="john.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

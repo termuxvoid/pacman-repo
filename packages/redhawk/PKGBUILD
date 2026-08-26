@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/redhawk)
+
+pkgname="redhawk"
+pkgver=2.0.0
+pkgrel=0
+pkgdesc='All in one tool for Information Gathering, Vulnerability Scanning and Crawling'
+arch=('any')
+url="https://github.com/Tuhinshubhra/RED_HAWK"
+depends=('git' 'php')
+install="redhawk.install"
+options=('!strip')
+source=(redhawk-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/redhawk-data.tar.gz" -C "${pkgdir}"
+}

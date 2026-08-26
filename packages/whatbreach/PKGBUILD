@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/whatbreach)
+
+pkgname="whatbreach"
+pkgver=0.3.0
+pkgrel=0
+pkgdesc='OSINT tool to discover email breaches'
+arch=('any')
+url="https://github.com/Ekultek/WhatBreach"
+depends=('git' 'python' 'python-pip')
+install="whatbreach.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

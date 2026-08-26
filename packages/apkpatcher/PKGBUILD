@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/apkpatcher)
+
+pkgname="apkpatcher"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Advanced APK Modification Tool '
+arch=('any')
+url="https://github.com/Anon4You/APKpatcher"
+depends=('git' 'libxml2' 'openjdk-17' 'apkeditor' 'apksigner')
+install="apkpatcher.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

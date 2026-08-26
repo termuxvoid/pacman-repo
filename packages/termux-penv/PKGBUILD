@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termux-penv)
+
+pkgname="termux-penv"
+pkgver=2.0.1
+pkgrel=0
+pkgdesc='Termux Penv - Simplify Chroot Environments in Termux'
+arch=('any')
+url="https://github.com/Anon4You/termux-penv.git"
+depends=('wget' 'proot' 'figlet')
+install="termux-penv.install"
+options=('!strip')
+source=(termux-penv-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termux-penv-data.tar.gz" -C "${pkgdir}"
+}

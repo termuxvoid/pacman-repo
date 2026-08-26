@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cctvip)
+
+pkgname="cctvip"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='A collection of open cctv camera ip'
+arch=('any')
+depends=('python' 'python-pip' 'figlet')
+install="cctvip.install"
+options=('!strip')
+source=(cctvip-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/cctvip-data.tar.gz" -C "${pkgdir}"
+}

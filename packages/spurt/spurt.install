@@ -1,0 +1,33 @@
+#!/bin/bash
+
+pre_install() {
+spurtDir="$PREFIX/share/spurt"
+if [[ -d $spurtDir ]]; then
+  rm -rf $spurtDir
+fi
+}
+
+post_install() {
+spurtDir="$PREFIX/share/spurt"
+git clone --quiet https://github.com/zer-far/spurt.git $spurtDir
+
+if [[ -d $spurtDir ]]; then
+  cd $spurtDir
+  make
+else
+  printf "\nspurt dir missing...\n"
+  return 1
+fi
+install -Dm700 -t $PREFIX/bin $spurtDir/spurt
+printf "\nspurt installed successfully.."
+}
+
+pre_remove() {
+rm -rf $PREFIX/share/spurt
+rm -rf $PREFIX/bin/spurt
+}
+
+post_remove() {
+printf "\nspurt removed.."
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/phoneintel)
+
+pkgname="phoneintel"
+pkgver=1.1.1
+pkgrel=0
+pkgdesc='Phone number intelligence and validation tool'
+arch=('any')
+url="https://phoneintel.github.io"
+depends=('python' 'python-pip')
+install="phoneintel.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/theharvester)
+
+pkgname="theharvester"
+pkgver=4.10.1
+pkgrel=0
+pkgdesc='E-mail, Subdomain, and Name Harvester'
+arch=('any')
+url="https://github.com/laramies/theHarvester"
+depends=('proot' 'tar' 'axel' 'nethunter-cli')
+install="theharvester.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

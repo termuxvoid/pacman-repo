@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ngrok)
+
+pkgname="ngrok"
+pkgver=3.39.1
+pkgrel=0
+pkgdesc='Secure tunnels to localhost'
+arch=('any')
+url="https://ngrok.com"
+depends=('wget' 'proot' 'openssl')
+install="ngrok.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

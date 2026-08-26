@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/antisplit)
+
+pkgname="antisplit"
+pkgver=1.2
+pkgrel=0
+pkgdesc='APK Split Package Combiner and Modifier'
+arch=('any')
+url="https://github.com/termuxvoid/AntiSplit"
+depends=('git' 'apkeditor' 'apksigner' 'figlet' 'gum')
+install="antisplit.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

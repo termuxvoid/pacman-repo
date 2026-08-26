@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/unfurl)
+
+pkgname="unfurl"
+pkgver=0.4.3
+pkgrel=0
+pkgdesc='Pull out bits of URLs provided on stdin'
+arch=('any')
+url="https://github.com/tomnomnom/unfurl"
+depends=('git' 'golang')
+install="unfurl.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

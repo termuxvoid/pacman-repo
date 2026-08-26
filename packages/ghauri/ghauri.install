@@ -1,0 +1,43 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing Ghauri 1.4.3...${NC}"
+
+# Install Ghauri directly from GitHub
+pip install git+https://github.com/r0oth3x49/ghauri.git || {
+    echo -e "${RED}Error: Failed to install Ghauri.${NC}"
+    echo -e "${YELLOW}Make sure dependencies (git, python) are installed.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Ghauri installed successfully!${NC}"
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  ghauri --help"
+echo "  ghauri -u http://example.com/vuln.php?id=1"
+echo "  ghauri --level 5 --risk 3 -u http://target.com"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling Ghauri...${NC}"
+
+# Uninstall Ghauri
+pip uninstall -y ghauri 2>/dev/null || {
+    echo -e "${YELLOW}Ghauri not found or already uninstalled.${NC}"
+}
+
+echo -e "${GREEN}Ghauri completely removed${NC}"
+return 0
+}
+

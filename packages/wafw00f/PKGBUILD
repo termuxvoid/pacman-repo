@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wafw00f)
+
+pkgname="wafw00f"
+pkgver=2.4.2
+pkgrel=0
+pkgdesc='Web Application Firewall detection tool'
+arch=('any')
+url="https://github.com/EnableSecurity/wafw00f"
+depends=('python' 'python-pip')
+install="wafw00f.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

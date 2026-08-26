@@ -1,0 +1,42 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+INSTALL_DIR="$TMPDIR/qdl-build"
+
+# Agar pehle se folder hai to remove kar do
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+pip install meson
+
+git clone https://github.com/linux-msm/qdl.git "$INSTALL_DIR"
+cd "$INSTALL_DIR"
+
+sed -i 's/#error Define BYTE_ORDER to be equal to either LITTLE_ENDIAN or BIG_ENDIAN/#define BYTE_ORDER LITTLE_ENDIAN/' src/sha2.c
+
+meson setup build --prefix="$PREFIX" --buildtype=release
+meson compile -C build -j$(nproc)
+meson install -C build
+
+cd /
+rm -rf "$INSTALL_DIR"
+
+echo "qdl 3.7 installed successfully."
+echo ""
+echo "Usage:"
+echo "  qdl --help"
+echo "  qdl prog_firehose*.elf rawprogram*.xml patch*.xml"
+return 0
+}
+
+post_remove() {
+set -e
+
+rm -f "$PREFIX/bin/qdl"
+rm -rf "$PREFIX/share/qdl-src"
+rm -f "$PREFIX/share/man/man1/qdl.1"
+
+return 0
+}
+

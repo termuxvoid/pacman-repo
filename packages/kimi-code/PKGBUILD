@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/kimi-code)
+
+pkgname="kimi-code"
+pkgver=0.38.0
+pkgrel=0
+pkgdesc='AI-powered coding assistant for the terminal'
+arch=('any')
+url="https://github.com/MoonshotAI/kimi-code"
+depends=('git' 'npm' 'ripgrep')
+install="kimi-code.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

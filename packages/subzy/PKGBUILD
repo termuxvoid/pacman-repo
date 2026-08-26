@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/subzy)
+
+pkgname="subzy"
+pkgver=1.2.1
+pkgrel=0
+pkgdesc='Subdomain takeover vulnerability scanner'
+arch=('any')
+url="https://github.com/PentestPad/subzy"
+depends=('golang' 'git')
+install="subzy.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

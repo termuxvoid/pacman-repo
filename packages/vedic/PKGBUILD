@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/vedic)
+
+pkgname="vedic"
+pkgver=2.0.6
+pkgrel=0
+pkgdesc='World'\''s first Sanskrit programming language'
+arch=('any')
+url="https://github.com/vedic-lang/vedic"
+depends=('git' 'rust' 'clang' 'make' 'cmake')
+install="vedic.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

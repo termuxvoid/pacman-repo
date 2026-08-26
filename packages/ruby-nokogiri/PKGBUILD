@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ruby-nokogiri)
+
+pkgname="ruby-nokogiri"
+pkgver=1.19.0
+pkgrel=0
+pkgdesc='Ruby gem for HTML/XML parsing (system libraries version)'
+arch=('any')
+url="https://nokogiri.org/"
+depends=('ruby' 'pkg-config' 'libxml2' 'libxslt' 'gumbo-parser' 'gumbo-parser-static')
+install="ruby-nokogiri.install"
+options=('!strip')
+source=(ruby-nokogiri-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/ruby-nokogiri-data.tar.gz" -C "${pkgdir}"
+}

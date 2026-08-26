@@ -1,0 +1,16 @@
+#!/bin/bash
+
+post_install() {
+set -e
+go install -trimpath -ldflags "-w -s" github.com/projectdiscovery/vulnx/v2/cmd/vulnx@v2.0.2
+if [ ! -f "$PREFIX/bin/vulnx" ] && [ -f "$HOME/go/bin/vulnx" ]; then
+    ln -sf "$HOME/go/bin/vulnx" "$PREFIX/bin/vulnx"
+fi
+return 0
+}
+
+post_remove() {
+rm -f "$HOME/go/bin/vulnx" "$PREFIX/bin/vulnx"
+return 0
+}
+

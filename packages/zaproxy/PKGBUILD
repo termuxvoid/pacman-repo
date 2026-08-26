@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/zaproxy)
+
+pkgname="zaproxy"
+pkgver=2026.03.02
+pkgrel=0
+pkgdesc='OWASP Zed Attack Proxy'
+arch=('any')
+url="https://www.zaproxy.org/"
+depends=('openjdk-21' 'python' 'tar')
+install="zaproxy.install"
+options=('!strip')
+source=(zaproxy-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/zaproxy-data.tar.gz" -C "${pkgdir}"
+}

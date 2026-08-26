@@ -1,0 +1,33 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/s0md3v/Breacher.git"
+INSTALL_DIR="$PREFIX/share/breacher"
+LAUNCHER="$PREFIX/bin/breacher"
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+
+git clone --depth 1 "$REPO" "$INSTALL_DIR"
+
+pip install requests
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/breacher"
+exec python -W ignore breacher.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo "Breacher installed. Run 'breacher'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/breacher"
+rm -rf "$PREFIX/share/breacher"
+echo "Breacher removed."
+return 0
+}
+

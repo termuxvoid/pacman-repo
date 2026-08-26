@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/secretfinder)
+
+pkgname="secretfinder"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Discover sensitive data (API keys, access tokens, JWT, etc.) in JavaScript files'
+arch=('any')
+url="https://github.com/m4ll0k/SecretFinder"
+depends=('curl' 'python' 'python-pip' 'python-lxml' 'termux-tools')
+install="secretfinder.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

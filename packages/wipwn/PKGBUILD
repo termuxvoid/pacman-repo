@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wipwn)
+
+pkgname="wipwn"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Fast automated WiFi WPS PIN cracking tool'
+arch=('any')
+url="https://github.com/anbuinfosec/wipwn"
+depends=('git' 'python' 'wpa-supplicant' 'pixiewps' 'iw' 'openssl' 'sudo' 'openssh')
+install="wipwn.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

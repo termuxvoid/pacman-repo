@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/emailcrawl)
+
+pkgname="emailcrawl"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Professional-grade OSINT email extraction tool'
+arch=('any')
+url="https://github.com/techenthusiast167/EMAIL-CRAWL"
+depends=('python' 'python-lxml')
+install="emailcrawl.install"
+options=('!strip')
+source=(emailcrawl-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/emailcrawl-data.tar.gz" -C "${pkgdir}"
+}

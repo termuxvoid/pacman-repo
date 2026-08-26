@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ransomux)
+
+pkgname="ransomux"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Ramsomware making tool'
+arch=('any')
+url="https://github.com/Anon4You/RansoMux"
+depends=('git' 'libxml2' 'openjdk-17' 'apkeditor' 'apksigner' 'file' 'which')
+install="ransomux.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

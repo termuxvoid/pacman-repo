@@ -1,0 +1,60 @@
+#!/bin/bash
+
+post_install() {
+
+OBP_DIR="$PREFIX/share/openbullet"
+LAUNCHER="$PREFIX/bin/openbullet"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing openbullet 1.0.2...${NC}"
+[ -d "$OBP_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$OBP_DIR"; }
+
+echo -e "${GREEN}Cloning repository...${NC}"
+git clone --depth=1 https://github.com/esfelurm/OpenBullet.git "$OBP_DIR" || {
+    echo -e "${RED}Error: Failed to clone openbullet repository.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Installing Python dependencies...${NC}"
+pip install requests bs4 colorama jsonpath_ng || {
+    echo -e "${RED}Error: Failed to install Python dependencies.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher...${NC}"
+cat > "$LAUNCHER" << EOF
+cd "$OBP_DIR" && python OpenBullet.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "${GREEN}openbullet installed successfully!${NC}"
+echo "Run: openbullet"
+return 0
+}
+
+post_remove() {
+
+OBP_DIR="$PREFIX/share/openbullet"
+LAUNCHER="$PREFIX/bin/openbullet"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling openbullet...${NC}"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -d "$OBP_DIR" ]; then
+    rm -rf "$OBP_DIR" && echo -e "${GREEN}✓ Removed openbullet directory${NC}" || \
+    echo -e "${RED}✗ Failed to remove openbullet directory${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+return 0
+}
+

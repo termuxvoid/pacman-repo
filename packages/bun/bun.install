@@ -1,0 +1,38 @@
+#!/bin/bash
+
+pre_install() {
+
+ARCH=$(uname -m)
+
+case "$ARCH" in
+    aarch64)
+        return 0
+        ;;
+    x86_64)
+        return 0
+        ;;
+    *)
+        echo "Error: bun is only available for aarch64 (ARM64) or x86_64 (AMD64) architectures." >&2
+        echo "Your architecture: $ARCH" >&2
+        return 1
+        ;;
+esac
+}
+
+post_install() {
+set -e
+
+npm install -g bun@1.4.0
+
+echo "bun installed successfully. Run 'bun' to start."
+return 0
+}
+
+post_remove() {
+
+npm uninstall -g bun 2>/dev/null || true
+
+echo "bun removed."
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/elpscrk)
+
+pkgname="elpscrk"
+pkgver=2.0
+pkgrel=0
+pkgdesc='Intelligent common user-password profiler'
+arch=('any')
+url="https://github.com/D4Vinci/elpscrk"
+depends=('git' 'python' 'python-psutil')
+install="elpscrk.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

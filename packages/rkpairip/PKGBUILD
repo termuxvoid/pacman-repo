@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/rkpairip)
+
+pkgname="rkpairip"
+pkgver=5.3
+pkgrel=0
+pkgdesc='Remove Pairip Protection and Rebuild APKs'
+arch=('any')
+url="https://github.com/TechnoIndian/RKPairip"
+depends=('git' 'python' 'openjdk-17' 'apksigner')
+install="rkpairip.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

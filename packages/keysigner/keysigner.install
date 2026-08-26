@@ -1,0 +1,18 @@
+#!/bin/bash
+
+post_install() {
+
+echo "Installing/updating Keysigner Python package..."
+pip install --force-reinstall keysigner
+
+echo "Keysigner installation complete!"
+}
+
+post_remove() {
+
+echo "Removing Keysigner Python package..."
+pip uninstall -y keysigner
+
+echo "Keysigner removal complete!"
+}
+

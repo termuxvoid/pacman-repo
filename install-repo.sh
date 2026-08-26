@@ -13,7 +13,7 @@ INFO=">> "
 
 PACMAN_CONF="${PREFIX:-/data/data/com.termux/files/usr}/etc/pacman.conf"
 REPO_URL="https://termuxvoid.github.io/pacman-repo/any"
-KEY_URL="https://termuxvoid.github.io/pacman-repo/any/termuxvoid.gpg.asc"
+KEY_URL="https://termuxvoid.github.io/pacman-repo/termuxvoid.gpg.asc"
 
 print_header() {
     echo -e "\n${BLUE}========================================${RESET}"

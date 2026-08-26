@@ -1,0 +1,22 @@
+#!/bin/bash
+
+post_install() {
+
+set -e
+
+go install -trimpath -ldflags "-w -s" github.com/tomnomnom/gron@v0.7.1
+
+if [ ! -f "$PREFIX/bin/gron" ] && [ -f "$HOME/go/bin/gron" ]; then
+    ln -sf "$HOME/go/bin/gron" "$PREFIX/bin/gron"
+fi
+
+return 0
+}
+
+post_remove() {
+
+rm -f "$HOME/go/bin/gron" "$PREFIX/bin/gron"
+
+return 0
+}
+

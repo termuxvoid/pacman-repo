@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/enctool)
+
+pkgname="enctool"
+pkgver=1.0
+pkgrel=0
+pkgdesc='encrypt or decrypt bash file and encrypt python in Marshal format'
+arch=('any')
+depends=('python' 'nodejs')
+install="enctool.install"
+options=('!strip')
+source=(enctool-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/enctool-data.tar.gz" -C "${pkgdir}"
+}

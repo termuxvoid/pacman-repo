@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/mkwebapp)
+
+pkgname="mkwebapp"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='Tool to create Termux .deb packages for websites'
+arch=('any')
+url="https://github.com/Anon4You/mkwebapp"
+depends=('curl' 'file' 'termux-tools')
+options=('!strip')
+source=(mkwebapp-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/mkwebapp-data.tar.gz" -C "${pkgdir}"
+}

@@ -3,8 +3,11 @@
 post_install() {
     set -e
 
-    npm install -g "@mmmbuto/codex-cli-termux@${1}"
-    echo "codex-cli installed. Run 'codex' to start."
+    # strip pacman pkgrel suffix: npm needs the bare upstream version
+    UPVER="${1%%-*}"
+
+    npm install -g "@mmmbuto/codex-cli-termux@${UPVER}"
+    echo "codex-cli ${UPVER} installed. Run 'codex' to start."
 }
 
 post_remove() {

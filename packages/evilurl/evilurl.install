@@ -1,0 +1,45 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+EVILURL_DIR="$PREFIX/share/evilurl"
+LAUNCHER="$PREFIX/bin/evilurl"
+
+echo "[*] Installing EvilURL 3.0..."
+[ -d "$EVILURL_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$EVILURL_DIR"; }
+
+echo "[*] Cloning repository..."
+git clone --depth=1 https://github.com/UndeadSec/EvilURL.git "$EVILURL_DIR"
+
+echo "[*] Installing Python dependencies..."
+python -m pip install python-nmap python-whois
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" << EOF
+unset LD_PRELOAD
+cd "$EVILURL_DIR" && python evilurl.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "\n[√] EvilURL installed successfully!"
+echo "Usage:"
+echo "  evilurl -h          # Show help menu"
+
+return 0
+}
+
+post_remove() {
+set -e
+
+echo "[*] Removing EvilURL..."
+rm -rf "$PREFIX/share/evilurl"
+rm -f "$PREFIX/bin/evilurl"
+
+echo "[*] Cleaning Python packages..."
+python -m pip uninstall -y python-nmap python-whois 2>/dev/null || true
+
+echo "[√] EvilURL completely removed"
+return 0
+}
+

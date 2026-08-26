@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/openbullet)
+
+pkgname="openbullet"
+pkgver=1.0.2
+pkgrel=0
+pkgdesc='A tool for running openbullet configurations'
+arch=('any')
+url="https://github.com/esfelurm/OpenBullet.git"
+depends=('git' 'python' 'python-pip')
+install="openbullet.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

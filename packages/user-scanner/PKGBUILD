@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/user-scanner)
+
+pkgname="user-scanner"
+pkgver=1.5.0
+pkgrel=0
+pkgdesc='2-in-1 Email & Username OSINT suite'
+arch=('any')
+url="https://github.com/kaifcodec/user-scanner"
+depends=('python' 'python-pip')
+install="user-scanner.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

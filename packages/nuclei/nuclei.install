@@ -1,0 +1,16 @@
+#!/bin/bash
+
+post_install() {
+set -e
+go install -trimpath -ldflags "-w -s" github.com/projectdiscovery/nuclei/v3/cmd/nuclei@v3.11.1
+if [ ! -f "$PREFIX/bin/nuclei" ] && [ -f "$HOME/go/bin/nuclei" ]; then
+    ln -sf "$HOME/go/bin/nuclei" "$PREFIX/bin/nuclei"
+fi
+return 0
+}
+
+post_remove() {
+rm -f "$HOME/go/bin/nuclei" "$PREFIX/bin/nuclei"
+return 0
+}
+

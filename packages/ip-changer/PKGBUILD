@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ip-changer)
+
+pkgname="ip-changer"
+pkgver=1.0
+pkgrel=0
+pkgdesc='A powerful and easy-to-use tool to change your IP address automatically'
+arch=('any')
+url="https://github.com/Anon4You/Ip-Changer"
+depends=('git' 'curl' 'tor' 'privoxy' 'netcat-openbsd')
+install="ip-changer.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

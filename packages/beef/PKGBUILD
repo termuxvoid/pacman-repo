@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/beef)
+
+pkgname="beef"
+pkgver=0.6.0.0
+pkgrel=0
+pkgdesc='Browser Exploitation Framework'
+arch=('any')
+url="https://beefproject.com/"
+depends=('ruby' 'nodejs' 'git' 'make' 'clang' 'sqlite' 'openssl-tool' 'build-essential' 'curl' 'libcurl' 'ruby-nokogiri' 'ruby-curb')
+install="beef.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

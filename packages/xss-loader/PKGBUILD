@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/xss-loader)
+
+pkgname="xss-loader"
+pkgver=1.0
+pkgrel=0
+pkgdesc='XSS payload generator and loader tool'
+arch=('any')
+url="https://github.com/capture0x/XSS-LOADER"
+depends=('git' 'sed' 'python' 'python-pip' 'python-lxml')
+install="xss-loader.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

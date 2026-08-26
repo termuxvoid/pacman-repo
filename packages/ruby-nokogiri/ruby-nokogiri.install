@@ -1,0 +1,45 @@
+#!/bin/bash
+
+post_install() {
+# Post-installation script for ruby-nokogiri
+
+set -e
+
+echo "Installing Nokogiri 1.19.0 with system libraries..."
+
+gem install nokogiri -v 1.19.0 -- --use-system-libraries
+
+echo "Verifying installation..."
+ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
+    echo "Nokogiri installation failed!" >&2
+    return 1
+}
+
+echo "Nokogiri 1.19.0 installed successfully."
+return 0
+}
+
+post_remove() {
+# Post-removal script for ruby-nokogiri
+
+set -e
+
+echo "Removing Nokogiri gem..."
+gem uninstall nokogiri -v 1.19.0 -x || true
+
+# Also try to remove any other versions that might be installed
+gem uninstall nokogiri -a -x -I || true
+
+echo "Cleaning up residual files..."
+[ -d "$PREFIX/lib/ruby/gems" ] && find "$PREFIX/lib/ruby/gems" -name "*nokogiri*" -exec rm -rf {} + || true
+
+# Remove nokogiri binary from bin directory if it exists
+if [ -f "$PREFIX/bin/nokogiri" ]; then
+    echo "Removing nokogiri binary from $PREFIX/bin..."
+    rm -f "$PREFIX/bin/nokogiri"
+fi
+
+echo "Nokogiri removal complete."
+return 0
+}
+

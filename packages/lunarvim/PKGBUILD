@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/lunarvim)
+
+pkgname="lunarvim"
+pkgver=1.4.0
+pkgrel=0
+pkgdesc='IDE layer for Neovim with sane defaults'
+arch=('any')
+url="https://www.lunarvim.org/"
+depends=('git' 'make' 'python' 'npm' 'rust' 'fzf' 'fd' 'ripgrep' 'neovim')
+install="lunarvim.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

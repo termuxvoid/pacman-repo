@@ -3,7 +3,7 @@
 
 pkgname="sqlmap"
 pkgver=1.10.8
-pkgrel=1
+pkgrel=0
 pkgdesc="Automatic SQL Injection and Database Takeover Tool"
 arch=('any')
 url="https://sqlmap.org/"

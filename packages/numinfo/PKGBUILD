@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/numinfo)
+
+pkgname="numinfo"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Phone number intelligence and lookup tool'
+arch=('any')
+url="https://github.com/Anon4You/NumInfo"
+depends=('git' 'python')
+install="numinfo.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

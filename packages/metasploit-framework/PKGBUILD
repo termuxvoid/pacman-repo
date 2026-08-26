@@ -5,7 +5,7 @@
 
 pkgname="metasploit-framework"
 pkgver=6.4.142
-pkgrel=1
+pkgrel=0
 pkgdesc="Penetration testing framework"
 arch=('any')
 url="https://www.metasploit.com/"

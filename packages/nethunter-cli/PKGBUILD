@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/nethunter-cli)
+
+pkgname="nethunter-cli"
+pkgver=2025.4
+pkgrel=0
+pkgdesc='Kali NetHunter Rootless Edition CLI'
+arch=('any')
+url="https://www.kali.org/"
+depends=('proot' 'tar' 'axel')
+install="nethunter-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

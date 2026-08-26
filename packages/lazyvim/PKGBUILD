@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/lazyvim)
+
+pkgname="lazyvim"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Modern Neovim configuration framework'
+arch=('any')
+url="https://www.lazyvim.org/"
+depends=('git' 'fzf' 'fd' 'ripgrep' 'neovim' 'npm')
+install="lazyvim.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

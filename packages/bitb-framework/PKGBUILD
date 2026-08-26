@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/bitb-framework)
+
+pkgname="bitb-framework"
+pkgver=1.2
+pkgrel=0
+pkgdesc='Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.'
+arch=('any')
+url="https://github.com/surya-dev-singh/BITB-framwork"
+depends=('php' 'git' 'python' 'curl' 'wget')
+install="bitb-framework.install"
+options=('!strip')
+source=(bitb-framework-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/bitb-framework-data.tar.gz" -C "${pkgdir}"
+}

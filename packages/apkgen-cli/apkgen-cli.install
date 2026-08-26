@@ -1,0 +1,29 @@
+#!/bin/bash
+
+post_install() {
+
+set -e
+
+INSTALL_DIR="$PREFIX/share/apkgen"
+
+echo "Installing apkgen-cli..."
+
+rm -rf "$INSTALL_DIR"
+git clone https://github.com/termuxvoid/apkgen-cli.git "$INSTALL_DIR"
+
+ln -sf "$INSTALL_DIR/apkgen" "$PREFIX/bin/apkgen"
+flutter config --android-sdk $PREFIX/opt/android-sdk
+
+echo "apkgen-cli installed successfully."
+return 0
+}
+
+post_remove() {
+
+rm -f "$PREFIX/bin/apkgen"
+rm -rf "$PREFIX/share/apkgen"
+
+echo "apkgen-cli completely removed."
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/holehe)
+
+pkgname="holehe"
+pkgver=1.61
+pkgrel=0
+pkgdesc='Email OSINT tool'
+arch=('any')
+url="https://github.com/megadose/holehe"
+depends=('python' 'python-pip')
+install="holehe.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

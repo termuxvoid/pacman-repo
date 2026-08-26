@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ffuf)
+
+pkgname="ffuf"
+pkgver=2.2.1
+pkgrel=0
+pkgdesc='Fast web fuzzer written in Go'
+arch=('any')
+url="https://github.com/ffuf/ffuf"
+depends=('git' 'golang')
+install="ffuf.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

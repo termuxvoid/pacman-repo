@@ -1,0 +1,20 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+npm install -g @moonshot-ai/kimi-code@0.38.0
+
+echo "kimi-code installed successfully."
+echo "Run 'kimi' to start."
+return 0
+}
+
+post_remove() {
+
+npm uninstall -g @moonshot-ai/kimi-code 2>/dev/null || true
+
+echo "kimi-code completely removed."
+return 0
+}
+

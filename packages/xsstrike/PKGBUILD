@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/xsstrike)
+
+pkgname="xsstrike"
+pkgver=3.1.6
+pkgrel=0
+pkgdesc='Advanced XSS Detection and Exploitation Suite'
+arch=('any')
+url="https://github.com/s0md3v/XSStrike"
+depends=('git' 'python')
+install="xsstrike.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

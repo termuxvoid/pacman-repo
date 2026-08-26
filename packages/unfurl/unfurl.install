@@ -1,0 +1,25 @@
+#!/bin/bash
+
+post_install() {
+
+set -e
+
+# Install specific version using go install
+go install -trimpath -ldflags "-w -s" github.com/tomnomnom/unfurl@v0.4.3
+
+# Create symlink in $PREFIX/bin if binary is not already there
+if [ ! -f "$PREFIX/bin/unfurl" ] && [ -f "$HOME/go/bin/unfurl" ]; then
+    ln -sf "$HOME/go/bin/unfurl" "$PREFIX/bin/unfurl"
+fi
+
+return 0
+}
+
+post_remove() {
+
+# Remove binary and symlink
+rm -f "$HOME/go/bin/unfurl" "$PREFIX/bin/unfurl"
+
+return 0
+}
+

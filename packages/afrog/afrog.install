@@ -1,0 +1,32 @@
+#!/bin/bash
+
+post_install() {
+
+echo "Installing frog (patched afrog)..."
+
+git clone https://github.com/zan8in/afrog.git "$TMPDIR/afrogsrc" || exit 1
+cd "$TMPDIR/afrogsrc"
+
+go mod vendor || exit 1
+
+PATCH_FILE="vendor/gitee.com/chunanyong/dm/zq.go"
+if [ -f "$PATCH_FILE" ]; then
+    sed -i 's/Dm_build_704 && len(dataBytes) < 0xffffffff &&/Dm_build_704 \&\& uint32(len(dataBytes)) < uint32(0xffffffff) \&\&/' "$PATCH_FILE"
+fi
+
+go build -v -a -o afrog cmd/afrog/main.go || exit 1
+install -Dm700 -t "$PREFIX/bin" afrog || exit 1
+
+rm -rf "$TMPDIR/afrogsrc"
+
+echo "frog installed successfully (as 'afrog'). Run 'afrog' to start."
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/afrog"
+rm -rf "$HOME/.config/afrog/"
+echo "frog completely removed."
+return 0
+}
+

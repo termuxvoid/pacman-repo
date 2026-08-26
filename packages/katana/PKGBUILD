@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/katana)
+
+pkgname="katana"
+pkgver=1.7.0
+pkgrel=0
+pkgdesc='Fast, passive and active web crawler'
+arch=('any')
+url="https://github.com/projectdiscovery/katana"
+depends=('git' 'golang')
+install="katana.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

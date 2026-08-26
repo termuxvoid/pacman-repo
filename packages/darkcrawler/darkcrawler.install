@@ -1,0 +1,32 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+INSTALL_DIR="$PREFIX/share/darkcrawler"
+LAUNCHER="$PREFIX/bin/darkcrawler"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone --depth 1 https://github.com/Anon4You/DarkCrawler.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+pip install requests pysocks beautifulsoup4 stem rich
+
+cat > "$LAUNCHER" << 'EOF'
+exec python "$PREFIX/share/darkcrawler/darkcrawler.py" "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+return 0
+}
+
+post_remove() {
+
+rm -f "$PREFIX/bin/darkcrawler"
+rm -rf "$PREFIX/share/darkcrawler"
+
+return 0
+}
+

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/evilginx)
+
+pkgname="evilginx"
+pkgver=3.3.0
+pkgrel=0
+pkgdesc='Advanced phishing framework with 2FA bypass'
+arch=('any')
+url="https://github.com/kgretzky/evilginx2"
+depends=('git' 'golang' 'make')
+install="evilginx.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

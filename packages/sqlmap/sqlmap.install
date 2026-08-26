@@ -3,18 +3,21 @@
 post_install() {
     set -e
 
+    # pacman passes "$1" as pkgver-pkgrel; upstream pins need bare pkgver
+    UPVER="${1%%-*}"
+
     RED='\033[0;31m'
     GREEN='\033[0;32m'
     YELLOW='\033[1;33m'
     NC='\033[0m'
 
-    pip install "sqlmap==${1}" || {
+    pip install "sqlmap==${UPVER}" || {
         echo -e "${RED}Error: Failed to install sqlmap.${NC}"
         echo -e "${YELLOW}Make sure dependencies (python, python-pip) are installed.${NC}"
         return 1
     }
 
-    echo -e "${GREEN}sqlmap ${1} installed successfully!${NC}"
+    echo -e "${GREEN}sqlmap ${UPVER} installed successfully!${NC}"
     echo -e "${YELLOW}Usage examples:${NC}"
     echo "  sqlmap -u http://example.com/vuln.php?id=1"
     echo "  sqlmap -l targets.txt"

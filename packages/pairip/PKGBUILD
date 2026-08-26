@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pairip)
+
+pkgname="pairip"
+pkgver=1.3.10
+pkgrel=0
+pkgdesc='PairIP Protection Removal Tool'
+arch=('any')
+url="https://telegram.me/NullRE_Channel"
+depends=('openjdk-21')
+options=('!strip')
+source=(pairip-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/pairip-data.tar.gz" -C "${pkgdir}"
+}

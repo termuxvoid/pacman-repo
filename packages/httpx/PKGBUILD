@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/httpx)
+
+pkgname="httpx"
+pkgver=1.10.0
+pkgrel=0
+pkgdesc='Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery'
+arch=('any')
+url="https://docs.projectdiscovery.io/tools/httpx"
+depends=('git' 'golang')
+install="httpx.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

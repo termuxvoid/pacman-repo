@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/arjun)
+
+pkgname="arjun"
+pkgver=2.2.7
+pkgrel=0
+pkgdesc='HTTP parameter discovery suite'
+arch=('any')
+url="https://github.com/s0md3v/Arjun"
+depends=('python' 'python-pip')
+install="arjun.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

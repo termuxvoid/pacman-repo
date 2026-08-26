@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/silverinstaeye)
+
+pkgname="silverinstaeye"
+pkgver=1.0.patched
+pkgrel=0
+pkgdesc='Instagram information gathering tool'
+arch=('any')
+url="https://github.com/silverxpymaster/SilverInstaEye"
+depends=('git' 'python' 'python-pip' 'python-pillow' 'python-numpy' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf' 'binutils' 'rust')
+install="silverinstaeye.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

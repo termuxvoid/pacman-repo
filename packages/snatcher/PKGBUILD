@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/snatcher)
+
+pkgname="snatcher"
+pkgver=1.0.2
+pkgrel=0
+pkgdesc='Snatcher - Capture Images from Victim'\''s Camera'
+arch=('any')
+url="https://github.com/Anon4You/snatcher"
+depends=('git' 'php' 'curl' 'nodejs' 'python' 'python-pip' 'openssh' 'cloudflared')
+install="snatcher.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

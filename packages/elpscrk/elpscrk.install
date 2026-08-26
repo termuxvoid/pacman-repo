@@ -1,0 +1,30 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+INSTALL_DIR="$PREFIX/share/elpscrk"
+LAUNCHER="$PREFIX/bin/elpscrk"
+
+[ -d "$INSTALL_DIR" ] && rm -rf "$INSTALL_DIR"
+
+git clone https://github.com/D4Vinci/elpscrk.git "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+pip install colorama phonenumbers
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/elpscrk"
+exec python elpscrk.py "$@"
+EOF
+chmod +x "$LAUNCHER"
+
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/elpscrk"
+rm -rf "$PREFIX/share/elpscrk"
+return 0
+}
+

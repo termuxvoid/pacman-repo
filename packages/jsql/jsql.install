@@ -1,0 +1,94 @@
+#!/bin/bash
+
+post_install() {
+
+# jSQL Injection installer for Termux
+
+JSQL_DIR="$PREFIX/share/jsql"
+JAR_NAME="jsql-injection-v0.115.jar"
+JAR_URL="https://github.com/ron190/jsql-injection/releases/download/v0.115/$JAR_NAME"
+LAUNCHER="$PREFIX/bin/jsql"
+
+# Colors
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+RESET='\e[0m'
+
+# Functions
+error_msg() {
+    echo -e "${RED}[!] Error: $1${RESET}" >&2
+    return 1
+}
+
+success_msg() {
+    echo -e "${GREEN}[✓] $1${RESET}"
+}
+
+info_msg() {
+    echo -e "${BLUE}[i] $1${RESET}"
+}
+
+# Check Termux
+[ ! -d "$PREFIX" ] && error_msg "This script is for Termux only."
+
+# Remove existing installation
+if [ -d "$JSQL_DIR" ]; then
+    info_msg "Removing previous installation..."
+    rm -rf "$JSQL_DIR"
+fi
+
+# Create fresh directory
+mkdir -p "$JSQL_DIR" || error_msg "Failed to create directory"
+
+# Download JAR
+info_msg "Downloading jSQL Injection JAR..."
+curl -L -o "$JSQL_DIR/$JAR_NAME" "$JAR_URL" || error_msg "Download failed"
+
+# Create launcher
+cat > "$LAUNCHER" << EOF
+exec java -jar "$JSQL_DIR/$JAR_NAME" "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || error_msg "Failed to make launcher executable"
+
+success_msg "jSQL Injection installed successfully!"
+return 0
+}
+
+post_remove() {
+
+# jSQL Injection uninstaller for Termux
+
+JSQL_DIR="$PREFIX/share/jsql"
+LAUNCHER="$PREFIX/bin/jsql"
+
+# Colors
+RED='\e[31m'
+GREEN='\e[32m'
+YELLOW='\e[33m'
+BLUE='\e[34m'
+RESET='\e[0m'
+
+# Functions
+success_msg() {
+    echo -e "${GREEN}[✓] $1${RESET}"
+}
+
+# Remove launcher
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER"
+    success_msg "Removed launcher"
+fi
+
+# Remove installation directory
+if [ -d "$JSQL_DIR" ]; then
+    rm -rf "$JSQL_DIR"
+    success_msg "Removed installation files"
+fi
+
+success_msg "jSQL Injection completely removed"
+return 0
+}
+

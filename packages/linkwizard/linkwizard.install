@@ -1,0 +1,53 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing linkwizard...${NC}"
+
+# Install Python dependencies
+echo -e "${YELLOW}Installing Python dependencies...${NC}"
+pip install rich requests bs4 pyfiglet || {
+    echo -e "${RED}Error: Failed to install dependencies.${NC}"
+    return 1
+}
+
+# Create launcher
+echo -e "${YELLOW}Creating launcher...${NC}"
+LAUNCHER="$PREFIX/bin/linkwizard"
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/linkwizard"
+exec python lw.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo -e "${GREEN}linkwizard installed successfully!${NC}"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling linkwizard...${NC}"
+
+# Remove launcher
+if [ -f "$PREFIX/bin/linkwizard" ]; then
+    rm -f "$PREFIX/bin/linkwizard"
+    echo -e "${GREEN}Removed launcher script${NC}"
+fi
+
+# Note: The package manager will remove the shared files automatically.
+# This script only needs to remove the launcher.
+
+echo -e "${GREEN}linkwizard completely removed${NC}"
+return 0
+}
+

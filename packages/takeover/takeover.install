@@ -1,0 +1,27 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/edoardottt/takeover.git"
+TMP_DIR="$TMPDIR/takeover-build"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+
+git clone --depth 1 "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+python setup.py install
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "takeover installed. Run 'takeover'"
+return 0
+}
+
+post_remove() {
+pip uninstall -y takeover 2>/dev/null || true
+echo "takeover removed."
+return 0
+}
+

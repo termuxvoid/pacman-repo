@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/opencode)
+
+pkgname="opencode"
+pkgver=1.18.22
+pkgrel=0
+pkgdesc='AI‑powered coding assistant (glibc version)'
+arch=('any')
+url="https://opencode.ai/"
+depends=('glibc' 'clang' 'python' 'curl' 'tar')
+install="opencode.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/arsenal-ng)
+
+pkgname="arsenal-ng"
+pkgver=1.6
+pkgrel=0
+pkgdesc='Fast command launcher with 200+ cybersecurity cheat-sheets'
+arch=('any')
+url="https://github.com/halilkirazkaya/arsenal-ng"
+depends=('git' 'golang' 'make')
+install="arsenal-ng.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

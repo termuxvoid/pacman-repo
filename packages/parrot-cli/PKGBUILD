@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/parrot-cli)
+
+pkgname="parrot-cli"
+pkgver=6.3
+pkgrel=0
+pkgdesc='Parrot Security OS 6.3 (Lorikeet) for Termux'
+arch=('any')
+url="https://www.parrotsec.org/"
+depends=('proot' 'tar' 'axel')
+install="parrot-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

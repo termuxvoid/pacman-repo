@@ -1,0 +1,38 @@
+#!/bin/bash
+
+post_install() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing knockpy 9.0.0...${NC}"
+pip install knock-subdomains || {
+    echo -e "${RED}Error: Failed to install knock-subdomains. Ensure pip is available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}knockpy installed successfully!${NC}"
+echo "Usage:"
+echo "  knockpy --help        # Show help menu"
+echo "  knockpy -d example.com   # Enumerate subdomains"
+return 0
+}
+
+post_remove() {
+
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling knockpy...${NC}"
+
+pip uninstall -y knock-subdomains 2>/dev/null || {
+    echo -e "${RED}Error: Failed to uninstall knock-subdomains.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}knockpy completely removed${NC}"
+return 0
+}
+

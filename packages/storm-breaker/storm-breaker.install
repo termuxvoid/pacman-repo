@@ -1,0 +1,46 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+STORM_DIR="$PREFIX/share/storm-breaker"
+BIN_DIR="$PREFIX/bin"
+
+echo "[*] Installing Storm-Breaker..."
+[ -d "$STORM_DIR" ] && rm -rf "$STORM_DIR"
+
+echo "[*] Cloning repository..."
+git clone --depth 1 https://github.com/ultrasecurity/Storm-Breaker.git "$STORM_DIR"
+
+echo "[*] Installing dependencies..."
+cd "$STORM_DIR"
+pip install -r requirements.txt 2>/dev/null
+
+echo "[*] Creating launcher..."
+cat > "$BIN_DIR/storm-breaker" <<EOF
+cd "$STORM_DIR" && python st.py "\$@"
+EOF
+chmod +x "$BIN_DIR/storm-breaker"
+
+echo -e "\n[√] Storm-Breaker installed successfully!"
+echo "Default credentials:"
+echo "  username: admin"
+echo "  password: admin"
+echo "Run: storm-breaker"
+return 0
+}
+
+post_remove() {
+set -e
+
+echo "[*] Removing Storm-Breaker..."
+rm -rf "$PREFIX/share/storm-breaker"
+rm -f "$PREFIX/bin/storm-breaker"
+
+echo "[*] Cleaning Python packages..."
+pip uninstall -y -r "$PREFIX/share/storm-breaker/requirements.txt" 2>/dev/null || true
+
+echo "[√] Storm-Breaker completely removed"
+return 0
+}
+

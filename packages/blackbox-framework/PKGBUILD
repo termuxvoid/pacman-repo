@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/blackbox-framework)
+
+pkgname="blackbox-framework"
+pkgver=2.0
+pkgrel=0
+pkgdesc='A Python-based network analysis and exploitation toolkit'
+arch=('any')
+url="https://github.com/jothatron/blackbox"
+depends=('python2')
+install="blackbox-framework.install"
+options=('!strip')
+source=(blackbox-framework-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/blackbox-framework-data.tar.gz" -C "${pkgdir}"
+}

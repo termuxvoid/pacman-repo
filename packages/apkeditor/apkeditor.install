@@ -1,0 +1,41 @@
+#!/bin/bash
+
+pre_install() {
+rm -rf $PREFIX/share/apkeditor
+}
+
+post_install() {
+
+INSTALL_DIR="$PREFIX/share/apkeditor"
+LAUNCHER="$PREFIX/bin/apkeditor"
+JAR_URL="https://github.com/REAndroid/APKEditor/releases/download/V1.4.9/APKEditor-1.4.9.jar"
+
+echo "[*] Setting up APKEditor..."
+mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR" || exit 1
+
+echo "[*] Downloading JAR..."
+wget -q --show-progress "$JAR_URL" -O APKEditor.jar || {
+    echo -e "\n[!] Download failed. Possible fixes:"
+    echo "    1. Check internet connection"
+    echo "    2. Run: pkg install wget"
+    echo "    3. Try manual download: $JAR_URL"
+    return 1
+}
+
+echo "[*] Creating launcher..."
+cat > "$LAUNCHER" <<EOF
+exec java -jar "$INSTALL_DIR/APKEditor.jar" "\$@"
+EOF
+
+chmod +x "$LAUNCHER" && echo -e "\n[+] APKEditor ready! Usage:\n  apkeditor -h" || {
+    echo "[!] Launcher creation failed"
+    return 1
+}
+}
+
+post_remove() {
+rm -rf "$PREFIX/share/apkeditor"
+rm -f "$PREFIX/bin/apkeditor"
+echo "[+] APKEditor removed"
+}
+

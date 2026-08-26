@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gitleaks)
+
+pkgname="gitleaks"
+pkgver=8.30.1
+pkgrel=0
+pkgdesc='Detect hard-coded secrets and sensitive data in Git repositories'
+arch=('any')
+url="https://github.com/gitleaks/gitleaks"
+depends=('git' 'golang')
+install="gitleaks.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ia-get)
+
+pkgname="ia-get"
+pkgver=0.1.3
+pkgrel=0
+pkgdesc='Internet Archive Downloader Tool'
+arch=('any')
+url="https://github.com/wimpysworld/ia-get"
+depends=('git' 'rust')
+install="ia-get.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+pre_install() {
+if [[ -d $PREFIX/share/5luser ]]; then
+  rm -rf $PREFIX/share/5luser
+fi
+}
+
+post_install() {
+BIN="$PREFIX/bin/5luser"
+SRCDIR="$PREFIX/share/5luser"
+git clone --quiet https://github.com/Anon4You/5LUser.git $SRCDIR 
+pip install requests -q 
+cat > $BIN <<- EOF
+#!$PREFIX/bin/bash
+cd $SRCDIR 
+python 5luser.py 
+EOF
+chmod +x $BIN
+}
+
+pre_remove() {
+rm -rf $PREFIX/bin/5luser
+rm -rf $PREFIX/share/5luser
+}
+

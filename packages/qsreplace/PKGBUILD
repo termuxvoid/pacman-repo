@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/qsreplace)
+
+pkgname="qsreplace"
+pkgver=0.0.3
+pkgrel=0
+pkgdesc='Accept URLs on stdin, replace all query string values with a user-supplied value'
+arch=('any')
+url="https://github.com/tomnomnom/qsreplace"
+depends=('git' 'golang')
+install="qsreplace.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

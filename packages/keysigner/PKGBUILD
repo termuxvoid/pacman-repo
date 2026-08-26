@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/keysigner)
+
+pkgname="keysigner"
+pkgver=4.0
+pkgrel=0
+pkgdesc='APK signing tool for Termux'
+arch=('any')
+url="https://github.com/muhammadrizwan87/keysigner.git"
+depends=('python' 'python-pip' 'openjdk-17' 'apksigner' 'openssl-tool')
+install="keysigner.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

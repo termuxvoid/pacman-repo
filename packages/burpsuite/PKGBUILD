@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/burpsuite)
+
+pkgname="burpsuite"
+pkgver=2026.2.1
+pkgrel=0
+pkgdesc='An integrated platform for performing security testing of web applications (community edition)'
+arch=('any')
+url="https://portswigger.net/burp/"
+depends=('curl' 'openjdk-21' 'openjdk-21-x')
+install="burpsuite.install"
+options=('!strip')
+source=(burpsuite-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/burpsuite-data.tar.gz" -C "${pkgdir}"
+}

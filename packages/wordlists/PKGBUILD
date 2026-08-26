@@ -1,0 +1,19 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wordlists)
+
+pkgname="wordlists"
+pkgver=1.1
+pkgrel=0
+pkgdesc='Security wordlists collection (rockyou.txt + SecLists subset).'
+arch=('any')
+depends=('wget' 'git')
+install="wordlists.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

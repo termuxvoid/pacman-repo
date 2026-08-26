@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/phonesploit-pro)
+
+pkgname="phonesploit-pro"
+pkgver=1.61
+pkgrel=0
+pkgdesc='Android hacking tool with ADB'
+arch=('any')
+url="https://github.com/AzeemIdrisi/PhoneSploit-Pro"
+depends=('git' 'python' 'android-tools' 'nmap' 'which' 'scrcpy')
+install="phonesploit-pro.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

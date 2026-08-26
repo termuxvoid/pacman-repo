@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/kerbrute)
+
+pkgname="kerbrute"
+pkgver=1.0.3
+pkgrel=0
+pkgdesc='Kerberos brute force and enumeration tool'
+arch=('any')
+url="https://github.com/ropnop/kerbrute"
+depends=('git' 'golang' 'make')
+install="kerbrute.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

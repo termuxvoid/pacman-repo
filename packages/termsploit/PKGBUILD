@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termsploit)
+
+pkgname="termsploit"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='Pentesting framework for Termux'
+arch=('any')
+url="https://github.com/Anon4You/termsploit-framework"
+depends=('git' 'curl' 'python' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf' 'binutils-is-llvm' 'rust' 'jq' 'python-pillow' 'nodejs' 'qpdf' 'libiconv' 'libxml2' 'libxslt' 'dnsutils' 'whois' 'php')
+install="termsploit.install"
+options=('!strip')
+source=(termsploit-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termsploit-data.tar.gz" -C "${pkgdir}"
+}

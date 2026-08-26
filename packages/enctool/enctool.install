@@ -1,0 +1,8 @@
+#!/bin/bash
+
+post_install() {
+if ! hash bash-obfuscate > /dev/null 2>&1 ; then
+npm -g install bash-obfuscate
+fi
+}
+

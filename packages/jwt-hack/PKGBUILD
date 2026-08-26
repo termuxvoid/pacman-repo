@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/jwt-hack)
+
+pkgname="jwt-hack"
+pkgver=2.6.0
+pkgrel=0
+pkgdesc='JWT security testing and exploitation tool'
+arch=('any')
+url="https://jwt-hack.hahwul.com/"
+depends=('make' 'openssl' 'rust' 'perl' 'pkg-config')
+install="jwt-hack.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

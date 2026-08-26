@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pip-basic-depends)
+
+pkgname="pip-basic-depends"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Essential build dependencies for Python packages'
+arch=('any')
+url="https://alienkrishn.page.gd"
+depends=('git' 'python' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf' 'binutils' 'rust' 'libxml2' 'libxslt')
+install="pip-basic-depends.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

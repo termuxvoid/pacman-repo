@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gowitness)
+
+pkgname="gowitness"
+pkgver=3.1.1
+pkgrel=0
+pkgdesc='Web screenshot utility using headless Chrome'
+arch=('any')
+url="https://github.com/sensepost/gowitness"
+depends=('git' 'golang')
+install="gowitness.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/linkwizard)
+
+pkgname="linkwizard"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Powerful profile link finder for Termux'
+arch=('any')
+url="https://telegram.me/nullxvoid"
+depends=('python' 'python-pip')
+install="linkwizard.install"
+options=('!strip')
+source=(linkwizard-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/linkwizard-data.tar.gz" -C "${pkgdir}"
+}

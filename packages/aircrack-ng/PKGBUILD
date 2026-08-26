@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/aircrack-ng)
+
+pkgname="aircrack-ng"
+pkgver=1.7
+pkgrel=0
+pkgdesc='Wireless network security auditing suite'
+arch=('any')
+url="https://www.aircrack-ng.org/"
+depends=('git' 'make' 'automake' 'autoconf' 'libc++' 'libnl' 'libpcap' 'libsqlite' 'openssl' 'pcre' 'zlib' 'iw' 'ethtool' 'libtool' 'usbutils')
+install="aircrack-ng.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

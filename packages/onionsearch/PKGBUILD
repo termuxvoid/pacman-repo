@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/onionsearch)
+
+pkgname="onionsearch"
+pkgver=1.3
+pkgrel=0
+pkgdesc='Scrape .onion URLs from various Tor search engines'
+arch=('any')
+url="https://github.com/megadose/OnionSearch"
+depends=('python' 'python-pip')
+install="onionsearch.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

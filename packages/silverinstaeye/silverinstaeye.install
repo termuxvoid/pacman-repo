@@ -1,0 +1,64 @@
+#!/bin/bash
+
+post_install() {
+
+SILVEREYE_DIR="$PREFIX/share/silverinstaeye"
+LAUNCHER="$PREFIX/bin/silverinstaeye"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing SilverInstaEye...${NC}"
+[ -d "$SILVEREYE_DIR" ] && { echo "[*] Removing old installation..."; rm -rf "$SILVEREYE_DIR"; }
+
+echo -e "${GREEN}Cloning repository...${NC}"
+git clone --depth=1 https://github.com/silverxpymaster/SilverInstaEye.git "$SILVEREYE_DIR" || {
+    echo -e "${RED}Error: Failed to clone SilverInstaEye repository.${NC}"
+    return 1
+}
+
+export ANDROID_API_LEVEL=24
+echo -e "${GREEN}Installing Python dependencies...${NC}"
+cd "$SILVEREYE_DIR"
+pip install -r requirements.txt || {
+    echo -e "${RED}Error: Failed to install Python dependencies.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher...${NC}"
+cat > "$LAUNCHER" << EOF
+clear
+unset LD_PRELOAD
+cd "$SILVEREYE_DIR" && python silverinstaeye.py "\$@"
+EOF
+chmod +x "$LAUNCHER"
+
+echo -e "${GREEN}SilverInstaEye installed successfully!${NC}"
+echo "Run: silverinstaeye --help"
+return 0
+}
+
+post_remove() {
+
+SILVEREYE_DIR="$PREFIX/share/silverinstaeye"
+LAUNCHER="$PREFIX/bin/silverinstaeye"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling SilverInstaEye...${NC}"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -d "$SILVEREYE_DIR" ]; then
+    rm -rf "$SILVEREYE_DIR" && echo -e "${GREEN}✓ Removed SilverInstaEye directory${NC}" || \
+    echo -e "${RED}✗ Failed to remove SilverInstaEye directory${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+return 0
+}
+

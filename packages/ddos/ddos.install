@@ -1,0 +1,40 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/the-deepnet/ddos.git"
+INSTALL_DIR="$PREFIX/share/ddos"
+LAUNCHER="$PREFIX/bin/ddos"
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+
+git clone --depth 1 -q "$REPO" "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+
+pip install 'urllib3<2.0'
+pip install -r requirements.txt
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/ddos"
+exec python ddos "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo "ddos installed. Run 'ddos'"
+return 0
+}
+
+post_remove() {
+
+rm -f "$PREFIX/bin/ddos"
+rm -rf "$PREFIX/share/ddos"
+
+pip uninstall -y urllib3 cfscrape 2>/dev/null || true
+
+echo "ddos removed."
+return 0
+}
+

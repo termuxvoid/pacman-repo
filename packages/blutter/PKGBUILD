@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/blutter)
+
+pkgname="blutter"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Flutter/Dart Binary Analysis and Reverse Engineering'
+arch=('any')
+url="https://github.com/dedshit/blutter-termux"
+depends=('git' 'python' 'python-pip' 'cmake' 'ninja' 'build-essential' 'pkg-config' 'libicu' 'capstone' 'fmt' 'radare2')
+install="blutter.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

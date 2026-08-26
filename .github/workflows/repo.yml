@@ -34,16 +34,13 @@ jobs:
           chown -R builder:builder "$GITHUB_WORKSPACE"
 
       - name: Build all packages
+        env:
+          JOBS: '2'
         run: |
           su builder -c '
             set -e
-            export PKGEXT=".pkg.tar.xz"
             cd "$GITHUB_WORKSPACE"
-            for d in packages/*/; do
-              [ -f "${d}PKGBUILD" ] || continue
-              echo "Building ${d}"
-              (cd "$d" && makepkg -f --nodeps)
-            done
+            tools/build-all.sh
           '
 
       - name: Import GPG key
@@ -62,10 +59,9 @@ jobs:
 
       - name: Verify signatures
         run: |
-          cd dist/any
-          gpg --verify termuxvoid.db.sig termuxvoid.db
-          gpg --verify sqlmap-*.pkg.tar.xz.sig sqlmap-1*.pkg.tar.xz
-          ls -la
+          gpg --verify dist/any/termuxvoid.db.sig dist/any/termuxvoid.db
+          gpg --verify dist/any/sqlmap-*.pkg.tar.xz.sig dist/any/sqlmap-*.pkg.tar.xz
+          echo "packages: $(ls dist/any/*.pkg.tar.xz | wc -l)"
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4

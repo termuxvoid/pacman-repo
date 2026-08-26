@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/bun)
+
+pkgname="bun"
+pkgver=1.4.0
+pkgrel=0
+pkgdesc='Incredibly fast JavaScript runtime, bundler, test runner and package manager'
+arch=('any')
+url="https://bun.sh"
+depends=('npm')
+install="bun.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

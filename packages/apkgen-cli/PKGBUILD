@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/apkgen-cli)
+
+pkgname="apkgen-cli"
+pkgver=1.4.0
+pkgrel=0
+pkgdesc='CLI tool to quickly generate Android APKs from local templates'
+arch=('any')
+url="https://github.com/termuxvoid/apkgen-cli"
+depends=('git' 'gum' 'termux-tools' 'android-sdk' 'flutter')
+install="apkgen-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

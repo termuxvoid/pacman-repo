@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/naabu)
+
+pkgname="naabu"
+pkgver=2.6.1
+pkgrel=0
+pkgdesc='Fast port scanner written in Go'
+arch=('any')
+url="https://github.com/projectdiscovery/naabu"
+depends=('git' 'golang' 'libcap')
+install="naabu.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

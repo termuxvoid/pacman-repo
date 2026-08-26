@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/d-tect)
+
+pkgname="d-tect"
+pkgver=1.0
+pkgrel=0
+pkgdesc='D-TECT - Pentest the Modern Web'
+arch=('any')
+url="https://github.com/bibortone/D-Tech"
+depends=('git' 'python2')
+install="d-tect.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

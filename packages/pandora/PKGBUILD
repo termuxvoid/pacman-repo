@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pandora)
+
+pkgname="pandora"
+pkgver=3.2.0
+pkgrel=0
+pkgdesc='open source osint tool'
+arch=('any')
+url="https://github.com/MrSanZz/pandora"
+depends=('git' 'python' 'wget' 'curl')
+install="pandora.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

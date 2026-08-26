@@ -1,0 +1,134 @@
+#!/bin/bash
+
+pre_install() {
+ARCH=$(uname -m)
+case "$ARCH" in
+    aarch64|x86_64)
+        return 0
+        ;;
+    *)
+        echo "Error: Sliver only supports aarch64 or x86_64 architectures." >&2
+        echo "Your architecture: $ARCH" >&2
+        return 1
+        ;;
+esac
+}
+
+post_install() {
+set -e
+
+TAG="v1.7.3"
+TMP_DIR="$TMPDIR/sliver-build"
+BIN_DIR="$PREFIX/bin"
+ARCHIVE_URL="https://github.com/BishopFox/sliver/archive/refs/tags/${TAG}.tar.gz"
+
+LDFLAGS="-s -w -X github.com/bishopfox/sliver/client/command/update.SliverPublicKey=RWTZPg959v3b7tLG7VzKHRB1/QT+d3c71Uzetfa44qAoX5rH7mGoQTTR -X github.com/bishopfox/sliver/client/assets.DefaultArmoryPublicKey=RWSBpxpRWDrD7Fe+VvRE3c2VEDC2NK80rlNCj+BX0gz44Xw07r6KQD9L -X github.com/bishopfox/sliver/client/assets.DefaultArmoryRepoURL=https://api.github.com/repos/sliverarmory/armory/releases -X github.com/bishopfox/sliver/server/version.Version=${TAG} -X github.com/bishopfox/sliver/server/version.GitCommit=3bbaf805104dcc4a75414ee0084e8de50702cad4 -X github.com/bishopfox/sliver/client/version.Version=${TAG} -X github.com/bishopfox/sliver/client/version.GitCommit=3bbaf805104dcc4a75414ee0084e8de50702cad4"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+mkdir -p "$TMP_DIR"
+curl -fsSL "$ARCHIVE_URL" -o "$TMP_DIR/sliver.tar.gz"
+tar -xzf "$TMP_DIR/sliver.tar.gz" -C "$TMP_DIR" --strip-components=1
+cd "$TMP_DIR"
+
+# Termux/Android constraints:
+#  * GOOS=linux binaries are rejected by Android's bionic loader (TLS alignment),
+#    so the server MUST be built natively (android/arm64) to run at all.
+#  * Go publishes no android/arm64 toolchain for Sliver to embed, so the embedded
+#    Go toolchain can never be installed on Android.
+#  * The upstream asset generator downloads linux/amd64+arm64 Go/Zig toolchains and
+#    embeds them; the linux archives cannot run on Android and bloat the binary, so
+#    we do NOT run it. Instead we create placeholder embedded assets (the runtime
+#    is patched to use the SYSTEM Go toolchain, so the embedded ones are never read)
+#    and we patch Sliver to compile implants with the system `golang` dependency.
+#    A missing `garble` degrades gracefully to a non-obfuscated build.
+
+# Patch Sliver to use the system Go toolchain on Android.
+cat > "$TMP_DIR/patch_gogo.py" << 'PYEOF'
+import os
+base = os.environ["SLIVER_DIR"]
+
+# --- server/gogo/go.go ---
+p = base + "/server/gogo/go.go"
+s = open(p).read()
+s = s.replace('\t"os/exec"\n', '\t"os/exec"\n\t"runtime"\n', 1)
+
+old = '''func GetGoRootDir(appDir string) string {
+\treturn filepath.Join(appDir, goDirName)
+}'''
+new = '''func GetGoRootDir(appDir string) string {
+\tif runtime.GOOS == "android" {
+\t\tif r := os.Getenv("SLIVER_GO_ROOT"); r != "" {
+\t\t\treturn r
+\t\t}
+\t\ttermux := "/data/data/com.termux/files/usr/lib/go"
+\t\tif _, err := os.Stat(termux + "/bin/go"); err == nil {
+\t\t\treturn termux
+\t\t}
+\t}
+\treturn filepath.Join(appDir, goDirName)
+}'''
+assert old in s, "GetGoRootDir not found"
+s = s.replace(old, new)
+
+oldc = 'func GetGoCache(appDir string) string {\n\tcachePath := filepath.Join(GetGoRootDir(appDir), "cache")\n\tos.MkdirAll(cachePath, 0700)\n\treturn cachePath\n}'
+newc = 'func GetGoCache(appDir string) string {\n\tcachePath := filepath.Join(appDir, "gocache")\n\tos.MkdirAll(cachePath, 0700)\n\treturn cachePath\n}'
+assert oldc in s, "GetGoCache not found"
+s = s.replace(oldc, newc)
+
+oldm = 'func GetGoModCache(appDir string) string {\n\tcachePath := filepath.Join(GetGoRootDir(appDir), "modcache")\n\tos.MkdirAll(cachePath, 0700)\n\treturn cachePath\n}'
+newm = 'func GetGoModCache(appDir string) string {\n\tcachePath := filepath.Join(appDir, "gomodcache")\n\tos.MkdirAll(cachePath, 0700)\n\treturn cachePath\n}'
+assert oldm in s, "GetGoModCache not found"
+s = s.replace(oldm, newm)
+
+oldg = 'garbleBinPath := filepath.Join(config.GOROOT, "bin", "garble")\n\tgarbleFlags'
+newg = 'garbleBinPath := filepath.Join(config.GOROOT, "bin", "garble")\n\tif _, err := os.Stat(garbleBinPath); err != nil {\n\t\tgogoLog.Warnf("garble not found at %s, falling back to non-obfuscated build", garbleBinPath)\n\t\treturn GoCmd(config, cwd, command)\n\t}\n\tgarbleFlags'
+assert oldg in s, "garbleBinPath not found"
+s = s.replace(oldg, newg)
+open(p, "w").write(s)
+
+# --- server/assets/assets-helpers.go ---
+ap = base + "/server/assets/assets-helpers.go"
+a = open(ap).read()
+olda = 'func setupGo(appDir string) error {\n\tsetupLog.Infof("Unpacking to \'%s\'", appDir)'
+newa = 'func setupGo(appDir string) error {\n\tif os.Getenv("SLIVER_GO_ROOT") != "" || runtime.GOOS == "android" {\n\t\tsetupLog.Infof("Using external Go toolchain, skipping embedded extraction")\n\t\treturn nil\n\t}\n\tsetupLog.Infof("Unpacking to \'%s\'", appDir)'
+assert olda in a, "setupGo not found"
+a = a.replace(olda, newa)
+# bring in the "runtime" import used by the patched setupGo
+if '"runtime"' not in a:
+    a = a.replace('\t"os"\n', '\t"os"\n\t"runtime"\n', 1)
+open(ap, "w").write(a)
+PYEOF
+SLIVER_DIR="$TMP_DIR" python3 "$TMP_DIR/patch_gogo.py"
+
+# Create placeholder embedded assets so the server binary compiles.
+# NOTE: embed ignores files starting with '.' or '_', so use plain names.
+mkdir -p "$TMP_DIR/server/assets/fs/linux/amd64" "$TMP_DIR/server/assets/fs/linux/arm64"
+: > "$TMP_DIR/server/assets/fs/linux/amd64/keep"
+: > "$TMP_DIR/server/assets/fs/linux/arm64/keep"
+: > "$TMP_DIR/server/assets/fs/placeholder.zip"
+
+# Remove the platform-specific asset files that reference darwin/windows
+# embedded directories we do not generate (they would break the build).
+rm -f "$TMP_DIR/server/assets/assets_darwin_amd64.go" \
+      "$TMP_DIR/server/assets/assets_darwin_arm64.go" \
+      "$TMP_DIR/server/assets/assets_windows_amd64.go" \
+      "$TMP_DIR/server/assets/assets_windows_arm64.go"
+
+# Build natively for android/arm64 (runs on bionic's loader).
+go build -mod=vendor -trimpath -tags go_sqlite,server -ldflags "$LDFLAGS" -p $(nproc) -o sliver-server ./server
+CGO_ENABLED=0 go build -mod=vendor -trimpath -tags go_sqlite,client -ldflags "$LDFLAGS" -p $(nproc) -o sliver-client ./client
+
+install -Dm755 sliver-server "$BIN_DIR/sliver-server"
+install -Dm755 sliver-client "$BIN_DIR/sliver-client"
+
+cd / && rm -rf "$TMP_DIR"
+echo "sliver-c2 installed. Run 'sliver-server' or 'sliver-client'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/sliver-server" "$PREFIX/bin/sliver-client"
+echo "sliver-c2 removed."
+return 0
+}
+

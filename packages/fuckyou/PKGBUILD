@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/fuckyou)
+
+pkgname="fuckyou"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='A powerful and customizable password list generator written in Bash.'
+arch=('any')
+url="https://github.com/Anon4You/FuckYou"
+depends=('termux-exec')
+options=('!strip')
+source=(fuckyou-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/fuckyou-data.tar.gz" -C "${pkgdir}"
+}

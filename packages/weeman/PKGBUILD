@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/weeman)
+
+pkgname="weeman"
+pkgver=1.7.1
+pkgrel=0
+pkgdesc='HTTP server for phishing in python2'
+arch=('any')
+url="https://github.com/evait-security/weeman"
+depends=('python2' 'git')
+install="weeman.install"
+options=('!strip')
+source=(weeman-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/weeman-data.tar.gz" -C "${pkgdir}"
+}

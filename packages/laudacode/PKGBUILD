@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/laudacode)
+
+pkgname="laudacode"
+pkgver=0.4.0
+pkgrel=0
+pkgdesc='Fast, lightweight AI coding agent for your terminal'
+arch=('any')
+url="https://github.com/Anon4You/Laudacode"
+depends=('curl' 'rust' 'tar')
+install="laudacode.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

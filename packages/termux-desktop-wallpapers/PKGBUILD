@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termux-desktop-wallpapers)
+
+pkgname="termux-desktop-wallpapers"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Wallpapers for termux-desktop'
+arch=('any')
+url="https://alienkrishn.infy.uk"
+depends=('termux-tools' 'termux-desktop')
+options=('!strip')
+source=(termux-desktop-wallpapers-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termux-desktop-wallpapers-data.tar.gz" -C "${pkgdir}"
+}

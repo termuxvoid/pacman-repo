@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/dorks-eye)
+
+pkgname="dorks-eye"
+pkgver=2.0
+pkgrel=0
+pkgdesc='Google Hacking Dork Scraping and Searching Tool'
+arch=('any')
+url="https://github.com/BullsEye0/dorks-eye"
+depends=('git' 'python' 'python-pip' 'pip-basic-depends' 'python-cryptography' 'libffi' 'libiconv')
+install="dorks-eye.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

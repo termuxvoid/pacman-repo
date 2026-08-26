@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/findomain)
+
+pkgname="findomain"
+pkgver=10.0.1
+pkgrel=0
+pkgdesc='The fastest and complete solution for domain recognition'
+arch=('any')
+url="https://github.com/Findomain/Findomain"
+depends=('git' 'rust' 'make' 'cmake')
+install="findomain.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

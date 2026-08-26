@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/fscan)
+
+pkgname="fscan"
+pkgver=2.2.0
+pkgrel=0
+pkgdesc='Intranet penetration test tool for scanning vulnerabilities'
+arch=('any')
+url="https://github.com/shadow1ng/fscan"
+depends=('git' 'golang')
+install="fscan.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ipinfo)
+
+pkgname="ipinfo"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Ip address information gathering tool for termux '
+arch=('any')
+depends=('python' 'python-pip' 'termux-exec' 'termux-tools')
+install="ipinfo.install"
+options=('!strip')
+source=(ipinfo-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/ipinfo-data.tar.gz" -C "${pkgdir}"
+}

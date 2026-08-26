@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/nvchad)
+
+pkgname="nvchad"
+pkgver=3.0
+pkgrel=0
+pkgdesc='Neovim Configuration Framework'
+arch=('any')
+url="https://github.com/NvChad/NvChad"
+depends=('git' 'neovim' 'ripgrep' 'lua-language-server' 'clang' 'npm')
+install="nvchad.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

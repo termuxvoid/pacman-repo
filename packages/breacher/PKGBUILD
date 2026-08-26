@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/breacher)
+
+pkgname="breacher"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Multi-threaded URL brute-forcer for hidden paths'
+arch=('any')
+url="https://github.com/s0md3v/Breacher"
+depends=('git' 'python' 'python-pip')
+install="breacher.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

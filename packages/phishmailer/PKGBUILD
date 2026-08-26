@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/phishmailer)
+
+pkgname="phishmailer"
+pkgver=2.2
+pkgrel=0
+pkgdesc='Professional Phishing Email Generation Tool'
+arch=('any')
+url="https://github.com/BiZken/PhishMailer"
+depends=('git' 'python')
+install="phishmailer.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

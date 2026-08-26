@@ -1,0 +1,12 @@
+#!/bin/bash
+
+post_install() {
+pip install requests -q
+pip install rich -q
+pip install lolcat -q
+echo -e "
+Installation complete
+report bugs at \e[34mhttps://telegram.me/alienkrishn
+\e[0m"
+}
+

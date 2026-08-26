@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/bettercap)
+
+pkgname="bettercap"
+pkgver=2.41.7
+pkgrel=0
+pkgdesc='Swiss army knife for network attacks and monitoring'
+arch=('any')
+url="https://www.bettercap.org/"
+depends=('git' 'make' 'golang' 'libpcap' 'libnetfilter-queue' 'libusb')
+install="bettercap.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

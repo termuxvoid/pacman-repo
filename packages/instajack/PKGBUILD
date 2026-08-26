@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/instajack)
+
+pkgname="instajack"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Instagram old account jacker'
+arch=('any')
+depends=('python' 'python-pip')
+install="instajack.install"
+options=('!strip')
+source=(instajack-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/instajack-data.tar.gz" -C "${pkgdir}"
+}

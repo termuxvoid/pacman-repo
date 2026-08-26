@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termux-media-downloader)
+
+pkgname="termux-media-downloader"
+pkgver=2.1
+pkgrel=0
+pkgdesc='A high-performance media downloader for Termux'
+arch=('any')
+url="https://github.com/Anon4You/Termux-Media-Downloader"
+depends=('curl' 'python' 'python-pip' 'ffmpeg')
+install="termux-media-downloader.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

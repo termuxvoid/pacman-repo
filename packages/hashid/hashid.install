@@ -1,0 +1,28 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+echo "[*] Installing hashid 3.1.4..."
+pip install --upgrade --force-reinstall hashid==3.1.4 >/dev/null 2>&1 || {
+    echo "[!] Installation failed" >&2
+    return 1
+}
+
+echo -e "\n[√] hashID ready!"
+echo "Usage:"
+echo "  hashid 'hash_to_identify'"
+echo "  echo 'hash' | hashid"
+return 0
+}
+
+post_remove() {
+set -e
+
+echo "[*] Removing hashid..."
+pip uninstall -y hashid >/dev/null 2>&1 || true
+
+echo "[√] Uninstallation complete"
+return 0
+}
+

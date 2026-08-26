@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/zen-c)
+
+pkgname="zen-c"
+pkgver=1.0
+pkgrel=0
+pkgdesc='High-level Systems Programming Language compiling to C'
+arch=('any')
+url="https://github.com/z-libs/Zen-C"
+depends=('git' 'make' 'clang' 'llvm')
+install="zen-c.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

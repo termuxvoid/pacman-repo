@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/android-sdk)
+
+pkgname="android-sdk"
+pkgver=36.0.0
+pkgrel=0
+pkgdesc='Android SDK built using musl libc, supporting multiple architectures.'
+arch=('any')
+url="https://developer.android.com"
+depends=('openjdk-21' '7zip' 'axel')
+install="android-sdk.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

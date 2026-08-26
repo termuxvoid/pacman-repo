@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ddos)
+
+pkgname="ddos"
+pkgver=1.0
+pkgrel=0
+pkgdesc='DDoS attack script with 36+ attack methods'
+arch=('any')
+url="https://github.com/the-deepnet/ddos"
+depends=('git' 'python' 'python-pip')
+install="ddos.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/jsql)
+
+pkgname="jsql"
+pkgver=0.144
+pkgrel=0
+pkgdesc='Lightweight database information finder from a server'
+arch=('any')
+url="https://github.com/ron190/jsql-injection"
+depends=('curl' 'openjdk-21')
+install="jsql.install"
+options=('!strip')
+source=(jsql-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/jsql-data.tar.gz" -C "${pkgdir}"
+}

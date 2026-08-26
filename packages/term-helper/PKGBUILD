@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/term-helper)
+
+pkgname="term-helper"
+pkgver=1.1.1
+pkgrel=0
+pkgdesc='Terminal command helper and cheatsheet tool'
+arch=('any')
+url="https://github.com/Anon4You/term-helper"
+depends=('curl' 'pv')
+install="term-helper.install"
+options=('!strip')
+source=(term-helper-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/term-helper-data.tar.gz" -C "${pkgdir}"
+}

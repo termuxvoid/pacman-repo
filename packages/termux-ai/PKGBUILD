@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termux-ai)
+
+pkgname="termux-ai"
+pkgver=3.0
+pkgrel=0
+pkgdesc='Interactive AI Assistant for Termux'
+arch=('any')
+url="https://github.com/Anon4You/Termux-Ai"
+depends=('curl' 'gum' 'tgpt')
+install="termux-ai.install"
+options=('!strip')
+source=(termux-ai-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termux-ai-data.tar.gz" -C "${pkgdir}"
+}

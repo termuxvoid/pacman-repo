@@ -1,0 +1,15 @@
+#!/bin/bash
+
+post_install() {
+set -e
+command -v http-server >/dev/null 2>&1 || npm install -g http-server >/dev/null
+command -v tmole >/dev/null 2>&1 || npm install -g tunnelmole >/dev/null
+return 0
+}
+
+post_remove() {
+npm uninstall -g http-server >/dev/null 2>&1 || true
+npm uninstall -g tunnelmole >/dev/null 2>&1 || true
+return 0
+}
+

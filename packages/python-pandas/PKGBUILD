@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/python-pandas)
+
+pkgname="python-pandas"
+pkgver=3.0.5
+pkgrel=0
+pkgdesc='Powerhouse data analysis toolkit'
+arch=('any')
+url="https://pandas.pydata.org"
+depends=('python' 'python-pip' 'python-numpy' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf')
+install="python-pandas.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

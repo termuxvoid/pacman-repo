@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cloudflare-gui)
+
+pkgname="cloudflare-gui"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Stylish GUI for Cloudflare Tunnels'
+arch=('any')
+url="https://github.com/Keyaru-code/Cloudflare-GUI"
+depends=('cloudflared' 'python' 'python-pip' 'python-tkinter')
+install="cloudflare-gui.install"
+options=('!strip')
+source=(cloudflare-gui-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/cloudflare-gui-data.tar.gz" -C "${pkgdir}"
+}

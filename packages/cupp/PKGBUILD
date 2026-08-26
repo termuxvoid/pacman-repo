@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cupp)
+
+pkgname="cupp"
+pkgver=3.3.0
+pkgrel=0
+pkgdesc='Common User Passwords Profiler (CUPP)'
+arch=('any')
+url="https://github.com/Mebus/cupp"
+depends=('termux-exec' 'python')
+options=('!strip')
+source=(cupp-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/cupp-data.tar.gz" -C "${pkgdir}"
+}

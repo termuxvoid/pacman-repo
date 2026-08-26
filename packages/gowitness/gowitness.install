@@ -1,0 +1,32 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/sensepost/gowitness.git"
+TAG="3.1.1"
+TMP_DIR="$TMPDIR/gowitness-build"
+BIN_DIR="$PREFIX/bin"
+
+rm -rf "$TMP_DIR" 2>/dev/null || true
+
+git clone --depth 1 --branch "$TAG" -q "$REPO" "$TMP_DIR"
+cd "$TMP_DIR"
+
+go build -trimpath -ldflags "-w -s" -o gowitness
+
+install -Dm755 gowitness "$BIN_DIR/gowitness"
+
+cd /
+rm -rf "$TMP_DIR"
+
+echo "gowitness installed. Run 'gowitness'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/gowitness"
+echo "gowitness removed."
+return 0
+}
+

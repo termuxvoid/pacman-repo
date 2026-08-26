@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wacli)
+
+pkgname="wacli"
+pkgver=0.13.0
+pkgrel=0
+pkgdesc='Command-line tool for WhatsApp chat management'
+arch=('any')
+url="https://wacli.sh/"
+depends=('git' 'golang')
+install="wacli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

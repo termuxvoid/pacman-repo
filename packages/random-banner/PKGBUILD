@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/random-banner)
+
+pkgname="random-banner"
+pkgver=1
+pkgrel=0
+pkgdesc='random banner and quote'
+arch=('any')
+url="https://github.com/Alienkrishn/random_banners"
+depends=('git')
+install="random-banner.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

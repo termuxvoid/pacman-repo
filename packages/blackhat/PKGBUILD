@@ -1,0 +1,19 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/blackhat)
+
+pkgname="blackhat"
+pkgver=1.0
+pkgrel=0
+pkgdesc='blackhat hacking sources'
+arch=('any')
+options=('!strip')
+source=(blackhat-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/blackhat-data.tar.gz" -C "${pkgdir}"
+}

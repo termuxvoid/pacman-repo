@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/webhost)
+
+pkgname="webhost"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='Serve local directories and expose via tunnels'
+arch=('any')
+url="https://github.com/Anon4You/WebHost"
+depends=('curl' 'php' 'python' 'npm' 'ngrok' 'cloudflared' 'figlet' 'openssh')
+install="webhost.install"
+options=('!strip')
+source=(webhost-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/webhost-data.tar.gz" -C "${pkgdir}"
+}

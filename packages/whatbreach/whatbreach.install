@@ -1,0 +1,37 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/Ekultek/WhatBreach.git"
+INSTALL_DIR="$PREFIX/share/whatbreach"
+LAUNCHER="$PREFIX/bin/whatbreach"
+
+rm -rf "$INSTALL_DIR" 2>/dev/null || true
+
+git clone --depth 1 "$REPO" "$INSTALL_DIR"
+
+cd "$INSTALL_DIR"
+pip install -r requirements.txt
+
+cat > "$LAUNCHER" << 'EOF'
+cd "$PREFIX/share/whatbreach"
+exec python whatbreach.py "$@"
+EOF
+
+chmod +x "$LAUNCHER"
+
+echo "WhatBreach installed successfully."
+echo "Run 'whatbreach' to start."
+return 0
+}
+
+post_remove() {
+
+rm -f "$PREFIX/bin/whatbreach"
+rm -rf "$PREFIX/share/whatbreach"
+
+echo "WhatBreach completely removed."
+return 0
+}
+

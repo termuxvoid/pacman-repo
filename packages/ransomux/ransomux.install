@@ -1,0 +1,48 @@
+#!/bin/bash
+
+post_install() {
+
+INSTALL_DIR="$PREFIX/share/ransomux"
+LAUNCHER="$PREFIX/bin/ransomux"
+
+# Check if INSTALL_DIR exists and remove it
+if [ -d "$INSTALL_DIR" ]; then
+    echo "[*] Removing existing directory $INSTALL_DIR..."
+    rm -rf "$INSTALL_DIR" || exit 1
+fi
+
+# Clone ransomux
+git clone --quiet https://github.com/Anon4You/RansoMux.git "$INSTALL_DIR" || exit 1
+
+# Create symlink and set permissions
+ln -sf "$INSTALL_DIR/ransomux.sh" "$LAUNCHER"
+chmod +x "$LAUNCHER"
+}
+
+post_remove() {
+
+INSTALL_DIR="$PREFIX/share/ransomux"
+LAUNCHER="$PREFIX/bin/ransomux"
+
+# Remove the launcher symlink if it exists
+if [ -L "$LAUNCHER" ]; then
+    echo "[*] Removing launcher symlink $LAUNCHER..."
+    rm -f "$LAUNCHER" || {
+        echo "[!] Failed to remove $LAUNCHER"
+        return 1
+    }
+fi
+
+# Remove the installation directory if it exists
+if [ -d "$INSTALL_DIR" ]; then
+    echo "[*] Removing installation directory $INSTALL_DIR..."
+    rm -rf "$INSTALL_DIR" || {
+        echo "[!] Failed to remove $INSTALL_DIR"
+        return 1
+    }
+fi
+
+echo "[*] Cleanup completed successfully"
+return 0
+}
+

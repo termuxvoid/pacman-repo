@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/iplookup)
+
+pkgname="iplookup"
+pkgver=1.0.0
+pkgrel=0
+pkgdesc='Ip address info gethering script..'
+arch=('any')
+depends=('termux-exec' 'termux-tools' 'figlet' 'toilet' 'pv')
+options=('!strip')
+source=(iplookup-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/iplookup-data.tar.gz" -C "${pkgdir}"
+}

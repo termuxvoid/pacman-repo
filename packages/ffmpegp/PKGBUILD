@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ffmpegp)
+
+pkgname="ffmpegp"
+pkgver=1.30
+pkgrel=0
+pkgdesc='Python Utility for FFmpeg and FFprobe Operations'
+arch=('any')
+url="https://github.com/ankushbhagats/ffmpegp"
+depends=('python' 'python-pip' 'jq' 'ffmpeg')
+install="ffmpegp.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

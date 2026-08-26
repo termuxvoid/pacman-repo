@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/hashcat)
+
+pkgname="hashcat"
+pkgver=7.1.2
+pkgrel=0
+pkgdesc='World'\''s fastest and most advanced password recovery utility'
+arch=('any')
+url="https://hashcat.net/hashcat/"
+depends=('clang' 'make' 'binutils' 'curl' 'libc++' 'libiconv' 'opencl-vendor-driver' 'python')
+install="hashcat.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

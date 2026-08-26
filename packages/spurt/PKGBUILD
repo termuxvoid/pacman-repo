@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/spurt)
+
+pkgname="spurt"
+pkgver=1.9.0
+pkgrel=0
+pkgdesc='HTTP stress testing tool that can overload web servers.'
+arch=('any')
+url="https://github.com/zer-far/spurt/"
+depends=('make' 'golang' 'git')
+install="spurt.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

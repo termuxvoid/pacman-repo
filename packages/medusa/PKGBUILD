@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/medusa)
+
+pkgname="medusa"
+pkgver=2.3.patched
+pkgrel=0
+pkgdesc='Parallel network login brute-forcer'
+arch=('any')
+url="https://github.com/jmk-foofus/medusa"
+depends=('git' 'make' 'automake' 'autoconf' 'libtool' 'clang' 'pkg-config' 'openssl' 'libgcrypt' 'gnutls' 'postgresql' 'libssh2' 'libcurl' 'sed' 'findutils' 'apr' 'apr-util')
+install="medusa.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

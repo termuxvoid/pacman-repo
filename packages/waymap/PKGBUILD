@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/waymap)
+
+pkgname="waymap"
+pkgver=8.1.1
+pkgrel=0
+pkgdesc='Fast Web Vulnerability Scanner and Security Testing Toolkit'
+arch=('any')
+url="https://waymapscanner.github.io"
+depends=('git' 'python')
+install="waymap.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

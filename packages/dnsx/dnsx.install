@@ -1,0 +1,61 @@
+#!/bin/bash
+
+post_install() {
+
+LAUNCHER="$PREFIX/bin/dnsx"
+DNSX_BIN="$HOME/go/bin/dnsx"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${GREEN}Installing dnsx...${NC}"
+go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest || {
+    echo -e "${RED}Error: Failed to install dnsx. Ensure Go is installed and internet is available.${NC}"
+    return 1
+}
+
+echo -e "${GREEN}Creating launcher at $LAUNCHER...${NC}"
+cat > "$LAUNCHER" <<- EOF
+$DNSX_BIN "\$@"
+EOF
+
+chmod +x "$LAUNCHER" || {
+    echo -e "${RED}Error: Failed to set executable permissions for $LAUNCHER.${NC}"
+    return 1
+}
+
+if [ -x "$DNSX_BIN" ]; then
+    echo -e "${GREEN}dnsx installed successfully. Run 'dnsx -h' to verify.${NC}"
+else
+    echo -e "${RED}Error: dnsx binary not found at $DNSX_BIN.${NC}"
+    return 1
+fi
+}
+
+post_remove() {
+
+LAUNCHER="$PREFIX/bin/dnsx"
+DNSX_BIN="$HOME/go/bin/dnsx"
+GO_DIR="$HOME/go"
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+echo -e "${GREEN}Uninstalling dnsx...${NC}"
+
+[ -d "$GO_DIR" ] && chmod 751 -R "$GO_DIR"
+
+if [ -f "$LAUNCHER" ]; then
+    rm -f "$LAUNCHER" && echo -e "${GREEN}✓ Removed launcher${NC}" || \
+    echo -e "${RED}✗ Failed to remove launcher${NC}"
+fi
+
+if [ -f "$DNSX_BIN" ]; then
+    rm -f "$DNSX_BIN" && echo -e "${GREEN}✓ Removed binary${NC}" || \
+    echo -e "${RED}✗ Failed to remove binary (try: rm -f $DNSX_BIN)${NC}"
+fi
+
+echo -e "${GREEN}Uninstallation complete${NC}"
+}
+

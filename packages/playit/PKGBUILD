@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/playit)
+
+pkgname="playit"
+pkgver=0.17.1
+pkgrel=0
+pkgdesc='Global Proxy for Server Hosting Without Port Forwarding'
+arch=('any')
+url="https://playit.gg/"
+depends=('git' 'rust' 'build-essential' 'pkg-config')
+install="playit.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

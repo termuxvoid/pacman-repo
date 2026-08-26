@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cronitor-cli)
+
+pkgname="cronitor-cli"
+pkgver=33.4
+pkgrel=0
+pkgdesc='Command Line Interface for Cronitor Monitoring'
+arch=('any')
+url="https://github.com/cronitorio/cronitor-cli"
+depends=('curl' 'tar')
+install="cronitor-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

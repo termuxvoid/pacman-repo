@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/amass)
+
+pkgname="amass"
+pkgver=5.1.1
+pkgrel=0
+pkgdesc='In-depth Attack Surface Mapping and Asset Discovery'
+arch=('any')
+url="https://owasp.org/www-project-amass/"
+depends=('curl' 'tar')
+install="amass.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

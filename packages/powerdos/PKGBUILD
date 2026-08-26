@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/powerdos)
+
+pkgname="powerdos"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='A multi-threaded Denial of Service tool made in Python'
+arch=('any')
+depends=('python')
+options=('!strip')
+source=(powerdos-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/powerdos-data.tar.gz" -C "${pkgdir}"
+}

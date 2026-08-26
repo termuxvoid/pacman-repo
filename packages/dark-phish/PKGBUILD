@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/dark-phish)
+
+pkgname="dark-phish"
+pkgver=2.3.0
+pkgrel=0
+pkgdesc='Powerful Phishing Tool with 50+ templates'
+arch=('any')
+url="https://github.com/Cyber-Anonymous/Dark-Phish"
+depends=('git' 'php' 'python' 'python-tkinter' 'openssh' 'npm')
+install="dark-phish.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

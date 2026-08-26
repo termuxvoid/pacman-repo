@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/snoop)
+
+pkgname="snoop"
+pkgver=1.4.3
+pkgrel=0
+pkgdesc='Information gathering tool using online resources'
+arch=('any')
+url="https://github.com/snooppr/snoop"
+depends=('git' 'python' 'python-psutil')
+install="snoop.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

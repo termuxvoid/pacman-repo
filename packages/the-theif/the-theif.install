@@ -1,0 +1,14 @@
+#!/bin/bash
+
+post_install() {
+pip install rich
+mkdir -p ~/the-theif
+printf "\n\nthe-theif is installed...\nReport issus at telegram.me/nullxvoid"
+}
+
+post_remove() {
+rm -rf ~/the-theif/
+rm -rf ~/.config/the-theif.conf
+echo "unistalled finish.."
+}
+

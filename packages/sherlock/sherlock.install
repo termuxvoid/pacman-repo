@@ -1,0 +1,10 @@
+#!/bin/bash
+
+post_install() {
+pip install sherlock-project 
+}
+
+post_remove() {
+pip uninstall sherlock-project -y
+}
+

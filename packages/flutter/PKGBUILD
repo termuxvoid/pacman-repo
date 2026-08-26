@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/flutter)
+
+pkgname="flutter"
+pkgver=3.41.9
+pkgrel=0
+pkgdesc='Google'\''s UI toolkit for building native apps'
+arch=('any')
+url="https://flutter.dev"
+depends=('git' 'axel' 'which' '7zip' 'android-sdk')
+install="flutter.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

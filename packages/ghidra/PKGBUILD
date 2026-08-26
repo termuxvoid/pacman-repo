@@ -1,0 +1,22 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ghidra)
+
+pkgname="ghidra"
+pkgver=12.1.3
+pkgrel=0
+pkgdesc='NSA Reverse Engineering Framework'
+arch=('any')
+url="https://ghidra-sre.org/"
+depends=('openjdk-21' 'unzip' 'python' 'wget')
+install="ghidra.install"
+options=('!strip')
+source=(ghidra-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/ghidra-data.tar.gz" -C "${pkgdir}"
+}

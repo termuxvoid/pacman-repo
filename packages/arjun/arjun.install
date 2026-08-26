@@ -1,0 +1,21 @@
+#!/bin/bash
+
+post_install() {
+set -e
+pip install arjun==2.2.7
+
+echo "Arjun installed successfully."
+echo "Basic usage:"
+echo "  arjun -h"
+echo "  arjun -u https://example.com"
+echo "  arjun -u https://example.com -o results.json"
+echo "  arjun -u https://example.com --get --no-strict"
+
+return 0
+}
+
+post_remove() {
+pip uninstall -y arjun 2>/dev/null || true
+return 0
+}
+

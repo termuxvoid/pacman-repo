@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/termuxfetch)
+
+pkgname="termuxfetch"
+pkgver=2.0
+pkgrel=0
+pkgdesc='Neofetch‑like system information tool for Termux'
+arch=('any')
+depends=('bash')
+options=('!strip')
+source=(termuxfetch-data.tar.gz)
+sha256sums=('SKIP')
+
+build() {
+    return 0
+}
+
+package() {
+    tar -xzf "${srcdir}/termuxfetch-data.tar.gz" -C "${pkgdir}"
+}

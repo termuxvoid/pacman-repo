@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/superfile)
+
+pkgname="superfile"
+pkgver=1.6.0
+pkgrel=0
+pkgdesc='Terminal file manager with modern features'
+arch=('any')
+url="https://github.com/yorukot/superfile"
+depends=('git' 'golang')
+install="superfile.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

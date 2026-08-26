@@ -1,0 +1,40 @@
+#!/bin/bash
+
+pre_install() {
+# Clean previous installations (if any)
+rm -rf $PREFIX/share/hatcloud 2>/dev/null
+return 0
+}
+
+post_install() {
+
+INSTALL_DIR="$PREFIX/share/hatcloud"
+LAUNCHER="$PREFIX/bin/hatcloud"
+
+echo "[*] Cloning HatCloud..."
+git clone --depth 1 https://github.com/HatBashBR/HatCloud.git $INSTALL_DIR || {
+    echo "[!] Failed to clone repository"
+    return 1
+}
+
+echo "[*] Creating launcher..."
+cat > $LAUNCHER <<EOF
+cd $INSTALL_DIR && exec ruby hatcloud.rb "\$@"
+EOF
+
+chmod +x $LAUNCHER || {
+    echo "[!] Failed to make launcher executable"
+    return 1
+}
+
+echo "[+] HatCloud installed! Run 'hatcloud -h' for help."
+}
+
+post_remove() {
+
+echo "[*] Removing HatCloud..."
+rm -rf $PREFIX/share/hatcloud 2>/dev/null
+rm -f $PREFIX/bin/hatcloud 2>/dev/null
+echo "[+] HatCloud uninstalled."
+}
+
