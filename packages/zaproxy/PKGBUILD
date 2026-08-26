@@ -3,13 +3,13 @@
 
 pkgname="zaproxy"
 pkgver=2026.03.02
-pkgrel=0
+pkgrel=1
 pkgdesc='OWASP Zed Attack Proxy'
 arch=('any')
 url="https://www.zaproxy.org/"
 depends=('openjdk-21' 'python' 'tar')
 install="zaproxy.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(zaproxy-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/zaproxy-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/zaproxy-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

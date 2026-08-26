@@ -3,13 +3,13 @@
 
 pkgname="sploitscan"
 pkgver=0.14.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Exploit Intelligence Gathering and Analysis Tool'
 arch=('any')
 url="https://github.com/xaitax/SploitScan"
 depends=('python' 'python-pip' 'pip-basic-depends')
 install="sploitscan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

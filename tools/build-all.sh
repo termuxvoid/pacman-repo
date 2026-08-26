@@ -26,6 +26,15 @@ fi
 USER_CONF="$ROOT/.makepkg-user.conf"
 grep -v '^PACKAGER=' "$MAKEPKG_CONF" > "$USER_CONF"
 echo "PACKAGER=\"${PACKAGER}\"" >> "$USER_CONF"
+# Belt & braces: keep host defaults from injecting unwanted content
+# (!debug prevents phantom usr/src/debug/<name> dirs; termux-pacman
+#  RootDir="/" means anything landing outside data/data/com.termux/files
+#  would be extracted into Android's read-only /).
+if grep -q '^OPTIONS=' "$USER_CONF"; then
+    sed -i 's/^OPTIONS=.*/OPTIONS=(!strip !docs !libtool !staticlibs !emptydirs !zipman !purge !debug !lto)/' "$USER_CONF"
+else
+    echo "OPTIONS=('!strip' '!docs' '!libtool' '!staticlibs' '!emptydirs' '!zipman' '!purge' '!debug' '!lto')" >> "$USER_CONF"
+fi
 export MAKEPKG_CONF="$USER_CONF"
 
 build_one() {

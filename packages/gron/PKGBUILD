@@ -3,13 +3,13 @@
 
 pkgname="gron"
 pkgver=0.7.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Make JSON greppable'
 arch=('any')
 url="https://github.com/tomnomnom/gron"
 depends=('git' 'golang')
 install="gron.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

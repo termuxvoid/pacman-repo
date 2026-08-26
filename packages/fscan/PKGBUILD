@@ -3,13 +3,13 @@
 
 pkgname="fscan"
 pkgver=2.2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Intranet penetration test tool for scanning vulnerabilities'
 arch=('any')
 url="https://github.com/shadow1ng/fscan"
 depends=('git' 'golang')
 install="fscan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

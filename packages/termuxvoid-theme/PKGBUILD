@@ -3,13 +3,13 @@
 
 pkgname="termuxvoid-theme"
 pkgver=3.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Professional terminal customization for Termux'
 arch=('any')
 url="https://github.com/termuxvoid/TermuxVoid-Theme"
 depends=('fish' 'starship' 'git' 'jp2a' 'eza')
 install="termuxvoid-theme.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

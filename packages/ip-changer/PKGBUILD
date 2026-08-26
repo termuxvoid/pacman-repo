@@ -3,13 +3,13 @@
 
 pkgname="ip-changer"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='A powerful and easy-to-use tool to change your IP address automatically'
 arch=('any')
 url="https://github.com/Anon4You/Ip-Changer"
 depends=('git' 'curl' 'tor' 'privoxy' 'netcat-openbsd')
 install="ip-changer.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

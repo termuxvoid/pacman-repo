@@ -3,13 +3,13 @@
 
 pkgname="metabigor"
 pkgver=2.2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='OSINT tool without API keys'
 arch=('any')
 url="https://github.com/j3ssie/metabigor"
 depends=('curl' 'tar' 'git' 'golang')
 install="metabigor.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

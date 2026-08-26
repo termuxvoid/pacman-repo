@@ -3,12 +3,12 @@
 
 pkgname="publiceye"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Comprehensive OSINT Tool for Information Lookup'
 arch=('any')
 url="https://github.com/Anon4You/publiceye"
 depends=('curl' 'jq' 'gum')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(publiceye-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/publiceye-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/publiceye-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

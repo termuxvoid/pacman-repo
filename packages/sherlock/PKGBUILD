@@ -3,13 +3,13 @@
 
 pkgname="sherlock"
 pkgver=0.16.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Hunt down social media accounts by username'
 arch=('any')
 url="https://sherlockproject.xyz"
 depends=('python' 'python-pip' 'python-numpy' 'python-pandas')
 install="sherlock.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="openbullet2"
 pkgver=2.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Cross-platform automation suite powered by .NET Core'
 arch=('any')
 url="https://github.com/openbullet/OpenBullet2"
 depends=('curl' 'tar' 'dotnet-sdk-10.0' 'npm' 'libsqlite')
 install="openbullet2.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

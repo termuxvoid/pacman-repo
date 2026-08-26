@@ -131,14 +131,18 @@ port_one() {
     local srclines=() sumlines=() pkgbody='    return 0'
     if [ -d "$srcdir/data" ]; then
         # Pack PREFIX-RELATIVE (usr/..., etc/...) like termux-pacman packages:
-        # pacman root is $PREFIX on real bootstrap devices, so absolute
-        # data/data/com.termux/... paths inside archives cannot extract there.
+        # pacman RootDir is "/" on termux-pacman, so package payloads must
+        # carry the full data/data/com.termux/files prefix to land in $PREFIX.
         tar -czf "$outdir/${name}-data.tar.gz" -C "$srcdir/data/data/com.termux/files" .
         # No integrity pinning (mirrors the APT repo): hashes of manually
-        # packed data drift out of sync and break builds for no benefit.
+        # packed data drift out of sync and break builds for new ports.
         srclines=("source=(${name}-data.tar.gz)")
         sumlines=("sha256sums=('SKIP')")
-        pkgbody="    tar -xzf \"\${srcdir}/${name}-data.tar.gz\" -C \"\${pkgdir}\""
+        # Retarget PREFIX-RELATIVE payload -> ABSOLUTE device paths.
+        # (termux-pacman's makepkg does this via terdir="$pkgdir$TERMUX_BASE_DIR";
+        #  stock Arch makepkg used by this repo has no equivalent.)
+        pkgbody='    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/'"${name}"'-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"'
     fi
 
     # ---- depends ----
@@ -162,7 +166,7 @@ port_one() {
         [ -n "$homepage" ] && echo "url=\"${homepage}\""
         [ -n "$deparr" ] && echo "$deparr"
         [ -n "$installvar" ] && echo "$installvar"
-        echo "options=('!strip')"
+        echo "options=('!strip' '!debug' '!emptydirs')"
         if [ ${#srclines[@]} -gt 0 ]; then
             echo "${srclines[0]}"
             echo "${sumlines[0]}"

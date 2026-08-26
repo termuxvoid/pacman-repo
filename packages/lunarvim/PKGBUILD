@@ -3,13 +3,13 @@
 
 pkgname="lunarvim"
 pkgver=1.4.0
-pkgrel=0
+pkgrel=1
 pkgdesc='IDE layer for Neovim with sane defaults'
 arch=('any')
 url="https://www.lunarvim.org/"
 depends=('git' 'make' 'python' 'npm' 'rust' 'fzf' 'fd' 'ripgrep' 'neovim')
 install="lunarvim.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

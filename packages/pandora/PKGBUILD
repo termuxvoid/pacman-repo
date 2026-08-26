@@ -3,13 +3,13 @@
 
 pkgname="pandora"
 pkgver=3.2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='open source osint tool'
 arch=('any')
 url="https://github.com/MrSanZz/pandora"
 depends=('git' 'python' 'wget' 'curl')
 install="pandora.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

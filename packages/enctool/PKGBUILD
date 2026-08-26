@@ -3,12 +3,12 @@
 
 pkgname="enctool"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='encrypt or decrypt bash file and encrypt python in Marshal format'
 arch=('any')
 depends=('python' 'nodejs')
 install="enctool.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(enctool-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/enctool-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/enctool-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

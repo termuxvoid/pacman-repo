@@ -3,13 +3,13 @@
 
 pkgname="user-scanner"
 pkgver=1.5.0
-pkgrel=0
+pkgrel=1
 pkgdesc='2-in-1 Email & Username OSINT suite'
 arch=('any')
 url="https://github.com/kaifcodec/user-scanner"
 depends=('python' 'python-pip')
 install="user-scanner.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

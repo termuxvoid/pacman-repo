@@ -3,13 +3,13 @@
 
 pkgname="bettercap"
 pkgver=2.41.7
-pkgrel=0
+pkgrel=1
 pkgdesc='Swiss army knife for network attacks and monitoring'
 arch=('any')
 url="https://www.bettercap.org/"
 depends=('git' 'make' 'golang' 'libpcap' 'libnetfilter-queue' 'libusb')
 install="bettercap.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

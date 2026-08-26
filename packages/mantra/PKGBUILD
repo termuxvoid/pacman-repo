@@ -3,13 +3,13 @@
 
 pkgname="mantra"
 pkgver=3.1
-pkgrel=0
+pkgrel=1
 pkgdesc='API key hunter for JS files and web pages'
 arch=('any')
 url="https://github.com/brosck/mantra"
 depends=('golang' 'git')
 install="mantra.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

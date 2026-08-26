@@ -3,13 +3,13 @@
 
 pkgname="scanqli"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='SQL injection scanner and vulnerability detection tool'
 arch=('any')
 url="https://github.com/bambish/ScanQLi"
 depends=('git' 'python' 'python-lxml' 'python-numpy')
 install="scanqli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="kerbrute"
 pkgver=1.0.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Kerberos brute force and enumeration tool'
 arch=('any')
 url="https://github.com/ropnop/kerbrute"
 depends=('git' 'golang' 'make')
 install="kerbrute.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

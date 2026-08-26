@@ -3,12 +3,12 @@
 
 pkgname="instajack"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Instagram old account jacker'
 arch=('any')
 depends=('python' 'python-pip')
 install="instajack.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(instajack-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/instajack-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/instajack-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

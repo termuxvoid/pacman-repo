@@ -3,13 +3,13 @@
 
 pkgname="cdxsummary"
 pkgver=0.1.1
-pkgrel=0
+pkgrel=1
 pkgdesc='CDX summary and analysis tool'
 arch=('any')
 url="https://github.com/internetarchive/cdx-summary"
 depends=('python' 'python-pip')
 install="cdxsummary.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

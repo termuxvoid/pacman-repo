@@ -3,13 +3,13 @@
 
 pkgname="ffmpegp"
 pkgver=1.30
-pkgrel=0
+pkgrel=1
 pkgdesc='Python Utility for FFmpeg and FFprobe Operations'
 arch=('any')
 url="https://github.com/ankushbhagats/ffmpegp"
 depends=('python' 'python-pip' 'jq' 'ffmpeg')
 install="ffmpegp.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

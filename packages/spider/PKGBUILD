@@ -3,12 +3,12 @@
 
 pkgname="spider"
 pkgver=2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='telegram autoreport script'
 arch=('any')
 depends=('python' 'python-pip')
 install="spider.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(spider-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/spider-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/spider-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

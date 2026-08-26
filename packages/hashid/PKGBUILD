@@ -3,13 +3,13 @@
 
 pkgname="hashid"
 pkgver=3.1.4
-pkgrel=0
+pkgrel=1
 pkgdesc='Advanced hash identifier'
 arch=('any')
 url="https://github.com/psypanda/hashID"
 depends=('python' 'python-pip')
 install="hashid.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

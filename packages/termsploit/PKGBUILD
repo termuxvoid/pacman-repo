@@ -3,13 +3,13 @@
 
 pkgname="termsploit"
 pkgver=1.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Pentesting framework for Termux'
 arch=('any')
 url="https://github.com/Anon4You/termsploit-framework"
 depends=('git' 'curl' 'python' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf' 'binutils-is-llvm' 'rust' 'jq' 'python-pillow' 'nodejs' 'qpdf' 'libiconv' 'libxml2' 'libxslt' 'dnsutils' 'whois' 'php')
 install="termsploit.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(termsploit-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/termsploit-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/termsploit-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

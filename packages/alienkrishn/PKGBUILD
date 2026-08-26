@@ -3,12 +3,12 @@
 
 pkgname="alienkrishn"
 pkgver=2.0.7
-pkgrel=0
+pkgrel=1
 pkgdesc='TermuxVoid package manager and system helper'
 arch=('any')
 url="https://termuxvoid.github.io/"
 depends=('curl' 'termux-tools')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(alienkrishn-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/alienkrishn-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/alienkrishn-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

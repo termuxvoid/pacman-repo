@@ -3,13 +3,13 @@
 
 pkgname="cewl"
 pkgver=6.2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Custom Word List generator (CeWL) for password cracking'
 arch=('any')
 url="https://github.com/digininja/CeWL"
 depends=('git' 'ruby' 'pkg-config' 'openssl' 'libxml2' 'libxslt' 'ruby-nokogiri' 'exiftool')
 install="cewl.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

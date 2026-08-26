@@ -3,13 +3,13 @@
 
 pkgname="playit"
 pkgver=0.17.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Global Proxy for Server Hosting Without Port Forwarding'
 arch=('any')
 url="https://playit.gg/"
 depends=('git' 'rust' 'build-essential' 'pkg-config')
 install="playit.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

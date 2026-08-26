@@ -3,13 +3,13 @@
 
 pkgname="haxrat"
 pkgver=1.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Cloud-based remote Android management suite'
 arch=('any')
 url="https://github.com/Anon4You/haxRat"
 depends=('git' 'npm' 'apkeditor' 'apksigner')
 install="haxrat.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

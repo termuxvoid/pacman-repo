@@ -3,13 +3,13 @@
 
 pkgname="ghosttrack"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Advanced tracking and reconnaissance tool'
 arch=('any')
 url="https://github.com/HunxByts/GhostTrack"
 depends=('git' 'python' 'python-pip')
 install="ghosttrack.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="darksploit-framework"
 pkgver=2
-pkgrel=0
+pkgrel=1
 pkgdesc='Darksploit is a tool to run and create exploits'
 arch=('any')
 url="https://github.com/ykankaya/DarkSploit"
 depends=('git' 'python2' 'perl' 'wget' 'php')
 install="darksploit-framework.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(darksploit-framework-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/darksploit-framework-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/darksploit-framework-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

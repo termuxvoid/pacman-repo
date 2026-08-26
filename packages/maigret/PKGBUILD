@@ -3,13 +3,13 @@
 
 pkgname="maigret"
 pkgver=0.6.4
-pkgrel=0
+pkgrel=1
 pkgdesc='OSINT username search tool with 3000+ sites'
 arch=('any')
 url="https://maigret.readthedocs.io"
 depends=('python' 'python-lxml' 'python-pillow' 'python-psutil' 'rust' 'make' 'pkg-config' 'cmake')
 install="maigret.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

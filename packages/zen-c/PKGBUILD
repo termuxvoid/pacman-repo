@@ -3,13 +3,13 @@
 
 pkgname="zen-c"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='High-level Systems Programming Language compiling to C'
 arch=('any')
 url="https://github.com/z-libs/Zen-C"
 depends=('git' 'make' 'clang' 'llvm')
 install="zen-c.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

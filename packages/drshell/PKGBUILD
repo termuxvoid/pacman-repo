@@ -3,13 +3,13 @@
 
 pkgname="drshell"
 pkgver=1.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Reverse Shell Session Manager'
 arch=('any')
 url="https://github.com/DrDataYE/DrShell"
 depends=('git' 'python' 'openssh')
 install="drshell.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

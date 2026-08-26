@@ -3,13 +3,13 @@
 
 pkgname="setoolkit"
 pkgver=8.0.3+git20241021.0kali1
-pkgrel=0
+pkgrel=1
 pkgdesc='Social Engineering Toolkit'
 arch=('any')
 url="https://github.com/trustedsec/social-engineer-toolkit"
 depends=('proot' 'tar' 'axel' 'nethunter-cli')
 install="setoolkit.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

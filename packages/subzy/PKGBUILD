@@ -3,13 +3,13 @@
 
 pkgname="subzy"
 pkgver=1.2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Subdomain takeover vulnerability scanner'
 arch=('any')
 url="https://github.com/PentestPad/subzy"
 depends=('golang' 'git')
 install="subzy.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

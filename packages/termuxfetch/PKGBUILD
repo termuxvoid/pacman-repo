@@ -3,11 +3,11 @@
 
 pkgname="termuxfetch"
 pkgver=2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Neofetch‑like system information tool for Termux'
 arch=('any')
 depends=('bash')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(termuxfetch-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/termuxfetch-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/termuxfetch-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

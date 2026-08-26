@@ -3,13 +3,13 @@
 
 pkgname="nethunter-cli"
 pkgver=2025.4
-pkgrel=0
+pkgrel=1
 pkgdesc='Kali NetHunter Rootless Edition CLI'
 arch=('any')
 url="https://www.kali.org/"
 depends=('proot' 'tar' 'axel')
 install="nethunter-cli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

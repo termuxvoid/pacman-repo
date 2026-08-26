@@ -3,13 +3,13 @@
 
 pkgname="storm-breaker"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Social Engineering Toolkit'
 arch=('any')
 url="https://github.com/ultrasecurity/Storm-Breaker"
 depends=('git' 'python' 'php')
 install="storm-breaker.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

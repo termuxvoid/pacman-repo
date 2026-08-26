@@ -3,13 +3,13 @@
 
 pkgname="ghidra"
 pkgver=12.1.3
-pkgrel=0
+pkgrel=1
 pkgdesc='NSA Reverse Engineering Framework'
 arch=('any')
 url="https://ghidra-sre.org/"
 depends=('openjdk-21' 'unzip' 'python' 'wget')
 install="ghidra.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(ghidra-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/ghidra-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/ghidra-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

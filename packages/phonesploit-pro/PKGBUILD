@@ -3,13 +3,13 @@
 
 pkgname="phonesploit-pro"
 pkgver=1.61
-pkgrel=0
+pkgrel=1
 pkgdesc='Android hacking tool with ADB'
 arch=('any')
 url="https://github.com/AzeemIdrisi/PhoneSploit-Pro"
 depends=('git' 'python' 'android-tools' 'nmap' 'which' 'scrcpy')
 install="phonesploit-pro.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

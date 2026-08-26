@@ -3,13 +3,13 @@
 
 pkgname="redhawk"
 pkgver=2.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='All in one tool for Information Gathering, Vulnerability Scanning and Crawling'
 arch=('any')
 url="https://github.com/Tuhinshubhra/RED_HAWK"
 depends=('git' 'php')
 install="redhawk.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(redhawk-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/redhawk-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/redhawk-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

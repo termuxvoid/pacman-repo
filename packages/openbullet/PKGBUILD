@@ -3,13 +3,13 @@
 
 pkgname="openbullet"
 pkgver=1.0.2
-pkgrel=0
+pkgrel=1
 pkgdesc='A tool for running openbullet configurations'
 arch=('any')
 url="https://github.com/esfelurm/OpenBullet.git"
 depends=('git' 'python' 'python-pip')
 install="openbullet.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

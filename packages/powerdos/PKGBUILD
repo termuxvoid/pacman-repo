@@ -3,11 +3,11 @@
 
 pkgname="powerdos"
 pkgver=1.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='A multi-threaded Denial of Service tool made in Python'
 arch=('any')
 depends=('python')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(powerdos-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/powerdos-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/powerdos-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

@@ -3,13 +3,13 @@
 
 pkgname="hashcat"
 pkgver=7.1.2
-pkgrel=0
+pkgrel=1
 pkgdesc='World'\''s fastest and most advanced password recovery utility'
 arch=('any')
 url="https://hashcat.net/hashcat/"
 depends=('clang' 'make' 'binutils' 'curl' 'libc++' 'libiconv' 'opencl-vendor-driver' 'python')
 install="hashcat.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

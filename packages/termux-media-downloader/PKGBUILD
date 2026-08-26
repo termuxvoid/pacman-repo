@@ -3,13 +3,13 @@
 
 pkgname="termux-media-downloader"
 pkgver=2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='A high-performance media downloader for Termux'
 arch=('any')
 url="https://github.com/Anon4You/Termux-Media-Downloader"
 depends=('curl' 'python' 'python-pip' 'ffmpeg')
 install="termux-media-downloader.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="random-banner"
 pkgver=1
-pkgrel=0
+pkgrel=1
 pkgdesc='random banner and quote'
 arch=('any')
 url="https://github.com/Alienkrishn/random_banners"
 depends=('git')
 install="random-banner.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

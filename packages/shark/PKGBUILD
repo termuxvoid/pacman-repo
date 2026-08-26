@@ -3,13 +3,13 @@
 
 pkgname="shark"
 pkgver=2.5.1.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Future of Phishing with less delay'
 arch=('any')
 url="https://github.com/E343IO/shark"
 depends=('git' 'curl' 'wget' 'php' 'unzip' '7zip' 'ncurses-utils' 'proot' 'resolv-conf' 'sox' 'ffmpeg' 'dialog')
 install="shark.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

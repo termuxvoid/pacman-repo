@@ -3,13 +3,13 @@
 
 pkgname="thezoo"
 pkgver=0.60
-pkgrel=0
+pkgrel=1
 pkgdesc='A repository of live malware samples'
 arch=('any')
 url="https://github.com/ytisf/theZoo"
 depends=('git' 'python' 'python-pip')
 install="thezoo.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

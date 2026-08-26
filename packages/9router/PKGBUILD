@@ -3,13 +3,13 @@
 
 pkgname="9router"
 pkgver=0.5.55
-pkgrel=0
+pkgrel=1
 pkgdesc='Smart gateway between your tools and 60+ AI providers'
 arch=('any')
 url="https://9router.com/"
 depends=('npm')
 install="9router.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

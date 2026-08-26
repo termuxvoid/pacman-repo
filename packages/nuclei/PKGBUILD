@@ -3,13 +3,13 @@
 
 pkgname="nuclei"
 pkgver=3.11.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast and customizable vulnerability scanner'
 arch=('any')
 url="https://nuclei.projectdiscovery.io/"
 depends=('git' 'golang')
 install="nuclei.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,12 +3,12 @@
 
 pkgname="webinfo"
 pkgver=3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Website information gathering '
 arch=('any')
 url="https://github.com/Anon4You/webinfo/"
 depends=('curl' 'openssl-tool' 'dnsutils' 'nmap' 'whois' 'traceroute')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(webinfo-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/webinfo-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/webinfo-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

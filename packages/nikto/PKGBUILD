@@ -3,13 +3,13 @@
 
 pkgname="nikto"
 pkgver=2.6.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Comprehensive web server scanner'
 arch=('any')
 url="https://github.com/sullo/nikto"
 depends=('perl' 'git' 'openssl' 'openssl-tool' 'clang' 'make' 'cmake' 'curl' 'pkg-config')
 install="nikto.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

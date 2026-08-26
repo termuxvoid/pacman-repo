@@ -3,13 +3,13 @@
 
 pkgname="flutter"
 pkgver=3.41.9
-pkgrel=0
+pkgrel=1
 pkgdesc='Google'\''s UI toolkit for building native apps'
 arch=('any')
 url="https://flutter.dev"
 depends=('git' 'axel' 'which' '7zip' 'android-sdk')
 install="flutter.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

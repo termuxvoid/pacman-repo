@@ -3,13 +3,13 @@
 
 pkgname="android-sdk"
 pkgver=36.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Android SDK built using musl libc, supporting multiple architectures.'
 arch=('any')
 url="https://developer.android.com"
 depends=('openjdk-21' '7zip' 'axel')
 install="android-sdk.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

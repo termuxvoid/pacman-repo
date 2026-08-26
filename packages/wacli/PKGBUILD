@@ -3,13 +3,13 @@
 
 pkgname="wacli"
 pkgver=0.13.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Command-line tool for WhatsApp chat management'
 arch=('any')
 url="https://wacli.sh/"
 depends=('git' 'golang')
 install="wacli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

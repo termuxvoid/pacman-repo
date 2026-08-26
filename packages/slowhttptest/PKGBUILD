@@ -3,13 +3,13 @@
 
 pkgname="slowhttptest"
 pkgver=1.9.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Application Layer Denial of Service attack simulator'
 arch=('any')
 url="https://github.com/shekyan/slowhttptest"
 depends=('git' 'openssl' 'build-essential' 'findutils')
 install="slowhttptest.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

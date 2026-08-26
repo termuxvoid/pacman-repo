@@ -3,13 +3,13 @@
 
 pkgname="nosqli"
 pkgver=0.5.4
-pkgrel=0
+pkgrel=1
 pkgdesc='NoSQL injection detection and exploitation tool'
 arch=('any')
 url="https://github.com/Charlie-belmer/nosqli"
 depends=('git' 'golang')
 install="nosqli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

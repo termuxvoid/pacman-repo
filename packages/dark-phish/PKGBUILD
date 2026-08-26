@@ -3,13 +3,13 @@
 
 pkgname="dark-phish"
 pkgver=2.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Powerful Phishing Tool with 50+ templates'
 arch=('any')
 url="https://github.com/Cyber-Anonymous/Dark-Phish"
 depends=('git' 'php' 'python' 'python-tkinter' 'openssh' 'npm')
 install="dark-phish.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

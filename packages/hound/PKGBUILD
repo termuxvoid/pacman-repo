@@ -3,13 +3,13 @@
 
 pkgname="hound"
 pkgver=0.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Simple and light tool for information gathering and capture exact GPS coordinates'
 arch=('any')
 url="https://github.com/Anon4You/hound"
 depends=('git' 'php' 'nodejs')
 install="hound.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

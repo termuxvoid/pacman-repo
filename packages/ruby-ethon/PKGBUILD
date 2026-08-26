@@ -3,13 +3,13 @@
 
 pkgname="ruby-ethon"
 pkgver=0.18.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Ruby HTTP client library (libcurl wrapper)'
 arch=('any')
 url="https://github.com/typhoeus/ethon"
 depends=('ruby' 'libcurl' 'libffi' 'sed' 'findutils')
 install="ruby-ethon.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

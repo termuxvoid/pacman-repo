@@ -3,11 +3,11 @@
 
 pkgname="androdos"
 pkgver=1.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Denials of service(DoS) attack tool '
 arch=('any')
 depends=('python')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(androdos-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/androdos-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/androdos-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

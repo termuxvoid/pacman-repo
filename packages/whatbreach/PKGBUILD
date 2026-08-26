@@ -3,13 +3,13 @@
 
 pkgname="whatbreach"
 pkgver=0.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='OSINT tool to discover email breaches'
 arch=('any')
 url="https://github.com/Ekultek/WhatBreach"
 depends=('git' 'python' 'python-pip')
 install="whatbreach.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

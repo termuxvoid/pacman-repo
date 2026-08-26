@@ -3,12 +3,12 @@
 
 pkgname="cupp"
 pkgver=3.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Common User Passwords Profiler (CUPP)'
 arch=('any')
 url="https://github.com/Mebus/cupp"
 depends=('termux-exec' 'python')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(cupp-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/cupp-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/cupp-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

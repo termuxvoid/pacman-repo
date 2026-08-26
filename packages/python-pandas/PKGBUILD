@@ -3,13 +3,13 @@
 
 pkgname="python-pandas"
 pkgver=3.0.5
-pkgrel=0
+pkgrel=1
 pkgdesc='Powerhouse data analysis toolkit'
 arch=('any')
 url="https://pandas.pydata.org"
 depends=('python' 'python-pip' 'python-numpy' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf')
 install="python-pandas.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

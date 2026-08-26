@@ -3,11 +3,11 @@
 
 pkgname="local2onion"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Expose your localhost on the DARKWEB using termux'
 arch=('any')
 depends=('tor' 'php' 'curl' 'pv')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(local2onion-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/local2onion-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/local2onion-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

@@ -3,13 +3,13 @@
 
 pkgname="byakugan"
 pkgver=1.0.5
-pkgrel=0
+pkgrel=1
 pkgdesc='Advanced footprinting tool for Termux'
 arch=('any')
 url="https://github.com/Anon4You/Byakugan.git"
 depends=('curl' 'git' 'php' 'cloudflared' 'jq' 'figlet')
 install="byakugan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

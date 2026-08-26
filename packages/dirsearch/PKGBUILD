@@ -3,13 +3,13 @@
 
 pkgname="dirsearch"
 pkgver=0.5.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Web path scanner'
 arch=('any')
 url="https://github.com/maurosoria/dirsearch"
 depends=('python' 'python-pip' 'git' 'rust')
 install="dirsearch.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

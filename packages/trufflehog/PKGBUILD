@@ -3,13 +3,13 @@
 
 pkgname="trufflehog"
 pkgver=3.97.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Find leaked credentials and secrets in code and data'
 arch=('any')
 url="https://github.com/trufflesecurity/trufflehog"
 depends=('git' 'golang')
 install="trufflehog.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

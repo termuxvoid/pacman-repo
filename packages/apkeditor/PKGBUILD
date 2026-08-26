@@ -3,13 +3,13 @@
 
 pkgname="apkeditor"
 pkgver=1.4.9
-pkgrel=0
+pkgrel=1
 pkgdesc='Lightweight APK modification tool'
 arch=('any')
 url="https://github.com/REandroid/APKEditor"
 depends=('openjdk-21' 'wget')
 install="apkeditor.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

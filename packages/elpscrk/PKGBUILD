@@ -3,13 +3,13 @@
 
 pkgname="elpscrk"
 pkgver=2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Intelligent common user-password profiler'
 arch=('any')
 url="https://github.com/D4Vinci/elpscrk"
 depends=('git' 'python' 'python-psutil')
 install="elpscrk.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

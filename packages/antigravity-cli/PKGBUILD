@@ -3,13 +3,13 @@
 
 pkgname="antigravity-cli"
 pkgver=1.1.19
-pkgrel=0
+pkgrel=1
 pkgdesc='AI‑powered coding assistant (glibc wrapper for Termux)'
 arch=('any')
 url="https://antigravity.google/"
 depends=('curl' 'clang' 'python' 'glibc')
 install="antigravity-cli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

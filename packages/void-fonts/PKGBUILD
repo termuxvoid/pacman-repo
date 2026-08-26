@@ -3,13 +3,13 @@
 
 pkgname="void-fonts"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Custom font collection for Termux'
 arch=('any')
 url="https://github.com/termuxvoid/Void-Fonts.git"
 depends=('git' 'bash')
 install="void-fonts.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

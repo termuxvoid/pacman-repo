@@ -5,7 +5,7 @@
 
 pkgname="metasploit-framework"
 pkgver=6.4.142
-pkgrel=0
+pkgrel=1
 pkgdesc="Penetration testing framework"
 arch=('any')
 url="https://www.metasploit.com/"
@@ -17,7 +17,7 @@ depends=('binutils' 'python' 'autoconf' 'bison' 'clang' 'coreutils' 'curl'
          'unzip' 'zip' 'tar' 'termux-tools' 'termux-elf-cleaner'
          'pkg-config' 'ruby' 'ruby-nokogiri' 'apktool' 'apksigner')
 install="metasploit-framework.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

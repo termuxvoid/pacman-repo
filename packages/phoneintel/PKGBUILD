@@ -3,13 +3,13 @@
 
 pkgname="phoneintel"
 pkgver=1.1.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Phone number intelligence and validation tool'
 arch=('any')
 url="https://phoneintel.github.io"
 depends=('python' 'python-pip')
 install="phoneintel.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="phishmailer"
 pkgver=2.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Professional Phishing Email Generation Tool'
 arch=('any')
 url="https://github.com/BiZken/PhishMailer"
 depends=('git' 'python')
 install="phishmailer.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

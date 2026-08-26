@@ -3,13 +3,13 @@
 
 pkgname="pywhat"
 pkgver=5.1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Identify anything - text analysis tool'
 arch=('any')
 url="https://github.com/bee-san/pyWhat"
 depends=('python' 'python-pip')
 install="pywhat.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

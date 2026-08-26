@@ -3,13 +3,13 @@
 
 pkgname="apkleaks"
 pkgver=2.6.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Scanning APK file for URIs, endpoints & secrets.'
 arch=('any')
 url="https://github.com/dwisiswant0/apkleaks"
 depends=('python' 'jadx')
 install="apkleaks.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

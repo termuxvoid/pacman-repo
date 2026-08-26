@@ -3,10 +3,10 @@
 
 pkgname="blackhat"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='blackhat hacking sources'
 arch=('any')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(blackhat-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -15,5 +15,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/blackhat-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/blackhat-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

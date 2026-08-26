@@ -3,13 +3,13 @@
 
 pkgname="apkpatcher"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Advanced APK Modification Tool '
 arch=('any')
 url="https://github.com/Anon4You/APKpatcher"
 depends=('git' 'libxml2' 'openjdk-17' 'apkeditor' 'apksigner')
 install="apkpatcher.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

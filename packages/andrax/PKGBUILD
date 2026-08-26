@@ -3,13 +3,13 @@
 
 pkgname="andrax"
 pkgver=5
-pkgrel=2
+pkgrel=1
 pkgdesc='Android Penetration Testing OS (rootless)'
 arch=('any')
 url="https://gitlab.com/crk-mythical/andrax-hackers-platform-v5-2"
 depends=('proot' 'tar' 'axel')
 install="andrax.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

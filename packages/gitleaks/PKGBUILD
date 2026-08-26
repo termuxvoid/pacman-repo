@@ -3,13 +3,13 @@
 
 pkgname="gitleaks"
 pkgver=8.30.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Detect hard-coded secrets and sensitive data in Git repositories'
 arch=('any')
 url="https://github.com/gitleaks/gitleaks"
 depends=('git' 'golang')
 install="gitleaks.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

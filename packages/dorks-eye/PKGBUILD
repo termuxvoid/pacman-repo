@@ -3,13 +3,13 @@
 
 pkgname="dorks-eye"
 pkgver=2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Google Hacking Dork Scraping and Searching Tool'
 arch=('any')
 url="https://github.com/BullsEye0/dorks-eye"
 depends=('git' 'python' 'python-pip' 'pip-basic-depends' 'python-cryptography' 'libffi' 'libiconv')
 install="dorks-eye.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

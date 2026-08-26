@@ -3,14 +3,14 @@
 
 pkgname="asciibanner"
 pkgver=2.1.0
-pkgrel=0
+pkgrel=1
 pkgdesc="A feature-rich FIGlet-compatible ASCII art generator with color support and font previews"
 arch=('any')
 url="https://github.com/Anon4You/asciibanner"
 license=('MIT')
 depends=('python' 'libcaca')
 install="asciibanner.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=("asciibanner-data.tar.gz")
 sha256sums=('SKIP')
 
@@ -22,5 +22,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/asciibanner-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/asciibanner-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

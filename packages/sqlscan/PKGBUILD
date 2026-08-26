@@ -3,13 +3,13 @@
 
 pkgname="sqlscan"
 pkgver=1
-pkgrel=0
+pkgrel=1
 pkgdesc='A small and an efficient tool to find SQL injection vulnerability in a websites.'
 arch=('any')
 url="https://github.com/machine1337/sqlscan"
 depends=('git' 'curl')
 install="sqlscan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

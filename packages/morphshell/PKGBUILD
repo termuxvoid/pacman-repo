@@ -3,13 +3,13 @@
 
 pkgname="morphshell"
 pkgver=2.0.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Sleek Termux Shell Environment with Dynamic Themes'
 arch=('any')
 url="https://github.com/termuxvoid/MorphShell"
 depends=('git' 'python' 'tte' 'eza' 'starship' 'fish' 'bat')
 install="morphshell.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

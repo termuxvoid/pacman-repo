@@ -3,12 +3,12 @@
 
 pkgname="cctvip"
 pkgver=1.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='A collection of open cctv camera ip'
 arch=('any')
 depends=('python' 'python-pip' 'figlet')
 install="cctvip.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(cctvip-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/cctvip-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/cctvip-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

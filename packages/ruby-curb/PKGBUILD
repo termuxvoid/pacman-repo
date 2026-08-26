@@ -3,13 +3,13 @@
 
 pkgname="ruby-curb"
 pkgver=1.3.5
-pkgrel=0
+pkgrel=1
 pkgdesc='Ruby bindings for libcurl'
 arch=('any')
 url="https://github.com/taf2/curb"
 depends=('ruby' 'curl' 'libcurl' 'make' 'clang' 'build-essential')
 install="ruby-curb.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

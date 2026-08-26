@@ -3,13 +3,13 @@
 
 pkgname="dnsx"
 pkgver=1.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast DNS toolkit for reconnaissance'
 arch=('any')
 url="https://github.com/projectdiscovery/dnsx"
 depends=('golang' 'git')
 install="dnsx.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

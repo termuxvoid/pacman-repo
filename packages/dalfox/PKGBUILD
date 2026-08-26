@@ -3,13 +3,13 @@
 
 pkgname="dalfox"
 pkgver=3.2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast parameter analysis and XSS scanning tool (v3 in Rust)'
 arch=('any')
 url="https://github.com/hahwul/dalfox"
 depends=('rust' 'clang' 'pkg-config' 'openssl' 'openssl-tool')
 install="dalfox.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

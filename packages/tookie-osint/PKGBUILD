@@ -3,13 +3,13 @@
 
 pkgname="tookie-osint"
 pkgver=4.1fix
-pkgrel=0
+pkgrel=1
 pkgdesc='OSINT tool for username search across platforms'
 arch=('any')
 url="https://github.com/Alfredredbird/tookie-osint"
 depends=('git' 'python' 'python-pip' 'termux-tools')
 install="tookie-osint.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="gallery-eye"
 pkgver=0.1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Silent gallery exfiltration via Telegram bot'
 arch=('any')
 url="https://github.com/Anon4You/gallery-eye"
 depends=('git' 'ruby' 'apkeditor' 'apksigner')
 install="gallery-eye.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

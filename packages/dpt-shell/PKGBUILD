@@ -3,13 +3,13 @@
 
 pkgname="dpt-shell"
 pkgver=2.20.0
-pkgrel=0
+pkgrel=1
 pkgdesc='DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime.'
 arch=('any')
 url="https://github.com/luoyesiqiu/dpt-shell"
 depends=('curl' 'openjdk-21')
 install="dpt-shell.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

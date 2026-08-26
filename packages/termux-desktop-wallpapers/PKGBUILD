@@ -3,12 +3,12 @@
 
 pkgname="termux-desktop-wallpapers"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Wallpapers for termux-desktop'
 arch=('any')
 url="https://alienkrishn.infy.uk"
 depends=('termux-tools' 'termux-desktop')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(termux-desktop-wallpapers-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/termux-desktop-wallpapers-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/termux-desktop-wallpapers-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

@@ -3,13 +3,13 @@
 
 pkgname="snatcher"
 pkgver=1.0.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Snatcher - Capture Images from Victim'\''s Camera'
 arch=('any')
 url="https://github.com/Anon4You/snatcher"
 depends=('git' 'php' 'curl' 'nodejs' 'python' 'python-pip' 'openssh' 'cloudflared')
 install="snatcher.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

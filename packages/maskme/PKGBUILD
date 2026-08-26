@@ -3,10 +3,10 @@
 
 pkgname="maskme"
 pkgver=1.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Give a Mask to Phishing URL like a PRO'
 arch=('any')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(maskme-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -15,5 +15,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/maskme-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/maskme-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

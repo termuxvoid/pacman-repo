@@ -3,13 +3,13 @@
 
 pkgname="parrot-cli"
 pkgver=6.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Parrot Security OS 6.3 (Lorikeet) for Termux'
 arch=('any')
 url="https://www.parrotsec.org/"
 depends=('proot' 'tar' 'axel')
 install="parrot-cli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

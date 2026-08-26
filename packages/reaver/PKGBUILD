@@ -3,13 +3,13 @@
 
 pkgname="reaver"
 pkgver=1.6.6
-pkgrel=0
+pkgrel=1
 pkgdesc='Brute force WPS PINs and recover WPA/WPA2 passphrases'
 arch=('any')
 url="https://github.com/t6x/reaver-wps-fork-t6x"
 depends=('git' 'make' 'libpcap' 'libnl')
 install="reaver.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,12 +3,12 @@
 
 pkgname="mkwebapp"
 pkgver=1.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Tool to create Termux .deb packages for websites'
 arch=('any')
 url="https://github.com/Anon4You/mkwebapp"
 depends=('curl' 'file' 'termux-tools')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(mkwebapp-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/mkwebapp-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/mkwebapp-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

@@ -3,13 +3,13 @@
 
 pkgname="arjun"
 pkgver=2.2.7
-pkgrel=0
+pkgrel=1
 pkgdesc='HTTP parameter discovery suite'
 arch=('any')
 url="https://github.com/s0md3v/Arjun"
 depends=('python' 'python-pip')
 install="arjun.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

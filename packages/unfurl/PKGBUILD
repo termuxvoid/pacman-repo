@@ -3,13 +3,13 @@
 
 pkgname="unfurl"
 pkgver=0.4.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Pull out bits of URLs provided on stdin'
 arch=('any')
 url="https://github.com/tomnomnom/unfurl"
 depends=('git' 'golang')
 install="unfurl.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

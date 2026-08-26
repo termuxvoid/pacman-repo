@@ -3,13 +3,13 @@
 
 pkgname="masscan"
 pkgver=1.3.2
-pkgrel=0
+pkgrel=1
 pkgdesc='High-speed TCP port scanner'
 arch=('any')
 url="https://github.com/robertdavidgraham/masscan"
 depends=('git' 'make' 'clang' 'libpcap' 'sed')
 install="masscan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

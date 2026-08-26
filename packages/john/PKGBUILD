@@ -3,13 +3,13 @@
 
 pkgname="john"
 pkgver=1.9.0
-pkgrel=0
+pkgrel=1
 pkgdesc='John the Ripper password cracker'
 arch=('any')
 url="https://www.openwall.com/john/"
 depends=('git' 'make' 'clang' 'openssl' 'zlib')
 install="john.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

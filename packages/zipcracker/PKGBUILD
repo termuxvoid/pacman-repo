@@ -3,12 +3,12 @@
 
 pkgname="zipcracker"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='A powerful yet simple ZIP archive password recovery tool designed for Termux'
 arch=('any')
 url="https://github.com/Anon4You/ZipCracker"
 depends=('zip' 'unzip')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(zipcracker-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/zipcracker-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/zipcracker-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

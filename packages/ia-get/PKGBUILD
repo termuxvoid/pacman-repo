@@ -3,13 +3,13 @@
 
 pkgname="ia-get"
 pkgver=0.1.3
-pkgrel=0
+pkgrel=1
 pkgdesc='Internet Archive Downloader Tool'
 arch=('any')
 url="https://github.com/wimpysworld/ia-get"
 depends=('git' 'rust')
 install="ia-get.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

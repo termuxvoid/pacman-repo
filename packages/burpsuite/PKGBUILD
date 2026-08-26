@@ -3,13 +3,13 @@
 
 pkgname="burpsuite"
 pkgver=2026.2.1
-pkgrel=0
+pkgrel=1
 pkgdesc='An integrated platform for performing security testing of web applications (community edition)'
 arch=('any')
 url="https://portswigger.net/burp/"
 depends=('curl' 'openjdk-21' 'openjdk-21-x')
 install="burpsuite.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(burpsuite-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/burpsuite-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/burpsuite-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

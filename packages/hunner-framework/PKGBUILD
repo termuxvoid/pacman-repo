@@ -3,13 +3,13 @@
 
 pkgname="hunner-framework"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Open Source Penetration Testing Framework'
 arch=('any')
 url="https://github.com/b3-v3r/Hunner"
 depends=('git' 'python' 'python-pip')
 install="hunner-framework.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

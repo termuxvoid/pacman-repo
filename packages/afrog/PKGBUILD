@@ -3,13 +3,13 @@
 
 pkgname="afrog"
 pkgver=3.5.6
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast vulnerability scanner with custom PoCs (afrog)'
 arch=('any')
 url="https://github.com/zan8in/afrog"
 depends=('git' 'golang')
 install="afrog.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

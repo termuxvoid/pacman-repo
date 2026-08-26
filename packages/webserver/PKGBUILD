@@ -3,11 +3,11 @@
 
 pkgname="webserver"
 pkgver=1.2
-pkgrel=0
+pkgrel=1
 pkgdesc='a simple webserver for termux'
 arch=('any')
 depends=('php' 'figlet' 'openssh')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(webserver-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/webserver-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/webserver-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

@@ -3,12 +3,12 @@
 
 pkgname="pdfcracker"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='A powerful yet simple PDF password recovery tool designed for security professionals and ethical hackers.'
 arch=('any')
 url="https://github.com/Anon4You/PDFCracker"
 depends=('qpdf')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(pdfcracker-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -17,5 +17,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/pdfcracker-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/pdfcracker-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

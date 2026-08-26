@@ -3,13 +3,13 @@
 
 pkgname="nvchad"
 pkgver=3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Neovim Configuration Framework'
 arch=('any')
 url="https://github.com/NvChad/NvChad"
 depends=('git' 'neovim' 'ripgrep' 'lua-language-server' 'clang' 'npm')
 install="nvchad.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

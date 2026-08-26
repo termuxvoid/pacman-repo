@@ -3,13 +3,13 @@
 
 pkgname="wpscan"
 pkgver=4.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='WordPress vulnerability scanner'
 arch=('any')
 url="https://wpscan.com/"
 depends=('ruby' 'ruby-nokogiri' 'ruby-ethon' 'libcurl' 'libffi' 'sed' 'findutils')
 install="wpscan.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

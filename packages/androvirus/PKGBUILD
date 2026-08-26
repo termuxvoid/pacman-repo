@@ -3,13 +3,13 @@
 
 pkgname="androvirus"
 pkgver=3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Android penetration testing framework (USE RESPONSIBLY)'
 arch=('any')
 url="https://github.com/Anon4You/AndroVirus.git"
 depends=('curl' 'git' 'php' 'cloudflared')
 install="androvirus.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

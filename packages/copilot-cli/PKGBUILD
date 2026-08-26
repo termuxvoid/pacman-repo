@@ -3,13 +3,13 @@
 
 pkgname="copilot-cli"
 pkgver=1.0.80
-pkgrel=0
+pkgrel=1
 pkgdesc='GitHub Copilot CLI (glibc version)'
 arch=('any')
 url="https://github.com/github/copilot-cli"
 depends=('git' 'gh' 'glibc' 'clang' 'python' 'curl' 'tar')
 install="copilot-cli.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="evilginx"
 pkgver=3.3.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Advanced phishing framework with 2FA bypass'
 arch=('any')
 url="https://github.com/kgretzky/evilginx2"
 depends=('git' 'golang' 'make')
 install="evilginx.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

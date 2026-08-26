@@ -3,13 +3,13 @@
 
 pkgname="subcat"
 pkgver=1.6.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Lightning-fast Passive Subdomain Discovery Tool'
 arch=('any')
 url="https://github.com/duty1g/subcat"
 depends=('python' 'python-pip')
 install="subcat.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="rang3r"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Multi-threaded IP + port scanner'
 arch=('any')
 url="https://github.com/floriankunushevci/rang3r"
 depends=('git' 'python2')
 install="rang3r.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

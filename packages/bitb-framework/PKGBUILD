@@ -3,13 +3,13 @@
 
 pkgname="bitb-framework"
 pkgver=1.2
-pkgrel=0
+pkgrel=1
 pkgdesc='Phishing technique that simulates a browser window within the browser to spoof a legitimate domain.'
 arch=('any')
 url="https://github.com/surya-dev-singh/BITB-framwork"
 depends=('php' 'git' 'python' 'curl' 'wget')
 install="bitb-framework.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(bitb-framework-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -18,5 +18,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/bitb-framework-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/bitb-framework-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

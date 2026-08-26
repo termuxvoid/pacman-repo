@@ -3,14 +3,14 @@
 
 pkgname="brutespray"
 pkgver=2.6.3
-pkgrel=0
+pkgrel=1
 pkgdesc="Brute-force attacks from Nmap output"
 arch=('any')
 url="https://github.com/x90skysn3k/brutespray"
 license=('MIT')
 depends=('golang' 'git')
 install="brutespray.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="superfile"
 pkgver=1.6.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Terminal file manager with modern features'
 arch=('any')
 url="https://github.com/yorukot/superfile"
 depends=('git' 'golang')
 install="superfile.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="laudacode"
 pkgver=0.4.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast, lightweight AI coding agent for your terminal'
 arch=('any')
 url="https://github.com/Anon4You/Laudacode"
 depends=('curl' 'rust' 'tar')
 install="laudacode.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

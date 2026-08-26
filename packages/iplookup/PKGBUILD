@@ -3,11 +3,11 @@
 
 pkgname="iplookup"
 pkgver=1.0.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Ip address info gethering script..'
 arch=('any')
 depends=('termux-exec' 'termux-tools' 'figlet' 'toilet' 'pv')
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 source=(iplookup-data.tar.gz)
 sha256sums=('SKIP')
 
@@ -16,5 +16,6 @@ build() {
 }
 
 package() {
-    tar -xzf "${srcdir}/iplookup-data.tar.gz" -C "${pkgdir}"
+    mkdir -p "${pkgdir}/data/data/com.termux/files"
+    tar -xzf "${srcdir}/iplookup-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
 }

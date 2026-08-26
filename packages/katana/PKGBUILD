@@ -3,13 +3,13 @@
 
 pkgname="katana"
 pkgver=1.7.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Fast, passive and active web crawler'
 arch=('any')
 url="https://github.com/projectdiscovery/katana"
 depends=('git' 'golang')
 install="katana.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

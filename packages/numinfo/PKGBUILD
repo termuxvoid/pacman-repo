@@ -3,13 +3,13 @@
 
 pkgname="numinfo"
 pkgver=1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Phone number intelligence and lookup tool'
 arch=('any')
 url="https://github.com/Anon4You/NumInfo"
 depends=('git' 'python')
 install="numinfo.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

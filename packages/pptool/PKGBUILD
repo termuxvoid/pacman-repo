@@ -3,13 +3,13 @@
 
 pkgname="pptool"
 pkgver=2.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Python tool to find the loading addresses of Dart objects in libapp.so through their pool pointer offset.'
 arch=('any')
 url="https://github.com/Kirlif/PPTool"
 depends=('curl' 'python' 'python-pip')
 install="pptool.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

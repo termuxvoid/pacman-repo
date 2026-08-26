@@ -3,13 +3,13 @@
 
 pkgname="tte"
 pkgver=0.15.0
-pkgrel=0
+pkgrel=1
 pkgdesc='Terminal Text Effects and Animation Library'
 arch=('any')
 url="https://pypi.org/project/terminaltexteffects/"
 depends=('python' 'python-pip')
 install="tte.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

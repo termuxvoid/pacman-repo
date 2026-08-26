@@ -3,13 +3,13 @@
 
 pkgname="jwt-hack"
 pkgver=2.6.0
-pkgrel=0
+pkgrel=1
 pkgdesc='JWT security testing and exploitation tool'
 arch=('any')
 url="https://jwt-hack.hahwul.com/"
 depends=('make' 'openssl' 'rust' 'perl' 'pkg-config')
 install="jwt-hack.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0

@@ -3,13 +3,13 @@
 
 pkgname="theharvester"
 pkgver=4.10.1
-pkgrel=0
+pkgrel=1
 pkgdesc='E-mail, Subdomain, and Name Harvester'
 arch=('any')
 url="https://github.com/laramies/theHarvester"
 depends=('proot' 'tar' 'axel' 'nethunter-cli')
 install="theharvester.install"
-options=('!strip')
+options=('!strip' '!debug' '!emptydirs')
 
 build() {
     return 0
