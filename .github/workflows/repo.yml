@@ -1,0 +1,76 @@
+name: Build and Deploy Pacman Repo to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: archlinux:base-devel
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install tooling
+        run: |
+          pacman -Syu --noconfirm git gnupg xz
+
+      - name: Create unprivileged builder
+        run: |
+          useradd -m builder
+          chown -R builder:builder "$GITHUB_WORKSPACE"
+
+      - name: Build all packages
+        run: |
+          su builder -c '
+            set -e
+            cd "$GITHUB_WORKSPACE"
+            for d in packages/*/; do
+              [ -f "${d}PKGBUILD" ] || continue
+              echo "Building ${d}"
+              (cd "$d" && makepkg -f --nodeps)
+            done
+          '
+
+      - name: Import GPG key
+        id: gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.PRIVATE_GPG_KEY }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE }}
+
+      - name: Assemble and sign repository
+        env:
+          KEYID: ${{ steps.gpg.outputs.fingerprint }}
+        run: |
+          SIGN=1 KEYID="$KEYID" tools/mkrepo.sh dist/any
+          gpg --armor --export "$KEYID" > dist/any/termuxvoid.gpg.asc
+
+      - name: Verify signatures
+        run: |
+          cd dist/any
+          gpg --verify termuxvoid.db.sig termuxvoid.db
+          gpg --verify sqlmap-*.pkg.tar.xz.sig sqlmap-*.pkg.tar.xz
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./dist
+          keep_files: false
+          user_name: Anon4You
+          user_email: katilchora666@gmail.com

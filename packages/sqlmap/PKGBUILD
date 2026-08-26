@@ -1,0 +1,23 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/sqlmap)
+
+pkgname="sqlmap"
+pkgver=1.10.8
+pkgrel=1
+pkgdesc="Automatic SQL Injection and Database Takeover Tool"
+arch=('any')
+url="https://sqlmap.org/"
+license=('GPL2')
+depends=('python' 'python-pip')
+install="sqlmap.install"
+options=('!strip')
+
+# The tool itself is fetched on-device by post_install() via pip,
+# mirroring the apt package behaviour (installed on device).
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

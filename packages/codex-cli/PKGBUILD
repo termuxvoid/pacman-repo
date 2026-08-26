@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/codex-cli)
+
+pkgname="codex-cli"
+pkgver=0.148.1
+pkgrel=1
+pkgdesc="Codex CLI for Termux (npm version)"
+arch=('any')
+url="https://github.com/DioNanos/codex-termux"
+depends=('npm')
+install="codex-cli.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

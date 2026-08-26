@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/brutespray)
+
+pkgname="brutespray"
+pkgver=2.6.3
+pkgrel=1
+pkgdesc="Brute-force attacks from Nmap output"
+arch=('any')
+url="https://github.com/x90skysn3k/brutespray"
+license=('MIT')
+depends=('golang' 'git')
+install="brutespray.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

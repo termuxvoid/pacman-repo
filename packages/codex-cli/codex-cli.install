@@ -1,0 +1,13 @@
+#!/bin/bash
+
+post_install() {
+    set -e
+
+    npm install -g "@mmmbuto/codex-cli-termux@${1}"
+    echo "codex-cli installed. Run 'codex' to start."
+}
+
+post_remove() {
+    npm uninstall -g @mmmbuto/codex-cli-termux 2>/dev/null || true
+    echo "codex-cli removed."
+}

@@ -1,0 +1,28 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/metasploit-framework)
+# Note: apt version was 6.4.142-dev; pacman forbids '-' in pkgver,
+# so the -dev suffix is dropped and tracked via pkgrel.
+
+pkgname="metasploit-framework"
+pkgver=6.4.142
+pkgrel=1
+pkgdesc="Penetration testing framework"
+arch=('any')
+url="https://www.metasploit.com/"
+license=('BSD')
+depends=('binutils' 'python' 'autoconf' 'bison' 'clang' 'coreutils' 'curl'
+         'findutils' 'apr' 'apr-util' 'postgresql' 'openssl' 'readline'
+         'libffi' 'libgmp' 'libpcap' 'libsqlite' 'libgrpc' 'libtool'
+         'libxml2' 'libxslt' 'ncurses' 'make' 'ncurses-utils' 'git' 'wget'
+         'unzip' 'zip' 'tar' 'termux-tools' 'termux-elf-cleaner'
+         'pkg-config' 'ruby' 'ruby-nokogiri' 'apktool' 'apksigner')
+install="metasploit-framework.install"
+options=('!strip')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

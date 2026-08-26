@@ -1,0 +1,7 @@
+packages/*/src/
+packages/*/pkg/
+packages/*/*.pkg.tar.*
+packages/*/*.sig
+dist/
+*.log
+packages/asciibanner/data/

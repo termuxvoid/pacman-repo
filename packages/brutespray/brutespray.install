@@ -1,0 +1,17 @@
+#!/bin/bash
+
+post_install() {
+    set -e
+
+    go install -trimpath -ldflags "-w -s" \
+        "github.com/x90skysn3k/brutespray/v2@v${1}"
+
+    if [ ! -f "$PREFIX/bin/brutespray" ] && [ -f "$HOME/go/bin/brutespray" ]; then
+        ln -sf "$HOME/go/bin/brutespray" "$PREFIX/bin/brutespray"
+    fi
+    echo "brutespray ${1} installed successfully."
+}
+
+post_remove() {
+    rm -f "$HOME/go/bin/brutespray" "$PREFIX/bin/brutespray"
+}
