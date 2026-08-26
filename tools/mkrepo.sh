@@ -13,6 +13,7 @@ DIST="${1:-${ROOT}/dist}"
 mkdir -p "$DIST"
 DIST="$(cd "$DIST" && pwd)"
 OUT="$DIST/any"
+mkdir -p "$OUT"
 
 echo "==> Collecting built packages"
 find "${ROOT}/packages" -name '*.pkg.tar.xz' ! -name '*.sig' \
