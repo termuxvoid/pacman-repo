@@ -12,6 +12,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 OUT="${1:-${ROOT}/dist/any}"
 
 mkdir -p "$OUT"
+OUT="$(cd "$OUT" && pwd)"
 
 echo "==> Collecting packages"
 find "${ROOT}/packages" -name '*.pkg.tar.*' ! -name '*.sig' -exec cp -f {} "$OUT/" \;
