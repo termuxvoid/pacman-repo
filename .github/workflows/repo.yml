@@ -54,13 +54,13 @@ jobs:
         env:
           KEYID: ${{ steps.gpg.outputs.fingerprint }}
         run: |
-          SIGN=1 KEYID="$KEYID" tools/mkrepo.sh dist/any
-          gpg --armor --export "$KEYID" > dist/any/termuxvoid.gpg.asc
+          SIGN=1 KEYID="$KEYID" tools/mkrepo.sh dist
 
       - name: Verify signatures
         run: |
           gpg --verify dist/any/termuxvoid.db.sig dist/any/termuxvoid.db
           gpg --verify dist/any/sqlmap-*.pkg.tar.xz.sig dist/any/sqlmap-*.pkg.tar.xz
+          test -s dist/termuxvoid.gpg.asc
           echo "packages: $(ls dist/any/*.pkg.tar.xz | wc -l)"
 
       - name: Deploy to gh-pages

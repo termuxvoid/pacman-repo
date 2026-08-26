@@ -10,9 +10,9 @@ set -eu
 REPO_NAME="termuxvoid"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 DIST="${1:-${ROOT}/dist}"
+mkdir -p "$DIST"
+DIST="$(cd "$DIST" && pwd)"
 OUT="$DIST/any"
-
-mkdir -p "$OUT"
 
 echo "==> Collecting built packages"
 find "${ROOT}/packages" -name '*.pkg.tar.xz' ! -name '*.sig' \

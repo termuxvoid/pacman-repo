@@ -140,14 +140,9 @@ graph TD
 
 ## 🐧 APT Users
 
-We also ship the very same tools through our classic **APT repository** for standard (dpkg-based) Termux. If you are not on a pacman setup, use the APT repo instead:
+The very same tools are also shipped as classic **APT packages** for standard (dpkg-based) Termux. If you are not on a pacman setup, use the APT repository instead:
 
-| Repo | Install |
-| :--- | :--- |
-| **APT (default Termux)** | `curl -sL https://github.com/termuxvoid/repo/raw/main/install.sh \| bash` |
-| **Pacman (this repo)** | `curl -sL https://github.com/termuxvoid/pacman-repo/raw/main/install-repo.sh \| bash` |
-
-APT repository source: [github.com/termuxvoid/repo](https://github.com/termuxvoid/repo)
+**APT repository:** [github.com/termuxvoid/repo](https://github.com/termuxvoid/repo)
 
 ## Legal & Disclaimer
 
@@ -196,7 +191,13 @@ Open an issue on GitHub with the tool name and error output. We aim to fix repor
 <details>
 <summary><b>How do I uninstall the repository?</b></summary>
 <br>
-Remove the <code>[termuxvoid]</code> section from <code>$PREFIX/etc/pacman.conf</code>, optionally remove the key with <code>pacman-key --delete termuxvoid</code>-style cleanup, then run <code>pacman -Syu</code>. Installed packages remain until you remove them individually.
+One command:
+
+```bash
+curl -sL https://github.com/termuxvoid/pacman-repo/raw/main/uninstall-repo.sh | bash
+```
+
+This removes the repository from `pacman.conf` and deletes our key from your pacman keyring. Packages you already installed remain until you remove them individually with `pacman -R <tool>`.
 </details>
 
 ## 🌐 Support & Community
