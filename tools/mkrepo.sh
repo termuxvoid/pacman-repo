@@ -14,7 +14,7 @@ OUT="${1:-${ROOT}/dist/any}"
 mkdir -p "$OUT"
 
 echo "==> Collecting packages"
-find "${ROOT}/packages" -name '*.pkg.tar.xz' -exec cp -f {} "$OUT/" \;
+find "${ROOT}/packages" -name '*.pkg.tar.*' ! -name '*.sig' -exec cp -f {} "$OUT/" \;
 (cd "$OUT" && rm -rf src pkg)
 
 cd "$OUT"
@@ -22,7 +22,7 @@ cd "$OUT"
 echo "==> Generating ${REPO_NAME} database"
 rm -f "${REPO_NAME}.db" "${REPO_NAME}.db.tar.gz" \
       "${REPO_NAME}.files" "${REPO_NAME}.files.tar.gz"
-repo-add "${REPO_NAME}.db.tar.gz" ./*.pkg.tar.xz
+repo-add "${REPO_NAME}.db.tar.gz" ./*.pkg.tar.*
 
 # gh-pages cannot serve symlink targets: replace db/files symlinks
 # with real copies of their tarballs.
@@ -36,7 +36,8 @@ if [ "${SIGN}" = "1" ]; then
     [ -n "${KEYID}" ] && SIGNARGS+=(--local-user "${KEYID}")
     gpg "${SIGNARGS[@]}" "${REPO_NAME}.db"
     gpg "${SIGNARGS[@]}" "${REPO_NAME}.files"
-    for f in ./*.pkg.tar.xz; do
+    for f in ./*.pkg.tar.*; do
+        case "$f" in *.sig) continue ;; esac
         gpg "${SIGNARGS[@]}" "$f"
     done
 fi

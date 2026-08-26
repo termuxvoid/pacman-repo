@@ -4,6 +4,9 @@
 # (e.g. termux-penv login termux-pacman64).
 set -e
 
+# termux-pacman builds use xz; keep identical output across environments
+export PKGEXT='.pkg.tar.xz'
+
 cd "$(dirname "$0")/.."
 
 for d in packages/*/; do
