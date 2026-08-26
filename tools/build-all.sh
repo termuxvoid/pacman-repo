@@ -13,6 +13,21 @@ JOBS="${JOBS:-1}"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 
+# Attribute every built package to the repository maintainer
+PACKAGER="Alienkrishn [Anon4You]"
+
+# locate the host makepkg.conf and derive an override that sets PACKAGER
+if [ -z "${MAKEPKG_CONF:-}" ]; then
+    for c in /usr/etc/makepkg.conf /etc/makepkg.conf; do
+        [ -f "$c" ] && MAKEPKG_CONF="$c" && break
+    done
+fi
+[ -f "${MAKEPKG_CONF:-/nonexistent}" ] || { echo "makepkg.conf not found" >&2; exit 1; }
+USER_CONF="$ROOT/.makepkg-user.conf"
+grep -v '^PACKAGER=' "$MAKEPKG_CONF" > "$USER_CONF"
+echo "PACKAGER=\"${PACKAGER}\"" >> "$USER_CONF"
+export MAKEPKG_CONF="$USER_CONF"
+
 build_one() {
     local d="$1"
     # resumable: skip packages that already have a built artifact

@@ -5,3 +5,4 @@ packages/*/*.sig
 dist/
 *.log
 packages/asciibanner/data/
+.makepkg-user.conf
