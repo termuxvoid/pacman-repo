@@ -64,7 +64,7 @@ jobs:
         run: |
           cd dist/any
           gpg --verify termuxvoid.db.sig termuxvoid.db
-          gpg --verify sqlmap-*.pkg.tar.*.sig sqlmap-*.pkg.tar.*
+          gpg --verify sqlmap-*.pkg.tar.xz.sig sqlmap-1*.pkg.tar.xz
           ls -la
 
       - name: Deploy to gh-pages
