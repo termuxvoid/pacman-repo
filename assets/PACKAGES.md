@@ -159,6 +159,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [claude-code](https://termuxvoid.github.io/tool.html?name=claude-code) | Claude Code - AI coding assistant by Anthropic |
 | [codex-cli](https://termuxvoid.github.io/tool.html?name=codex-cli) | Codex CLI for Termux (npm version) |
 | [copilot-cli](https://termuxvoid.github.io/tool.html?name=copilot-cli) | GitHub Copilot CLI (glibc version) |
+| [freebuff](https://termuxvoid.github.io/tool.html?name=freebuff) | Free, subscription-less AI coding agent for the terminal |
 | [hermes-agent](https://termuxvoid.github.io/tool.html?name=hermes-agent) | AI-powered coding assistant and workflow automation tool |
 | [kimi-code](https://termuxvoid.github.io/tool.html?name=kimi-code) | AI-powered coding assistant for the terminal |
 | [laudacode](https://termuxvoid.github.io/tool.html?name=laudacode) | Fast, lightweight AI coding agent for your terminal |

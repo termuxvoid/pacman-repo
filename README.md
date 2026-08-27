@@ -1,9 +1,9 @@
 <div align="center">
   <a href="https://termuxvoid.github.io/">
-    <img alt="TermuxVoid" height="180" src="https://github.com/termuxvoid/repo/raw/main/img/termuxvoid_logo.png">
+    <img alt="TermuxVoid" height="180" src="https://github.com/termuxvoid/pacman-repo/raw/main/img/termuxvoid_logo.png">
     <h1>TermuxVoid Pacman Repository</h1>
   </a>
-  <p><b>Unofficial Pacman APT-Style Repository: 233 Ethical Hacking & Pentesting Packages</b></p>
+  <p><b>Unofficial Pacman Repository: 220+ Ethical Hacking & Pentesting Packages</b></p>
 
   <div>
     <a href="https://github.com/TermuxVoid/pacman-repo/stargazers">
@@ -20,11 +20,11 @@
 
 ## 📖 Table of Contents
 
+- [Project Overview](#-project-overview)
 - [Prerequisites](#-prerequisites)
 - [Quick Installation](#-quick-installation)
-- [Project Overview](#-project-overview)
-- [Security & Transparency](#-security--transparency)
 - [APT Users](#-apt-users)
+- [Featured Tools](#-featured-tools)
 - [Legal & Disclaimer](#-legal--disclaimer)
 - [Frequently Asked Questions](#-frequently-asked-questions)
 - [Support & Community](#-support--community)
@@ -34,29 +34,71 @@
 
 ## 📋 Prerequisites
 
-Before using the TermuxVoid pacman repository, ensure your environment meets these requirements:
+Before using TermuxVoid, ensure your environment meets these requirements:
 
-- **Full pacman environment** — either a switched pacman bootstrap or `termux-penv` ([Switching package manager](https://wiki.termux.com/wiki/Switching_package_manager)). A plain `pkg install pacman` is not enough.
+- **Termux** installed from [F-Droid](https://f-droid.org/en/packages/com.termux/) (recommended) or GitHub
 - **Android 7+** with ~2GB free storage for larger tools
 - **Working internet connection** for package downloads
 - **No root required** for most tools (some may need root for certain features)
 
 ---
 
+## 🔍 Project Overview
+
+**TermuxVoid** is an **unofficial custom pacman repository** that bridges the gap between mobile convenience and professional security auditing. We host **220+ advanced security tools** that are not available in the official Termux repositories. Package installation happens on your device: depending on the tool, the package may build from source, install an upstream dependency, or download an upstream release.
+
+Whether you are a professional penetration tester or an ethical hacking enthusiast, TermuxVoid turns your Android device into a portable powerhouse.
+
+> [!NOTE]
+> This repository contains tools that are often excluded from official sources due to complexity, licensing, or security sensitivity. Read a package's PKGBUILD and its hook script before installing it.<br>
+
+## Security & Transparency
+
+TermuxVoid is an unofficial, community-maintained repository. Package definitions and lifecycle hooks are published here so you can inspect what runs on installation and removal. The database (`termuxvoid.db`) and every package are **GPG signed** so you can verify what is installed.
+
+Each package lives in `packages/<name>/` and normally ships a standard pacman layout:
+
+- `PKGBUILD` — metadata (name, version, dependencies, description) plus packaging rules
+- `<name>.install` — lifecycle hooks (`pre_install`, `post_install`, `pre_remove`, `post_remove`) that perform installation on your device
+
+### What packages do—and do not—change
+
+- No package modifies `$PATH`, `$HOME`, `$PREFIX`, or any other Termux environment variable.
+- Most tool packages do not alter existing Termux configuration and expose commands through **symlinks** or package-manager-installed commands instead of environment mutation.
+- Packages whose stated purpose is shell styling, themes, desktop environments, or similar customization may create or change relevant configuration files. Read their hooks carefully before installation and removal.
+- Removal hooks are intended to remove files created by the package. Preserve your own configuration backups, especially before installing customization packages.
+
+### Before you install
+
+Security tools are powerful and many have dual-use capabilities. Use them only on systems and data you own or are explicitly authorized to test. Do not install a package solely because it is listed here.
+
+1. Read `packages/<name>/PKGBUILD` and `packages/<name>/<name>.install` (where present).
+2. Check every download URL, Git repository, package-manager command, and configuration change in those scripts.
+3. Review the upstream tool and its license, then install it in a test environment first if it is unfamiliar.
+4. Keep backups of personal configuration before installing shell, theme, or desktop packages.
+
+Don't trust — verify. See [CONTRIBUTING.md](CONTRIBUTING.md) for the package layout and [SECURITY.md](SECURITY.md) for the security policy.
+
+### Package-source expectations
+
+When a package obtains software from upstream, its scripts should make the source auditable. Contributors should provide the upstream project URL, use a pinned release, tag, or commit where practical, and verify an upstream checksum or signature when one is available. Review every network download, upstream package-manager command, file/configuration change, exposed command, and uninstall action before installing.
+
 ## 🚀 Quick Installation
 
-Run the following one-liner in your Termux terminal to add the repository automatically:
+Getting started is seamless. Run the following one-liner in your Termux terminal to add the repository automatically:
 
 ```bash
+# Add repository
 curl -sL https://github.com/termuxvoid/pacman-repo/raw/main/install-repo.sh | bash
 ```
 
 > [!WARNING]
 > Piping a remote script directly to `bash` executes it immediately. For maximum transparency, download and inspect `install-repo.sh` first, then run it locally.
 
-Once the repository is added, install any tool using pacman:
+Once the repository is added, you can install any tool using `pacman -S`:
 
 ```bash
+# Refresh databases
 pacman -Sy
 
 # Install any tool
@@ -67,51 +109,45 @@ pacman -S metasploit-framework
 ```
 
 > [!TIP]
-> You can search tools with `pacman -Ss <tool-name>` and list everything from this repo with `pacman -Sl termuxvoid`.
-
-## 🔍 Project Overview
-
-**TermuxVoid** is an **unofficial custom repository** that bridges the gap between mobile convenience and professional security auditing. We host **233+ advanced security tools** that are not available in the official Termux repositories. Package installation happens on your device: depending on the tool, the package may build from source, install an upstream dependency, or download an upstream release.
-
-Whether you are a professional penetration tester or an ethical hacking enthusiast, TermuxVoid turns your Android device into a portable powerhouse.
+> After installation, run `pacman -Sy` to refresh your local package database. You can search for tools using `pacman -Ss <tool-name>`.
 
 > [!NOTE]
-> This repository contains tools that are often excluded from official sources due to complexity, licensing, or security sensitivity. Read a package's PKGBUILD and hook script before installing it.<br>
+> Removing the TermuxVoid repository later does not remove packages you already installed. Use the package manager to remove individual packages; see the [uninstall instructions](#how-do-i-uninstall-the-termuxvoid-repository) to remove only the repository source and key.
 
-Each package lives in `packages/<name>/` as a standard pacman PKGBUILD:
+## 🐧 APT Users
 
-- `PKGBUILD` — metadata (name, version, dependencies, description) plus packaging rules
-- `<name>.install` — lifecycle hooks (`pre_install`, `post_install`, `pre_remove`, `post_remove`) that perform installation on your device
-- `*-data.tar.gz` — files shipped inside the package where applicable
+Running a **standard apt/dpkg Termux** (the default bootstrap)? The very same tools are also shipped as APT packages through our dedicated APT repository — classic `dpkg` workflow, `pkg install <tool>`.
 
-### What packages do—and do not—change
+**APT repository:** [github.com/termuxvoid/repo](https://github.com/termuxvoid/repo)
 
-- No package modifies `$PATH`, `$HOME`, `$PREFIX`, or any other Termux environment variable.
-- Most tool packages do not alter existing Termux configuration and expose commands through **symlinks** or package-manager-installed commands instead of environment mutation.
-- Packages whose stated purpose is shell styling, themes, desktop environments, or similar customization may create or change relevant configuration files. Read their hooks carefully before installation and removal.
-- Removal hooks are intended to remove files created by the package. Preserve your own configuration backups.
+```bash
+curl -sL https://github.com/termuxvoid/repo/raw/main/install.sh | bash
+```
 
-### Before you install
+If you are on a pacman-based Termux, stay right here — this repository is for you.
 
-1. Read `packages/<name>/PKGBUILD` and `packages/<name>/<name>.install`.
-2. Check every download URL, Git repository, package-manager command, and configuration change.
-3. Review the upstream tool and its license, then install in a test environment first if unfamiliar.
-4. Keep backups of personal configuration before installing shell, theme, or desktop packages.
+## ✨ Featured Tools
 
-Don't trust — verify. See [CONTRIBUTING.md](CONTRIBUTING.md) for the package layout and [SECURITY.md](SECURITY.md) for the security policy.
+We provide a curated selection of industry-standard tools. Here are some highlights:
 
-## 🛡️ Security & Transparency
+<div align="center">
 
-TermuxVoid is an unofficial, community-maintained repository. Package definitions are published here so you can inspect what runs on installation and removal. The database (`termuxvoid.db`) and every package are **GPG signed**; import our key via `install-repo.sh` or manually with `pacman-key`.
+| Tool | Category | Description |
+| :--- | :--- | :--- |
+| **Metasploit Framework** | `Exploitation` | The world's most used penetration testing framework. |
+| **Burp Suite** | `Web Security` | Leading toolkit for web application security testing. |
+| **Ghidra** | `Reverse Eng.` | NSA's high-end software reverse engineering suite. |
+| **THC Hydra** | `Password Cracking` | Fast network logon cracker supporting many protocols. |
+| **SQLMap** | `Web Security` | Automatic SQL injection and database takeover tool. |
 
-Package-source expectations: contributors should provide the upstream project URL, use a pinned release, tag, or commit where practical, and verify an upstream checksum or signature when one is available. Review every network download, upstream package-manager command, file/configuration change, exposed command, and uninstall action before installing.
+</div>
 
 <details>
 <summary><b>📊 View Mermaid Architecture</b></summary>
 
 ```mermaid
 graph TD
-    A[TermuxVoid Pacman Repo] -->|Provides| B[Exploitation]
+    A[TermuxVoid Repo] -->|Provides| B[Exploitation]
     A -->|Provides| C[Reverse Engineering]
     A -->|Provides| D[Network Scanning]
     A -->|Provides| E[Password Attacks]
@@ -131,18 +167,26 @@ graph TD
 </details>
 
 <div align="center">
-
-<a href="assets/PACKAGES.md">
-  <img src="https://img.shields.io/badge/📦-Browse_All_233_Packages-2ea44f?style=for-the-badge" alt="Browse All Packages">
-</a>
-
+  <a href="assets/PACKAGES.md">
+    <img src="https://img.shields.io/badge/📦-Browse_All_220%2B_Packages-2ea44f?style=for-the-badge" alt="Browse All Packages">
+  </a>
 </div>
 
-## 🐧 APT Users
+## 🧠 AI Agents
 
-The very same tools are also shipped as classic **APT packages** for standard (dpkg-based) Termux. If you are not on a pacman setup, use the APT repository instead:
-
-**APT repository:** [github.com/termuxvoid/repo](https://github.com/termuxvoid/repo)
+| Tool | Description |
+| :--- | :--- |
+| **opencode** | AI-powered coding assistant |
+| **claude-code** | AI-powered coding assistant by Anthropic |
+| **antigravity-cli** | AI coding assistant (glibc wrapper) |
+| **copilot-cli** | GitHub Copilot CLI — AI-powered assistance in your terminal |
+| **codex-cli** | Codex CLI by OpenAI — lightweight AI-powered coding agent in your terminal |
+| **mimocode** | Autonomous AI engineer — creates, modifies, tests, deploys code |
+| **openclaude** | Open-source coding-agent CLI for cloud & local LLMs |
+| **hermes-agent** | AI-powered coding assistant and workflow automation tool |
+| **kimi-code** | AI-powered coding assistant for the terminal by Moonshot AI |
+| **mmx-cli** | CLI tool for MiniMax AI – chat, completion, and image generation from the terminal |
+| **freebuff** | Free, subscription-less AI coding agent for the terminal |
 
 ## Legal & Disclaimer
 
@@ -153,54 +197,73 @@ These tools are provided for **educational and authorized security research only
 <details>
 <summary><b>Are these tools safe to use on a personal device?</b></summary>
 <br>
-Yes — nothing is pre-compiled here. Each tool is downloaded or built on your device during installation, so it runs in your own Termux environment. However, these are powerful security tools; ensure you understand what a tool does before executing it.
+Yes, all packages are built from source directly on your device during installation. This means no pre-compiled binaries are shipped — each tool is compiled and installed for your specific Termux environment. However, these are powerful security tools; ensure you understand what a tool does before executing it to avoid unintended system modifications.
 </details>
 
 <details>
-<summary><b>Do I need to switch my bootstrap to pacman?</b></summary>
+<summary><b>Are these tools legal to use?</b></summary>
 <br>
-For full functionality yes — this repository serves pacman-format packages. If you prefer to stay on apt/dpkg, use our <a href="https://github.com/termuxvoid/repo">APT repository</a> instead: same tools, same behaviour, different package manager.
+All tools are for <strong>legal security research and ethical hacking purposes only</strong>. Always obtain proper authorization before testing systems you do not own.
 </details>
 
 <details>
-<summary><b>Why is there a "-0" at the end of versions?</b></summary>
+<summary><b>Why aren't these in the official repo?</b></summary>
 <br>
-That is pacman's mandatory package release field (<code>pkgrel</code>). We keep it at 0 so the visible version matches upstream exactly (e.g. sqlmap 1.10.8-0). When we repackage without an upstream version change, the number increases.
+Many of these tools (like Metasploit or Ghidra) have heavy dependencies, large sizes, or licensing complexities that make them difficult to maintain in the official core repositories. We handle the heavy lifting so you don't have to.
 </details>
 
 <details>
 <summary><b>How often are tools updated?</b></summary>
 <br>
-- Security patches within 24 hours<br>
-- Version updates every Sunday<br>
+- Security patches within 24 hours
+- Version updates every Sunday
 - Emergency fixes as needed
 </details>
 
 <details>
 <summary><b>How do I request a new package?</b></summary>
 <br>
-Open a GitHub Issue, contact us on Telegram @nullxvoid, or email termuxvoid@gmail.com.
+We are constantly expanding. You can request new tools via:
+
+1. Opening a **[GitHub Issue](https://github.com/TermuxVoid/pacman-repo/issues)**
+2. Contacting us on Telegram: **[Telegram @nullxvoid](https://telegram.me/nullxvoid)**
+3. Sending an email to: **[termuxvoid@gmail.com](mailto:termuxvoid@gmail.com)**
 </details>
 
 <details>
 <summary><b>How do I report a broken package?</b></summary>
 <br>
-Open an issue on GitHub with the tool name and error output. We aim to fix reported issues within 24 hours.
+Open an issue on **[GitHub](https://github.com/TermuxVoid/pacman-repo/issues)** with the tool name and error output. We aim to fix reported issues within 24 hours.
 </details>
 
 <details>
-<summary><b>How do I uninstall the repository?</b></summary>
+<summary><b>How do I uninstall the TermuxVoid repository?</b></summary>
 <br>
-One command:
+To remove the repository from your Termux environment:
 
 ```bash
 curl -sL https://github.com/termuxvoid/pacman-repo/raw/main/uninstall-repo.sh | bash
 ```
 
-This removes the repository from `pacman.conf` and deletes our key from your pacman keyring. Packages you already installed remain until you remove them individually with `pacman -R <tool>`.
+This removes the repository source and its GPG key from your pacman keyring, refreshes the databases, and does not remove packages you have already installed.
+</details>
+
+<details>
+<summary><b>I get a "package not found" error — what should I do?</b></summary>
+<br>
+Ensure you have run `pacman -Sy` after adding the repository. If the issue persists, try:
+
+```bash
+pacman -Sy
+pacman -Ss <tool-name>
+```
+
+If the tool still doesn't appear, it may have a different package name — check the **[full package list](assets/PACKAGES.md)** for the exact name.
 </details>
 
 ## 🌐 Support & Community
+
+Join our growing community of security researchers and mobile hackers.
 
 <div align="center">
   <a href="https://telegram.me/nullxvoid">

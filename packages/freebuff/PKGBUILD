@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/freebuff)
+
+pkgname="freebuff"
+pkgver=0.0.126
+pkgrel=1
+pkgdesc='Free, subscription-less AI coding agent for the terminal'
+arch=('any')
+url="https://freebuff.com"
+depends=('npm' 'ripgrep')
+install="freebuff.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

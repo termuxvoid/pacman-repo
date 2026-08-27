@@ -1,0 +1,14 @@
+#!/bin/bash
+
+post_install() {
+set -e
+npm install -g @nyxur/freebuff@0.0.126
+echo "freebuff installed. Run 'freebuff'"
+return 0
+}
+
+post_remove() {
+npm uninstall -g @nyxur/freebuff 2>/dev/null || true
+echo "freebuff removed."
+return 0
+}
