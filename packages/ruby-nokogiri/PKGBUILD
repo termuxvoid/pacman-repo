@@ -3,11 +3,11 @@
 
 pkgname="ruby-nokogiri"
 pkgver=1.19.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Ruby gem for HTML/XML parsing (system libraries version)'
 arch=('any')
 url="https://nokogiri.org/"
-depends=('ruby' 'pkg-config' 'libxml2' 'libxslt' 'gumbo-parser' 'gumbo-parser-static')
+depends=('ruby' 'pkg-config' 'libxml2' 'libxslt' 'gumbo-parser' 'gumbo-parser-static' 'make')
 install="ruby-nokogiri.install"
 options=('!strip' '!debug' '!emptydirs')
 source=(ruby-nokogiri-data.tar.gz)
