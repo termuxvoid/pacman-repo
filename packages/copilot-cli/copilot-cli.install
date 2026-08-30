@@ -16,7 +16,13 @@ post_install() {
 set -e
 
 PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-VERSION="1.0.80"
+
+# Ensure glibc can resolve DNS (pacman envs may lack the resolv.conf symlink)
+mkdir -p "$PREFIX/glibc/etc"
+ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
+ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
+
+VERSION="1.0.82"
 TARFILE="copilot-linux-arm64.tar.gz"
 DOWNLOAD_URL="https://github.com/github/copilot-cli/releases/download/v${VERSION}/${TARFILE}"
 

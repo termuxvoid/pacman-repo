@@ -11,8 +11,14 @@ return 0
 
 post_install() {
 set -e
-VERSION="1.1.19"
+VERSION="1.1.22"
 PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
+
+# Ensure glibc can resolve DNS (pacman envs may lack the resolv.conf symlink)
+mkdir -p "$PREFIX/glibc/etc"
+ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
+ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
+
 DOWNLOAD_URL="https://github.com/google-antigravity/antigravity-cli/releases/download/${VERSION}/agy_cli_linux_arm64.tar.gz"
 SHARE_DIR="$PREFIX/share/antigravity-cli"
 BIN_DIR="$PREFIX/bin"
