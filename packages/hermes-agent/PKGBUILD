@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='AI-powered coding assistant and workflow automation tool'
 arch=('any')
 url="https://github.com/NousResearch/hermes-agent"
-depends=('npm' 'uv' 'git' 'python' 'clang' 'rust' 'make' 'pkg-config' 'libffi' 'openssl' 'nodejs' 'ripgrep' 'ffmpeg' 'python-psutil' 'python-pillow' 'python-cryptography')
+depends=('python' 'curl' 'clang' 'rust' 'make' 'pkg-config' 'libffi' 'openssl' 'python-psutil' 'python-pillow' 'python-cryptography' 'file' 'termux-tools')
 install="hermes-agent.install"
 options=('!strip' '!debug' '!emptydirs')
 
