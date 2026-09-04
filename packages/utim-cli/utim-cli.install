@@ -1,0 +1,16 @@
+#!/bin/bash
+
+post_install() {
+    set -e
+
+    # strip pacman pkgrel suffix: npm needs the bare upstream version
+    UPVER="${1%%-*}"
+
+    npm install -g "@emend-ai/utim@${UPVER}"
+    echo "utim-cli ${UPVER} installed. Run 'utim' to start."
+}
+
+post_remove() {
+    npm uninstall -g @emend-ai/utim 2>/dev/null || true
+    echo "utim-cli removed."
+}

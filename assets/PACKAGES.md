@@ -167,6 +167,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [mmx-cli](https://termuxvoid.github.io/tool.html?name=mmx-cli) | CLI tool for MiniMax AI |
 | [openclaude](https://termuxvoid.github.io/tool.html?name=openclaude) | Open‑source coding‑agent CLI for cloud and local LLMs |
 | [opencode](https://termuxvoid.github.io/tool.html?name=opencode) | AI‑powered coding assistant (glibc version) |
+| [utim-cli](https://termuxvoid.github.io/tool.html?name=utim-cli) | UTIM CLI — AI-powered unified terminal intelligence manager |
 | [pip-basic-depends](https://termuxvoid.github.io/tool.html?name=pip-basic-depends) | Essential build dependencies for Python packages |
 | [vedic](https://termuxvoid.github.io/tool.html?name=vedic) | World's first Sanskrit programming language |
 | [zen-c](https://termuxvoid.github.io/tool.html?name=zen-c) | High-level Systems Programming Language compiling to C |
