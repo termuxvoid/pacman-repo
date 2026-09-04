@@ -1,0 +1,18 @@
+#!/bin/bash
+
+post_install() {
+    set -e
+
+    curl -sL -o "$PREFIX/bin/bad-pdf" "https://raw.githubusercontent.com/deepzec/Bad-Pdf/master/badpdf.py"
+    termux-fix-shebang "$PREFIX/bin/bad-pdf"
+    chmod +x "$PREFIX/bin/bad-pdf"
+
+    echo "bad-pdf installed. Run 'bad-pdf'"
+    return 0
+}
+
+post_remove() {
+    rm -f "$PREFIX/bin/bad-pdf"
+    echo "bad-pdf removed."
+    return 0
+}

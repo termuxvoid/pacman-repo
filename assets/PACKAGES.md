@@ -19,6 +19,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | Tool | Description |
 |------|-------------|
 | [androvirus](https://termuxvoid.github.io/tool.html?name=androvirus) | Android penetration testing framework (USE RESPONSIBLY) |
+| [bad-pdf](https://termuxvoid.github.io/tool.html?name=bad-pdf) | Create malicious PDFs to steal NTLM hashes from Windows |
 | [brutespray](https://termuxvoid.github.io/tool.html?name=brutespray) | Brute-force attacks from Nmap output |
 | [byakugan](https://termuxvoid.github.io/tool.html?name=byakugan) | Advanced footprinting tool for Termux |
 | [dalfox](https://termuxvoid.github.io/tool.html?name=dalfox) | Fast parameter analysis and XSS scanning tool (v3 in Rust) |
