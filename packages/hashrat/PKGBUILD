@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/hashrat)
+
+pkgname="hashrat"
+pkgver=1.25
+pkgrel=0
+pkgdesc='Cryptographics hash-generation command-line utility'
+arch=('any')
+url="https://github.com/ColumPaget/Hashrat"
+depends=('build-essential' 'make' 'openssl' 'zlib' 'findutils')
+install="hashrat.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

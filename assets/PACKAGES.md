@@ -19,6 +19,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | Tool | Description |
 |------|-------------|
 | [androvirus](https://termuxvoid.github.io/tool.html?name=androvirus) | Android penetration testing framework (USE RESPONSIBLY) |
+| [adassault](https://termuxvoid.github.io/tool.html?name=adassault) | Active Directory penetration testing tool |
 | [bad-pdf](https://termuxvoid.github.io/tool.html?name=bad-pdf) | Create malicious PDFs to steal NTLM hashes from Windows |
 | [brutespray](https://termuxvoid.github.io/tool.html?name=brutespray) | Brute-force attacks from Nmap output |
 | [byakugan](https://termuxvoid.github.io/tool.html?name=byakugan) | Advanced footprinting tool for Termux |
@@ -71,6 +72,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [gophish](https://termuxvoid.github.io/tool.html?name=gophish) | Open-source phishing framework |
 | [goshs](https://termuxvoid.github.io/tool.html?name=goshs) | Feature-rich single-binary file server for red teamers and developers |
 | [haxrat](https://termuxvoid.github.io/tool.html?name=haxrat) | Cloud-based remote Android management suite |
+| [hulk](https://termuxvoid.github.io/tool.html?name=hulk) | Web server DoS testing tool (Golang port) |
 | [masscan](https://termuxvoid.github.io/tool.html?name=masscan) | High-speed TCP port scanner |
 | [medusa](https://termuxvoid.github.io/tool.html?name=medusa) | Parallel network login brute-forcer |
 | [metabigor](https://termuxvoid.github.io/tool.html?name=metabigor) | OSINT tool without API keys |
@@ -126,6 +128,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 
 | Tool | Description |
 |------|-------------|
+| [acccheck](https://termuxvoid.github.io/tool.html?name=acccheck) | SMB account enumeration and password guessing tool |
 | [amass](https://termuxvoid.github.io/tool.html?name=amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
 | [dnsx](https://termuxvoid.github.io/tool.html?name=dnsx) | Fast DNS toolkit for reconnaissance |
@@ -208,6 +211,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [ghidra](https://termuxvoid.github.io/tool.html?name=ghidra) | NSA Reverse Engineering Framework |
 | [gron](https://termuxvoid.github.io/tool.html?name=gron) | Make JSON greppable |
 | [haiti](https://termuxvoid.github.io/tool.html?name=haiti) | Hash type identifier (CLI tool) |
+| [hashrat](https://termuxvoid.github.io/tool.html?name=hashrat) | Cryptographic hash-generation command-line utility |
 | [hbctool](https://termuxvoid.github.io/tool.html?name=hbctool) | Hermes Bytecode Disassembler and Assembler |
 | [ia-get](https://termuxvoid.github.io/tool.html?name=ia-get) | Internet Archive Downloader Tool |
 | [jwt-hack](https://termuxvoid.github.io/tool.html?name=jwt-hack) | JWT security testing and exploitation tool |

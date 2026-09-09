@@ -1,0 +1,19 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+gem install adassault -v 0.0.4
+
+echo "ADAssault installed. Run 'adassault'"
+return 0
+}
+
+post_remove() {
+
+gem uninstall adassault -v 0.0.4 -x --force 2>/dev/null || true
+
+echo "ADAssault removed."
+return 0
+}
+

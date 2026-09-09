@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/adassault)
+
+pkgname="adassault"
+pkgver=0.0.4
+pkgrel=0
+pkgdesc='Active Directory penetration testing tool'
+arch=('any')
+url="https://noraj.github.io/ADAssault/"
+depends=('ruby' 'build-essential')
+install="adassault.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

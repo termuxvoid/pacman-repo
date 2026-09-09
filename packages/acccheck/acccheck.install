@@ -1,0 +1,23 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+URL="https://github.com/qashqao/acccheck/raw/master/acccheck.pl"
+BIN="$PREFIX/bin/acccheck"
+
+curl -sL -o "$BIN" "$URL"
+termux-fix-shebang "$BIN"
+sed -i 's/acccheck\.pl/acccheck/g' "$BIN"
+chmod +x "$BIN"
+
+echo "acccheck installed. Run 'acccheck'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/acccheck"
+echo "acccheck removed."
+return 0
+}
+
