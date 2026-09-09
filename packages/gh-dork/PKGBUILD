@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/gh-dork)
+
+pkgname="gh-dork"
+pkgver=1.0
+pkgrel=0
+pkgdesc='GitHub dorking tool'
+arch=('any')
+url="https://github.com/molly/gh-dork"
+depends=('git' 'python' 'python-pip' 'rust' 'make' 'openssl' 'pkg-config' 'python-cryptography')
+install="gh-dork.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

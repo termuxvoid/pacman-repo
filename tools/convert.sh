@@ -86,7 +86,7 @@ emit_install() { # $1=src pkg dir  $2=name  $3=dest dir ; returns 0 if written
             case "$src" in poatrm) fn="post_remove";; *) fn="${MAP[$src]}";; esac
             echo "${fn}() {"
             body="$(sed -E \
-                -e '/^#![\/]/d' \
+                -e '1{/^#![\/]/d}' \
                 -e 's/^([[:space:]]*)exit[[:space:]]+([0-9]+)[[:space:]]*$/\1return \2/' \
                 -e 's/^([[:space:]]*)exit[[:space:]]*$//' "$f")"
             echo "$body"

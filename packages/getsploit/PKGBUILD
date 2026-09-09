@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/getsploit)
+
+pkgname="getsploit"
+pkgver=3.0.1
+pkgrel=0
+pkgdesc='Command-line search tool for exploits and vulnerabilities'
+arch=('any')
+url="https://github.com/vulnersCom/getsploit"
+depends=('python' 'python-pip' 'rust' 'make' 'pkg-config')
+install="getsploit.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

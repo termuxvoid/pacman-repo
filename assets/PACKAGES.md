@@ -8,7 +8,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 > The same tools are also available as classic APT packages: [github.com/termuxvoid/repo](https://github.com/termuxvoid/repo) (`curl -sL https://github.com/termuxvoid/repo/raw/main/install.sh | bash`).
 
 
-**233 packages** across 17 categories.
+**220+ packages** across 17 categories.
 
 
 ## Tool List
@@ -114,6 +114,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [photon](https://termuxvoid.github.io/tool.html?name=photon) | Lightweight web crawler for OSINT and reconnaissance |
 | [scanqli](https://termuxvoid.github.io/tool.html?name=scanqli) | SQL injection scanner and vulnerability detection tool |
 | [shark](https://termuxvoid.github.io/tool.html?name=shark) | Future of Phishing with less delay |
+| [getsploit](https://termuxvoid.github.io/tool.html?name=getsploit) | Command-line search tool for exploits and vulnerabilities using the Vulners database |
 | [sploitscan](https://termuxvoid.github.io/tool.html?name=sploitscan) | Exploit Intelligence Gathering and Analysis Tool |
 | [sqlmap](https://termuxvoid.github.io/tool.html?name=sqlmap) | Automatic SQL Injection and Database Takeover Tool |
 | [waymap](https://termuxvoid.github.io/tool.html?name=waymap) | Fast Web Vulnerability Scanner and Security Testing Toolkit |
@@ -129,6 +130,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
 | [dnsx](https://termuxvoid.github.io/tool.html?name=dnsx) | Fast DNS toolkit for reconnaissance |
 | [dorks-eye](https://termuxvoid.github.io/tool.html?name=dorks-eye) | Google Hacking Dork Scraping and Searching Tool |
+| [gh-dork](https://termuxvoid.github.io/tool.html?name=gh-dork) | GitHub dorking tool – search repositories using dorks |
 | [ghosttrack](https://termuxvoid.github.io/tool.html?name=ghosttrack) | Advanced tracking and reconnaissance tool |
 | [knockpy](https://termuxvoid.github.io/tool.html?name=knockpy) | Subdomain enumeration and reconnaissance tool |
 | [maigret](https://termuxvoid.github.io/tool.html?name=maigret) | OSINT username search tool with 3000+ sites |
