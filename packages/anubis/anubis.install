@@ -1,0 +1,19 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+pip install anubis-netsec==1.3.1
+
+echo "anubis installed. Run 'anubis'"
+return 0
+}
+
+post_remove() {
+
+pip uninstall -y anubis-netsec 2>/dev/null || true
+
+echo "anubis removed."
+return 0
+}
+

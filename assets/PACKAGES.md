@@ -130,6 +130,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 |------|-------------|
 | [acccheck](https://termuxvoid.github.io/tool.html?name=acccheck) | SMB account enumeration and password guessing tool |
 | [amass](https://termuxvoid.github.io/tool.html?name=amass) | In-depth Attack Surface Mapping and Asset Discovery |
+| [anubis](https://termuxvoid.github.io/tool.html?name=anubis) | Subdomain enumeration and information gathering tool |
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
 | [dnsx](https://termuxvoid.github.io/tool.html?name=dnsx) | Fast DNS toolkit for reconnaissance |
 | [dorks-eye](https://termuxvoid.github.io/tool.html?name=dorks-eye) | Google Hacking Dork Scraping and Searching Tool |
@@ -196,6 +197,8 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [apkleaks](https://termuxvoid.github.io/tool.html?name=apkleaks) | Scanning APK file for URIs, endpoints & secrets. |
 | [apkpatcher](https://termuxvoid.github.io/tool.html?name=apkpatcher) | Advanced APK Modification Tool |
 | [apksearch](https://termuxvoid.github.io/tool.html?name=apksearch) | APK Search Tool for Multiple APK Websites |
+| [apkstat](https://termuxvoid.github.io/tool.html?name=apkstat) | APK file statistics and analysis tool |
+| [archivebox](https://termuxvoid.github.io/tool.html?name=archivebox) | Open-source self-hosted web archiving system |
 | [arsenal-ng](https://termuxvoid.github.io/tool.html?name=arsenal-ng) | Fast command launcher with 200+ cybersecurity cheat-sheets |
 | [blackbox-framework](https://termuxvoid.github.io/tool.html?name=blackbox-framework) | A Python-based network analysis and exploitation toolkit |
 | [blutter](https://termuxvoid.github.io/tool.html?name=blutter) | Flutter/Dart Binary Analysis and Reverse Engineering |

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/archivebox)
+
+pkgname="archivebox"
+pkgver=0.9.35rc437
+pkgrel=0
+pkgdesc='Open-source self-hosted web archiving system'
+arch=('any')
+url="https://github.com/pirate/ArchiveBox"
+depends=('python' 'python-pip' 'python-yt-dlp' 'wget' 'chromium' 'python-psutil' 'python-bcrypt' 'python-lxml' 'python-pillow' 'python-greenlet' 'libpq' 'uv' 'rust' 'make' 'cmake' 'pkg-config' 'python-cryptography')
+install="archivebox.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
