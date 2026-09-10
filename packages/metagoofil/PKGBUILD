@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/metagoofil)
+
+pkgname="metagoofil"
+pkgver=1.4.0
+pkgrel=0
+pkgdesc='Search Google and download specific file types'
+arch=('any')
+url="https://github.com/opsdisk/metagoofil"
+depends=('git' 'python' 'python-pip')
+install="metagoofil.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

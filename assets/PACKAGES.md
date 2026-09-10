@@ -138,6 +138,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [ghosttrack](https://termuxvoid.github.io/tool.html?name=ghosttrack) | Advanced tracking and reconnaissance tool |
 | [knockpy](https://termuxvoid.github.io/tool.html?name=knockpy) | Subdomain enumeration and reconnaissance tool |
 | [maigret](https://termuxvoid.github.io/tool.html?name=maigret) | OSINT username search tool with 3000+ sites |
+| [metagoofil](https://termuxvoid.github.io/tool.html?name=metagoofil) | Search Google and download specific file types for OSINT gathering |
 | [phoneinfoga](https://termuxvoid.github.io/tool.html?name=phoneinfoga) | Phone number intelligence framework |
 | [publiceye](https://termuxvoid.github.io/tool.html?name=publiceye) | Comprehensive OSINT Tool for Information Lookup |
 | [secretfinder](https://termuxvoid.github.io/tool.html?name=secretfinder) | Discover sensitive data (API keys, access tokens, JWT, etc.) in JavaScript files |
