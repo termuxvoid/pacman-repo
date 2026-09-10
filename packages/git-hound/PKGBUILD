@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/git-hound)
+
+pkgname="git-hound"
+pkgver=3.2
+pkgrel=0
+pkgdesc='A pattern-matching, patch-attacking, batch-catching secret snatcher'
+arch=('any')
+url="https://github.com/tillson/git-hound"
+depends=('git' 'golang')
+install="git-hound.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

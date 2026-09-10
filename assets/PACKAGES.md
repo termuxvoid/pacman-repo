@@ -136,6 +136,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [dorks-eye](https://termuxvoid.github.io/tool.html?name=dorks-eye) | Google Hacking Dork Scraping and Searching Tool |
 | [gh-dork](https://termuxvoid.github.io/tool.html?name=gh-dork) | GitHub dorking tool – search repositories using dorks |
 | [ghosttrack](https://termuxvoid.github.io/tool.html?name=ghosttrack) | Advanced tracking and reconnaissance tool |
+| [git-hound](https://termuxvoid.github.io/tool.html?name=git-hound) | Fast GitHub recon – hunt leaked secrets and API keys across all of GitHub using dorks |
 | [knockpy](https://termuxvoid.github.io/tool.html?name=knockpy) | Subdomain enumeration and reconnaissance tool |
 | [maigret](https://termuxvoid.github.io/tool.html?name=maigret) | OSINT username search tool with 3000+ sites |
 | [metagoofil](https://termuxvoid.github.io/tool.html?name=metagoofil) | Search Google and download specific file types for OSINT gathering |

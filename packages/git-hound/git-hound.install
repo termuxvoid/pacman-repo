@@ -1,0 +1,24 @@
+#!/bin/bash
+
+post_install() {
+    set -e
+
+    UPVER="${1%%-*}"
+    TMP_DIR="$TMPDIR/git-hound-build"
+    BIN="$PREFIX/bin/git-hound"
+
+    rm -rf "$TMP_DIR" 2>/dev/null || true
+    git clone -q --depth 1 --branch "v${UPVER}" --config advice.detachedHead=false "https://github.com/tillson/git-hound.git" "$TMP_DIR"
+    cd "$TMP_DIR"
+    go build -trimpath -ldflags "-w -s" -o git-hound
+    install -Dm755 git-hound "$BIN"
+    cd /
+    rm -rf "$TMP_DIR"
+
+    return 0
+}
+
+post_remove() {
+    rm -f "$PREFIX/bin/git-hound"
+    return 0
+}
