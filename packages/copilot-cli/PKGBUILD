@@ -2,8 +2,8 @@
 # Ported from TermuxVoid APT repo (packages/copilot-cli)
 
 pkgname="copilot-cli"
-pkgver=1.0.82
-pkgrel=1
+pkgver=1.0.83
+pkgrel=0
 pkgdesc='GitHub Copilot CLI (glibc version)'
 arch=('any')
 url="https://github.com/github/copilot-cli"

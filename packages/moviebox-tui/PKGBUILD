@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/moviebox-tui)
+
+pkgname="moviebox-tui"
+pkgver=0.1.18
+pkgrel=0
+pkgdesc='Terminal UI for MovieBox'
+arch=('any')
+url="https://github.com/mesamirh/MovieBox-Tui"
+depends=('rust' 'termux-tools' 'termux-api' 'curl' 'tar')
+install="moviebox-tui.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

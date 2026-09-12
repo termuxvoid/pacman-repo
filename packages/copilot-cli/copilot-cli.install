@@ -22,7 +22,7 @@ mkdir -p "$PREFIX/glibc/etc"
 ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
 ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
 
-VERSION="1.0.82"
+VERSION="1.0.83"
 TARFILE="copilot-linux-arm64.tar.gz"
 DOWNLOAD_URL="https://github.com/github/copilot-cli/releases/download/v${VERSION}/${TARFILE}"
 

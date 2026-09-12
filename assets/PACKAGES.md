@@ -222,6 +222,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [jwt-hack](https://termuxvoid.github.io/tool.html?name=jwt-hack) | JWT security testing and exploitation tool |
 | [linkwizard](https://termuxvoid.github.io/tool.html?name=linkwizard) | Powerful profile link finder for Termux |
 | [mkwebapp](https://termuxvoid.github.io/tool.html?name=mkwebapp) | Tool to create Termux .deb packages for websites |
+| [moviebox-tui](https://termuxvoid.github.io/tool.html?name=moviebox-tui) | Terminal UI for browsing and streaming movies from MovieBox |
 | [mtcr-apply](https://termuxvoid.github.io/tool.html?name=mtcr-apply) | MTCR Patch Application Tool for Android APKs |
 | [numinfo](https://termuxvoid.github.io/tool.html?name=numinfo) | Phone number intelligence and lookup tool |
 | [pairip](https://termuxvoid.github.io/tool.html?name=pairip) | PairIP Protection Removal Tool |
