@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/cheat-sh)
+
+pkgname="cheat-sh"
+pkgver=1.0
+pkgrel=0
+pkgdesc='Command-line client for cheat.sh'
+arch=('any')
+url="https://cheat.sh/"
+depends=('curl' 'bash' 'termux-tools')
+install="cheat-sh.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

@@ -206,6 +206,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [blutter](https://termuxvoid.github.io/tool.html?name=blutter) | Flutter/Dart Binary Analysis and Reverse Engineering |
 | [cdxsummary](https://termuxvoid.github.io/tool.html?name=cdxsummary) | CDX summary and analysis tool |
 | [cewl](https://termuxvoid.github.io/tool.html?name=cewl) | Custom Word List generator (CeWL) for password cracking |
+| [cheat-sh](https://termuxvoid.github.io/tool.html?name=cheat-sh) | Command-line client for cheat.sh – cheat sheets for programming languages and tools |
 | [cronitor-cli](https://termuxvoid.github.io/tool.html?name=cronitor-cli) | Command Line Interface for Cronitor Monitoring |
 | [dpt-shell](https://termuxvoid.github.io/tool.html?name=dpt-shell) | DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime. |
 | [elpscrk](https://termuxvoid.github.io/tool.html?name=elpscrk) | Intelligent common user-password profiler |

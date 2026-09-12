@@ -1,0 +1,22 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+URL="https://cht.sh/:cht.sh"
+BIN="$PREFIX/bin/cheat-sh"
+
+curl -sL -o "$BIN" "$URL"
+termux-fix-shebang "$BIN"
+chmod +x "$BIN"
+
+echo "cheat-sh installed. Run 'cheat-sh'"
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/cheat-sh"
+echo "cheat-sh removed."
+return 0
+}
+
