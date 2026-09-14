@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/phpsploit)
+
+pkgname="phpsploit"
+pkgver=3.2.aea961d
+pkgrel=0
+pkgdesc='Stealth post-exploitation C2 framework for web servers'
+arch=('any')
+url="https://github.com/nil0x42/phpsploit"
+depends=('git' 'python' 'python-pip')
+install="phpsploit.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

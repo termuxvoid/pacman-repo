@@ -40,6 +40,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [nikto](https://termuxvoid.github.io/tool.html?name=nikto) | Comprehensive web server scanner |
 | [openbullet](https://termuxvoid.github.io/tool.html?name=openbullet) | A tool for running openbullet configurations |
 | [paramspider](https://termuxvoid.github.io/tool.html?name=paramspider) | Parameter discovery suite for web applications |
+| [phpsploit](https://termuxvoid.github.io/tool.html?name=phpsploit) | Stealth post-exploitation C2 framework for web servers |
 | [phonesploit-pro](https://termuxvoid.github.io/tool.html?name=phonesploit-pro) | Android hacking tool with ADB |
 | [ransomux](https://termuxvoid.github.io/tool.html?name=ransomux) | Ramsomware making tool |
 | [setoolkit](https://termuxvoid.github.io/tool.html?name=setoolkit) | Social Engineering Toolkit |
