@@ -13,8 +13,8 @@
 #   version dash -> numeric tail becomes pkgrel, otherwise folded into pkgver
 set -u
 
-SRC="${1:-$HOME/termuxvoid/repo}"
-DEST="${2:-$HOME/termuxvoid/pacman-repo}"
+SRC="${1:-$HOME/repo}"
+DEST="${2:-$HOME/pacman-repo}"
 shift 2 2>/dev/null || shift $# 2>/dev/null
 PKGS="$*"
 

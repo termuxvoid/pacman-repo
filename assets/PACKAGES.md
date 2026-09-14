@@ -39,6 +39,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [mantra](https://termuxvoid.github.io/tool.html?name=mantra) | API key hunter for JS files and web pages |
 | [nikto](https://termuxvoid.github.io/tool.html?name=nikto) | Comprehensive web server scanner |
 | [openbullet](https://termuxvoid.github.io/tool.html?name=openbullet) | A tool for running openbullet configurations |
+| [ophcrack](https://termuxvoid.github.io/tool.html?name=ophcrack) | NTLM/LM hash cracker using rainbow tables – cracks Windows SAM hashes |
 | [paramspider](https://termuxvoid.github.io/tool.html?name=paramspider) | Parameter discovery suite for web applications |
 | [phpsploit](https://termuxvoid.github.io/tool.html?name=phpsploit) | Stealth post-exploitation C2 framework for web servers |
 | [phonesploit-pro](https://termuxvoid.github.io/tool.html?name=phonesploit-pro) | Android hacking tool with ADB |

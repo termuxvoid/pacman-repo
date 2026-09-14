@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/ophcrack)
+
+pkgname="ophcrack"
+pkgver=3.8.0
+pkgrel=0
+pkgdesc='NTLM/LM hash cracker using rainbow tables'
+arch=('any')
+url="https://ophcrack.sourceforge.io/"
+depends=('clang' 'make' 'pkg-config' 'openssl' 'build-essential' 'sed' 'curl' 'tar' 'bzip2')
+install="ophcrack.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
