@@ -94,6 +94,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [webhost](https://termuxvoid.github.io/tool.html?name=webhost) | Serve local directories and expose via tunnels |
 | [whatsapp-cli](https://termuxvoid.github.io/tool.html?name=whatsapp-cli) | Standalone CLI for WhatsApp using multidevice protocol |
 | [wipwn](https://termuxvoid.github.io/tool.html?name=wipwn) | Fast automated WiFi WPS PIN cracking tool |
+| [zgrab2](https://termuxvoid.github.io/tool.html?name=zgrab2) | Fast modular L7 application-layer scanner |
 
 ### Web Security
 
