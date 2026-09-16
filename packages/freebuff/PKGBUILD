@@ -2,11 +2,11 @@
 # Ported from TermuxVoid APT repo (packages/freebuff)
 
 pkgname="freebuff"
-pkgver=0.0.162
+pkgver=0.0.175
 pkgrel=1
 pkgdesc='Free, subscription-less AI coding agent for the terminal'
 arch=('any')
-url="https://codebuff.com"
+url="https://freebuff.com"
 depends=('glibc' 'clang' 'curl' 'tar')
 install="freebuff.install"
 options=('!strip' '!debug' '!emptydirs')

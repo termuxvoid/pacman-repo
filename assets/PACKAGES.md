@@ -173,6 +173,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [copilot-cli](https://termuxvoid.github.io/tool.html?name=copilot-cli) | GitHub Copilot CLI (glibc version) |
 | [freebuff](https://termuxvoid.github.io/tool.html?name=freebuff) | Free, subscription-less AI coding agent for the terminal |
 | [hermes-agent](https://termuxvoid.github.io/tool.html?name=hermes-agent) | AI-powered coding assistant and workflow automation tool |
+| [jcode](https://termuxvoid.github.io/tool.html?name=jcode) | Terminal coding agent harness with a fast local TUI, persistent memory, and MCP support |
 | [kimi-code](https://termuxvoid.github.io/tool.html?name=kimi-code) | AI-powered coding assistant for the terminal |
 | [laudacode](https://termuxvoid.github.io/tool.html?name=laudacode) | Fast, lightweight AI coding agent for your terminal |
 | [mimocode](https://termuxvoid.github.io/tool.html?name=mimocode) | AI‑powered coding assistant (glibc wrapper for Termux) |

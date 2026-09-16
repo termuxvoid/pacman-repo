@@ -24,7 +24,7 @@ mkdir -p "$PREFIX/glibc/etc"
 ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
 ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
 
-VERSION="0.0.162"
+VERSION="0.0.175"
 ARCH=$(uname -m)
 
 case "$ARCH" in
