@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/dpt-shell)
 
 pkgname="dpt-shell"
-pkgver=2.20.0
+pkgver=2.21.0
 pkgrel=1
 pkgdesc='DPT Shell - Dex Protection Tool Shell dpt-shell is an Android Dex protection shell that hollows out Dex method implementations and reconstructs them at runtime.'
 arch=('any')

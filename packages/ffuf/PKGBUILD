@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/ffuf)
 
 pkgname="ffuf"
-pkgver=2.2.1
+pkgver=2.3.0
 pkgrel=1
 pkgdesc='Fast web fuzzer written in Go'
 arch=('any')

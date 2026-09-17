@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/user-scanner)
 
 pkgname="user-scanner"
-pkgver=1.5.0
+pkgver=1.5.1
 pkgrel=1
 pkgdesc='2-in-1 Email & Username OSINT suite'
 arch=('any')

@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/nikto)
 
 pkgname="nikto"
-pkgver=2.6.0
+pkgver=2.6.1
 pkgrel=1
 pkgdesc='Comprehensive web server scanner'
 arch=('any')

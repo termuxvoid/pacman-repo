@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/brutespray)
 
 pkgname="brutespray"
-pkgver=2.6.3
+pkgver=2.7.2
 pkgrel=1
 pkgdesc="Brute-force attacks from Nmap output"
 arch=('any')

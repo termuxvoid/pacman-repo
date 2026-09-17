@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/moviebox-tui)
 
 pkgname="moviebox-tui"
-pkgver=0.1.18
+pkgver=0.1.20
 pkgrel=0
 pkgdesc='Terminal UI for MovieBox'
 arch=('any')

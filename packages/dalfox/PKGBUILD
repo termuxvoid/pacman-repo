@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/dalfox)
 
 pkgname="dalfox"
-pkgver=3.2.1
+pkgver=3.2.3
 pkgrel=1
 pkgdesc='Fast parameter analysis and XSS scanning tool (v3 in Rust)'
 arch=('any')
