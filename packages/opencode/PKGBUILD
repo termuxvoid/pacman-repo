@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/opencode)
 
 pkgname="opencode"
-pkgver=1.18.30
+pkgver=1.18.31
 pkgrel=0
 pkgdesc='AI‑powered coding assistant (glibc version)'
 arch=('any')

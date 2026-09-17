@@ -11,7 +11,7 @@ return 0
 
 post_install() {
 set -e
-VERSION="1.1.22"
+VERSION="1.2.4"
 PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
 
 # Ensure glibc can resolve DNS (pacman envs may lack the resolv.conf symlink)
