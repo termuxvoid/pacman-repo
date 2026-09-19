@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pipal)
+
+pkgname="pipal"
+pkgver=3.4.0
+pkgrel=0
+pkgdesc='Password analyser and statistics generator'
+arch=('any')
+url="https://github.com/digininja/pipal"
+depends=('git' 'ruby')
+install="pipal.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

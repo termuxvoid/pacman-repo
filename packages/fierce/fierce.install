@@ -1,0 +1,29 @@
+#!/bin/bash
+
+post_install() {
+set -e
+
+REPO="https://github.com/mschwager/fierce.git"
+DEST="$PREFIX/share/fierce"
+
+pip install dnspython
+
+rm -rf "$DEST" 2>/dev/null || true
+git clone --depth 1 "$REPO" "$DEST"
+
+python -m pip install --no-deps "$DEST"
+
+echo "fierce installed. Run 'fierce'"
+echo "Example: fierce --domain example.com --dns-servers 8.8.8.8"
+return 0
+}
+
+post_remove() {
+
+pip uninstall -y fierce 2>/dev/null || true
+rm -rf "$PREFIX/share/fierce"
+
+echo "fierce removed."
+return 0
+}
+

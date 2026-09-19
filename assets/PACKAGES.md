@@ -28,6 +28,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [evilurl](https://termuxvoid.github.io/tool.html?name=evilurl) | Generate unicode evil domains for IDN homograph attacks |
 | [gitleaks](https://termuxvoid.github.io/tool.html?name=gitleaks) | Detect hard-coded secrets and sensitive data in Git repositories |
 | [gobuster](https://termuxvoid.github.io/tool.html?name=gobuster) | Directory/file & DNS busting tool written in Go |
+| [linux-exploit-suggester](https://termuxvoid.github.io/tool.html?name=linux-exploit-suggester) | Suggest kernel exploits based on the running kernel version |
 | [hashcat](https://termuxvoid.github.io/tool.html?name=hashcat) | World's fastest and most advanced password recovery utility |
 | [hashid](https://termuxvoid.github.io/tool.html?name=hashid) | Advanced hash identifier |
 | [hatcloud](https://termuxvoid.github.io/tool.html?name=hatcloud) | CloudFlare detector and information gatherer |
@@ -41,6 +42,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [openbullet](https://termuxvoid.github.io/tool.html?name=openbullet) | A tool for running openbullet configurations |
 | [ophcrack](https://termuxvoid.github.io/tool.html?name=ophcrack) | NTLM/LM hash cracker using rainbow tables – cracks Windows SAM hashes |
 | [paramspider](https://termuxvoid.github.io/tool.html?name=paramspider) | Parameter discovery suite for web applications |
+| [pipal](https://termuxvoid.github.io/tool.html?name=pipal) | Password analyser – generate statistics from password lists |
 | [phpsploit](https://termuxvoid.github.io/tool.html?name=phpsploit) | Stealth post-exploitation C2 framework for web servers |
 | [phonesploit-pro](https://termuxvoid.github.io/tool.html?name=phonesploit-pro) | Android hacking tool with ADB |
 | [ransomux](https://termuxvoid.github.io/tool.html?name=ransomux) | Ramsomware making tool |
@@ -82,6 +84,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [naabu](https://termuxvoid.github.io/tool.html?name=naabu) | Fast port scanner written in Go |
 | [nethunter-cli](https://termuxvoid.github.io/tool.html?name=nethunter-cli) | Kali NetHunter Rootless Edition CLI |
 | [ngrok](https://termuxvoid.github.io/tool.html?name=ngrok) | Secure tunnels to localhost |
+| [stowaway](https://termuxvoid.github.io/tool.html?name=stowaway) | Multi-hop proxy tool – build chained tunnels through compromised hosts |
 | [onionsearch](https://termuxvoid.github.io/tool.html?name=onionsearch) | Scrape .onion URLs from various Tor search engines |
 | [openbullet2](https://termuxvoid.github.io/tool.html?name=openbullet2) | Cross-platform automation suite powered by .NET Core |
 | [parrot-cli](https://termuxvoid.github.io/tool.html?name=parrot-cli) | Parrot Security OS 6.3 (Lorikeet) for Termux |
@@ -94,6 +97,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [webhost](https://termuxvoid.github.io/tool.html?name=webhost) | Serve local directories and expose via tunnels |
 | [whatsapp-cli](https://termuxvoid.github.io/tool.html?name=whatsapp-cli) | Standalone CLI for WhatsApp using multidevice protocol |
 | [wipwn](https://termuxvoid.github.io/tool.html?name=wipwn) | Fast automated WiFi WPS PIN cracking tool |
+| [zackattack](https://termuxvoid.github.io/tool.html?name=zackattack) | NTLM authentication relaying toolkit with rogue HTTP/SMB servers, LDAP and EWS relay |
 | [zgrab2](https://termuxvoid.github.io/tool.html?name=zgrab2) | Fast modular L7 application-layer scanner |
 
 ### Web Security
@@ -107,10 +111,12 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [commix](https://termuxvoid.github.io/tool.html?name=commix) | Automated All-in-One OS Command Injection and Exploitation Tool |
 | [dark-phish](https://termuxvoid.github.io/tool.html?name=dark-phish) | Powerful Phishing Tool with 50+ templates |
 | [dirsearch](https://termuxvoid.github.io/tool.html?name=dirsearch) | Web path scanner |
+| [droopescan](https://termuxvoid.github.io/tool.html?name=droopescan) | CMS scanner for Drupal, WordPress, Silverstripe and Joomla |
 | [ffuf](https://termuxvoid.github.io/tool.html?name=ffuf) | Fast web fuzzer written in Go |
 | [ghauri](https://termuxvoid.github.io/tool.html?name=ghauri) | Advanced Cross-Platform SQL Injection Scanner |
 | [gowitness](https://termuxvoid.github.io/tool.html?name=gowitness) | Web screenshot utility using headless Chrome |
 | [httpx](https://termuxvoid.github.io/tool.html?name=httpx) | Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery |
+| [interlace](https://termuxvoid.github.io/tool.html?name=interlace) | Multi-thread a single-threaded CLI command across many targets (CIDR/glob) |
 | [jsql](https://termuxvoid.github.io/tool.html?name=jsql) | Lightweight database information finder from a server |
 | [katana](https://termuxvoid.github.io/tool.html?name=katana) | Fast, passive and active web crawler |
 | [nosqli](https://termuxvoid.github.io/tool.html?name=nosqli) | NoSQL injection detection and exploitation tool |
@@ -136,6 +142,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [anubis](https://termuxvoid.github.io/tool.html?name=anubis) | Subdomain enumeration and information gathering tool |
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
 | [dnsx](https://termuxvoid.github.io/tool.html?name=dnsx) | Fast DNS toolkit for reconnaissance |
+| [fierce](https://termuxvoid.github.io/tool.html?name=fierce) | DNS reconnaissance – locate targets and non-contiguous IP space |
 | [dorks-eye](https://termuxvoid.github.io/tool.html?name=dorks-eye) | Google Hacking Dork Scraping and Searching Tool |
 | [gh-dork](https://termuxvoid.github.io/tool.html?name=gh-dork) | GitHub dorking tool – search repositories using dorks |
 | [ghosttrack](https://termuxvoid.github.io/tool.html?name=ghosttrack) | Advanced tracking and reconnaissance tool |
@@ -160,6 +167,12 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 |------|-------------|
 | [instaghost](https://termuxvoid.github.io/tool.html?name=instaghost) | Professional Instagram OSINT Tool |
 | [sherlock](https://termuxvoid.github.io/tool.html?name=sherlock) | Hunt down social media accounts by username |
+
+### Steganography & Forensics
+
+| Tool | Description |
+|------|-------------|
+| [snow](https://termuxvoid.github.io/tool.html?name=snow) | Hide secret messages in plain text files using invisible whitespace, with optional compression and encryption |
 
 ### Development
 

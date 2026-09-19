@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/stowaway)
+
+pkgname="stowaway"
+pkgver=2.2
+pkgrel=0
+pkgdesc='Multi-hop proxy tool for security researchers and pentesters'
+arch=('any')
+url="https://github.com/ph4ntonn/Stowaway"
+depends=('git' 'golang')
+install="stowaway.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
