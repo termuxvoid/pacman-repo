@@ -3,7 +3,7 @@
 
 pkgname="tvpkg"
 pkgver=0.1.0
-pkgrel=0
+pkgrel=1
 pkgdesc='TermuxVoid package manager with a fuzzy TUI'
 arch=('any')
 url="https://github.com/termuxvoid/tvpkg"
