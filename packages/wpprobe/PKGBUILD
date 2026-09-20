@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wpprobe)
+
+pkgname="wpprobe"
+pkgver=174.b5aa2b0
+pkgrel=0
+pkgdesc='Fast tool to fingerprint and enumerate WordPress plugins and themes'
+arch=('any')
+url="https://github.com/Chocapikk/wpprobe"
+depends=('git' 'golang')
+install="wpprobe.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

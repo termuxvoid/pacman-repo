@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/wordlistctl)
+
+pkgname="wordlistctl"
+pkgver=0.9.4
+pkgrel=0
+pkgdesc='Fetch, install and search wordlist archives from wordlists and repositories'
+arch=('any')
+url="https://github.com/BlackArch/wordlistctl"
+depends=('python' 'curl')
+install="wordlistctl.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

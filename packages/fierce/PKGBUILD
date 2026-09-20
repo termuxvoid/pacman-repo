@@ -3,7 +3,7 @@
 
 pkgname="fierce"
 pkgver=1.6.0
-pkgrel=0
+pkgrel=1
 pkgdesc='DNS reconnaissance tool for locating targets and non-contiguous IP space'
 arch=('any')
 url="https://github.com/mschwager/fierce"

@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/dnscan)
+
+pkgname="dnscan"
+pkgver=209.281721e
+pkgrel=0
+pkgdesc='A python wordlist-based DNS subdomain scanner'
+arch=('any')
+url="https://github.com/rbsec/dnscan"
+depends=('git' 'python' 'python-cryptography')
+install="dnscan.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
