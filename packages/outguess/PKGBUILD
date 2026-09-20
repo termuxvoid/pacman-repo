@@ -7,7 +7,7 @@ pkgrel=0
 pkgdesc='Universal steganographic tool for inserting hidden data into images'
 arch=('any')
 url="https://github.com/resurrecting-open-source-projects/outguess"
-depends=('curl' 'make' 'clang' 'gcc' 'libjpeg-turbo')
+depends=('git' 'autoconf' 'automake' 'libtool' 'make' 'clang' 'gcc' 'libjpeg-turbo')
 install="outguess.install"
 options=('!strip' '!debug' '!emptydirs')
 

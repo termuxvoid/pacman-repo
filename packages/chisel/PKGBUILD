@@ -7,7 +7,7 @@ pkgrel=0
 pkgdesc='Fast TCP/UDP tunnel transported over HTTP, secured via SSH'
 arch=('any')
 url="https://github.com/jpillora/chisel"
-depends=('git' 'golang')
+depends=('curl' 'golang')
 install="chisel.install"
 options=('!strip' '!debug' '!emptydirs')
 
