@@ -3,7 +3,7 @@
 
 pkgname="wordlistctl"
 pkgver=0.9.4
-pkgrel=0
+pkgrel=1
 pkgdesc='Fetch, install and search wordlist archives from wordlists and repositories'
 arch=('any')
 url="https://github.com/BlackArch/wordlistctl"
