@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/tvpkgs)
+
+pkgname="tvpkgs"
+pkgver=0.1.0
+pkgrel=0
+pkgdesc='TermuxVoid package manager with a fuzzy TUI'
+arch=('any')
+url="https://github.com/termuxvoid/tvpkg"
+depends=('curl' 'tar' 'gzip' 'coreutils' 'grep')
+install="tvpkgs.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
