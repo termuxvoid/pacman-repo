@@ -109,6 +109,9 @@ pacman -S metasploit-framework
 ```
 
 > [!TIP]
+> The installer also automatically sets up **tvpkgs**, the TermuxVoid package manager. Launch it anytime with **`tvpkg`** (alias **`tvp`**) for an interactive TUI — browse, filter, install and remove TermuxVoid tools without leaving your terminal.
+
+> [!TIP]
 > After installation, run `pacman -Sy` to refresh your local package database. You can search for tools using `pacman -Ss <tool-name>`.
 
 > [!NOTE]

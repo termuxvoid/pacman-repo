@@ -82,7 +82,13 @@ run_command "Refreshing package databases" \
 run_command "Installing base-devel (build tools: make, gcc, etc.)" \
 "pacman -S --needed --noconfirm base-devel"
 
+run_command "Installing tvpkgs (TermuxVoid package manager)" \
+"pacman -S --needed --noconfirm tvpkgs"
+
 print_header "${GREEN}🎉 TermuxVoid Pacman Repository Setup Complete! 🎉${RESET}"
+echo -e "${INFO} Launch the TermuxVoid package manager anytime with:${RESET}"
+echo -e "${CYAN}  tvpkg     # interactive TUI${RESET}"
+echo -e "${CYAN}  tvp       # alias for tvpkg${RESET}"
 echo -e "${INFO} Install tools with:  pacman -S <tool-name>${RESET}"
 echo -e "${INFO} Example:             pacman -S sqlmap${RESET}"
 echo -e "${INFO} Join our Telegram channel for updates:"
