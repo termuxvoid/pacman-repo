@@ -215,7 +215,6 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 
 | Tool | Description |
 |------|-------------|
-| [alienkrishn](https://termuxvoid.github.io/tool.html?name=alienkrishn) | TermuxVoid package manager and system helper |
 | [andrax](https://termuxvoid.github.io/tool.html?name=andrax) | Android Penetration Testing OS (rootless) |
 | [antisplit](https://termuxvoid.github.io/tool.html?name=antisplit) | APK Split Package Combiner and Modifier |
 | [apkeditor](https://termuxvoid.github.io/tool.html?name=apkeditor) | Lightweight APK modification tool |
@@ -264,6 +263,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [term-helper](https://termuxvoid.github.io/tool.html?name=term-helper) | Terminal command helper and cheatsheet tool |
 | [termuxfetch](https://termuxvoid.github.io/tool.html?name=termuxfetch) | Neofetch‑like system information tool for Termux |
 | [tte](https://termuxvoid.github.io/tool.html?name=tte) | Terminal Text Effects and Animation Library |
+| [tvpkgs](https://termuxvoid.github.io/tool.html?name=tvpkgs) | TermuxVoid package manager with a fuzzy TUI |
 | [unfurl](https://termuxvoid.github.io/tool.html?name=unfurl) | Pull out bits of URLs provided on stdin |
 | [user-scanner](https://termuxvoid.github.io/tool.html?name=user-scanner) | 2-in-1 Email & Username OSINT suite |
 | [vulnx](https://termuxvoid.github.io/tool.html?name=vulnx) | Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities. |
