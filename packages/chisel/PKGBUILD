@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/chisel)
 
 pkgname="chisel"
-pkgver=261.3c00f04
+pkgver=1.12.1
 pkgrel=0
 pkgdesc='Fast TCP/UDP tunnel transported over HTTP, secured via SSH'
 arch=('any')

@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/wpprobe)
 
 pkgname="wpprobe"
-pkgver=174.b5aa2b0
+pkgver=0.12.11
 pkgrel=0
 pkgdesc='Fast tool to fingerprint and enumerate WordPress plugins and themes'
 arch=('any')

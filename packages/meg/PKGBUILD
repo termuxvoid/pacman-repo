@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/meg)
 
 pkgname="meg"
-pkgver=89.5cc1d34
+pkgver=0.3.0
 pkgrel=0
 pkgdesc='Fetch many paths for many hosts - without killing the hosts'
 arch=('any')
