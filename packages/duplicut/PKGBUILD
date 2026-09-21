@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/duplicut)
+
+pkgname="duplicut"
+pkgver=2.4
+pkgrel=0
+pkgdesc='Fast duplicate line remover for wordlists'
+arch=('any')
+url="https://github.com/nil0x42/duplicut"
+depends=('curl' 'tar' 'gzip' 'make' 'clang' 'binutils')
+install="duplicut.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

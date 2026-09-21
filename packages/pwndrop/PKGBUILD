@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/pwndrop)
+
+pkgname="pwndrop"
+pkgver=1.0.1
+pkgrel=0
+pkgdesc='Self-deployable HTTP file hosting service for red team payloads'
+arch=('any')
+url="https://github.com/kgretzky/pwndrop"
+depends=('curl' 'golang' 'tar' 'gzip')
+install="pwndrop.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

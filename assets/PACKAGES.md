@@ -28,6 +28,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [evilurl](https://termuxvoid.github.io/tool.html?name=evilurl) | Generate unicode evil domains for IDN homograph attacks |
 | [gitleaks](https://termuxvoid.github.io/tool.html?name=gitleaks) | Detect hard-coded secrets and sensitive data in Git repositories |
 | [gobuster](https://termuxvoid.github.io/tool.html?name=gobuster) | Directory/file & DNS busting tool written in Go |
+| [gospider](https://termuxvoid.github.io/tool.html?name=gospider) | Fast web spider for endpoint and asset discovery – js/css links, forms and more |
 | [linux-exploit-suggester](https://termuxvoid.github.io/tool.html?name=linux-exploit-suggester) | Suggest kernel exploits based on the running kernel version |
 | [hashcat](https://termuxvoid.github.io/tool.html?name=hashcat) | World's fastest and most advanced password recovery utility |
 | [hashid](https://termuxvoid.github.io/tool.html?name=hashid) | Advanced hash identifier |
@@ -89,6 +90,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [openbullet2](https://termuxvoid.github.io/tool.html?name=openbullet2) | Cross-platform automation suite powered by .NET Core |
 | [parrot-cli](https://termuxvoid.github.io/tool.html?name=parrot-cli) | Parrot Security OS 6.3 (Lorikeet) for Termux |
 | [playit](https://termuxvoid.github.io/tool.html?name=playit) | Global Proxy for Server Hosting Without Port Forwarding |
+| [pwndrop](https://termuxvoid.github.io/tool.html?name=pwndrop) | Self-deployable HTTP hosting service for red team payloads with a web admin panel |
 | [rang3r](https://termuxvoid.github.io/tool.html?name=rang3r) | Multi-threaded IP + port scanner |
 | [reaver](https://termuxvoid.github.io/tool.html?name=reaver) | Brute force WPS PINs and recover WPA/WPA2 passphrases |
 | [sliver-c2](https://termuxvoid.github.io/tool.html?name=sliver-c2) | Open‑source cross‑platform adversary emulation framework |
@@ -131,6 +133,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [sqlmap](https://termuxvoid.github.io/tool.html?name=sqlmap) | Automatic SQL Injection and Database Takeover Tool |
 | [waymap](https://termuxvoid.github.io/tool.html?name=waymap) | Fast Web Vulnerability Scanner and Security Testing Toolkit |
 | [wpprobe](https://termuxvoid.github.io/tool.html?name=wpprobe) | Stealthy WordPress plugin and theme scanner with CVE checks |
+| [xmlrpc-bruteforcer](https://termuxvoid.github.io/tool.html?name=xmlrpc-bruteforcer) | Multithreaded WordPress XML-RPC brute-force tool |
 | [wpscan](https://termuxvoid.github.io/tool.html?name=wpscan) | WordPress vulnerability scanner |
 | [xss-loader](https://termuxvoid.github.io/tool.html?name=xss-loader) | XSS payload generator and loader tool |
 | [xsstrike](https://termuxvoid.github.io/tool.html?name=xsstrike) | Advanced XSS Detection and Exploitation Suite |
@@ -145,6 +148,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
 | [dnsx](https://termuxvoid.github.io/tool.html?name=dnsx) | Fast DNS toolkit for reconnaissance |
 | [dnscan](https://termuxvoid.github.io/tool.html?name=dnscan) | Python wordlist‑based DNS subdomain scanner with zone‑transfer and TLD checks |
+| [dnsrecon](https://termuxvoid.github.io/tool.html?name=dnsrecon) | DNS enumeration – subdomains, record discovery, zone transfers and brute forcing |
 | [fierce](https://termuxvoid.github.io/tool.html?name=fierce) | DNS reconnaissance – locate targets and non-contiguous IP space |
 | [dorks-eye](https://termuxvoid.github.io/tool.html?name=dorks-eye) | Google Hacking Dork Scraping and Searching Tool |
 | [gh-dork](https://termuxvoid.github.io/tool.html?name=gh-dork) | GitHub dorking tool – search repositories using dorks |
@@ -179,6 +183,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 |------|-------------|
 | [outguess](https://termuxvoid.github.io/tool.html?name=outguess) | Universal steganographic tool – hide secrets inside JPEG images |
 | [snow](https://termuxvoid.github.io/tool.html?name=snow) | Hide secret messages in plain text files using invisible whitespace, with optional compression and encryption |
+| [stegseek](https://termuxvoid.github.io/tool.html?name=stegseek) | Lightning-fast steghide password cracker for JPEG stego files |
 
 ### Development
 
@@ -329,6 +334,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [burpsuite-pro](https://termuxvoid.github.io/tool.html?name=burpsuite-pro) | An integrated platform for performing security testing of web applications (professional edition) |
 | [cctvip](https://termuxvoid.github.io/tool.html?name=cctvip) | A collection of open cctv camera ip |
 | [cupp](https://termuxvoid.github.io/tool.html?name=cupp) | Common User Passwords Profiler (CUPP) |
+| [duplicut](https://termuxvoid.github.io/tool.html?name=duplicut) | Fast and memory-efficient duplicate line remover for massive wordlists – no sorting needed |
 | [darksploit-framework](https://termuxvoid.github.io/tool.html?name=darksploit-framework) | Darksploit is a tool to run and create exploits |
 | [enctool](https://termuxvoid.github.io/tool.html?name=enctool) | encrypt or decrypt bash file and encrypt python in Marshal format |
 | [hound](https://termuxvoid.github.io/tool.html?name=hound) | Simple and light tool for information gathering and capture exact GPS coordinates |

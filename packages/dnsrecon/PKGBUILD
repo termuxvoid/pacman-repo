@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/dnsrecon)
+
+pkgname="dnsrecon"
+pkgver=1.6.3
+pkgrel=0
+pkgdesc='DNS enumeration tool'
+arch=('any')
+url="https://github.com/darkoperator/dnsrecon"
+depends=('git' 'python')
+install="dnsrecon.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
