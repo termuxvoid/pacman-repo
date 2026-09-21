@@ -7,7 +7,7 @@ pkgrel=0
 pkgdesc='Lightning-fast steghide password cracker'
 arch=('any')
 url="https://github.com/RickdeJager/StegSeek"
-depends=('curl' 'tar' 'gzip' 'make' 'cmake' 'clang' 'binutils' 'libmhash' 'libmcrypt' 'libjpeg-turbo' 'zlib')
+depends=('curl' 'tar' 'gzip' 'sed' 'make' 'cmake' 'clang' 'binutils' 'libmhash' 'libmcrypt' 'libjpeg-turbo' 'zlib')
 install="stegseek.install"
 options=('!strip' '!debug' '!emptydirs')
 

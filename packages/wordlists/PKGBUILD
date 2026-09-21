@@ -3,10 +3,10 @@
 
 pkgname="wordlists"
 pkgver=1.1
-pkgrel=1
+pkgrel=0
 pkgdesc='Security wordlists collection (rockyou.txt + SecLists subset).'
 arch=('any')
-depends=('wget' 'git')
+depends=('wget' 'git' 'gawk')
 install="wordlists.install"
 options=('!strip' '!debug' '!emptydirs')
 
