@@ -53,3 +53,14 @@ echo "Example: stegseek stego.jpg wordlist.txt"
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/stegseek
+rm -rf $PREFIX/share/stegseek
+
+echo "stegseek completely removed."
+
+return 0
+}
+

@@ -25,3 +25,14 @@ echo "Example: duplicut wordlist.txt -o clean.txt"
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/duplicut
+rm -rf $PREFIX/share/duplicut
+
+echo "duplicut completely removed."
+
+return 0
+}
+

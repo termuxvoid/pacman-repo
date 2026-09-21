@@ -64,3 +64,14 @@ echo "Example: dnsrecon --domain example.com --type brt -n 8.8.8.8"
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/dnsrecon
+rm -rf $PREFIX/share/dnsrecon
+
+echo "dnsrecon completely removed."
+
+return 0
+}
+

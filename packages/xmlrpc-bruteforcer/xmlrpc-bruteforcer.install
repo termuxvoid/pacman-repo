@@ -23,3 +23,14 @@ echo "Example: xmlrpc-bruteforcer http://target.com/xmlrpc.php wordlist.txt admi
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/xmlrpc-bruteforcer
+rm -rf $PREFIX/share/xmlrpc-bruteforcer
+
+echo "xmlrpc-bruteforcer completely removed."
+
+return 0
+}
+

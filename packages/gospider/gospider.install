@@ -25,3 +25,14 @@ echo "Example: gospider --sitemap -q https://example.com"
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/gospider
+rm -rf $PREFIX/share/gospider
+
+echo "gospider completely removed."
+
+return 0
+}
+

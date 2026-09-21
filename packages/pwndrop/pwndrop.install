@@ -26,3 +26,14 @@ echo "Visit http://localhost:8080/admin in your browser"
 return 0
 }
 
+post_remove() {
+set -e
+
+rm -f $PREFIX/bin/pwndrop
+rm -rf $PREFIX/share/pwndrop
+
+echo "pwndrop completely removed."
+
+return 0
+}
+
