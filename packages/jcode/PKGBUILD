@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/jcode)
 
 pkgname="jcode"
-pkgver=0.84.0
+pkgver=0.86.0
 pkgrel=0
 pkgdesc='Terminal coding agent harness'
 arch=('any')

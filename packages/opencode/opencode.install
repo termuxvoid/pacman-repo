@@ -16,13 +16,7 @@ post_install() {
 set -e
  
 PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-
-# Ensure glibc can resolve DNS (pacman envs may lack the resolv.conf symlink)
-mkdir -p "$PREFIX/glibc/etc"
-ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
-ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
-
-VERSION="1.18.31"
+VERSION="1.18.32"
 TARFILE="opencode-linux-arm64.tar.gz"
 DOWNLOAD_URL="https://github.com/anomalyco/opencode/releases/download/v${VERSION}/${TARFILE}"
 

@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-npm install -g mmx-cli@1.0.25
+npm install -g mmx-cli@1.0.26
 
 echo "mmx-cli installed. Run 'mmx'"
 return 0

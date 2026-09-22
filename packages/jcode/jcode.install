@@ -17,14 +17,7 @@ esac
 post_install() {
 set -e
 
-PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-
-# Ensure glibc can resolve DNS (pacman envs may lack the resolv.conf symlink)
-mkdir -p "$PREFIX/glibc/etc"
-ln -sf "$PREFIX/etc/resolv.conf" "$PREFIX/glibc/etc/resolv.conf"
-ln -sf "$PREFIX/etc/hosts" "$PREFIX/glibc/etc/hosts"
-
-VERSION="0.84.0"
+VERSION="0.86.0"
 ARCH=$(uname -m)
 
 case "$ARCH" in
@@ -84,12 +77,9 @@ return 0
 }
 
 post_remove() {
-
-PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-
 rm -f "$PREFIX/bin/jcode"
 rm -rf "$PREFIX/share/jcode"
-
 echo "jcode removed."
 return 0
 }
+
