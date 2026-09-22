@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/laudacode)
 
 pkgname="laudacode"
-pkgver=0.7.0
+pkgver=0.8.0
 pkgrel=0
 pkgdesc='Fast, lightweight AI coding agent for your terminal'
 arch=('any')

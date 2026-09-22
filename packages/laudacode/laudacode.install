@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-VERSION="0.7.0"
+VERSION="0.8.0"
 ARCH=$(uname -m)
 
 case "$ARCH" in
@@ -48,3 +48,4 @@ rm -f "$PREFIX/bin/laudacode"
 echo "laudacode removed."
 return 0
 }
+
