@@ -3,7 +3,7 @@
 
 pkgname="ruby-curb"
 pkgver=1.3.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Ruby bindings for libcurl'
 arch=('any')
 url="https://github.com/taf2/curb"

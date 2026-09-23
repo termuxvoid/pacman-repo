@@ -14,6 +14,24 @@ set -e
 
     gem install nokogiri -v "${UPVER}" -- --use-system-libraries
 
+    # Ruby 4.x no longer auto-loads rubygems, so plain `ruby -rnokogiri` (and
+    # any gem require) fails with LoadError. Ship nokogiri into site_ruby (repo
+    # convention, cf. ruby-curb) and make it require rubygems itself so it works
+    # with or without rubygems preloaded (covers `nokogiri`, `bundler`, scripts).
+    GEM_DIR="$(find "$PREFIX/lib/ruby/gems" -maxdepth 4 -type d -name "nokogiri-${UPVER}" | head -n1)"
+    SITE_RUBY="$(ruby -rrbconfig -e 'print RbConfig::CONFIG["sitelibdir"]')"
+
+    mkdir -p "$SITE_RUBY"
+    cp -r "$GEM_DIR/lib/nokogiri" "$SITE_RUBY/"
+    cp -r "$GEM_DIR/lib/xsd" "$SITE_RUBY/"
+    cp "$GEM_DIR/lib/nokogiri.rb" "$SITE_RUBY/"
+
+    for f in "$SITE_RUBY/nokogiri.rb" "$SITE_RUBY/nokogiri/version/info.rb" "$SITE_RUBY/nokogiri/extension.rb"; do
+        [ -f "$f" ] || continue
+        grep -q 'require "rubygems" unless defined?(Gem)' "$f" ||
+            sed -i '1i require "rubygems" unless defined?(Gem)' "$f"
+    done
+
     echo "Verifying installation..."
     ruby -rnokogiri -e "puts Nokogiri::VERSION" || {
         echo "Nokogiri installation failed!" >&2
@@ -37,6 +55,13 @@ gem uninstall nokogiri -a -x -I || true
 
 echo "Cleaning up residual files..."
 [ -d "$PREFIX/lib/ruby/gems" ] && find "$PREFIX/lib/ruby/gems" -name "*nokogiri*" -exec rm -rf {} + || true
+
+# Remove the site_ruby copies installed by post_install (ruby 4.x paths)
+for d in "$PREFIX"/lib/ruby/site_ruby/*/; do
+    rm -rf "$d/nokogiri"
+    rm -f  "$d/nokogiri.rb"
+    rm -rf "$d/xsd"
+done
 
 # Remove nokogiri binary from bin directory if it exists
 if [ -f "$PREFIX/bin/nokogiri" ]; then
