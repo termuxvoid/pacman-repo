@@ -2,22 +2,23 @@
 # Ported from TermuxVoid APT repo (packages/ruby-nokogiri)
 
 pkgname="ruby-nokogiri"
-pkgver=1.19.0
-pkgrel=4
+pkgver=1.19.4
+pkgrel=0
 pkgdesc='Ruby gem for HTML/XML parsing (system libraries version)'
 arch=('any')
 url="https://nokogiri.org/"
 depends=('ruby' 'pkg-config' 'libxml2' 'libxslt' 'gumbo-parser' 'gumbo-parser-static' 'make')
 install="ruby-nokogiri.install"
 options=('!strip' '!debug' '!emptydirs')
-source=(ruby-nokogiri-data.tar.gz)
-sha256sums=('SKIP')
+# Gumbo parser header is fetched at install time (see ruby-nokogiri.install);
+# no data tarball is shipped.
+source=()
+sha256sums=()
 
 build() {
     return 0
 }
 
 package() {
-    mkdir -p "${pkgdir}/data/data/com.termux/files"
-    tar -xzf "${srcdir}/ruby-nokogiri-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
+    return 0
 }
