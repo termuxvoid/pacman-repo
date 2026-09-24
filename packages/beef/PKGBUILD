@@ -3,7 +3,7 @@
 
 pkgname="beef"
 pkgver=0.6.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Browser Exploitation Framework'
 arch=('any')
 url="https://beefproject.com/"
