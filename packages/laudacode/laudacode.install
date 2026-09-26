@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-VERSION="0.8.0"
+VERSION="0.9.0"
 ARCH=$(uname -m)
 
 case "$ARCH" in
