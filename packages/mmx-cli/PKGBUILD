@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/mmx-cli)
 
 pkgname="mmx-cli"
-pkgver=1.0.26
+pkgver=1.0.27
 pkgrel=0
 pkgdesc='CLI tool for MiniMax AI'
 arch=('any')

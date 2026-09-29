@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/antigravity-cli)
 
 pkgname="antigravity-cli"
-pkgver=1.2.7
+pkgver=1.2.13
 pkgrel=0
 pkgdesc='AI‑powered coding assistant (glibc wrapper for Termux)'
 arch=('any')

@@ -2,8 +2,8 @@
 # Ported from TermuxVoid APT repo (packages/utim-cli)
 
 pkgname="utim-cli"
-pkgver=2.3.19
-pkgrel=1
+pkgver=2.4.1
+pkgrel=0
 pkgdesc="UTIM CLI — AI-powered unified terminal intelligence manager"
 arch=('any')
 url="https://github.com/emend-ai/utim"

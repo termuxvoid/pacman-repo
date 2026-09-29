@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/kimi-code)
 
 pkgname="kimi-code"
-pkgver=2.0.2
+pkgver=2.1.1
 pkgrel=0
 pkgdesc='AI-powered coding assistant for the terminal'
 arch=('any')
