@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/statusbar)
+
+pkgname="statusbar"
+pkgver=0.5.1
+pkgrel=0
+pkgdesc='Terminal status bar that keeps useful information visible'
+arch=('any')
+url="https://github.com/vrypan/statusbar"
+depends=('curl' 'tar')
+install="statusbar.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

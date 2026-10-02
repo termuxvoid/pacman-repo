@@ -356,6 +356,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [spider](https://termuxvoid.github.io/tool.html?name=spider) | telegram autoreport script |
 | [spurt](https://termuxvoid.github.io/tool.html?name=spurt) | HTTP stress testing tool that can overload web servers. |
 | [sqlscan](https://termuxvoid.github.io/tool.html?name=sqlscan) | A small and an efficient tool to find SQL injection vulnerability in a websites. |
+| [statusbar](https://termuxvoid.github.io/tool.html?name=statusbar) | Terminal status bar that keeps useful information visible |
 | [termsploit](https://termuxvoid.github.io/tool.html?name=termsploit) | Pentesting framework for Termux |
 | [termux-desktop](https://termuxvoid.github.io/tool.html?name=termux-desktop) | termux xfce4 desktop gui with Hacker themes and icona |
 | [termux-desktop-wallpapers](https://termuxvoid.github.io/tool.html?name=termux-desktop-wallpapers) | Wallpapers for termux-desktop |
