@@ -4,10 +4,10 @@
 pkgname="statusbar"
 pkgver=0.5.1
 pkgrel=0
-pkgdesc='Terminal status bar that keeps useful information visible'
+pkgdesc='Terminal status bar that keeps useful information visible, built from source for Termux'
 arch=('any')
 url="https://github.com/vrypan/statusbar"
-depends=('curl' 'tar')
+depends=('curl' 'tar' 'zig')
 install="statusbar.install"
 options=('!strip' '!debug' '!emptydirs')
 
