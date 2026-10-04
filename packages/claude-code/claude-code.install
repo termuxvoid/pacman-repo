@@ -15,7 +15,7 @@ return 0
 post_install() {
 set -e
 
-VERSION="2.1.284"
+VERSION="2.1.289"
 TARFILE="claude-linux-arm64.tar.gz"
 DOWNLOAD_URL="https://github.com/anthropics/claude-code/releases/download/v${VERSION}/${TARFILE}"
 
