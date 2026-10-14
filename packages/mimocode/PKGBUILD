@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/mimocode)
 
 pkgname="mimocode"
-pkgver=0.1.14
+pkgver=0.1.15
 pkgrel=0
 pkgdesc='AI‑powered coding assistant (glibc wrapper for Termux)'
 arch=('any')
