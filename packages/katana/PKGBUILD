@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/katana)
 
 pkgname="katana"
-pkgver=1.7.0
+pkgver=1.8.0
 pkgrel=1
 pkgdesc='Fast, passive and active web crawler'
 arch=('any')
 url="https://github.com/projectdiscovery/katana"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="katana.install"
 options=('!strip' '!debug' '!emptydirs')
 

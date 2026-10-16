@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/httpx)
 
 pkgname="httpx"
-pkgver=1.10.0
+pkgver=1.12.0
 pkgrel=2
 pkgdesc='Fast and Multi-Purpose HTTP Toolkit by ProjectDiscovery'
 arch=('any')
 url="https://docs.projectdiscovery.io/tools/httpx"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="httpx.install"
 options=('!strip' '!debug' '!emptydirs')
 

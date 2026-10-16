@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Fast and customizable vulnerability scanner'
 arch=('any')
 url="https://nuclei.projectdiscovery.io/"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="nuclei.install"
 options=('!strip' '!debug' '!emptydirs')
 

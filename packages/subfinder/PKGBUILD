@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/subfinder)
 
 pkgname="subfinder"
-pkgver=2.16.0
+pkgver=2.17.0
 pkgrel=1
 pkgdesc='Fast passive subdomain enumeration tool'
 arch=('any')
 url="https://github.com/projectdiscovery/subfinder"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="subfinder.install"
 options=('!strip' '!debug' '!emptydirs')
 
