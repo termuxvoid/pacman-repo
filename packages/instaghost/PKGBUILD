@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/instaghost)
 
 pkgname="instaghost"
-pkgver=1.0.2
+pkgver=2.0.0
 pkgrel=1
 pkgdesc='Professional Instagram OSINT Tool'
 arch=('any')
 url="https://github.com/Anon4You/InstaGhost"
-depends=('git' 'python')
+depends=('git' 'python' 'python-pip' 'python-pillow')
 install="instaghost.install"
 options=('!strip' '!debug' '!emptydirs')
 
