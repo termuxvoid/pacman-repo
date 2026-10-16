@@ -88,6 +88,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [stowaway](https://termuxvoid.github.io/tool.html?name=stowaway) | Multi-hop proxy tool – build chained tunnels through compromised hosts |
 | [onionsearch](https://termuxvoid.github.io/tool.html?name=onionsearch) | Scrape .onion URLs from various Tor search engines |
 | [openbullet2](https://termuxvoid.github.io/tool.html?name=openbullet2) | Cross-platform automation suite powered by .NET Core |
+| [osintgram](https://termuxvoid.github.io/tool.html?name=osintgram) | OSINT tool for Instagram account analysis |
 | [parrot-cli](https://termuxvoid.github.io/tool.html?name=parrot-cli) | Parrot Security OS 6.3 (Lorikeet) for Termux |
 | [playit](https://termuxvoid.github.io/tool.html?name=playit) | Global Proxy for Server Hosting Without Port Forwarding |
 | [pwndrop](https://termuxvoid.github.io/tool.html?name=pwndrop) | Self-deployable HTTP hosting service for red team payloads with a web admin panel |

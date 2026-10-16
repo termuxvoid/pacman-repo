@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/osintgram)
+
+pkgname="osintgram"
+pkgver=2.0
+pkgrel=0
+pkgdesc='OSINT tool for Instagram account analysis'
+arch=('any')
+url="https://github.com/Datalux/Osintgram"
+depends=('curl' 'tar' 'python' 'python-pip' 'build-essential' 'rust' 'file')
+install="osintgram.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
