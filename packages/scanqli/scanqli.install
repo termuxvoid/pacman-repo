@@ -15,7 +15,7 @@ cd "$INSTALL_DIR"
 sed -i '/lxml/d' requirements.txt 2>/dev/null || true
 sed -i '/numpy/d' requirements.txt 2>/dev/null || true
 
-pip install -r requirements.txt
+pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary -r requirements.txt
 
 cat > "$LAUNCHER" << 'EOF'
 cd "$PREFIX/share/scanqli"

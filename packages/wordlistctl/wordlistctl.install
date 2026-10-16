@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-python -m pip install --quiet termcolor requests || pip install termcolor requests
+python -m pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary --quiet termcolor requests || pip install termcolor requests
 
 mkdir -p $PREFIX/share/wordlistctl
 cd $PREFIX/share/wordlistctl

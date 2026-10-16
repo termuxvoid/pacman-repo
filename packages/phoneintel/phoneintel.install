@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-pip install phoneintel==1.1.1
+pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary phoneintel==1.1.1
 
 echo "phoneintel installed successfully."
 return 0

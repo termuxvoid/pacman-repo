@@ -2,7 +2,7 @@
 
 post_install() {
 set -e
-pip install apkleaks==2.6.3
+pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary apkleaks==2.6.3
 return 0
 }
 
