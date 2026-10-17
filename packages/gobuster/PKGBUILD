@@ -7,7 +7,7 @@ pkgrel=2
 pkgdesc='Directory/file & DNS busting tool written in Go'
 arch=('any')
 url="https://github.com/OJ/gobuster"
-depends=('golang' 'git')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="gobuster.install"
 options=('!strip' '!debug' '!emptydirs')
 

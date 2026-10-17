@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/subjack)
 
 pkgname="subjack"
-pkgver=3.0.0
+pkgver=3.1.0
 pkgrel=1
 pkgdesc='Subdomain Takeover tool written in Go'
 arch=('any')
 url="https://github.com/haccer/subjack"
-depends=('golang' 'git')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="subjack.install"
 options=('!strip' '!debug' '!emptydirs')
 
