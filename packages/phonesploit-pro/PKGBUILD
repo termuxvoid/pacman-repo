@@ -7,7 +7,8 @@ pkgrel=1
 pkgdesc='Android hacking tool with ADB'
 arch=('any')
 url="https://github.com/AzeemIdrisi/PhoneSploit-Pro"
-depends=('curl' 'tar' 'python' 'python-pip' 'android-tools' 'nmap' 'which' 'scrcpy' 'file' 'metasploit-framework')
+depends=('curl' 'tar' 'python' 'python-pip' 'android-tools' 'nmap' 'which' 'scrcpy' 'file')
+optdepends=('metasploit-framework: advanced exploitation modules')
 install="phonesploit-pro.install"
 options=('!strip' '!debug' '!emptydirs')
 
