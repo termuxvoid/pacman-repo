@@ -7,7 +7,7 @@ pkgrel=0
 pkgdesc='Web server DoS testing tool (Golang port)'
 arch=('any')
 url="https://github.com/grafov/hulk"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="hulk.install"
 options=('!strip' '!debug' '!emptydirs')
 

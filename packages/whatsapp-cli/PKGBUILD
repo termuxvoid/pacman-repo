@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Standalone CLI for WhatsApp using multidevice protocol'
 arch=('any')
 url="https://github.com/vicentereig/whatsapp-cli"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="whatsapp-cli.install"
 options=('!strip' '!debug' '!emptydirs')
 

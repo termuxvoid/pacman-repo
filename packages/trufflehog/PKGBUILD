@@ -2,12 +2,12 @@
 # Ported from TermuxVoid APT repo (packages/trufflehog)
 
 pkgname="trufflehog"
-pkgver=3.97.5
+pkgver=3.99.2
 pkgrel=1
 pkgdesc='Find leaked credentials and secrets in code and data'
 arch=('any')
 url="https://github.com/trufflesecurity/trufflehog"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="trufflehog.install"
 options=('!strip' '!debug' '!emptydirs')
 

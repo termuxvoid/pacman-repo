@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/sliver-c2)
 
 pkgname="sliver-c2"
-pkgver=1.7.3
+pkgver=1.7.8
 pkgrel=1
 pkgdesc='Open‑source cross‑platform adversary emulation framework'
 arch=('any')

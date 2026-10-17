@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Terminal file manager with modern features'
 arch=('any')
 url="https://github.com/yorukot/superfile"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="superfile.install"
 options=('!strip' '!debug' '!emptydirs')
 

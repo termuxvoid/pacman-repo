@@ -3,11 +3,10 @@
 post_install() {
 set -e
 
-PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-
 VERSION="2.6.1"
 BUILD_DIR="$TMPDIR/naabu-build"
 
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
@@ -28,3 +27,4 @@ rm -f "$PREFIX/bin/naabu"
 echo "naabu removed."
 return 0
 }
+

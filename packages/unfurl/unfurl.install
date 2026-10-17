@@ -6,6 +6,7 @@ set -e
 VERSION="0.4.3"
 BUILD_DIR="$TMPDIR/unfurl-build"
 
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
@@ -22,10 +23,8 @@ return 0
 }
 
 post_remove() {
-
-# Remove binary and symlink
-rm -f "$HOME/go/bin/unfurl" "$PREFIX/bin/unfurl"
-
+rm -f "$PREFIX/bin/unfurl"
+echo "unfurl removed."
 return 0
 }
 

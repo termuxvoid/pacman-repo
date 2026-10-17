@@ -3,11 +3,10 @@
 post_install() {
 set -e
 
-PREFIX=${PREFIX:-/data/data/com.termux/files/usr}
-
 VERSION="2.17.0"
 BUILD_DIR="$TMPDIR/subfinder-build"
 
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
@@ -28,3 +27,4 @@ rm -f "$PREFIX/bin/subfinder"
 echo "subfinder removed."
 return 0
 }
+

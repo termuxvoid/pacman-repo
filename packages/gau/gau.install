@@ -6,6 +6,7 @@ set -e
 VERSION="2.2.4"
 BUILD_DIR="$TMPDIR/gau-build"
 
+rm -rf "$BUILD_DIR"
 mkdir -p "$BUILD_DIR"
 cd "$BUILD_DIR"
 
@@ -22,8 +23,8 @@ return 0
 }
 
 post_remove() {
-
-rm -f "$HOME/go/bin/gau" "$PREFIX/bin/gau"
+rm -f "$PREFIX/bin/gau"
+echo "gau removed."
 return 0
 }
 

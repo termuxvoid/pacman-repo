@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Fast web fuzzer written in Go'
 arch=('any')
 url="https://github.com/ffuf/ffuf"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="ffuf.install"
 options=('!strip' '!debug' '!emptydirs')
 
