@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Accept URLs on stdin, replace all query string values with a user-supplied value'
 arch=('any')
 url="https://github.com/tomnomnom/qsreplace"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="qsreplace.install"
 options=('!strip' '!debug' '!emptydirs')
 

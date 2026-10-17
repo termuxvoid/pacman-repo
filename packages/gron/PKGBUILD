@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Make JSON greppable'
 arch=('any')
 url="https://github.com/tomnomnom/gron"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="gron.install"
 options=('!strip' '!debug' '!emptydirs')
 

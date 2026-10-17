@@ -7,7 +7,7 @@ pkgrel=1
 pkgdesc='Pull out bits of URLs provided on stdin'
 arch=('any')
 url="https://github.com/tomnomnom/unfurl"
-depends=('git' 'golang')
+depends=('curl' 'golang' 'tar' 'gzip')
 install="unfurl.install"
 options=('!strip' '!debug' '!emptydirs')
 
