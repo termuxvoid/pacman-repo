@@ -89,6 +89,7 @@ emit_install() { # $1=src pkg dir  $2=name  $3=dest dir ; returns 0 if written
                 -e '1{/^#![\/]/d}' \
                 -e 's/^([[:space:]]*)exit[[:space:]]+([0-9]+)[[:space:]]*$/\1return \2/' \
                 -e 's/^([[:space:]]*)exit[[:space:]]*$//' "$f")"
+            [ -z "$(echo "$body" | tr -d '[:space:]')" ] && body=":"; \
             echo "$body"
             echo '}'
             echo ''
