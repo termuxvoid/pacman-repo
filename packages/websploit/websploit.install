@@ -30,6 +30,8 @@ fi
 }
 
 post_remove() {
-
+rm -f "$PREFIX/bin/websploit"
+echo "[+] Websploit removed"
+return 0
 }
 
