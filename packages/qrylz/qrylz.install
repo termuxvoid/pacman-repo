@@ -1,0 +1,41 @@
+#!/bin/bash
+
+post_install() {
+INSTALL_DIR="$PREFIX/share/qrylz"
+LAUNCHER="$PREFIX/bin/qrylz"
+JAR_URL="https://github.com/Anon4You/Qrylz/releases/download/v1.0.3/qrylz.jar"
+
+echo "[*] Setting up Qrylz..."
+mkdir -p "$INSTALL_DIR" && cd "$INSTALL_DIR" || return 1
+
+echo "[*] Downloading JAR..."
+wget -q "$JAR_URL" -O qrylz.jar || {
+    echo "[!] Download failed. Possible fixes:"
+    echo "    1. Check internet connection"
+    echo "    2. Run: pacman -S wget"
+    echo "    3. Try manual download: $JAR_URL"
+    return 1
+}
+
+echo "[*] Creating launcher..."
+printf '%s\n' \
+'#!/data/data/com.termux/files/usr/bin/bash' \
+'exec java -jar "'"$INSTALL_DIR"'"/qrylz.jar "$@"' > "$LAUNCHER" || {
+    echo "[!] Launcher creation failed"
+    return 1
+}
+chmod +x "$LAUNCHER"
+
+echo ""
+echo "[+] Qrylz ready! Usage:"
+echo "  qrylz -h"
+echo ""
+return 0
+}
+
+post_remove() {
+rm -f "$PREFIX/bin/qrylz"
+rm -rf "$PREFIX/share/qrylz"
+echo "[+] Qrylz removed"
+return 0
+}
