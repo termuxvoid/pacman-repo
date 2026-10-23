@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/archivebox)
 
 pkgname="archivebox"
-pkgver=0.9.35rc437
+pkgver=0.9.73
 pkgrel=0
 pkgdesc='Open-source self-hosted web archiving system'
 arch=('any')

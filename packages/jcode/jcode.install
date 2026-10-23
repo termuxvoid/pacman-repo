@@ -17,7 +17,7 @@ esac
 post_install() {
 set -e
 
-VERSION="0.89.2"
+VERSION="0.99.1"
 ARCH=$(uname -m)
 
 case "$ARCH" in

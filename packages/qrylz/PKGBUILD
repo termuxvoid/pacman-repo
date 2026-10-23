@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/qrylz)
 
 pkgname="qrylz"
-pkgver=1.0.3
+pkgver=1.0.4
 pkgrel=0
 pkgdesc='APK signature-verification patcher'
 arch=('any')

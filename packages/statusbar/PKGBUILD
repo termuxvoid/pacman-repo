@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/statusbar)
 
 pkgname="statusbar"
-pkgver=0.5.1
+pkgver=0.6.0
 pkgrel=0
 pkgdesc='Terminal status bar that keeps useful information visible, built from source for Termux'
 arch=('any')

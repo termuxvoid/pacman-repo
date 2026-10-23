@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/theharvester)
 
 pkgname="theharvester"
-pkgver=4.10.1
+pkgver=4.11.1
 pkgrel=1
 pkgdesc='E-mail, Subdomain, and Name Harvester'
 arch=('any')

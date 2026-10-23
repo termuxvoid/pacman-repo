@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-VERSION="3.2.3"
+VERSION="3.2.4"
 BUILD_DIR="$TMPDIR/dalfox-build"
 
 mkdir -p "$BUILD_DIR"
