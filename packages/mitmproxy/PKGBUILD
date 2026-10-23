@@ -1,0 +1,20 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/mitmproxy)
+
+pkgname="mitmproxy"
+pkgver=12.3.0
+pkgrel=0
+pkgdesc='Interactive TLS-capable intercepting HTTP proxy'
+arch=('any')
+url="https://github.com/mitmproxy/mitmproxy"
+depends=('python' 'python-pip' 'python-cryptography' 'python-brotli' 'python-bcrypt' 'build-essential' 'libffi')
+install="mitmproxy.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

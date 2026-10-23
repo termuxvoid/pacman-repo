@@ -82,6 +82,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [medusa](https://termuxvoid.github.io/tool.html?name=medusa) | Parallel network login brute-forcer |
 | [metabigor](https://termuxvoid.github.io/tool.html?name=metabigor) | OSINT tool without API keys |
 | [metasploit-framework](https://termuxvoid.github.io/tool.html?name=metasploit-framework) | Penetration testing framework |
+| [mitmproxy](https://termuxvoid.github.io/tool.html?name=mitmproxy) | Interactive TLS-capable intercepting HTTP proxy (no root needed in proxy mode) |
 | [naabu](https://termuxvoid.github.io/tool.html?name=naabu) | Fast port scanner written in Go |
 | [nethunter-cli](https://termuxvoid.github.io/tool.html?name=nethunter-cli) | Kali NetHunter Rootless Edition CLI |
 | [ngrok](https://termuxvoid.github.io/tool.html?name=ngrok) | Secure tunnels to localhost |
@@ -262,6 +263,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | [pywhat](https://termuxvoid.github.io/tool.html?name=pywhat) | Identify anything - text analysis tool |
 | [qdl](https://termuxvoid.github.io/tool.html?name=qdl) | Qualcomm Download Tool (QDL) for EDL flashing |
 | [qsreplace](https://termuxvoid.github.io/tool.html?name=qsreplace) | Accept URLs on stdin, replace all query string values with a user-supplied value |
+| [reflutter](https://termuxvoid.github.io/tool.html?name=reflutter) | Reverse-engineer Flutter apps and intercept their traffic |
 | [rkpairip](https://termuxvoid.github.io/tool.html?name=rkpairip) | Remove Pairip Protection and Rebuild APKs |
 | [sms-stealer](https://termuxvoid.github.io/tool.html?name=sms-stealer) | Silent SMS interceptor via Telegram bot |
 | [snoop](https://termuxvoid.github.io/tool.html?name=snoop) | Information gathering tool using online resources |
