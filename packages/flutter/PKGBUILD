@@ -2,12 +2,13 @@
 # Ported from TermuxVoid APT repo (packages/flutter)
 
 pkgname="flutter"
-pkgver=3.41.9
+pkgver=3.47.7
 pkgrel=1
 pkgdesc='Google'\''s UI toolkit for building native apps'
 arch=('any')
 url="https://flutter.dev"
-depends=('git' 'axel' 'which' '7zip' 'android-sdk')
+depends=('git' 'axel' 'which')
+optdepends=('android-sdk: required for Android builds')
 install="flutter.install"
 options=('!strip' '!debug' '!emptydirs')
 
