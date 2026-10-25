@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/aliens-eye)
+
+pkgname="aliens-eye"
+pkgver=2.7.4
+pkgrel=0
+pkgdesc='AI-powered OSINT username scanner'
+arch=('any')
+url="https://github.com/arxhr007/Aliens_eye"
+depends=('python' 'python-pip' 'build-essential')
+optdepends=('python-playwright: browser-based correlation')
+install="aliens-eye.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

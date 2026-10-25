@@ -145,6 +145,7 @@ The complete catalog of packages available from the **TermuxVoid pacman reposito
 | Tool | Description |
 |------|-------------|
 | [acccheck](https://termuxvoid.github.io/tool.html?name=acccheck) | SMB account enumeration and password guessing tool |
+| [aliens-eye](https://termuxvoid.github.io/tool.html?name=aliens-eye) | AI-powered OSINT username scanner for 800+ platforms |
 | [amass](https://termuxvoid.github.io/tool.html?name=amass) | In-depth Attack Surface Mapping and Asset Discovery |
 | [anubis](https://termuxvoid.github.io/tool.html?name=anubis) | Subdomain enumeration and information gathering tool |
 | [blackbird](https://termuxvoid.github.io/tool.html?name=blackbird) | OSINT tool for username and email searches across 600+ platforms |
