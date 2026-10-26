@@ -6,6 +6,7 @@ pkgver=2025.4
 pkgrel=1
 pkgdesc='Kali NetHunter Rootless Edition CLI'
 arch=('any')
+groups=('security')
 url="https://www.kali.org/"
 depends=('proot' 'tar' 'axel')
 install="nethunter-cli.install"

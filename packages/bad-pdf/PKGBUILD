@@ -6,6 +6,7 @@ pkgver=1.1
 pkgrel=1
 pkgdesc="Create malicious PDFs to steal NTLM hashes from Windows"
 arch=('any')
+groups=('security')
 url="https://github.com/deepzec/Bad-Pdf"
 depends=('curl' 'python' 'termux-tools')
 install="bad-pdf.install"

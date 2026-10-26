@@ -6,6 +6,7 @@ pkgver=2026.2.1
 pkgrel=1
 pkgdesc='An integrated platform for performing security testing of web applications (community edition)'
 arch=('any')
+groups=('web')
 url="https://portswigger.net/burp/"
 depends=('curl' 'openjdk-21' 'openjdk-21-x')
 install="burpsuite.install"

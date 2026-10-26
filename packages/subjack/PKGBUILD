@@ -6,6 +6,7 @@ pkgver=3.1.0
 pkgrel=1
 pkgdesc='Subdomain Takeover tool written in Go'
 arch=('any')
+groups=('security')
 url="https://github.com/haccer/subjack"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="subjack.install"

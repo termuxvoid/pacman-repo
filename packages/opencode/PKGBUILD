@@ -6,6 +6,7 @@ pkgver=1.19.0
 pkgrel=0
 pkgdesc='AI‑powered coding assistant (glibc version)'
 arch=('any')
+groups=('ai')
 url="https://opencode.ai/"
 depends=('glibc' 'clang' 'python' 'curl' 'tar')
 install="opencode.install"

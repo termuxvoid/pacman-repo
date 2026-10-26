@@ -6,6 +6,7 @@ pkgver=0.6.0.0
 pkgrel=2
 pkgdesc='Browser Exploitation Framework'
 arch=('any')
+groups=('web')
 url="https://beefproject.com/"
 depends=('ruby' 'nodejs' 'git' 'make' 'clang' 'sqlite' 'openssl-tool' 'build-essential' 'curl' 'libcurl' 'ruby-nokogiri' 'ruby-curb')
 install="beef.install"

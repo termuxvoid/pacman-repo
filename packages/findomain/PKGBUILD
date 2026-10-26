@@ -6,6 +6,7 @@ pkgver=10.0.1
 pkgrel=1
 pkgdesc='The fastest and complete solution for domain recognition'
 arch=('any')
+groups=('recon')
 url="https://github.com/Findomain/Findomain"
 depends=('git' 'rust' 'make' 'cmake')
 install="findomain.install"

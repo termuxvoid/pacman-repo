@@ -6,6 +6,7 @@ pkgver=2.0
 pkgrel=1
 pkgdesc='Intelligent common user-password profiler'
 arch=('any')
+groups=('password')
 url="https://github.com/D4Vinci/elpscrk"
 depends=('git' 'python' 'python-psutil')
 install="elpscrk.install"

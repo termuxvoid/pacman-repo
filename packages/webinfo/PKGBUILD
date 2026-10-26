@@ -6,6 +6,7 @@ pkgver=3.0
 pkgrel=1
 pkgdesc='Website information gathering '
 arch=('any')
+groups=('recon')
 url="https://github.com/Anon4You/webinfo/"
 depends=('curl' 'openssl-tool' 'dnsutils' 'nmap' 'whois' 'traceroute')
 options=('!strip' '!debug' '!emptydirs')

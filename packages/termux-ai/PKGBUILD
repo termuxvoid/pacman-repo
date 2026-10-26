@@ -6,6 +6,7 @@ pkgver=4.0
 pkgrel=0
 pkgdesc='Interactive AI Assistant for Termux'
 arch=('any')
+groups=('ai')
 url="https://github.com/Anon4You/Termux-Ai"
 depends=('curl' 'gum' 'tgpt')
 install="termux-ai.install"

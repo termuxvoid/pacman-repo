@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='High-level Systems Programming Language compiling to C'
 arch=('any')
+groups=('devel')
 url="https://github.com/z-libs/Zen-C"
 depends=('git' 'make' 'clang' 'llvm')
 install="zen-c.install"

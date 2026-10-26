@@ -6,6 +6,7 @@ pkgver=3.0
 pkgrel=1
 pkgdesc='Android penetration testing framework (USE RESPONSIBLY)'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/AndroVirus.git"
 depends=('curl' 'git' 'php' 'cloudflared')
 install="androvirus.install"

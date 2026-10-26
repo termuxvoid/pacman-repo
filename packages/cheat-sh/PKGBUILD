@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=0
 pkgdesc='Command-line client for cheat.sh'
 arch=('any')
+groups=('utils')
 url="https://cheat.sh/"
 depends=('curl' 'bash' 'termux-tools')
 install="cheat-sh.install"

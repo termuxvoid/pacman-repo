@@ -6,6 +6,7 @@ pkgver=1.1.0
 pkgrel=1
 pkgdesc='MTCR Patch Application Tool for Android APKs'
 arch=('any')
+groups=('android')
 url="https://telegram.me/NullRE_Channel"
 depends=('openjdk-21')
 options=('!strip' '!debug' '!emptydirs')

@@ -6,6 +6,7 @@ pkgver=2
 pkgrel=1
 pkgdesc='Darksploit is a tool to run and create exploits'
 arch=('any')
+groups=('security')
 url="https://github.com/ykankaya/DarkSploit"
 depends=('git' 'python2' 'perl' 'wget' 'php')
 install="darksploit-framework.install"

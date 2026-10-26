@@ -6,6 +6,7 @@ pkgver=20130616
 pkgrel=0
 pkgdesc='Steganography tool to conceal messages in text files'
 arch=('any')
+groups=('crypto')
 url="https://darkside.com.au/snow/index.html"
 depends=('build-essential')
 install="snow.install"

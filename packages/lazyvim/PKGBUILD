@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Modern Neovim configuration framework'
 arch=('any')
+groups=('editors')
 url="https://www.lazyvim.org/"
 depends=('git' 'fzf' 'fd' 'ripgrep' 'neovim' 'npm')
 install="lazyvim.install"

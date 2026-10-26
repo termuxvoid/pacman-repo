@@ -6,6 +6,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc='Tool to create Termux .deb packages for websites'
 arch=('any')
+groups=('utils')
 url="https://github.com/Anon4You/mkwebapp"
 depends=('curl' 'file' 'termux-tools')
 options=('!strip' '!debug' '!emptydirs')

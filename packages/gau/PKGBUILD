@@ -6,6 +6,7 @@ pkgver=2.2.4
 pkgrel=1
 pkgdesc='Fetch known URLs from AlienVault OTX, Wayback Machine, Common Crawl'
 arch=('any')
+groups=('recon')
 url="https://github.com/lc/gau"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="gau.install"

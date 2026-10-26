@@ -6,6 +6,7 @@ pkgver=1.1.6
 pkgrel=0
 pkgdesc='Fast web spider written in Go'
 arch=('any')
+groups=('recon')
 url="https://github.com/jaeles-project/gospider"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="gospider.install"

@@ -6,6 +6,7 @@ pkgver=9.8dev
 pkgrel=1
 pkgdesc='Parallelized Login Cracker Supporting Numerous Protocols'
 arch=('any')
+groups=('net')
 url="https://github.com/vanhauser-thc/thc-hydra"
 depends=('git' 'make' 'clang' 'openssl' 'libssh' 'libssh2' 'libgcrypt' 'libidn' 'pcre' 'pcre2' 'zlib' 'sed')
 install="thc-hydra.install"

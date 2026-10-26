@@ -6,6 +6,7 @@ pkgver=0.15.0
 pkgrel=1
 pkgdesc='Terminal Text Effects and Animation Library'
 arch=('any')
+groups=('utils')
 url="https://pypi.org/project/terminaltexteffects/"
 depends=('python' 'python-pip')
 install="tte.install"

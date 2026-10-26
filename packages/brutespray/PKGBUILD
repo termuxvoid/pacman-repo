@@ -6,6 +6,7 @@ pkgver=2.7.2
 pkgrel=1
 pkgdesc='Brute-force attacks from Nmap output'
 arch=('any')
+groups=('net')
 url="https://github.com/x90skysn3k/brutespray"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="brutespray.install"

@@ -6,6 +6,7 @@ pkgver=3.0
 pkgrel=1
 pkgdesc='Neovim Configuration Framework'
 arch=('any')
+groups=('editors')
 url="https://github.com/NvChad/NvChad"
 depends=('git' 'neovim' 'ripgrep' 'lua-language-server' 'clang' 'npm')
 install="nvchad.install"

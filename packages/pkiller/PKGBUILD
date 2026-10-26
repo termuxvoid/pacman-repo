@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Automated PairIP License Removal Tool for Android APKs'
 arch=('any')
+groups=('android')
 url="https://github.com/Anon4You/PKiller"
 depends=('git' 'python' 'asciibanner' 'apkeditor' 'apksigner')
 install="pkiller.install"

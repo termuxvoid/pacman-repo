@@ -6,6 +6,7 @@ pkgver=1.2
 pkgrel=1
 pkgdesc='a simple webserver for termux'
 arch=('any')
+groups=('net')
 depends=('php' 'figlet' 'openssh')
 options=('!strip' '!debug' '!emptydirs')
 source=(webserver-data.tar.gz)

@@ -6,6 +6,7 @@ pkgver=3.2.aea961d
 pkgrel=0
 pkgdesc='Stealth post-exploitation C2 framework for web servers'
 arch=('any')
+groups=('security')
 url="https://github.com/nil0x42/phpsploit"
 depends=('git' 'python' 'python-pip')
 install="phpsploit.install"

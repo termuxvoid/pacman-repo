@@ -6,6 +6,7 @@ pkgver=1.5.2
 pkgrel=1
 pkgdesc='2-in-1 Email & Username OSINT suite'
 arch=('any')
+groups=('recon')
 url="https://github.com/kaifcodec/user-scanner"
 depends=('python' 'python-pip')
 install="user-scanner.install"

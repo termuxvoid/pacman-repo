@@ -6,6 +6,7 @@ pkgver=36.6a46371
 pkgrel=0
 pkgdesc='WordPress XML-RPC brute-force tool'
 arch=('any')
+groups=('web')
 url="https://github.com/kavishgr/xmlrpc-bruteforcer"
 depends=('git' 'python')
 install="xmlrpc-bruteforcer.install"

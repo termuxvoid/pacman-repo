@@ -6,6 +6,7 @@ pkgver=1.0.7
 pkgrel=1
 pkgdesc='termux xfce4 desktop gui with Hacker themes and icona '
 arch=('any')
+groups=('misc')
 depends=('termux-am' 'xfce4' 'xfce4-terminal' 'xwayland' 'xfce4-whiskermenu-plugin' 'firefox' 'neovim' 'termux-x11-nightly' 'dbus' 'termux-desktop-wallpapers' 'xfce4-goodies')
 options=('!strip' '!debug' '!emptydirs')
 source=(termux-desktop-data.tar.gz)

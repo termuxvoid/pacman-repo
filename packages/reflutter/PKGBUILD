@@ -6,6 +6,7 @@ pkgver=0.9.8
 pkgrel=0
 pkgdesc='Reverse-engineer Flutter apps and intercept their traffic'
 arch=('any')
+groups=('android')
 url="https://github.com/Impact-I/reFlutter"
 depends=('python' 'python-pip')
 install="reflutter.install"

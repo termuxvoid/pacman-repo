@@ -6,6 +6,7 @@ pkgver=2.1.0
 pkgrel=1
 pkgdesc="A feature-rich FIGlet-compatible ASCII art generator with color support and font previews"
 arch=('any')
+groups=('utils')
 url="https://github.com/Anon4You/asciibanner"
 license=('MIT')
 depends=('python' 'libcaca')

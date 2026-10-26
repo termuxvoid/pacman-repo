@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Stylish GUI for Cloudflare Tunnels'
 arch=('any')
+groups=('tunnel')
 url="https://github.com/Keyaru-code/Cloudflare-GUI"
 depends=('cloudflared' 'python' 'python-pip' 'python-tkinter')
 install="cloudflare-gui.install"

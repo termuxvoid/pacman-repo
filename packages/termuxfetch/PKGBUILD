@@ -6,6 +6,7 @@ pkgver=2.0
 pkgrel=1
 pkgdesc='Neofetch‑like system information tool for Termux'
 arch=('any')
+groups=('utils')
 depends=('bash')
 options=('!strip' '!debug' '!emptydirs')
 source=(termuxfetch-data.tar.gz)

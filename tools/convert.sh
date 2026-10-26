@@ -110,7 +110,7 @@ port_one() {
         return 0
     fi
 
-    local name ver homepage desc depstring
+    local name ver homepage desc depstring section
     name="$(awk -F': ' '/^Package:/{print $2; exit}' "$ctl" | tr -d '[:space:]')"
     [ -n "$name" ] || { echo "FAIL $p: no Package field"; FAILED=$((FAILED+1)); return 0; }
     rawver="$(control_field "$ctl" Version)"
@@ -119,6 +119,7 @@ port_one() {
     homepage="$(control_field "$ctl" Homepage | tr -d '[:space:]')"
     desc="$(first_desc_line "$ctl")"
     depstring="$(control_field "$ctl" Depends)"
+    section="$(control_field "$ctl" Section | tr -d '[:space:]')"
 
     mkdir -p "$outdir"
 
@@ -164,6 +165,7 @@ port_one() {
         echo "pkgrel=${REL}"
         echo "pkgdesc=$(sh_quote "${desc:-TermuxVoid tool}")"
         echo "arch=('any')"
+        [ -n "$section" ] && echo "groups=('${section}')"
         [ -n "$homepage" ] && echo "url=\"${homepage}\""
         [ -n "$deparr" ] && echo "$deparr"
         [ -n "$installvar" ] && echo "$installvar"

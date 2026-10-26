@@ -6,6 +6,7 @@ pkgver=0.99.1
 pkgrel=0
 pkgdesc='Terminal coding agent harness'
 arch=('any')
+groups=('ai')
 url="https://github.com/1jehuang/jcode"
 depends=('glibc' 'curl' 'tar' 'patchelf' 'findutils')
 install="jcode.install"

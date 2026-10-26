@@ -6,6 +6,7 @@ pkgver=1.6.0
 pkgrel=1
 pkgdesc='DNS reconnaissance tool for locating targets and non-contiguous IP space'
 arch=('any')
+groups=('recon')
 url="https://github.com/mschwager/fierce"
 depends=('git' 'python')
 install="fierce.install"

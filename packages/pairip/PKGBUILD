@@ -6,6 +6,7 @@ pkgver=1.3.10
 pkgrel=1
 pkgdesc='PairIP Protection Removal Tool'
 arch=('any')
+groups=('android')
 url="https://telegram.me/NullRE_Channel"
 depends=('openjdk-21')
 options=('!strip' '!debug' '!emptydirs')

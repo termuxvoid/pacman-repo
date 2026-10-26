@@ -6,6 +6,7 @@ pkgver=1.0.4
 pkgrel=0
 pkgdesc='APK signature-verification patcher'
 arch=('any')
+groups=('android')
 url="https://github.com/Anon4You/Qrylz"
 depends=('openjdk-21' 'wget')
 install="qrylz.install"

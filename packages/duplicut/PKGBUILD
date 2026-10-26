@@ -6,6 +6,7 @@ pkgver=2.4
 pkgrel=0
 pkgdesc='Fast duplicate line remover for wordlists'
 arch=('any')
+groups=('password')
 url="https://github.com/nil0x42/duplicut"
 depends=('curl' 'tar' 'gzip' 'make' 'clang' 'binutils')
 install="duplicut.install"

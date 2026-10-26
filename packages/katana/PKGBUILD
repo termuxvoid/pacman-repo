@@ -6,6 +6,7 @@ pkgver=1.8.0
 pkgrel=1
 pkgdesc='Fast, passive and active web crawler'
 arch=('any')
+groups=('recon')
 url="https://github.com/projectdiscovery/katana"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="katana.install"

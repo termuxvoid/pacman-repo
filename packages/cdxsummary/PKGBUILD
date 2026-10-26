@@ -6,6 +6,7 @@ pkgver=0.1.1
 pkgrel=1
 pkgdesc='CDX summary and analysis tool'
 arch=('any')
+groups=('utils')
 url="https://github.com/internetarchive/cdx-summary"
 depends=('python' 'python-pip')
 install="cdxsummary.install"

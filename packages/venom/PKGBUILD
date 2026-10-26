@@ -6,6 +6,7 @@ pkgver=1.0.3
 pkgrel=1
 pkgdesc='An automated phishing tool for absolute beginners'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/venom/"
 depends=('git' 'curl' 'php' 'openssh' 'nodejs' 'cloudflared')
 install="venom.install"

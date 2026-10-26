@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='A powerful yet simple PDF password recovery tool designed for security professionals and ethical hackers.'
 arch=('any')
+groups=('password')
 url="https://github.com/Anon4You/PDFCracker"
 depends=('qpdf')
 options=('!strip' '!debug' '!emptydirs')

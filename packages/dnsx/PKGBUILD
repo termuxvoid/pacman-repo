@@ -6,6 +6,7 @@ pkgver=1.3.1
 pkgrel=1
 pkgdesc='Fast DNS toolkit for reconnaissance'
 arch=('any')
+groups=('recon')
 url="https://github.com/projectdiscovery/dnsx"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="dnsx.install"

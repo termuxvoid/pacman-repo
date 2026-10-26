@@ -6,6 +6,7 @@ pkgver=12.3.0
 pkgrel=0
 pkgdesc='Interactive TLS-capable intercepting HTTP proxy'
 arch=('any')
+groups=('net')
 url="https://github.com/mitmproxy/mitmproxy"
 depends=('python' 'python-pip' 'python-cryptography' 'python-brotli' 'python-bcrypt' 'build-essential' 'libffi')
 install="mitmproxy.install"

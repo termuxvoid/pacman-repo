@@ -6,6 +6,7 @@ pkgver=0.1.4
 pkgrel=1
 pkgdesc='Internet Archive Downloader Tool'
 arch=('any')
+groups=('utils')
 url="https://github.com/wimpysworld/ia-get"
 depends=('git' 'rust')
 install="ia-get.install"

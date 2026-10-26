@@ -6,6 +6,7 @@ pkgver=3.2.0
 pkgrel=1
 pkgdesc='open source osint tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/MrSanZz/pandora"
 depends=('git' 'python' 'wget' 'curl')
 install="pandora.install"

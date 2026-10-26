@@ -6,6 +6,7 @@ pkgver=4.0.0
 pkgrel=1
 pkgdesc='Hash type identifier (CLI tool)'
 arch=('any')
+groups=('password')
 url="https://github.com/noraj/haiti"
 depends=('ruby')
 install="haiti.install"

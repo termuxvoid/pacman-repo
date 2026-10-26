@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Custom font collection for Termux'
 arch=('any')
+groups=('misc')
 url="https://github.com/termuxvoid/Void-Fonts.git"
 depends=('git' 'bash')
 install="void-fonts.install"

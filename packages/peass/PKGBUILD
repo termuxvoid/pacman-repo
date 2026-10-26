@@ -6,6 +6,7 @@ pkgver=20260919.fca1e2b0
 pkgrel=0
 pkgdesc='Privilege Escalation Awesome Scripts SUITE (with colors)'
 arch=('any')
+groups=('security')
 url="https://github.com/carlospolop/PEASS-ng"
 depends=('curl')
 install="peass.install"

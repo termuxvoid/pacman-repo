@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Ramsomware making tool'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/RansoMux"
 depends=('git' 'libxml2' 'openjdk-17' 'apkeditor' 'apksigner' 'file' 'which')
 install="ransomux.install"

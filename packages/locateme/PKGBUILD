@@ -6,6 +6,7 @@ pkgver=1.2
 pkgrel=1
 pkgdesc='Live location tracker using google maps'
 arch=('any')
+groups=('recon')
 depends=('php' 'jq' 'openssh' 'figlet')
 options=('!strip' '!debug' '!emptydirs')
 source=(locateme-data.tar.gz)

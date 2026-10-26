@@ -6,6 +6,7 @@ pkgver=0.13.1
 pkgrel=0
 pkgdesc='Fast, lightweight AI coding agent for your terminal'
 arch=('any')
+groups=('ai')
 url="https://github.com/Anon4You/Laudacode"
 depends=('curl' 'tar')
 install="laudacode.install"

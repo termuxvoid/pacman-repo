@@ -6,6 +6,7 @@ pkgver=0.2
 pkgrel=1
 pkgdesc='Simple and light tool for information gathering and capture exact GPS coordinates'
 arch=('any')
+groups=('recon')
 url="https://github.com/Anon4You/hound"
 depends=('git' 'php' 'nodejs')
 install="hound.install"

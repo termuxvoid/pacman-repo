@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Comprehensive OSINT Tool for Information Lookup'
 arch=('any')
+groups=('recon')
 url="https://github.com/Anon4You/publiceye"
 depends=('curl' 'jq' 'gum')
 options=('!strip' '!debug' '!emptydirs')

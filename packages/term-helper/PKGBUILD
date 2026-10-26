@@ -6,6 +6,7 @@ pkgver=1.1.1
 pkgrel=1
 pkgdesc='Terminal command helper and cheatsheet tool'
 arch=('any')
+groups=('utils')
 url="https://github.com/Anon4You/term-helper"
 depends=('curl' 'pv')
 install="term-helper.install"

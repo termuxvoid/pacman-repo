@@ -6,6 +6,7 @@ pkgver=1.0.2
 pkgrel=1
 pkgdesc='Snatcher - Capture Images from Victim'\''s Camera'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/snatcher"
 depends=('git' 'php' 'curl' 'nodejs' 'python' 'python-pip' 'openssh' 'cloudflared')
 install="snatcher.install"

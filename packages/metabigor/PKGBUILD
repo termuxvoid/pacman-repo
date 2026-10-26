@@ -6,6 +6,7 @@ pkgver=2.2.0
 pkgrel=1
 pkgdesc='OSINT tool without API keys'
 arch=('any')
+groups=('recon')
 url="https://github.com/j3ssie/metabigor"
 depends=('curl' 'tar' 'git' 'golang')
 install="metabigor.install"

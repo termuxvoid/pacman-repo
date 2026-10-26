@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Social Engineering Toolkit'
 arch=('any')
+groups=('security')
 url="https://github.com/ultrasecurity/Storm-Breaker"
 depends=('git' 'python' 'python-psutil' 'php')
 install="storm-breaker.install"

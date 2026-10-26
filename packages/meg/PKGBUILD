@@ -6,6 +6,7 @@ pkgver=0.3.0
 pkgrel=0
 pkgdesc='Fetch many paths for many hosts - without killing the hosts'
 arch=('any')
+groups=('recon')
 url="https://github.com/tomnomnom/meg"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="meg.install"

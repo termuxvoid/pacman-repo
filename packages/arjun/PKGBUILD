@@ -6,6 +6,7 @@ pkgver=2.2.7
 pkgrel=1
 pkgdesc='HTTP parameter discovery suite'
 arch=('any')
+groups=('web')
 url="https://github.com/s0md3v/Arjun"
 depends=('python' 'python-pip')
 install="arjun.install"

@@ -6,6 +6,7 @@ pkgver=0.1.6
 pkgrel=0
 pkgdesc='Hermes Bytecode Disassembler and Assembler'
 arch=('any')
+groups=('android')
 url="https://github.com/Kirlif/HBC-Tool"
 depends=('python' 'python-pip' 'curl')
 install="hbctool.install"

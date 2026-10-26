@@ -6,6 +6,7 @@ pkgver=3.4.0
 pkgrel=0
 pkgdesc='Password analyser and statistics generator'
 arch=('any')
+groups=('password')
 url="https://github.com/digininja/pipal"
 depends=('git' 'ruby')
 install="pipal.install"

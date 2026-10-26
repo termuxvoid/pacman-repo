@@ -6,6 +6,7 @@ pkgver=1.0.1
 pkgrel=1
 pkgdesc='A powerful and customizable password list generator written in Bash.'
 arch=('any')
+groups=('password')
 url="https://github.com/Anon4You/FuckYou"
 depends=('termux-exec')
 options=('!strip' '!debug' '!emptydirs')

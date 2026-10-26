@@ -6,6 +6,7 @@ pkgver=2.0
 pkgrel=1
 pkgdesc='telegram autoreport script'
 arch=('any')
+groups=('social')
 depends=('python' 'python-pip')
 install="spider.install"
 options=('!strip' '!debug' '!emptydirs')

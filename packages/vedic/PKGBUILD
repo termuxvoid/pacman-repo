@@ -6,6 +6,7 @@ pkgver=2.0.6
 pkgrel=1
 pkgdesc='World'\''s first Sanskrit programming language'
 arch=('any')
+groups=('devel')
 url="https://github.com/vedic-lang/vedic"
 depends=('git' 'rust' 'clang' 'make' 'cmake')
 install="vedic.install"

@@ -6,6 +6,7 @@ pkgver=2.0.0
 pkgrel=1
 pkgdesc='All in one tool for Information Gathering, Vulnerability Scanning and Crawling'
 arch=('any')
+groups=('security')
 url="https://github.com/Tuhinshubhra/RED_HAWK"
 depends=('git' 'php')
 install="redhawk.install"

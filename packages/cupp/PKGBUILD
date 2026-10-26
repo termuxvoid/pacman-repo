@@ -6,6 +6,7 @@ pkgver=3.3.0
 pkgrel=1
 pkgdesc='Common User Passwords Profiler (CUPP)'
 arch=('any')
+groups=('password')
 url="https://github.com/Mebus/cupp"
 depends=('termux-exec' 'python')
 options=('!strip' '!debug' '!emptydirs')

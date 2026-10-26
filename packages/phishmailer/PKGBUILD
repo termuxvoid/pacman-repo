@@ -6,6 +6,7 @@ pkgver=2.2
 pkgrel=1
 pkgdesc='Professional Phishing Email Generation Tool'
 arch=('any')
+groups=('security')
 url="https://github.com/BiZken/PhishMailer"
 depends=('git' 'python')
 install="phishmailer.install"

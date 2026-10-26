@@ -6,6 +6,7 @@ pkgver=3.5.6
 pkgrel=1
 pkgdesc='Fast vulnerability scanner with custom PoCs (afrog)'
 arch=('any')
+groups=('web')
 url="https://github.com/zan8in/afrog"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="afrog.install"

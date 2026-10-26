@@ -6,6 +6,7 @@ pkgver=0.2.1
 pkgrel=0
 pkgdesc='SMB account enumeration and password guessing tool'
 arch=('any')
+groups=('net')
 url="https://labs.portcullis.co.uk/tools/acccheck/"
 depends=('perl' 'samba' 'curl' 'sed')
 install="acccheck.install"

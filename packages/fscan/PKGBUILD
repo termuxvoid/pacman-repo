@@ -6,6 +6,7 @@ pkgver=2.2.2
 pkgrel=1
 pkgdesc='Intranet penetration test tool for scanning vulnerabilities'
 arch=('any')
+groups=('net')
 url="https://github.com/shadow1ng/fscan"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="fscan.install"

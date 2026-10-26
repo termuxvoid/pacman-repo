@@ -6,6 +6,7 @@ pkgver=81cdad3
 pkgrel=0
 pkgdesc='APK file statistics and analysis tool'
 arch=('any')
+groups=('android')
 url="https://github.com/hexabin/APKStat"
 depends=('python' 'apktool' 'curl' 'sed')
 install="apkstat.install"

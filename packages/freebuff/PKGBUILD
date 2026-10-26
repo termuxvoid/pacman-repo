@@ -6,6 +6,7 @@ pkgver=0.1.6
 pkgrel=0
 pkgdesc='Free, subscription-less AI coding agent for the terminal'
 arch=('any')
+groups=('ai')
 url="https://freebuff.com"
 depends=('glibc' 'clang' 'curl' 'tar')
 install="freebuff.install"

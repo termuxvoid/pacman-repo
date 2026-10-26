@@ -6,6 +6,7 @@ pkgver=4.0.5
 pkgrel=1
 pkgdesc='Advanced MITM framework.'
 arch=('any')
+groups=('security')
 url="https://github.com/The404Hacking/websploit"
 depends=('python' 'python-pip' 'git' 'python-numpy')
 install="websploit.install"

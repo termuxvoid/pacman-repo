@@ -6,6 +6,7 @@ pkgver=0.22.0
 pkgrel=1
 pkgdesc='Command-line tool for WhatsApp chat management'
 arch=('any')
+groups=('social')
 url="https://wacli.sh/"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="wacli.install"

@@ -6,6 +6,7 @@ pkgver=0.9.4
 pkgrel=1
 pkgdesc='Fetch, install and search wordlist archives from wordlists and repositories'
 arch=('any')
+groups=('password')
 url="https://github.com/BlackArch/wordlistctl"
 depends=('python' 'curl')
 install="wordlistctl.install"

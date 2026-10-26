@@ -6,6 +6,7 @@ pkgver=2.1.309
 pkgrel=0
 pkgdesc='Claude Code - AI coding assistant by Anthropic'
 arch=('any')
+groups=('ai')
 url="https://github.com/anthropics/claude-code"
 depends=('glibc' 'clang' 'curl' 'tar')
 install="claude-code.install"

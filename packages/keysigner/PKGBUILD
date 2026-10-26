@@ -6,6 +6,7 @@ pkgver=4.0
 pkgrel=1
 pkgdesc='APK signing tool for Termux'
 arch=('any')
+groups=('android')
 url="https://github.com/muhammadrizwan87/keysigner.git"
 depends=('python' 'python-pip' 'openjdk-17' 'apksigner' 'openssl-tool')
 install="keysigner.install"

@@ -6,6 +6,7 @@ pkgver=0.1.15
 pkgrel=0
 pkgdesc='AI‑powered coding assistant (glibc wrapper for Termux)'
 arch=('any')
+groups=('ai')
 url="https://github.com/XiaomiMiMo/MiMo-Code"
 depends=('curl' 'clang' 'glibc' 'tar')
 install="mimocode.install"

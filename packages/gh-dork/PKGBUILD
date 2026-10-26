@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=0
 pkgdesc='GitHub dorking tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/molly/gh-dork"
 depends=('git' 'python' 'python-pip' 'rust' 'make' 'openssl' 'pkg-config' 'python-cryptography')
 install="gh-dork.install"

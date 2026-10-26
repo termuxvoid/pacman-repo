@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='D-TECT - Pentest the Modern Web'
 arch=('any')
+groups=('web')
 url="https://github.com/bibortone/D-Tech"
 depends=('git' 'python2')
 install="d-tect.install"

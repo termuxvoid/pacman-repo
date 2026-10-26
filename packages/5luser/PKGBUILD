@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='get unlimited 5 letters instagram unused usernames'
 arch=('any')
+groups=('social')
 url="https://github.com/Anon4You/5LUser"
 depends=('git' 'python' 'python-pip')
 install="5luser.install"

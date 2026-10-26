@@ -6,6 +6,7 @@ pkgver=5.1.1
 pkgrel=1
 pkgdesc='In-depth Attack Surface Mapping and Asset Discovery'
 arch=('any')
+groups=('recon')
 url="https://owasp.org/www-project-amass/"
 depends=('curl' 'tar')
 install="amass.install"

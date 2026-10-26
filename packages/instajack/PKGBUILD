@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Instagram old account jacker'
 arch=('any')
+groups=('social')
 depends=('python' 'python-pip')
 install="instajack.install"
 options=('!strip' '!debug' '!emptydirs')

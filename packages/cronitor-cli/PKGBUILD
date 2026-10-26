@@ -6,6 +6,7 @@ pkgver=33.4
 pkgrel=1
 pkgdesc='Command Line Interface for Cronitor Monitoring'
 arch=('any')
+groups=('utils')
 url="https://github.com/cronitorio/cronitor-cli"
 depends=('curl' 'tar')
 install="cronitor-cli.install"

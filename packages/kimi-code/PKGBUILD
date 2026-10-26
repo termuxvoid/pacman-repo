@@ -6,6 +6,7 @@ pkgver=2.2.0
 pkgrel=0
 pkgdesc='AI-powered coding assistant for the terminal'
 arch=('any')
+groups=('ai')
 url="https://github.com/MoonshotAI/kimi-code"
 depends=('git' 'npm' 'ripgrep')
 install="kimi-code.install"

@@ -6,6 +6,7 @@ pkgver=0.4.3
 pkgrel=1
 pkgdesc='Pull out bits of URLs provided on stdin'
 arch=('any')
+groups=('utils')
 url="https://github.com/tomnomnom/unfurl"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="unfurl.install"

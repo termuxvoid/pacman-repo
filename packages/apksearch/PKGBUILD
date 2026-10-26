@@ -6,6 +6,7 @@ pkgver=1.3.5
 pkgrel=1
 pkgdesc='APK Search Tool for Multiple APK Websites'
 arch=('any')
+groups=('android')
 url="https://abhithemodder.github.io/apksearch/"
 depends=('python' 'python-pip')
 install="apksearch.install"

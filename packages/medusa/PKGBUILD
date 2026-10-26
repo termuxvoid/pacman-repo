@@ -6,6 +6,7 @@ pkgver=2.3.patched
 pkgrel=1
 pkgdesc='Parallel network login brute-forcer'
 arch=('any')
+groups=('net')
 url="https://github.com/jmk-foofus/medusa"
 depends=('git' 'make' 'automake' 'autoconf' 'libtool' 'clang' 'pkg-config' 'openssl' 'libgcrypt' 'gnutls' 'postgresql' 'libssh2' 'libcurl' 'sed' 'findutils' 'apr' 'apr-util')
 install="medusa.install"

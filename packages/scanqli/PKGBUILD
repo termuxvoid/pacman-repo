@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='SQL injection scanner and vulnerability detection tool'
 arch=('any')
+groups=('web')
 url="https://github.com/bambish/ScanQLi"
 depends=('git' 'python' 'python-lxml' 'python-numpy')
 install="scanqli.install"

@@ -6,6 +6,7 @@ pkgver=0.4.0.devel4
 pkgrel=1
 pkgdesc='Bash Line Editor (ble.sh) – interactive command line editing'
 arch=('any')
+groups=('shell')
 url="https://github.com/akinomyoga/ble.sh"
 depends=('git' 'make' 'termux-tools')
 install="blesh.install"

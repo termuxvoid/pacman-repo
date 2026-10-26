@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='XSS payload generator and loader tool'
 arch=('any')
+groups=('web')
 url="https://github.com/capture0x/XSS-LOADER"
 depends=('git' 'sed' 'python' 'python-pip' 'python-lxml')
 install="xss-loader.install"

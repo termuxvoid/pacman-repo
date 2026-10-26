@@ -6,6 +6,7 @@ pkgver=3.8.0
 pkgrel=0
 pkgdesc='NTLM/LM hash cracker using rainbow tables'
 arch=('any')
+groups=('password')
 url="https://ophcrack.sourceforge.io/"
 depends=('clang' 'make' 'pkg-config' 'openssl' 'build-essential' 'sed' 'curl' 'tar' 'bzip2')
 install="ophcrack.install"

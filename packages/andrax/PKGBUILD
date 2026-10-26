@@ -6,6 +6,7 @@ pkgver=5
 pkgrel=1
 pkgdesc='Android Penetration Testing OS (rootless)'
 arch=('any')
+groups=('security')
 url="https://gitlab.com/crk-mythical/andrax-hackers-platform-v5-2"
 depends=('proot' 'tar' 'axel')
 install="andrax.install"

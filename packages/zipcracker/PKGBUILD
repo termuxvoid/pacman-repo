@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='A powerful yet simple ZIP archive password recovery tool designed for Termux'
 arch=('any')
+groups=('password')
 url="https://github.com/Anon4You/ZipCracker"
 depends=('zip' 'unzip')
 options=('!strip' '!debug' '!emptydirs')

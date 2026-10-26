@@ -6,6 +6,7 @@ pkgver=1.0.1
 pkgrel=1
 pkgdesc='Parameter discovery suite for web applications'
 arch=('any')
+groups=('web')
 url="https://github.com/devanshbatham/paramspider"
 depends=('git' 'python' 'python-pip')
 install="paramspider.install"

@@ -6,6 +6,7 @@ pkgver=1.9.0
 pkgrel=1
 pkgdesc='HTTP stress testing tool that can overload web servers.'
 arch=('any')
+groups=('net')
 url="https://github.com/zer-far/spurt/"
 depends=('make' 'golang' 'git')
 install="spurt.install"

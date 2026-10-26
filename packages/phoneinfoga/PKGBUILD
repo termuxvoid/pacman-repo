@@ -6,6 +6,7 @@ pkgver=2.11.0
 pkgrel=1
 pkgdesc='Phone number intelligence framework'
 arch=('any')
+groups=('recon')
 url="https://github.com/sundowndev/phoneinfoga"
 depends=('curl' 'tar')
 install="phoneinfoga.install"

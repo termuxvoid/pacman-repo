@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Flutter/Dart Binary Analysis and Reverse Engineering'
 arch=('any')
+groups=('android')
 url="https://github.com/dedshit/blutter-termux"
 depends=('git' 'python' 'python-pip' 'cmake' 'ninja' 'build-essential' 'pkg-config' 'libicu' 'capstone' 'fmt' 'radare2')
 install="blutter.install"

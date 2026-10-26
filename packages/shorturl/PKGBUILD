@@ -6,6 +6,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc='URL shortner for termux'
 arch=('any')
+groups=('utils')
 depends=('toilet' 'curl')
 options=('!strip' '!debug' '!emptydirs')
 source=(shorturl-data.tar.gz)

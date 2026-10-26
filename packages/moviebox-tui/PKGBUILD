@@ -6,6 +6,7 @@ pkgver=0.1.26
 pkgrel=0
 pkgdesc='Terminal UI for MovieBox'
 arch=('any')
+groups=('utils')
 url="https://github.com/mesamirh/MovieBox-Tui"
 depends=('rust' 'termux-tools' 'termux-api' 'curl' 'tar')
 install="moviebox-tui.install"

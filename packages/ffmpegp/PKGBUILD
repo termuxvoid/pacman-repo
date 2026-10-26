@@ -6,6 +6,7 @@ pkgver=1.30
 pkgrel=1
 pkgdesc='Python Utility for FFmpeg and FFprobe Operations'
 arch=('any')
+groups=('utils')
 url="https://github.com/ankushbhagats/ffmpegp"
 depends=('python' 'python-pip' 'jq' 'ffmpeg')
 install="ffmpegp.install"

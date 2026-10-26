@@ -6,6 +6,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc='Serve local directories and expose via tunnels'
 arch=('any')
+groups=('tunnel')
 url="https://github.com/Anon4You/WebHost"
 depends=('curl' 'php' 'python' 'npm' 'ngrok' 'cloudflared' 'figlet' 'openssh')
 install="webhost.install"

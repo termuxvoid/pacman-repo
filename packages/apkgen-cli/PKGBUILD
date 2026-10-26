@@ -6,6 +6,7 @@ pkgver=1.4.0
 pkgrel=1
 pkgdesc='CLI tool to quickly generate Android APKs from local templates'
 arch=('any')
+groups=('android')
 url="https://github.com/termuxvoid/apkgen-cli"
 depends=('git' 'gum' 'termux-tools' 'android-sdk')
 optdepends=('flutter: required for apk generation')

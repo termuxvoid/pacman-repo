@@ -6,6 +6,7 @@ pkgver=1.4.0
 pkgrel=0
 pkgdesc='Search Google and download specific file types'
 arch=('any')
+groups=('recon')
 url="https://github.com/opsdisk/metagoofil"
 depends=('git' 'python' 'python-pip')
 install="metagoofil.install"

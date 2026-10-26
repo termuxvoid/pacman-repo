@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='encrypt or decrypt bash file and encrypt python in Marshal format'
 arch=('any')
+groups=('crypto')
 depends=('python' 'nodejs')
 install="enctool.install"
 options=('!strip' '!debug' '!emptydirs')

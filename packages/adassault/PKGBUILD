@@ -6,6 +6,7 @@ pkgver=0.0.4
 pkgrel=0
 pkgdesc='Active Directory penetration testing tool'
 arch=('any')
+groups=('security')
 url="https://noraj.github.io/ADAssault/"
 depends=('ruby' 'build-essential')
 install="adassault.install"

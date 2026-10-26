@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='DDoS attack script with 36+ attack methods'
 arch=('any')
+groups=('net')
 url="https://github.com/the-deepnet/ddos"
 depends=('git' 'python' 'python-pip')
 install="ddos.install"

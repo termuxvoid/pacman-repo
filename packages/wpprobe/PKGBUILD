@@ -6,6 +6,7 @@ pkgver=0.12.12
 pkgrel=0
 pkgdesc='Fast tool to fingerprint and enumerate WordPress plugins and themes'
 arch=('any')
+groups=('web')
 url="https://github.com/Chocapikk/wpprobe"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="wpprobe.install"

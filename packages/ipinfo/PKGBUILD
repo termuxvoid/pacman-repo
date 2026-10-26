@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Ip address information gathering tool for termux '
 arch=('any')
+groups=('recon')
 depends=('python' 'python-pip' 'termux-exec' 'termux-tools')
 install="ipinfo.install"
 options=('!strip' '!debug' '!emptydirs')

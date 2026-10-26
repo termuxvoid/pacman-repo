@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='terminal-based feline messenger inspired by cowsay'
 arch=('any')
+groups=('games')
 url="https://github.com/Anon4You/catsay"
 depends=('git' 'python')
 install="catsay.install"

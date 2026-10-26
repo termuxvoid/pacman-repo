@@ -6,6 +6,7 @@ pkgver=3.11.1
 pkgrel=1
 pkgdesc='Fast and customizable vulnerability scanner'
 arch=('any')
+groups=('web')
 url="https://nuclei.projectdiscovery.io/"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="nuclei.install"

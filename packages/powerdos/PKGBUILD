@@ -6,6 +6,7 @@ pkgver=1.0.1
 pkgrel=1
 pkgdesc='A multi-threaded Denial of Service tool made in Python'
 arch=('any')
+groups=('net')
 depends=('python')
 options=('!strip' '!debug' '!emptydirs')
 source=(powerdos-data.tar.gz)

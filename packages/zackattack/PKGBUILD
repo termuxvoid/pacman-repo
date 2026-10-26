@@ -6,6 +6,7 @@ pkgver=0.1.1
 pkgrel=0
 pkgdesc='NTLM authentication relaying toolkit (SMB/HTTP relay needs root for ports 445/80)'
 arch=('any')
+groups=('security')
 url="https://github.com/urbanesec/ZackAttack"
 depends=('git' 'ruby' 'libsqlite' 'pkg-config' 'build-essential')
 install="zackattack.install"

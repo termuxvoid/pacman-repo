@@ -6,6 +6,7 @@ pkgver=1.7
 pkgrel=1
 pkgdesc='Wireless network security auditing suite'
 arch=('any')
+groups=('net')
 url="https://www.aircrack-ng.org/"
 depends=('git' 'make' 'automake' 'autoconf' 'libc++' 'libnl' 'libpcap' 'libsqlite' 'openssl' 'pcre' 'zlib' 'iw' 'ethtool' 'libtool' 'usbutils')
 install="aircrack-ng.install"

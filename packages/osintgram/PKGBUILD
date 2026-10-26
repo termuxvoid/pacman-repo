@@ -6,6 +6,7 @@ pkgver=2.0
 pkgrel=0
 pkgdesc='OSINT tool for Instagram account analysis'
 arch=('any')
+groups=('social')
 url="https://github.com/Datalux/Osintgram"
 depends=('curl' 'tar' 'python' 'python-pip' 'build-essential' 'rust' 'file')
 install="osintgram.install"

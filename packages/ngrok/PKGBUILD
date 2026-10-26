@@ -6,6 +6,7 @@ pkgver=3.39.1
 pkgrel=1
 pkgdesc='Secure tunnels to localhost'
 arch=('any')
+groups=('tunnel')
 url="https://ngrok.com"
 depends=('wget' 'proot' 'openssl')
 install="ngrok.install"

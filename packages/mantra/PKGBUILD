@@ -6,6 +6,7 @@ pkgver=3.1
 pkgrel=1
 pkgdesc='API key hunter for JS files and web pages'
 arch=('any')
+groups=('security')
 url="https://github.com/brosck/mantra"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="mantra.install"

@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='A powerful and easy-to-use tool to change your IP address automatically'
 arch=('any')
+groups=('net')
 url="https://github.com/Anon4You/Ip-Changer"
 depends=('git' 'curl' 'tor' 'privoxy' 'netcat-openbsd')
 install="ip-changer.install"

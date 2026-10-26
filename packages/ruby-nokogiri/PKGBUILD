@@ -6,6 +6,7 @@ pkgver=1.19.4
 pkgrel=0
 pkgdesc='Ruby gem for HTML/XML parsing (system libraries version)'
 arch=('any')
+groups=('libs')
 url="https://nokogiri.org/"
 depends=('ruby' 'pkg-config' 'libxml2' 'libxslt' 'gumbo-parser' 'gumbo-parser-static' 'make')
 install="ruby-nokogiri.install"

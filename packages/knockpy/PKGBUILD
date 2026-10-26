@@ -6,6 +6,7 @@ pkgver=9.0.0
 pkgrel=1
 pkgdesc='Subdomain enumeration and reconnaissance tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/guelfoweb/knock"
 depends=('python' 'python-pip' 'python-cryptography')
 install="knockpy.install"

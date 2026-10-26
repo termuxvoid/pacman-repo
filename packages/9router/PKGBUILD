@@ -6,6 +6,7 @@ pkgver=0.5.91
 pkgrel=0
 pkgdesc='Smart gateway between your tools and 60+ AI providers'
 arch=('any')
+groups=('ai')
 url="https://9router.com/"
 depends=('npm')
 install="9router.install"

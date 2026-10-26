@@ -6,6 +6,7 @@ pkgver=4.1fix
 pkgrel=1
 pkgdesc='OSINT tool for username search across platforms'
 arch=('any')
+groups=('recon')
 url="https://github.com/Alfredredbird/tookie-osint"
 depends=('git' 'python' 'python-pip' 'termux-tools')
 install="tookie-osint.install"

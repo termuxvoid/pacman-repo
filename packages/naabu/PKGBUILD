@@ -6,6 +6,7 @@ pkgver=2.6.1
 pkgrel=1
 pkgdesc='Fast port scanner written in Go'
 arch=('any')
+groups=('net')
 url="https://github.com/projectdiscovery/naabu"
 depends=('curl' 'golang' 'tar' 'gzip' 'libcap')
 install="naabu.install"

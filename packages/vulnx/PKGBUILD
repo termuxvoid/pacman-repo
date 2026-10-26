@@ -6,6 +6,7 @@ pkgver=2.0.2
 pkgrel=1
 pkgdesc='Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.'
 arch=('any')
+groups=('recon')
 url="https://github.com/projectdiscovery/vulnx"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="vulnx.install"

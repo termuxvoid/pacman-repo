@@ -6,6 +6,7 @@ pkgver=7.1.2
 pkgrel=1
 pkgdesc='World'\''s fastest and most advanced password recovery utility'
 arch=('any')
+groups=('password')
 url="https://hashcat.net/hashcat/"
 depends=('clang' 'make' 'binutils' 'curl' 'libc++' 'libiconv' 'opencl-vendor-driver' 'python')
 install="hashcat.install"

@@ -6,6 +6,7 @@ pkgver=1.10.8
 pkgrel=1
 pkgdesc="Automatic SQL Injection and Database Takeover Tool"
 arch=('any')
+groups=('web')
 url="https://sqlmap.org/"
 license=('GPL2')
 depends=('python' 'python-pip')

@@ -6,6 +6,7 @@ pkgver=2.0.0
 pkgrel=1
 pkgdesc='Professional Instagram OSINT Tool'
 arch=('any')
+groups=('social')
 url="https://github.com/Anon4You/InstaGhost"
 depends=('git' 'python' 'python-pip' 'python-pillow')
 install="instaghost.install"

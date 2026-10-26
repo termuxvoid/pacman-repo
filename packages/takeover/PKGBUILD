@@ -6,6 +6,7 @@ pkgver=0.2
 pkgrel=1
 pkgdesc='Subdomain takeover detection tool'
 arch=('any')
+groups=('security')
 url="https://github.com/edoardottt/takeover"
 depends=('git' 'python' 'python-pip')
 install="takeover.install"

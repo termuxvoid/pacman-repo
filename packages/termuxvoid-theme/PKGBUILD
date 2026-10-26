@@ -6,6 +6,7 @@ pkgver=3.3
 pkgrel=2
 pkgdesc='Professional terminal customization for Termux'
 arch=('any')
+groups=('shell')
 url="https://github.com/termuxvoid/TermuxVoid-Theme"
 depends=('fish' 'starship' 'git' 'jp2a' 'eza')
 install="termuxvoid-theme.install"

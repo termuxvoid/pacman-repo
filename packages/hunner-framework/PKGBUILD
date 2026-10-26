@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Open Source Penetration Testing Framework'
 arch=('any')
+groups=('web')
 url="https://github.com/b3-v3r/Hunner"
 depends=('git' 'python' 'python-pip')
 install="hunner-framework.install"

@@ -6,6 +6,7 @@ pkgver=2.4.2
 pkgrel=1
 pkgdesc='Web Application Firewall detection tool'
 arch=('any')
+groups=('web')
 url="https://github.com/EnableSecurity/wafw00f"
 depends=('python' 'python-pip')
 install="wafw00f.install"

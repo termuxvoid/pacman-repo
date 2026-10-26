@@ -6,6 +6,7 @@ pkgver=1.4.3
 pkgrel=1
 pkgdesc='Advanced Cross-Platform SQL Injection Scanner'
 arch=('any')
+groups=('web')
 url="https://github.com/r0oth3x49/ghauri"
 depends=('git' 'python')
 install="ghauri.install"

@@ -6,6 +6,7 @@ pkgver=5.3
 pkgrel=1
 pkgdesc='Remove Pairip Protection and Rebuild APKs'
 arch=('any')
+groups=('android')
 url="https://github.com/TechnoIndian/RKPairip"
 depends=('git' 'python' 'openjdk-17' 'apksigner')
 install="rkpairip.install"

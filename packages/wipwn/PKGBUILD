@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Fast automated WiFi WPS PIN cracking tool'
 arch=('any')
+groups=('net')
 url="https://github.com/anbuinfosec/wipwn"
 depends=('git' 'python' 'wpa-supplicant' 'pixiewps' 'iw' 'openssl' 'sudo' 'openssh')
 install="wipwn.install"

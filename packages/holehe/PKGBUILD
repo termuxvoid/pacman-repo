@@ -6,6 +6,7 @@ pkgver=1.61
 pkgrel=1
 pkgdesc='Email OSINT tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/megadose/holehe"
 depends=('python' 'python-pip')
 install="holehe.install"

@@ -6,6 +6,7 @@ pkgver=1.9.8
 pkgrel=0
 pkgdesc='Turn single-threaded CLI tools into fast multi-threaded engines'
 arch=('any')
+groups=('utils')
 url="https://github.com/codingo/Interlace"
 depends=('git' 'python')
 install="interlace.install"

@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Advanced APK Modification Tool '
 arch=('any')
+groups=('android')
 url="https://github.com/Anon4You/APKpatcher"
 depends=('git' 'libxml2' 'openjdk-17' 'apkeditor' 'apksigner')
 install="apkpatcher.install"

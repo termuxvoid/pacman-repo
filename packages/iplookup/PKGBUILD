@@ -6,6 +6,7 @@ pkgver=1.0.0
 pkgrel=1
 pkgdesc='Ip address info gethering script..'
 arch=('any')
+groups=('recon')
 depends=('termux-exec' 'termux-tools' 'figlet' 'toilet' 'pv')
 options=('!strip' '!debug' '!emptydirs')
 source=(iplookup-data.tar.gz)

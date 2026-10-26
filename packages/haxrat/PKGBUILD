@@ -6,6 +6,7 @@ pkgver=1.0.1
 pkgrel=1
 pkgdesc='Cloud-based remote Android management suite'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/haxRat"
 depends=('git' 'npm' 'apkeditor' 'apksigner')
 install="haxrat.install"

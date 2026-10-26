@@ -6,6 +6,7 @@ pkgver=1.4.3
 pkgrel=1
 pkgdesc='Information gathering tool using online resources'
 arch=('any')
+groups=('recon')
 url="https://github.com/snooppr/snoop"
 depends=('git' 'python' 'python-psutil')
 install="snoop.install"

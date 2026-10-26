@@ -6,6 +6,7 @@ pkgver=0.144
 pkgrel=1
 pkgdesc='Lightweight database information finder from a server'
 arch=('any')
+groups=('web')
 url="https://github.com/ron190/jsql-injection"
 depends=('curl' 'openjdk-21')
 install="jsql.install"

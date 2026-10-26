@@ -6,6 +6,7 @@ pkgver=1.45.1
 pkgrel=0
 pkgdesc='CMS scanner for Drupal, WordPress, Silverstripe and Joomla'
 arch=('any')
+groups=('web')
 url="https://github.com/droope/droopescan"
 depends=('git' 'python')
 install="droopescan.install"

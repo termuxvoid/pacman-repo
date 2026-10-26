@@ -6,6 +6,7 @@ pkgver=1.1
 pkgrel=0
 pkgdesc='Security wordlists collection (rockyou.txt + SecLists subset).'
 arch=('any')
+groups=('password')
 depends=('wget' 'git' 'gawk')
 install="wordlists.install"
 options=('!strip' '!debug' '!emptydirs')

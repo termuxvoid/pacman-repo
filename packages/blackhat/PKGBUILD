@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='blackhat hacking sources'
 arch=('any')
+groups=('misc')
 options=('!strip' '!debug' '!emptydirs')
 source=(blackhat-data.tar.gz)
 sha256sums=('SKIP')

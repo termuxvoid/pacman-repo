@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='OSINT tool for username and email searches across 600+ platforms'
 arch=('any')
+groups=('recon')
 url="https://github.com/p1ngul1n0/blackbird"
 depends=('git' 'python' 'python-pip' 'sed' 'python-pillow')
 install="blackbird.install"

@@ -6,6 +6,7 @@ pkgver=209.281721e
 pkgrel=0
 pkgdesc='A python wordlist-based DNS subdomain scanner'
 arch=('any')
+groups=('recon')
 url="https://github.com/rbsec/dnscan"
 depends=('git' 'python' 'python-cryptography')
 install="dnscan.install"

@@ -6,6 +6,7 @@ pkgver=3.1.4
 pkgrel=1
 pkgdesc='Advanced hash identifier'
 arch=('any')
+groups=('password')
 url="https://github.com/psypanda/hashID"
 depends=('python' 'python-pip')
 install="hashid.install"

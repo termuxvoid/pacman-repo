@@ -6,6 +6,7 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc='Fetch known URLs from Wayback Machine archives'
 arch=('any')
+groups=('recon')
 url="https://github.com/tomnomnom/waybackurls"
 depends=('curl' 'golang' 'tar' 'gzip')
 install="waybackurls.install"

@@ -6,6 +6,7 @@ pkgver=1
 pkgrel=1
 pkgdesc='random banner and quote'
 arch=('any')
+groups=('misc')
 url="https://github.com/Alienkrishn/random_banners"
 depends=('git')
 install="random-banner.install"

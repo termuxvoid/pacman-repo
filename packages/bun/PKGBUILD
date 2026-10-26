@@ -6,6 +6,7 @@ pkgver=1.4.2
 pkgrel=1
 pkgdesc='Incredibly fast JavaScript runtime, bundler, test runner and package manager'
 arch=('any')
+groups=('devel')
 url="https://bun.sh"
 depends=('npm')
 install="bun.install"

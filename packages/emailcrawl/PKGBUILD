@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Professional-grade OSINT email extraction tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/techenthusiast167/EMAIL-CRAWL"
 depends=('python' 'python-lxml')
 install="emailcrawl.install"

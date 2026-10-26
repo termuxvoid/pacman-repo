@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Advanced tracking and reconnaissance tool'
 arch=('any')
+groups=('recon')
 url="https://github.com/HunxByts/GhostTrack"
 depends=('git' 'python' 'python-pip')
 install="ghosttrack.install"

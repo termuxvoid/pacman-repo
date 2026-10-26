@@ -6,6 +6,7 @@ pkgver=3.0.1
 pkgrel=0
 pkgdesc='Command-line search tool for exploits and vulnerabilities'
 arch=('any')
+groups=('recon')
 url="https://github.com/vulnersCom/getsploit"
 depends=('python' 'python-pip' 'rust' 'make' 'pkg-config')
 install="getsploit.install"

@@ -6,6 +6,7 @@ pkgver=1.0
 pkgrel=1
 pkgdesc='Expose your localhost on the DARKWEB using termux'
 arch=('any')
+groups=('tunnel')
 depends=('tor' 'php' 'curl' 'pv')
 options=('!strip' '!debug' '!emptydirs')
 source=(local2onion-data.tar.gz)

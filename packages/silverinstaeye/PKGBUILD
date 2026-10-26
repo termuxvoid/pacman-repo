@@ -6,6 +6,7 @@ pkgver=1.0.patched
 pkgrel=1
 pkgdesc='Instagram information gathering tool'
 arch=('any')
+groups=('social')
 url="https://github.com/silverxpymaster/SilverInstaEye"
 depends=('git' 'python' 'python-pip' 'python-pillow' 'python-numpy' 'build-essential' 'cmake' 'ninja' 'libopenblas' 'libandroid-execinfo' 'patchelf' 'binutils' 'rust')
 install="silverinstaeye.install"

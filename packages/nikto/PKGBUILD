@@ -6,6 +6,7 @@ pkgver=2.6.1
 pkgrel=1
 pkgdesc='Comprehensive web server scanner'
 arch=('any')
+groups=('web')
 url="https://github.com/sullo/nikto"
 depends=('perl' 'git' 'openssl' 'openssl-tool' 'clang' 'make' 'cmake' 'curl' 'pkg-config')
 install="nikto.install"

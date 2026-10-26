@@ -6,6 +6,7 @@ pkgver=1.0.1
 pkgrel=1
 pkgdesc='Phone number lookup tool for termux'
 arch=('any')
+groups=('recon')
 depends=('termux-tools' 'termux-exec' 'figlet' 'jq')
 options=('!strip' '!debug' '!emptydirs')
 source=(phoneinfo-data.tar.gz)

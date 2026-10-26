@@ -6,6 +6,7 @@ pkgver=0.2.0
 pkgrel=0
 pkgdesc='TermuxVoid package manager with a fuzzy TUI'
 arch=('any')
+groups=('utils')
 url="https://github.com/termuxvoid/tvpkg"
 depends=('curl' 'tar' 'gzip' 'coreutils' 'grep')
 install="tvpkg.install"

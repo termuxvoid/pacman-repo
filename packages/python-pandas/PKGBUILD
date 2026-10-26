@@ -6,6 +6,7 @@ pkgver=3.0.5
 pkgrel=1
 pkgdesc='Powerhouse data analysis toolkit'
 arch=('any')
+groups=('science')
 url="https://pandas.pydata.org"
 depends=('python' 'python-pip' 'python-numpy')
 install="python-pandas.install"

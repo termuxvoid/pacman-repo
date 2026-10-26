@@ -6,6 +6,7 @@ pkgver=2.4.3
 pkgrel=0
 pkgdesc="UTIM CLI — AI-powered unified terminal intelligence manager"
 arch=('any')
+groups=('ai')
 url="https://github.com/emend-ai/utim"
 depends=('python' 'npm')
 install="utim-cli.install"
