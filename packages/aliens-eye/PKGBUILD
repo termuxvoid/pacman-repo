@@ -2,10 +2,11 @@
 # Ported from TermuxVoid APT repo (packages/aliens-eye)
 
 pkgname="aliens-eye"
-pkgver=2.7.4
+pkgver=2.7.5
 pkgrel=0
 pkgdesc='AI-powered OSINT username scanner'
 arch=('any')
+groups=('recon')
 url="https://github.com/arxhr007/Aliens_eye"
 depends=('python' 'python-pip' 'build-essential')
 optdepends=('python-playwright: browser-based correlation')
