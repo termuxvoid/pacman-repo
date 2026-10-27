@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/deepseek-harness)
+
+pkgname="deepseek-harness"
+pkgver=0.2.1.rc.4
+pkgrel=0
+pkgdesc='DeepSeek Harness (dsh) AI coding agent for Termux'
+arch=('any')
+groups=('ai')
+url="https://github.com/deepseek-ai/deepseek-harness"
+depends=('glibc-nodejs' 'bash' 'coreutils' 'ca-certificates' 'ripgrep')
+install="deepseek-harness.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

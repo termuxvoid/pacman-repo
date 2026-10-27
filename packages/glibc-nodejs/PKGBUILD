@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/glibc-nodejs)
+
+pkgname="glibc-nodejs"
+pkgver=26.12.1
+pkgrel=0
+pkgdesc='Node.js runtime with glibc for Termux'
+arch=('any')
+groups=('devel')
+url="https://nodejs.org/"
+depends=('glibc' 'curl' 'tar' 'xz-utils' 'bash' 'coreutils' 'ca-certificates')
+install="glibc-nodejs.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
