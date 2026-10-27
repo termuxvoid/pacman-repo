@@ -27,7 +27,7 @@ packages/<name>/
 
 Required fields:
 
-`pkgname`, `pkgver`, `pkgrel` (use **0** so versions match upstream), `pkgdesc` (first line of upstream description), `arch=('any')`, `Maintainer` comment, `url` (upstream homepage), `depends`. List every runtime dependency under `depends`; pacman installs them for you. If a dependency does not exist in the pacman hosting, drop it from `depends` and install it inside `post_install()` instead.
+`pkgname`, `pkgver`, `pkgrel` (start at 1; increment for packaging-only changes, and match the existing package when editing one), `pkgdesc` (first line of upstream description), `arch=('any')`, `Maintainer` comment, `url` (upstream homepage), `depends`. List every runtime dependency under `depends`; pacman installs them for you. If a dependency does not exist in the pacman repository, drop it from `depends` and install it inside `post_install()` instead.
 
 Version rules:
 
@@ -89,7 +89,7 @@ package() {
 }
 ```
 
-We use `SKIP` for shipped data (same policy as the APT repo): manually maintained hashes drift out of sync and break builds without adding safety — the git history is the integrity record.
+We use `SKIP` for shipped data (same policy as the APT repo): the archive is committed to the repository, so review it in the PR. A checksum of a local archive would only verify it against itself.
 
 The archive's internal paths **must be PREFIX-relative** (`usr/bin/foo`, `share/<pkg>/...`) — never absolute `data/data/com.termux/...` paths. Pacman's root is `$PREFIX` on real pacman-bootstrap devices, so absolute paths fail to extract there (this matches how termux-pacman ships its own packages). Generate archives with:
 
