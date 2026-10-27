@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/opencode-v2)
+
+pkgname="opencode-v2"
+pkgver=2.1.4
+pkgrel=0
+pkgdesc='OpenCode 2 AI coding agent for Termux (glibc version)'
+arch=('any')
+groups=('ai')
+url="https://opencode.ai/v2/"
+depends=('glibc' 'clang' 'patchelf' 'curl' 'tar' 'ca-certificates' 'bash' 'coreutils')
+install="opencode-v2.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
