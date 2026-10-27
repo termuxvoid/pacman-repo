@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/jsql)
 
 pkgname="jsql"
-pkgver=0.144
+pkgver=0.115
 pkgrel=1
 pkgdesc='Lightweight database information finder from a server'
 arch=('any')

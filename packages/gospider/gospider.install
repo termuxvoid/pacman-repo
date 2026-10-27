@@ -11,6 +11,12 @@ rm -rf "$TMP_DIR" 2>/dev/null || true
 mkdir -p "$TMP_DIR"
 
 curl -fsSL -o "$TMP_DIR/gospider.tar.gz" "$REPO"
+SHA256="7cea9840c8a81c4b6be2c5984b25398a13bfe83cfd613332e8092f4c69d6ab5f"
+if ! printf '%s  %s\n' "$SHA256" "$TMP_DIR/gospider.tar.gz" | sha256sum -c - >/dev/null; then
+    echo "checksum mismatch: gospider.tar.gz" >&2
+    rm -f "$TMP_DIR/gospider.tar.gz"
+    return 1
+fi
 tar xzf "$TMP_DIR/gospider.tar.gz" -C "$TMP_DIR"
 cd "$TMP_DIR/gospider-1.1.6"
 
