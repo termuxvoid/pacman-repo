@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/omniroute)
+
+pkgname="omniroute"
+pkgver=3.8.52
+pkgrel=0
+pkgdesc='AI gateway with one OpenAI-compatible endpoint for many providers'
+arch=('any')
+groups=('ai')
+url="https://www.omniroute.online/"
+depends=('npm' 'python' 'build-essential' 'git' 'ca-certificates')
+install="omniroute.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
