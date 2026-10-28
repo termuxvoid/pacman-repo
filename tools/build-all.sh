@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Build every package in packages/ (arch-independent).
+# Build packages/ (arch-independent), or only the package dirs passed as args.
 # Intended to run inside a full pacman environment
 # (e.g. termux-penv login termux-pacman64).
 #
@@ -51,12 +51,19 @@ build_one() {
 }
 export -f build_one 2>/dev/null
 
+targets=("$@")
+if [ ${#targets[@]} -eq 0 ]; then
+    targets=(packages/*/)
+fi
+
 if [ "$JOBS" -gt 1 ] && command -v xargs > /dev/null 2>&1; then
-    for d in packages/*/; do
+    for d in "${targets[@]}"; do
+        d="${d%/}/"
         [ -f "${d}PKGBUILD" ] && printf '%s\n' "$d"
     done | xargs -P "$JOBS" -I{} bash -c 'build_one "$@"' _ {}
 else
-    for d in packages/*/; do
+    for d in "${targets[@]}"; do
+        d="${d%/}/"
         [ -f "${d}PKGBUILD" ] || continue
         build_one "$d"
     done

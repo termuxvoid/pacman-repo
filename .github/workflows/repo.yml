@@ -3,6 +3,10 @@ name: Build and Deploy Pacman Repo to gh-pages
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'packages/**'
+      - 'tools/**'
+      - '.github/workflows/repo.yml'
   workflow_dispatch:
 
 concurrency:
@@ -13,35 +17,179 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: archlinux:base-devel
+    defaults:
+      run:
+        shell: bash
     permissions:
       contents: write
       pages: write
       id-token: write
 
     steps:
+      - name: Install tooling
+        run: |
+          pacman -Syu --noconfirm git gnupg xz
+
       - name: Checkout code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install tooling
+      - name: Restore published packages
+        id: previous
         run: |
-          pacman -Syu --noconfirm git gnupg xz
+          set -euo pipefail
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          mkdir -p dist/any
+          base=""
+          if git fetch --depth=1 origin +refs/heads/gh-pages:refs/remotes/origin/gh-pages; then
+            if git archive origin/gh-pages any 2>/dev/null | tar -x -C dist; then
+              true
+            fi
+            base=$(git show origin/gh-pages:DEPLOYED_SHA 2>/dev/null || true)
+            if [ -z "$base" ]; then
+              base=$(git log -1 --format=%s origin/gh-pages | sed -n 's/^deploy: //p')
+            fi
+          fi
+          if [ -n "$base" ] && git cat-file -e "${base}^{commit}" 2>/dev/null; then
+            echo "base=$base" >> "$GITHUB_OUTPUT"
+          else
+            echo "base=" >> "$GITHUB_OUTPUT"
+          fi
+          echo "restored=$(find dist/any -name '*.pkg.tar.xz' | wc -l)" >> "$GITHUB_OUTPUT"
+
+      - name: Determine packages to build
+        id: changed
+        env:
+          BASE: ${{ steps.previous.outputs.base }}
+        run: |
+          set -euo pipefail
+          list="$RUNNER_TEMP/build-packages.txt"
+          published="$RUNNER_TEMP/published-packages.tsv"
+          : > "$list"
+          : > "$published"
+          add() {
+            grep -qxF "$1" "$list" || echo "$1" >> "$list"
+          }
+
+          shopt -s nullglob
+          for f in dist/any/*.pkg.tar.xz; do
+            meta=$(tar -xOf "$f" .PKGINFO)
+            name=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgname" { print $2; exit }')
+            ver=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgver" { print $2; exit }')
+            [ -n "$name" ] && [ -n "$ver" ] || {
+              echo "Invalid package metadata: $f" >&2
+              exit 1
+            }
+            printf '%s\t%s\n' "$name" "$ver" >> "$published"
+          done
+
+          if [ -z "$BASE" ]; then
+            echo "No previous deployment; rebuilding all packages"
+            for pkgbuild in packages/*/PKGBUILD; do
+              [ -f "$pkgbuild" ] && add "packages/$(basename "$(dirname "$pkgbuild")")"
+            done
+          else
+            git diff --name-only "$BASE" "$GITHUB_SHA" -- packages |
+              awk -F/ '$1 == "packages" && $2 != "" { print $2 }' |
+              sort -u |
+              while IFS= read -r pkg; do
+                if [ -d "packages/$pkg" ]; then add "packages/$pkg"; fi
+              done
+          fi
+
+          for pkgbuild in packages/*/PKGBUILD; do
+            [ -f "$pkgbuild" ] || continue
+            pkg=$(basename "$(dirname "$pkgbuild")")
+            name=$(bash -c 'source "$1" >/dev/null 2>&1; printf "%s" "$pkgname"' _ "$pkgbuild")
+            full=$(bash -c 'source "$1" >/dev/null 2>&1; if [ "${epoch:-0}" != "0" ]; then printf "%s:" "$epoch"; fi; printf "%s-%s" "$pkgver" "$pkgrel"' _ "$pkgbuild")
+            [ -n "$name" ] && [ -n "$full" ] || {
+              echo "Invalid PKGBUILD: $pkgbuild" >&2
+              exit 1
+            }
+            if ! awk -F'\t' -v n="$name" -v v="$full" \
+              '$1 == n && $2 == v { found = 1 } END { exit !found }' "$published"; then
+              echo "Missing published artifact: $pkg $full"
+              add "packages/$pkg"
+            fi
+          done
+
+          sort -u "$list" -o "$list"
+          echo "count=$(wc -l < "$list")" >> "$GITHUB_OUTPUT"
+          echo "packages=$(paste -sd' ' "$list")" >> "$GITHUB_OUTPUT"
+          echo "Packages to build:"
+          cat "$list"
 
       - name: Create unprivileged builder
         run: |
           useradd -m builder
-          chown -R builder:builder "$GITHUB_WORKSPACE"
+          chown builder:builder "$GITHUB_WORKSPACE"
+          chown -R builder:builder packages dist
 
-      - name: Build all packages
+      - name: Build changed packages
+        if: steps.changed.outputs.count != '0'
         env:
           JOBS: '2'
+          PACKAGES: ${{ steps.changed.outputs.packages }}
         run: |
+          set -euo pipefail
           su builder -c '
             set -e
             cd "$GITHUB_WORKSPACE"
-            tools/build-all.sh
+            tools/build-all.sh '"$PACKAGES"'
           '
+
+      - name: Collect built packages
+        run: |
+          find packages -name '*.pkg.tar.xz' ! -name '*.sig' -exec cp -f {} dist/any/ \;
+
+      - name: Remove stale packages
+        run: |
+          set -euo pipefail
+          expected="$RUNNER_TEMP/expected-packages.tsv"
+          : > "$expected"
+          for pkgbuild in packages/*/PKGBUILD; do
+            [ -f "$pkgbuild" ] || continue
+            name=$(bash -c 'source "$1" >/dev/null 2>&1; printf "%s" "$pkgname"' _ "$pkgbuild")
+            full=$(bash -c 'source "$1" >/dev/null 2>&1; if [ "${epoch:-0}" != "0" ]; then printf "%s:" "$epoch"; fi; printf "%s-%s" "$pkgver" "$pkgrel"' _ "$pkgbuild")
+            [ -n "$name" ] && [ -n "$full" ] || {
+              echo "Invalid PKGBUILD: $pkgbuild" >&2
+              exit 1
+            }
+            printf '%s\t%s\n' "$name" "$full" >> "$expected"
+          done
+
+          shopt -s nullglob
+          for f in dist/any/*.pkg.tar.xz; do
+            meta=$(tar -xOf "$f" .PKGINFO)
+            name=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgname" { print $2; exit }')
+            ver=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgver" { print $2; exit }')
+            if ! awk -F'\t' -v n="$name" -v v="$ver" \
+              '$1 == n && $2 == v { found = 1 } END { exit !found }' "$expected"; then
+              echo "Removing stale package: $f"
+              rm -f "$f" "$f.sig"
+            fi
+          done
+          echo "Packages in dist: $(find dist/any -maxdepth 1 -name '*.pkg.tar.xz' | wc -l)"
+
+      - name: Verify package coverage
+        run: |
+          set -euo pipefail
+          expected="$RUNNER_TEMP/expected-packages.tsv"
+          actual="$RUNNER_TEMP/actual-packages.tsv"
+          [ -f "$expected" ] || {
+            echo "Missing expected package list" >&2
+            exit 1
+          }
+          for f in dist/any/*.pkg.tar.xz; do
+            meta=$(tar -xOf "$f" .PKGINFO)
+            name=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgname" { print $2; exit }')
+            ver=$(printf '%s\n' "$meta" | awk -F' = ' '$1 == "pkgver" { print $2; exit }')
+            printf '%s\t%s\n' "$name" "$ver"
+          done | sort > "$actual"
+          sort -u "$expected" -o "$expected"
+          diff -u "$expected" "$actual"
+          echo "All packages have exactly one current artifact"
 
       - name: Import GPG key
         id: gpg
@@ -55,11 +203,14 @@ jobs:
           KEYID: ${{ steps.gpg.outputs.fingerprint }}
         run: |
           SIGN=1 KEYID="$KEYID" tools/mkrepo.sh dist
+          printf '%s\n' "$GITHUB_SHA" > dist/DEPLOYED_SHA
 
       - name: Verify signatures
         run: |
           gpg --verify dist/any/termuxvoid.db.sig dist/any/termuxvoid.db
-          gpg --verify dist/any/sqlmap-*.pkg.tar.xz.sig dist/any/sqlmap-*.pkg.tar.xz
+          for sig in dist/any/*.pkg.tar.xz.sig; do
+            gpg --verify "$sig" "${sig%.sig}"
+          done
           test -s dist/termuxvoid.gpg.asc
           echo "packages: $(ls dist/any/*.pkg.tar.xz | wc -l)"
 
