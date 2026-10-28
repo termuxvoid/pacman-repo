@@ -3,12 +3,12 @@
 
 pkgname="glibc-nodejs"
 pkgver=26.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Node.js runtime with glibc for Termux'
 arch=('any')
 groups=('devel')
 url="https://nodejs.org/"
-depends=('glibc' 'curl' 'tar' 'xz-utils' 'bash' 'coreutils' 'ca-certificates')
+depends=('glibc' 'gcc-libs-glibc' 'curl' 'tar' 'xz-utils' 'bash' 'coreutils' 'ca-certificates')
 install="glibc-nodejs.install"
 options=('!strip' '!debug' '!emptydirs')
 
