@@ -3,7 +3,7 @@
 
 pkgname="glibc-nodejs"
 pkgver=26.12.1
-pkgrel=0
+pkgrel=1
 pkgdesc='Node.js runtime with glibc for Termux'
 arch=('any')
 groups=('devel')

@@ -3,7 +3,7 @@
 
 pkgname="deepseek-harness"
 pkgver=0.2.1.rc.4
-pkgrel=0
+pkgrel=1
 pkgdesc='DeepSeek Harness (dsh) AI coding agent for Termux'
 arch=('any')
 groups=('ai')

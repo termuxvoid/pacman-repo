@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/opencode-v2)
 
 pkgname="opencode-v2"
-pkgver=2.1.4
+pkgver=2.2.0
 pkgrel=0
 pkgdesc='OpenCode 2 AI coding agent for Termux (glibc version)'
 arch=('any')
