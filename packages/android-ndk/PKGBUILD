@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/android-ndk)
+
+pkgname="android-ndk"
+pkgver=30.0.16248370
+pkgrel=1
+pkgdesc='Android NDK r30 for Termux (aarch64 and x86_64)'
+arch=('any')
+groups=('android')
+url="https://github.com/HomuHomu833/android-ndk-custom"
+depends=('axel' 'xz-utils' 'ca-certificates')
+install="android-ndk.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}

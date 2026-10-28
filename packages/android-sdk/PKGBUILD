@@ -2,13 +2,13 @@
 # Ported from TermuxVoid APT repo (packages/android-sdk)
 
 pkgname="android-sdk"
-pkgver=36.0.0
+pkgver=37.0.0
 pkgrel=1
-pkgdesc='Android SDK built using musl libc, supporting multiple architectures.'
+pkgdesc='Android SDK 37.0.0 for Termux (aarch64 and x86_64)'
 arch=('any')
 groups=('android')
-url="https://developer.android.com"
-depends=('openjdk-21' '7zip' 'axel')
+url="https://github.com/HomuHomu833/android-sdk-custom"
+depends=('openjdk-21' 'axel' 'xz-utils' 'ca-certificates')
 install="android-sdk.install"
 options=('!strip' '!debug' '!emptydirs')
 
