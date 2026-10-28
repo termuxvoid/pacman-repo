@@ -2,13 +2,13 @@
 # Ported from TermuxVoid APT repo (packages/apkgen-cli)
 
 pkgname="apkgen-cli"
-pkgver=1.4.0
+pkgver=1.4.1
 pkgrel=1
 pkgdesc='CLI tool to quickly generate Android APKs from local templates'
 arch=('any')
 groups=('android')
 url="https://github.com/termuxvoid/apkgen-cli"
-depends=('git' 'gum' 'termux-tools' 'android-sdk')
+depends=('git' 'gum' 'termux-tools' 'android-sdk' 'android-ndk' 'android-cmake')
 optdepends=('flutter: required for apk generation')
 install="apkgen-cli.install"
 options=('!strip' '!debug' '!emptydirs')

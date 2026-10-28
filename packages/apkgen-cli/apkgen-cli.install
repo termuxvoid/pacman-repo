@@ -1,5 +1,21 @@
 #!/bin/bash
 
+pre_install() {
+set -e
+
+ARCH=$(uname -m)
+case "$ARCH" in
+    aarch64|x86_64)
+        return 0
+        ;;
+    *)
+        echo "[!] ERROR: apkgen-cli supports aarch64 and x86_64 only" >&2
+        echo "[!] Your device architecture: $ARCH" >&2
+        return 1
+        ;;
+esac
+}
+
 post_install() {
 
 set -e
@@ -12,7 +28,6 @@ rm -rf "$INSTALL_DIR"
 git clone https://github.com/termuxvoid/apkgen-cli.git "$INSTALL_DIR"
 
 ln -sf "$INSTALL_DIR/apkgen" "$PREFIX/bin/apkgen"
-flutter config --android-sdk $PREFIX/opt/android-sdk
 
 echo "apkgen-cli installed successfully."
 return 0
