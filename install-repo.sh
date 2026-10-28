@@ -82,6 +82,9 @@ run_command "Refreshing package databases" \
 run_command "Installing base-devel (build tools: make, gcc, etc.)" \
 "pacman -S --needed --noconfirm base-devel"
 
+run_command "Installing glibc runtime libraries (gcc-libs-glibc)" \
+"pacman -S --needed --noconfirm gcc-libs-glibc"
+
 run_command "Installing tvpkg (TermuxVoid package manager)" \
 "pacman -S --needed --noconfirm tvpkg"
 
