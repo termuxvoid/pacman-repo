@@ -11,7 +11,8 @@ CHECK="✅"
 CROSS="❌"
 INFO=">> "
 
-PACMAN_CONF="${PREFIX:-/data/data/com.termux/files/usr}/etc/pacman.conf"
+PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
+PACMAN_CONF="$PREFIX/etc/pacman.conf"
 REPO_URL="https://termuxvoid.github.io/pacman-repo/any"
 KEY_URL="https://termuxvoid.github.io/pacman-repo/termuxvoid.gpg.asc"
 
@@ -84,6 +85,9 @@ run_command "Installing base-devel (build tools: make, gcc, etc.)" \
 
 run_command "Installing glibc runtime libraries (gcc-libs-glibc)" \
 "pacman -S --needed --noconfirm gcc-libs-glibc"
+
+run_command "Linking resolv.conf for the glibc environment" \
+"test -f $PREFIX/etc/resolv.conf && mkdir -p $PREFIX/glibc/etc && ln -sfn $PREFIX/etc/resolv.conf $PREFIX/glibc/etc/resolv.conf"
 
 run_command "Installing tvpkg (TermuxVoid package manager)" \
 "pacman -S --needed --noconfirm tvpkg"
