@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/9router)
 
 pkgname="9router"
-pkgver=0.5.111
+pkgver=0.5.112
 pkgrel=0
 pkgdesc='Smart gateway between your tools and 60+ AI providers'
 arch=('any')

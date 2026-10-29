@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/playit)
 
 pkgname="playit"
-pkgver=0.17.1
+pkgver=1.2.0
 pkgrel=1
 pkgdesc='Global Proxy for Server Hosting Without Port Forwarding'
 arch=('any')

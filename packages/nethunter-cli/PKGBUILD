@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/nethunter-cli)
 
 pkgname="nethunter-cli"
-pkgver=2025.4
+pkgver=2026.3
 pkgrel=1
 pkgdesc='Kali NetHunter Rootless Edition CLI'
 arch=('any')

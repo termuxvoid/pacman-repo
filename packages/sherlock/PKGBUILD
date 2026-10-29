@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/sherlock)
 
 pkgname="sherlock"
-pkgver=0.16.0
+pkgver=0.16.2
 pkgrel=1
 pkgdesc='Hunt down social media accounts by username'
 arch=('any')

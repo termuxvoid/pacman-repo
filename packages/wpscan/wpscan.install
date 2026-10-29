@@ -6,7 +6,7 @@ set -e
     # nokogiri native ext must link system libs, never bundled C sources
     export NOKOGIRI_USE_SYSTEM_LIBRARIES=1
 
-gem install wpscan -v 4.0.0 -- --use-system-libraries
+gem install wpscan -v 4.2.0 -- --use-system-libraries
 
 echo "WPScan installed successfully."
 echo ""
@@ -18,7 +18,7 @@ return 0
 }
 
 post_remove() {
-gem uninstall wpscan -v 4.0.0 -x --force 2>/dev/null || true
+gem uninstall wpscan -v 4.2.0 -x --force 2>/dev/null || true
 echo "WPScan completely removed."
 return 0
 }

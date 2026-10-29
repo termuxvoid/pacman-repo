@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/hashcat)
 
 pkgname="hashcat"
-pkgver=7.1.2
+pkgver=8.0.0
 pkgrel=1
 pkgdesc='World'\''s fastest and most advanced password recovery utility'
 arch=('any')

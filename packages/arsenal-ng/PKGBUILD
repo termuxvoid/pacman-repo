@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/arsenal-ng)
 
 pkgname="arsenal-ng"
-pkgver=1.6
+pkgver=1.8
 pkgrel=1
 pkgdesc='Fast command launcher with 200+ cybersecurity cheat-sheets'
 arch=('any')

@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/amass)
 
 pkgname="amass"
-pkgver=5.1.1
+pkgver=5.1.3
 pkgrel=1
 pkgdesc='In-depth Attack Surface Mapping and Asset Discovery'
 arch=('any')

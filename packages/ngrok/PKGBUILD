@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/ngrok)
 
 pkgname="ngrok"
-pkgver=3.39.1
+pkgver=3.39.13
 pkgrel=1
 pkgdesc='Secure tunnels to localhost'
 arch=('any')

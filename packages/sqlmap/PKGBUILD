@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/sqlmap)
 
 pkgname="sqlmap"
-pkgver=1.10.8
+pkgver=1.10.10
 pkgrel=1
 pkgdesc="Automatic SQL Injection and Database Takeover Tool"
 arch=('any')

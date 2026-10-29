@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/cronitor-cli)
 
 pkgname="cronitor-cli"
-pkgver=33.4
+pkgver=33.11
 pkgrel=1
 pkgdesc='Command Line Interface for Cronitor Monitoring'
 arch=('any')

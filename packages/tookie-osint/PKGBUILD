@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/tookie-osint)
 
 pkgname="tookie-osint"
-pkgver=4.1fix
+pkgver=4.2.2.3
 pkgrel=1
 pkgdesc='OSINT tool for username search across platforms'
 arch=('any')

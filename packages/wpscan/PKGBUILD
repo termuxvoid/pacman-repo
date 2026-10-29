@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/wpscan)
 
 pkgname="wpscan"
-pkgver=4.0.0
+pkgver=4.2.0
 pkgrel=1
 pkgdesc='WordPress vulnerability scanner'
 arch=('any')

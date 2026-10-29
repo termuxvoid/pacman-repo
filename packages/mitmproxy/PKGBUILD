@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/mitmproxy)
 
 pkgname="mitmproxy"
-pkgver=12.3.0
+pkgver=12.3.1
 pkgrel=0
 pkgdesc='Interactive TLS-capable intercepting HTTP proxy'
 arch=('any')

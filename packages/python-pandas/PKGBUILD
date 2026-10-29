@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/python-pandas)
 
 pkgname="python-pandas"
-pkgver=3.0.5
+pkgver=3.1.0
 pkgrel=1
 pkgdesc='Powerhouse data analysis toolkit'
 arch=('any')

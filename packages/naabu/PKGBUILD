@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/naabu)
 
 pkgname="naabu"
-pkgver=2.6.1
+pkgver=2.7.0
 pkgrel=1
 pkgdesc='Fast port scanner written in Go'
 arch=('any')

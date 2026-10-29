@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/wacli)
 
 pkgname="wacli"
-pkgver=0.22.0
+pkgver=0.25.1
 pkgrel=1
 pkgdesc='Command-line tool for WhatsApp chat management'
 arch=('any')

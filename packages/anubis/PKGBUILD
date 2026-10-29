@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/anubis)
 
 pkgname="anubis"
-pkgver=1.3.1
+pkgver=1.4.0
 pkgrel=0
 pkgdesc='Subdomain enumeration and information gathering tool'
 arch=('any')

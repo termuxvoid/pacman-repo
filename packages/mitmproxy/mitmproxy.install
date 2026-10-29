@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary mitmproxy==12.3.0
+pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary mitmproxy==12.3.1
 
 echo "mitmproxy installed. Run 'mitmproxy -p 8080' (explicit proxy, no root)."
 return 0
