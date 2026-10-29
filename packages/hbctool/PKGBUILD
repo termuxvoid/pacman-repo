@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/hbctool)
 
 pkgname="hbctool"
-pkgver=0.1.6
+pkgver=0.1.7
 pkgrel=0
 pkgdesc='Hermes Bytecode Disassembler and Assembler'
 arch=('any')
