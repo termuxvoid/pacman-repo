@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/craft-anything)
+
+pkgname="craft-anything"
+pkgver=0.3.0
+pkgrel=1
+pkgdesc='Reverse-engineering engine and AI-assisted rebuild CLI'
+arch=('any')
+groups=('security')
+url="https://github.com/storytold/craft-anything"
+depends=('glibc' 'curl' 'tar')
+install="craft-anything.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
