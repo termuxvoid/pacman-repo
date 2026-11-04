@@ -3,7 +3,7 @@
 
 pkgname="hbctool"
 pkgver=0.1.7
-pkgrel=0
+pkgrel=1
 pkgdesc='Hermes Bytecode Disassembler and Assembler'
 arch=('any')
 groups=('android')
