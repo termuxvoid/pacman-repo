@@ -2,8 +2,8 @@
 # Ported from TermuxVoid APT repo (packages/afrog)
 
 pkgname="afrog"
-pkgver=3.5.9
-pkgrel=1
+pkgver=3.5.10
+pkgrel=0
 pkgdesc='Fast vulnerability scanner with custom PoCs (afrog)'
 arch=('any')
 groups=('web')

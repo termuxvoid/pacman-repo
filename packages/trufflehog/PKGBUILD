@@ -2,8 +2,8 @@
 # Ported from TermuxVoid APT repo (packages/trufflehog)
 
 pkgname="trufflehog"
-pkgver=3.99.7
-pkgrel=1
+pkgver=3.99.8
+pkgrel=0
 pkgdesc='Find leaked credentials and secrets in code and data'
 arch=('any')
 groups=('security')
