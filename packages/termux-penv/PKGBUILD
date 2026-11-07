@@ -2,23 +2,20 @@
 # Ported from TermuxVoid APT repo (packages/termux-penv)
 
 pkgname="termux-penv"
-pkgver=2.0.1
-pkgrel=1
+pkgver=3.0.0
+pkgrel=0
 pkgdesc='Termux Penv - Simplify Chroot Environments in Termux'
 arch=('any')
 groups=('utils')
 url="https://github.com/Anon4You/termux-penv.git"
-depends=('wget' 'proot' 'figlet')
+depends=('wget' 'proot' 'figlet' 'curl' 'unzip' 'tar' 'gzip')
 install="termux-penv.install"
 options=('!strip' '!debug' '!emptydirs')
-source=(termux-penv-data.tar.gz)
-sha256sums=('SKIP')
 
 build() {
     return 0
 }
 
 package() {
-    mkdir -p "${pkgdir}/data/data/com.termux/files"
-    tar -xzf "${srcdir}/termux-penv-data.tar.gz" -C "${pkgdir}/data/data/com.termux/files"
+    return 0
 }
