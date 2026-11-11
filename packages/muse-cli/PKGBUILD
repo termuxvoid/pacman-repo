@@ -3,12 +3,12 @@
 
 pkgname="muse-cli"
 pkgver=1.4.15.R8339.1
-pkgrel=0
+pkgrel=1
 pkgdesc="Meta's terminal coding agent powered by Muse Spark"
 arch=('any')
 groups=('ai')
 url="https://dev.meta.ai/"
-depends=('curl' 'ca-certificates' 'git')
+depends=('curl' 'ca-certificates' 'git' 'proot')
 install="muse-cli.install"
 options=('!strip' '!debug' '!emptydirs')
 
