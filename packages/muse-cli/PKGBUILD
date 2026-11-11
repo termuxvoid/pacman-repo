@@ -3,7 +3,7 @@
 
 pkgname="muse-cli"
 pkgver=1.4.15.R8339.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Meta's terminal coding agent powered by Muse Spark"
 arch=('any')
 groups=('ai')
