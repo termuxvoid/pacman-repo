@@ -2,13 +2,13 @@
 # Ported from TermuxVoid APT repo (packages/muse-cli)
 
 pkgname="muse-cli"
-pkgver=1.4.15.R8339.1
-pkgrel=2
-pkgdesc="Meta's terminal coding agent powered by Muse Spark"
+pkgver=1.4.15
+pkgrel=1
+pkgdesc="Meta's terminal coding agent powered by Muse Spark (native aarch64 sysfix)"
 arch=('any')
 groups=('ai')
 url="https://dev.meta.ai/"
-depends=('curl' 'ca-certificates' 'git' 'proot')
+depends=('curl' 'ca-certificates' 'git')
 install="muse-cli.install"
 options=('!strip' '!debug' '!emptydirs')
 
