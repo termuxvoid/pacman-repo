@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/aliens-eye)
 
 pkgname="aliens-eye"
-pkgver=2.7.5
+pkgver=2.10.1
 pkgrel=0
 pkgdesc='AI-powered OSINT username scanner'
 arch=('any')

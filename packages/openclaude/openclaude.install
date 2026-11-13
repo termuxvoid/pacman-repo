@@ -5,14 +5,14 @@ post_install() {
 set -e
 
 echo "Installing OpenClaude..."
-npm install -g @gitlawb/openclaude@0.33.0 || exit 1
+npm install -g @twigpine/openclaude@0.36.0 || exit 1
 echo "OpenClaude installed successfully."
 return 0
 }
 
 post_remove() {
 
-npm uninstall -g @gitlawb/openclaude 2>/dev/null && echo "OpenClaude removed." || echo "OpenClaude not found."
+npm uninstall -g @twigpine/openclaude 2>/dev/null && echo "OpenClaude removed." || echo "OpenClaude not found."
 return 0
 }
 
