@@ -3,12 +3,12 @@
 
 pkgname="android-sdk"
 pkgver=37.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Android SDK 37.0.0 for Termux (aarch64 and x86_64)'
 arch=('any')
 groups=('android')
 url="https://github.com/HomuHomu833/android-sdk-custom"
-depends=('openjdk-21' 'axel' 'xz-utils' 'ca-certificates')
+depends=('openjdk-21' 'axel' 'xz-utils' 'ca-certificates' 'termux-tools')
 install="android-sdk.install"
 options=('!strip' '!debug' '!emptydirs')
 
