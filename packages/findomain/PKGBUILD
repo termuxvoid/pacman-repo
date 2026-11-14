@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/findomain)
 
 pkgname="findomain"
-pkgver=10.0.1
+pkgver=11.0.0
 pkgrel=1
 pkgdesc='The fastest and complete solution for domain recognition'
 arch=('any')
