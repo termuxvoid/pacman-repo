@@ -3,7 +3,7 @@
 post_install() {
 set -e
 
-pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary aliens-eye==2.10.1
+pip install --extra-index-url https://termux-user-repository.github.io/pypi/ --prefer-binary aliens-eye==2.11.0
 
 echo "aliens-eye installed. Run 'aliens_eye --help'"
 return 0
