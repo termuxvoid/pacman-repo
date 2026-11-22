@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/termux-penv)
 
 pkgname="termux-penv"
-pkgver=3.1.0
+pkgver=3.1.1
 pkgrel=0
 pkgdesc='Termux Penv - Simplify Chroot Environments in Termux'
 arch=('any')
