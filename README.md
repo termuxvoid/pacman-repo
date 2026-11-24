@@ -3,7 +3,7 @@
     <img alt="TermuxVoid" height="170" src="img/termuxvoid_logo.png">
     <h1>TermuxVoid Pacman Repository</h1>
   </a>
-  <p><b>An unofficial Pacman repository with 250+ security, Android, AI, and utility tools for Termux</b></p>
+  <p><b>An independent third-party Termux software ecosystem with 250+ security, Android, AI, and utility tools</b></p>
 
   <div>
     <a href="https://termuxvoid.github.io/">
@@ -24,7 +24,7 @@
   </div>
 </div>
 
-**TermuxVoid** is an unofficial Pacman repository for Termux. It packages **250+ security, Android, AI, and utility tools** that are missing from, or deliberately excluded by, the official Termux repositories.
+**TermuxVoid** is an independent third-party Termux software ecosystem. The Pacman side packages **250+ security, Android, AI, and utility tools** that are missing from, or deliberately excluded by, the official Termux repositories.
 
 - **One command to set up** — adds the repository, imports and locally signs the key, and installs the packaging prerequisites.
 - **Native Termux packaging** — tools are exposed through `$PREFIX/bin`; no root required unless a tool explicitly asks for it.
@@ -173,7 +173,7 @@ Read the relevant `PKGBUILD` and `.install` file before installing a package you
 
 ## Security
 
-This is an unofficial, independently maintained project. Package scripts run with your permissions, so read the script before installing. Some packages compile on device; others download prebuilt upstream binaries. Stable fixed-version downloads use pinned SHA-256 hashes, but git clones, mutable URLs, `pip`/`gem` installs, and upstream installers are not hash-pinned. A checksum reduces download-tampering risk, not the risk of a malicious package.
+This is an independent, third-party project, not affiliated with or endorsed by the Termux project. Package scripts run with your permissions, so read the script before installing. Some packages compile on device; others download prebuilt upstream binaries. Stable fixed-version downloads use pinned SHA-256 hashes, but git clones, mutable URLs, `pip`/`gem` installs, and upstream installers are not hash-pinned. A checksum reduces download-tampering risk, not the risk of a malicious package.
 
 The repository database and packages are GPG-signed; the `[termuxvoid]` entry requires package signatures (`SigLevel = Required DatabaseOptional`). `install-repo.sh` imports and locally signs the TermuxVoid key.
 
@@ -216,5 +216,5 @@ Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before openin
 Released under the [BSD 3-Clause License](LICENSE). TermuxVoid is not affiliated with the Termux project or its maintainers.
 
 <div align="center">
-  <sub>Unofficial project by <a href="https://github.com/Anon4You">Alienkrishn</a>. Review package scripts before installing.</sub>
+  <sub>Independent third-party project by <a href="https://github.com/Anon4You">Alienkrishn</a>. Review package scripts before installing.</sub>
 </div>
