@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/flutter)
 
 pkgname="flutter"
-pkgver=3.50.1
+pkgver=3.51.0_0.2.pre
 pkgrel=1
 pkgdesc='Google'\''s UI toolkit for building native apps'
 arch=('any')
