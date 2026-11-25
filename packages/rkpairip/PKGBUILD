@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/rkpairip)
 
 pkgname="rkpairip"
-pkgver=5.3
+pkgver=5.4
 pkgrel=1
 pkgdesc='Remove Pairip Protection and Rebuild APKs'
 arch=('any')

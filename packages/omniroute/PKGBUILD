@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/omniroute)
 
 pkgname="omniroute"
-pkgver=3.8.52
+pkgver=3.8.54
 pkgrel=0
 pkgdesc='AI gateway with one OpenAI-compatible endpoint for many providers'
 arch=('any')

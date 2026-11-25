@@ -2,8 +2,8 @@
 # Ported from TermuxVoid APT repo (packages/glibc-nodejs)
 
 pkgname="glibc-nodejs"
-pkgver=26.12.1
-pkgrel=2
+pkgver=26.13.1
+pkgrel=1
 pkgdesc='Node.js runtime with glibc for Termux'
 arch=('any')
 groups=('devel')

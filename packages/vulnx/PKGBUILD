@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/vulnx)
 
 pkgname="vulnx"
-pkgver=2.0.2
+pkgver=2.1.0
 pkgrel=1
 pkgdesc='Modern CLI for exploring vulnerability data with powerful search, filtering, and analysis capabilities.'
 arch=('any')

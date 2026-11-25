@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/maigret)
 
 pkgname="maigret"
-pkgver=0.6.6
+pkgver=0.6.7
 pkgrel=1
 pkgdesc='OSINT username search tool with 3000+ sites'
 arch=('any')
