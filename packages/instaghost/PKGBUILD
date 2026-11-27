@@ -2,7 +2,7 @@
 # Ported from TermuxVoid APT repo (packages/instaghost)
 
 pkgname="instaghost"
-pkgver=2.1.0
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='Advanced Instagram OSINT and intelligence tool'
 arch=('any')
