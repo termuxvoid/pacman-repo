@@ -1,0 +1,21 @@
+# Maintainer: Alienkrishn [Anon4You]
+# Ported from TermuxVoid APT repo (packages/quichash)
+
+pkgname="quichash"
+pkgver=0.1.2
+pkgrel=1
+pkgdesc='High-performance cryptographic hash utility with SIMD optimization'
+arch=('any')
+groups=('crypto')
+url="https://github.com/vyrti/quichash"
+depends=('rust' 'curl' 'tar')
+install="quichash.install"
+options=('!strip' '!debug' '!emptydirs')
+
+build() {
+    return 0
+}
+
+package() {
+    return 0
+}
